@@ -69,13 +69,11 @@ bool runSpecifiedTest(const std::string& expression, const std::string& testName
 	return isPassed;
 }
 
-void runStandartTestCount(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed, std::vector<TestCallStandart>& vectorStandartTest,
-	const std::string& expression, const std::string& expected, const std::string& testName, unsigned int& testNumber)
+void runStandartTestCount(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed,
+						  std::vector<TestCallStandart>& vectorStandartTest, const std::string& expression,
+						  const std::string& expected, const std::string& testName, unsigned int& testNumber)
 {
-	if (runTest(expression, expected, testName, testNumber))
-	{
-		++testsPassed;
-	}
+	if (runTest(expression, expected, testName, testNumber)) ++testsPassed;
 	else
 	{
 		++testsFailed;
@@ -85,13 +83,11 @@ void runStandartTestCount(unsigned int& testsTotal, unsigned int& testsPassed, u
 	++testNumber;
 }
 
-void runSpecifiedTestCount(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed, std::vector<TestCallSpecified>& vectorSpecifiedTest,
-	const std::string& expression, const std::string& testName, const std::string& exceptionName, unsigned int& testNumber)
+void runSpecifiedTestCount(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed,
+						   std::vector<TestCallSpecified>& vectorSpecifiedTest, const std::string& expression,
+						   const std::string& testName, const std::string& exceptionName, unsigned int& testNumber)
 {
-	if (runSpecifiedTest(expression, testName, exceptionName, testNumber))
-	{
-		++testsPassed;
-	}
+	if (runSpecifiedTest(expression, testName, exceptionName, testNumber)) ++testsPassed;
 	else
 	{
 		++testsFailed;
@@ -236,6 +232,7 @@ bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned i
 	if (testsFailed == 0)
 	{
 		std::cout << "\nAll tests passed!\n\n";
+
 		return true;
 	}
 	else
@@ -251,6 +248,7 @@ bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned i
 			i.func(i.expression, i.testName, i.exceptionName, i.testNumber);
 		}
 		std::cout << '\n';
+
 		return false;
 	}
 }

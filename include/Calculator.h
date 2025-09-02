@@ -8,9 +8,9 @@
 #include <stack>
 #include <vector>
 
-const std::string operands = "+-*/";
+const std::string operators = "+-*/";
 const std::string numbers = "0123456789";
-const std::string invalid_symbols = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ`~!@#$%^&_=[]{};':>?,<\"\\№|	";
+const std::string invalidSymbols = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ`~!@#$%^&_=[]{};':>?,<\"\\№|	";
 
 struct Order
 {
@@ -31,18 +31,18 @@ std::stack<std::string> reverseStack(std::stack<std::string>& source, std::stack
 std::stack<std::string> bracketAnalyze(const std::string& expression);
 std::string calculateOneExpression(const std::string& operator1, const std::string& operator2, char operand);
 std::string killSigns(std::string& number);
-void addNumberAndSign(std::size_t& i, const std::string& bracket, std::vector<std::string>& bracketParsed,
+void addNumberAndSign(const std::size_t& index, const std::string& bracket, std::vector<std::string>& bracketParsed,
 	int& dotCount, std::string& number, bool& check);
-void checkNumber(bool& check, const std::string& bracket, std::size_t& i, std::string& number, int& dotCount);
+void checkNumber(const bool check, const std::string& bracket, const std::size_t& index, std::string& number, int& dotCount);
 void parseBrackets(const std::string& bracket, std::vector<std::string>& bracketParsed, int& dotCount);
 void setPriority(std::vector<std::string>& bracketParsed, std::vector<Order>& bracketPriority);
 void insertNewElem(std::vector<Order>& bracketPriority, std::vector<std::string>& bracketParsed);
 void handleNonEvaluableExpression(int& dotCount, const std::string& bracket, std::string& result);
 void handleEvaluableExpression(const std::string& bracket, int& dotCount, std::string& result);
 std::string calculateBracket(const std::string& bracket);
-void oneMainBracket(std::string& expressionName, std::string& expressionValue, Correspond& cell,
+void oneMainBracket(const std::string& expressionName, std::string& expressionValue, Correspond& cell,
 	std::vector<Correspond>& table, std::stack<std::string>& expressionStack);
-void zeroMainBracket(std::string& expressionName, std::string& expressionValue, Correspond& cell,
+void zeroMainBracket(const std::string& expressionName, std::string& expressionValue, Correspond& cell,
 	std::vector<Correspond>& table, std::stack<std::string>& expressionStack);
 void replaceExpressionName(std::string& expressionName, std::string& expressionValue, Correspond& cell, std::vector<Correspond>& table,
 	std::stack<std::string>& expressionStack, std::stack<std::string>& tempStackReverse);
@@ -52,7 +52,7 @@ std::string calculateExpression(std::stack<std::string>& expressionStack);
 
 inline bool isInt(const std::string& str)
 {
-	for (const auto& i : str) if (i == '.') return false;
+	for (const char i : str) if (i == '.') return false;
 
 	return true;
 }
@@ -60,27 +60,29 @@ inline bool isInt(const std::string& str)
 inline bool isOneBracket(const std::string& expression)
 {
 	int brecketCount = 0;
-	for (const auto& i : expression)
+	for (const char i : expression)
 	{
 		if (i == '(') ++brecketCount;
 		if (brecketCount > 1) return false;
 	}
 	if (brecketCount == 0) return false;
+
 	return true;
 }
 
 inline bool isZeroBracket(const std::string& expression)
 {
 	int brecketCount = 0;
-	for (const auto& i : expression)
+	for (const char i : expression)
 	{
 		if (i == '(') ++brecketCount;
 		if (brecketCount > 0) return false;
 	}
+
 	return true;
 }
 
-inline bool isNotRepeatInVector(std::vector<Correspond>& vect, Correspond elem)
+inline bool isNotRepeatInVector(const std::vector<Correspond>& vect, const Correspond elem)
 {
 	for (const auto& i : vect) if ((i.bracketName == elem.bracketName) && (i.bracketValue == elem.bracketValue)) return false;
 
@@ -98,7 +100,7 @@ inline std::string killSigns(std::string& number)
 
 	int minus_count = 0;
 	pos = 0;
-	for (char c : number)
+	for (const char c : number)
 	{
 		if (c == '-') minus_count++;
 		else break;
@@ -111,23 +113,23 @@ inline std::string killSigns(std::string& number)
 	return number;
 }
 
-inline std::string calculateOneExpression(const std::string& operator1, const std::string& operator2, char operand)
+inline std::string calculateOneExpression(const std::string& operand1, const std::string& operand2, const char operator12)
 {
-	if (operand == '/')
+	if (operator12 == '/')
 	{
-		if (operator2 == "0" || operator2 == "0.0" || stold(operator2) == 0.0)
+		if (operand2 == "0" || operand2 == "0.0" || stold(operand2) == 0.0)
 		{
 			throw std::runtime_error("Divide by zero!");
 		}
 	}
 
 	std::string result;
-	if (isInt(operator1) && isInt(operator2))
+	if (isInt(operand1) && isInt(operand2))
 	{
-		long long op1 = stoll(operator1);
-		long long op2 = stoll(operator2);
+		long long op1 = stoll(operand1);
+		long long op2 = stoll(operand2);
 
-		switch (operand)
+		switch (operator12)
 		{
 		case '+':
 			result = std::to_string(op1 + op2);
@@ -140,16 +142,16 @@ inline std::string calculateOneExpression(const std::string& operator1, const st
 			break;
 		case '/':
 			if (op1 % op2 == 0)	result = std::to_string(op1 / op2);
-			else result = std::to_string(stold(operator1) / stold(operator2));
+			else result = std::to_string(stold(operand1) / stold(operand2));
 			break;
 		}
 	}
 	else
 	{
-		long double op1 = stold(operator1);
-		long double op2 = stold(operator2);
+		long double op1 = stold(operand1);
+		long double op2 = stold(operand2);
 
-		switch (operand)
+		switch (operator12)
 		{
 		case '+':
 			result = std::to_string(op1 + op2);
@@ -183,6 +185,7 @@ inline std::stack<std::string> reverseStack(std::stack<std::string>& source, std
 			source.pop();
 		}
 	}
+
 	return destination;
 }
 
