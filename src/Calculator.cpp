@@ -170,7 +170,7 @@ void checkNumber(const bool check, const std::string& bracket, const std::size_t
 		}
 		if (index != 0)
 		{
-			if (((bracket[index] == '*') || (bracket[index] == '/')) && (numbers.find(bracket[index - 1]) == std::string::npos))
+			if (((bracket[index] == '*') || (bracket[index] == '/') || (bracket[index] == '^')) && (numbers.find(bracket[index - 1]) == std::string::npos))
 				throw std::runtime_error("Invalid data format!");
 		}
 	}
@@ -200,6 +200,14 @@ void setPriority(std::vector<std::string>& bracketParsed, std::vector<Order>& br
 {
 	Order operation;
 	std::size_t priority = 1;
+	for (std::size_t i = bracketParsed.size() - 1; i != static_cast<std::size_t>(-1); i--)
+	{
+		if (bracketParsed[i][0] == '^')
+		{
+			operation = { i, priority++ };
+			bracketPriority.push_back(operation);
+		}
+	}
 	for (std::size_t i = 0; i < bracketParsed.size(); i++)
 	{
 		if ((bracketParsed[i][0] == '*') || (bracketParsed[i][0] == '/'))
@@ -298,7 +306,7 @@ void handleEvaluableExpression(const std::string& bracket, int& dotCount, std::s
 
 std::string calculateBracket(const std::string& bracket)
 {
-	if ((bracket[0] == '*') || (bracket[0] == '/')) throw std::runtime_error("Invalid data format!");
+	if ((bracket[0] == '*') || (bracket[0] == '/') || (bracket[0] == '^')) throw std::runtime_error("Invalid data format!");
 	if ((operators.find(bracket[bracket.size() - 1]) != std::string::npos)) throw std::runtime_error("Invalid data format!");
 	
 	std::string result;
@@ -306,7 +314,7 @@ std::string calculateBracket(const std::string& bracket)
 	int dotCount = 0;
 	try
 	{
-		for (int i = 0; i < 4; i++)	if (bracket.find(operators[i]) != std::string::npos) isCalculatable = true;
+		for (size_t i = 0; i < operators.size(); i++)	if (bracket.find(operators[i]) != std::string::npos) isCalculatable = true;
 		if (isCalculatable) handleEvaluableExpression(bracket, dotCount, result);
 		else handleNonEvaluableExpression(dotCount, bracket, result);
 	}

@@ -15,7 +15,7 @@ int main()
 			bool cont;
 			do
 			{
-				std::cout << "Enter expression to calculate(use only +-*/()0123456789.):\n";
+				std::cout << "Enter expression to calculate(use only +-*/^()0123456789.):\n";
 				std::string expression;
 				std::cin >> expression;
 				std::stack<std::string> expressionStack = bracketAnalyze(expression);

@@ -7,10 +7,11 @@
 #include <string>
 #include <stack>
 #include <vector>
+#include <math.h>
 
-const std::string operators = "+-*/";
+const std::string operators = "+-*/^";
 const std::string numbers = "0123456789";
-const std::string invalidSymbols = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ`~!@#$%^&_=[]{};':>?,<\"\\№|	";
+const std::string invalidSymbols = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ`~!@#$%&_=[]{};':>?,<\"\\№|	";
 
 struct Order
 {
@@ -122,6 +123,17 @@ inline std::string calculateOneExpression(const std::string& operand1, const std
 			throw std::runtime_error("Divide by zero!");
 		}
 	}
+	if (operator12 == '^')
+	{
+		if ((operand1 == "0" || operand1 == "0.0" || stold(operand1) == 0.0) && (stold(operand2) < 0.0))
+		{
+			throw std::runtime_error("Divide by zero!");
+		}
+		if ((stold(operand1) < 0.0) && (!isInt(operand2)))
+		{
+			throw std::runtime_error("Complex number!");
+		}
+	}
 
 	std::string result;
 	if (isInt(operand1) && isInt(operand2))
@@ -144,6 +156,10 @@ inline std::string calculateOneExpression(const std::string& operand1, const std
 			if (op1 % op2 == 0)	result = std::to_string(op1 / op2);
 			else result = std::to_string(stold(operand1) / stold(operand2));
 			break;
+		case '^':
+			if (stold(operand2) >= 0.0) result = std::to_string(int64_t(powl(stold(operand1), stold(operand2))));
+			else result = std::to_string(powl(stold(operand1), stold(operand2)));
+			break;
 		}
 	}
 	else
@@ -164,6 +180,9 @@ inline std::string calculateOneExpression(const std::string& operand1, const std
 			break;
 		case '/':
 			result = std::to_string(op1 / op2);
+			break;
+		case '^':
+			result = std::to_string(powl(stold(operand1), stold(operand2)));
 			break;
 		}
 	}

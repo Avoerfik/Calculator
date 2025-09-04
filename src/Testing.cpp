@@ -223,6 +223,50 @@ bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned i
 	/* №88 */ runSpecifiedTestCount(testsTotal, testsPassed, testsFailed, vectorSpecifiedTest, "(0).1", "Invalid data format!", "Invalid data format!", testNumber);
 	/* №89 */ runSpecifiedTestCount(testsTotal, testsPassed, testsFailed, vectorSpecifiedTest, "0.(1)", "Invalid data format!", "Invalid data format!", testNumber);
 
+	// 90-105. Тесты на операцию возведения в степень ^
+	/* №90 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^3", "8", "Simple exponentiation", testNumber);
+	/* №91 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "3^2", "9", "Exponentiation 3^2", testNumber);
+	/* №92 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "4^0.5", "2.000000", "Square root via exponentiation", testNumber);
+	/* №93 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^-1", "0.500000", "Negative exponent", testNumber);
+	/* №94 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^0", "1", "Zero exponent", testNumber);
+	/* №95 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "0^2", "0", "Zero base", testNumber);
+	/* №96 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "1^100", "1", "One to any power", testNumber);
+	/* №97 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^3^2", "512", "Right associativity", testNumber);
+	/* №98 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(2^3)^2", "64", "Brackets change associativity", testNumber);
+	/* №99 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2*3^2", "18", "Multiplication and exponentiation", testNumber);
+	/* №100 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "3^2*2", "18", "Exponentiation and multiplication", testNumber);
+	/* №101 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "4+2^3", "12", "Addition and exponentiation", testNumber);
+	/* №102 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^3+4", "12", "Exponentiation and addition", testNumber);
+	/* №103 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "9^0.5", "3.000000", "Square root of 9", testNumber);
+	/* №104 */ //runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "8^(1/3)", "2.000000", "Cube root", testNumber);
+	/* №105 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2.5^2", "6.250000", "Decimal exponentiation", testNumber);
+	
+	// 106-110. Тесты на особые случаи возведения в степень
+	/* №106 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "0^0", "1", "Zero to zero power", testNumber);
+	/* №107 */ runSpecifiedTestCount(testsTotal, testsPassed, testsFailed, vectorSpecifiedTest, "0^-1", "Zero to negative power", "Divide by zero!", testNumber);
+	/* №108 */ runSpecifiedTestCount(testsTotal, testsPassed, testsFailed, vectorSpecifiedTest, "(-2)^0.5", "Negative to fractional power", "Complex number!", testNumber);
+	/* №109 */ runSpecifiedTestCount(testsTotal, testsPassed, testsFailed, vectorSpecifiedTest, "(-8)^(1/3)", "Negative cube root", "Complex number!", testNumber);
+	/* №110 */ runSpecifiedTestCount(testsTotal, testsPassed, testsFailed, vectorSpecifiedTest, "(-1)^0.5", "Square root of -1", "Complex number!", testNumber);
+
+	// 111-120. Комплексные выражения с возведением в степень
+	/* №111 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^3*4", "32", "Exponentiation then multiplication", testNumber);
+	/* №112 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "4*2^3", "32", "Multiplication then exponentiation", testNumber);
+	/* №113 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(2+3)^2", "25", "Bracketed addition then exponentiation", testNumber);
+	/* №114 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^2+3^2", "13", "Sum of squares", testNumber);
+	/* №115 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "10-2^3", "2", "Subtraction after exponentiation", testNumber);
+	/* №116 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^3-4", "4", "Exponentiation then subtraction", testNumber);
+	/* №117 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "16/2^2", "4", "Division by power", testNumber);
+	/* №118 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^4/8", "2", "Power then division", testNumber);
+	/* №119 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^(3+1)", "16", "Exponent with addition", testNumber);
+	/* №120 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(3*2)^2", "36", "Multiplication in base then exponentiation", testNumber);
+
+	// 121-125. Тесты на приоритет операций с возведением в степень
+	/* №121 */ //runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "-2^2", "-4", "Negative base exponentiation", testNumber);
+	/* №122 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(-2)^2", "4", "Negative in brackets exponentiation", testNumber);
+	/* №123 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^-2", "0.250000", "Negative exponent", testNumber);
+	/* №124 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^3^2", "512", "Right associativity test", testNumber);
+	/* №125 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2*3^2+4", "22", "Complex priority test", testNumber);
+
 	std::cout << "\n----------------------\n";
 	std::cout << "Testing completed!\n";
 	std::cout << "Total Tests: " << testsTotal << '\n';
