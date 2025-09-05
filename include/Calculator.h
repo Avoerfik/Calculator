@@ -7,7 +7,8 @@
 #include <string>
 #include <stack>
 #include <vector>
-#include <math.h>
+#include <cmath>
+#include <complex>
 
 class Calculator
 {
@@ -18,7 +19,7 @@ public:
 private:
 	const std::string operators = "+-*/^";
 	const std::string numbers = "0123456789";
-	const std::string invalidSymbols = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ`~!@#$%&_=[]{};':>?,<\"\\№|	";
+	const std::string validSymbols = "+-*/^()0123456789.";
 
 	struct Order
 	{
@@ -141,9 +142,13 @@ std::string Calculator::calculateOneExpression(const std::string& operand1, cons
 		{
 			throw std::runtime_error("Divide by zero!");
 		}
-		if ((stold(operand1) < 0.0) && (!isInt(operand2)) /* && (int64_t(1 / stold(operand2)) % 2 == 0) */)
+		if ((stold(operand1) < 0.0) && (!isInt(operand2)) /* && (int64_t(1 / stold(operand2)) % 2 == 0)*/)
 		{
-			throw std::runtime_error("Complex number!");
+			std::complex<long double> cop1(stold(operand1), 0.0), cop2(stold(operand2), 0.0);
+			std::complex powered = pow(cop1, cop2);
+			long double real_part = powered.real();
+			long double image_part = powered.imag();
+			return std::to_string(real_part) + " + " + std::to_string(image_part) + "i";
 		}
 	}
 
@@ -194,7 +199,7 @@ std::string Calculator::calculateOneExpression(const std::string& operand1, cons
 			result = std::to_string(op1 / op2);
 			break;
 		case '^':
-			result = std::to_string(powl(stold(operand1), stold(operand2)));
+			result = std::to_string(powl(op1, op2));
 			break;
 		}
 	}

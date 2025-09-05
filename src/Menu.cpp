@@ -12,6 +12,7 @@ Menu::~Menu()
 
 void Menu::run()
 {
+    setlocale(LC_CTYPE, "Russian");
     if (runAllTests(testsTotal, testsPassed, testsFailed))
     {
         try

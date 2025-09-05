@@ -113,7 +113,7 @@ std::stack<std::string> Calculator::bracketAnalyze(const std::string& expression
 
 	for (std::size_t i = 0; i < expression.size(); i++)
 	{
-		if (invalidSymbols.find(expression[i]) != std::string::npos) throw std::runtime_error("Invalid Symbols");
+		if (validSymbols.find(expression[i]) == std::string::npos) throw std::runtime_error("Invalid Symbols");
 		if (numbers.find(expression[i]) != std::string::npos) isNumber = true;
 		try
 		{
