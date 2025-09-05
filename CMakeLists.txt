@@ -18,6 +18,7 @@ set(SOURCES
     "src/main.cpp"
     "src/Testing.cpp"
     "src/Calculator.cpp"
+    "src/Menu.cpp"
 )
 add_executable(Calculator ${SOURCES})
 

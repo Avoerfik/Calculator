@@ -6,14 +6,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <iostream>
-#include <string>
-#include <stack>
-
-std::stack<std::string> bracketAnalyze(const std::string& expression);
-std::string calculateExpression(std::stack<std::string>& expressionStack);
-
-bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed);
+#include "../include/Menu.h"
 
 #endif // !MAIN_H
 

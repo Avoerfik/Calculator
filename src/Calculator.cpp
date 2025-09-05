@@ -1,6 +1,7 @@
 #include "../include/Calculator.h"
 
-void analyzeFirstSymbol(const char symbol, const std::size_t index, std::stack<std::size_t>& bracketStack,
+// Внутренние функции
+void Calculator::analyzeFirstSymbol(const char symbol, const std::size_t index, std::stack<std::size_t>& bracketStack,
 						std::stack<bool>& bracketStackAnalyze, bool& start)
 {
 	if ((symbol == '(') && (index != 0))
@@ -21,7 +22,7 @@ void analyzeFirstSymbol(const char symbol, const std::size_t index, std::stack<s
 	}
 }
 
-void analyzeLastSymbol(const std::string& expression, const std::size_t index, std::stack<std::size_t>& bracketStack,
+void Calculator::analyzeLastSymbol(const std::string& expression, const std::size_t index, std::stack<std::size_t>& bracketStack,
 					   std::stack<bool>& bracketStackAnalyze, std::stack<std::string>& expressionStackReverse, bool& end)
 {
 	if (expression[index] == ')')
@@ -72,7 +73,7 @@ void analyzeLastSymbol(const std::string& expression, const std::size_t index, s
 	}
 }
 
-void analyzeOperatorNearBrackets(const std::size_t index, const std::string& expression)
+void Calculator::analyzeOperatorNearBrackets(const std::size_t index, const std::string& expression)
 {
 	if (index >= expression.size()) return;
 
@@ -101,7 +102,7 @@ void analyzeOperatorNearBrackets(const std::size_t index, const std::string& exp
 	}
 }
 
-std::stack<std::string> bracketAnalyze(const std::string& expression)
+std::stack<std::string> Calculator::bracketAnalyze(const std::string& expression)
 {
 	std::stack<std::size_t> bracketStack;
 	std::stack<bool> bracketStackAnalyze;
@@ -132,7 +133,7 @@ std::stack<std::string> bracketAnalyze(const std::string& expression)
 	return reverseStack(expressionStackReverse, expressionStack, expression);
 }
 
-void addNumberAndSign(const std::size_t& index, const std::string& bracket, std::vector<std::string>& bracketParsed,
+void Calculator::addNumberAndSign(const std::size_t& index, const std::string& bracket, std::vector<std::string>& bracketParsed,
 					  int& dotCount, std::string& number, bool& check)
 {
 	if ((index != bracket.size() - 1) && (index != 0))
@@ -156,7 +157,7 @@ void addNumberAndSign(const std::size_t& index, const std::string& bracket, std:
 	else check = true;
 }
 
-void checkNumber(const bool check, const std::string& bracket, const std::size_t& index, std::string& number, int& dotCount)
+void Calculator::checkNumber(const bool check, const std::string& bracket, const std::size_t& index, std::string& number, int& dotCount)
 {
 	if (check)
 	{
@@ -176,7 +177,7 @@ void checkNumber(const bool check, const std::string& bracket, const std::size_t
 	}
 }
 
-void parseBrackets(const std::string& bracket, std::vector<std::string>& bracketParsed, int& dotCount)
+void Calculator::parseBrackets(const std::string& bracket, std::vector<std::string>& bracketParsed, int& dotCount)
 {
 	try
 	{
@@ -196,7 +197,7 @@ void parseBrackets(const std::string& bracket, std::vector<std::string>& bracket
 	}
 }
 
-void setPriority(std::vector<std::string>& bracketParsed, std::vector<Order>& bracketPriority)
+void Calculator::setPriority(std::vector<std::string>& bracketParsed, std::vector<Order>& bracketPriority)
 {
 	Order operation;
 	std::size_t priority = 1;
@@ -226,7 +227,7 @@ void setPriority(std::vector<std::string>& bracketParsed, std::vector<Order>& br
 	}
 }
 
-void insertNewElem(std::vector<Order>& bracketPriority, std::vector<std::string>& bracketParsed)
+void Calculator::insertNewElem(std::vector<Order>& bracketPriority, std::vector<std::string>& bracketParsed)
 {
 	if (!bracketPriority.empty())
 	{
@@ -264,7 +265,7 @@ void insertNewElem(std::vector<Order>& bracketPriority, std::vector<std::string>
 	}
 }
 
-void handleNonEvaluableExpression(int& dotCount, const std::string& bracket, std::string& result)
+void Calculator::handleNonEvaluableExpression(int& dotCount, const std::string& bracket, std::string& result)
 {
 	dotCount = 0;
 	for (std::size_t i = 0; i < bracket.size(); i++)
@@ -284,7 +285,7 @@ void handleNonEvaluableExpression(int& dotCount, const std::string& bracket, std
 	else result = bracket.substr(1, bracket.size());
 }
 
-void handleEvaluableExpression(const std::string& bracket, int& dotCount, std::string& result)
+void Calculator::handleEvaluableExpression(const std::string& bracket, int& dotCount, std::string& result)
 {
 	std::vector<std::string> bracketParsed;
 	try
@@ -304,7 +305,7 @@ void handleEvaluableExpression(const std::string& bracket, int& dotCount, std::s
 	else result = bracketParsed[0].substr(1, bracketParsed[0].size());
 }
 
-std::string calculateBracket(const std::string& bracket)
+std::string Calculator::calculateBracket(const std::string& bracket)
 {
 	if ((bracket[0] == '*') || (bracket[0] == '/') || (bracket[0] == '^')) throw std::runtime_error("Invalid data format!");
 	if ((operators.find(bracket[bracket.size() - 1]) != std::string::npos)) throw std::runtime_error("Invalid data format!");
@@ -326,7 +327,7 @@ std::string calculateBracket(const std::string& bracket)
 	return result;
 }
 
-void oneMainBracket(const std::string& expressionName, std::string& expressionValue, Correspond& cell,
+void Calculator::oneMainBracket(const std::string& expressionName, std::string& expressionValue, Correspond& cell,
 					std::vector<Correspond>& table, std::stack<std::string>& expressionStack)
 {
 	try
@@ -350,7 +351,7 @@ void oneMainBracket(const std::string& expressionName, std::string& expressionVa
 	}
 }
 
-void zeroMainBracket(const std::string& expressionName, std::string& expressionValue, Correspond& cell,
+void Calculator::zeroMainBracket(const std::string& expressionName, std::string& expressionValue, Correspond& cell,
 					 std::vector<Correspond>& table, std::stack<std::string>& expressionStack)
 {
 	try
@@ -373,7 +374,7 @@ void zeroMainBracket(const std::string& expressionName, std::string& expressionV
 	}
 }
 
-void replaceExpressionName(std::string& expressionName, std::string& expressionValue, Correspond& cell, std::vector<Correspond>& table,
+void Calculator::replaceExpressionName(std::string& expressionName, std::string& expressionValue, Correspond& cell, std::vector<Correspond>& table,
 						   std::stack<std::string>& expressionStack, std::stack<std::string>& tempStackReverse)
 {
 	std::size_t pos;
@@ -401,7 +402,7 @@ void replaceExpressionName(std::string& expressionName, std::string& expressionV
 	}
 }
 
-void iteration(std::string& expressionName, std::string& expressionValue, std::stack<std::string>& expressionStack,
+void Calculator::iteration(std::string& expressionName, std::string& expressionValue, std::stack<std::string>& expressionStack,
 			   std::stack<std::string>& tempStackReverse, Correspond& cell, std::vector<Correspond>& table)
 {
 	try
@@ -420,7 +421,7 @@ void iteration(std::string& expressionName, std::string& expressionValue, std::s
 	}
 }
 
-std::string calculateExpression(std::stack<std::string>& expressionStack)
+std::string Calculator::calculateExpression(std::stack<std::string>& expressionStack)
 {
 	std::stack<std::string> tempStack, tempStackReverse;
 	std::string expressionName, expressionValue;
@@ -438,4 +439,17 @@ std::string calculateExpression(std::stack<std::string>& expressionStack)
 	} while (!expressionStack.empty());
 
 	return expressionValue;
+}
+
+// Внешние функции
+std::stack<std::string> bracketAnalyze(const std::string& expression)
+{
+	Calculator calc;
+	return calc.bracketAnalyze(expression);
+}
+
+std::string calculateExpression(std::stack<std::string>& expressionStack)
+{
+	Calculator calc;
+	return calc.calculateExpression(expressionStack);
 }

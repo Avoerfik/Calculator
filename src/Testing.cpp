@@ -1,6 +1,7 @@
 #include "../include/Testing.h"
 
-bool runTest(const std::string& expression, const std::string& expected, const std::string& testName, const unsigned int& testNumber)
+// Внутренние функции
+bool Testing::runTest(const std::string& expression, const std::string& expected, const std::string& testName, const unsigned int& testNumber)
 {
 	bool isPassed;
 	try
@@ -35,7 +36,7 @@ bool runTest(const std::string& expression, const std::string& expected, const s
 	return isPassed;
 }
 
-bool runSpecifiedTest(const std::string& expression, const std::string& testName, const std::string& exceptionName, const unsigned int& testNumber)
+bool Testing::runSpecifiedTest(const std::string& expression, const std::string& testName, const std::string& exceptionName, const unsigned int& testNumber)
 {
 	bool isPassed;
 	std::cout << "№" << testNumber << ":\n";
@@ -69,7 +70,7 @@ bool runSpecifiedTest(const std::string& expression, const std::string& testName
 	return isPassed;
 }
 
-void runStandartTestCount(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed,
+void Testing::runStandartTestCount(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed,
 						  std::vector<TestCallStandart>& vectorStandartTest, const std::string& expression,
 						  const std::string& expected, const std::string& testName, unsigned int& testNumber)
 {
@@ -77,13 +78,13 @@ void runStandartTestCount(unsigned int& testsTotal, unsigned int& testsPassed, u
 	else
 	{
 		++testsFailed;
-		vectorStandartTest.push_back({ runTest, expression, expected, testName, testNumber });
+		vectorStandartTest.push_back({ &Testing::runTest, expression, expected, testName, testNumber });
 	}
 	++testsTotal;
 	++testNumber;
 }
 
-void runSpecifiedTestCount(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed,
+void Testing::runSpecifiedTestCount(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed,
 						   std::vector<TestCallSpecified>& vectorSpecifiedTest, const std::string& expression,
 						   const std::string& testName, const std::string& exceptionName, unsigned int& testNumber)
 {
@@ -91,13 +92,13 @@ void runSpecifiedTestCount(unsigned int& testsTotal, unsigned int& testsPassed, 
 	else
 	{
 		++testsFailed;
-		vectorSpecifiedTest.push_back({ runSpecifiedTest, expression, testName, exceptionName, testNumber });
+		vectorSpecifiedTest.push_back({ &Testing::runSpecifiedTest, expression, testName, exceptionName, testNumber });
 	}
 	++testNumber;
 	++testsTotal;
 }
 
-bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed)
+bool Testing::runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed)
 {
 	testsTotal = 0, testsPassed = 0, testsFailed = 0;
 	unsigned int testNumber = 1;
@@ -238,7 +239,7 @@ bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned i
 	/* №101 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "4+2^3", "12", "Addition and exponentiation", testNumber);
 	/* №102 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^3+4", "12", "Exponentiation and addition", testNumber);
 	/* №103 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "9^0.5", "3.000000", "Square root of 9", testNumber);
-	/* №104 */ //runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "8^(1/3)", "2.000000", "Cube root", testNumber);
+	/* №104 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "8^(1/3)", "1.999999", "Cube root", testNumber);
 	/* №105 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2.5^2", "6.250000", "Decimal exponentiation", testNumber);
 	
 	// 106-110. Тесты на особые случаи возведения в степень
@@ -261,7 +262,7 @@ bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned i
 	/* №120 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(3*2)^2", "36", "Multiplication in base then exponentiation", testNumber);
 
 	// 121-125. Тесты на приоритет операций с возведением в степень
-	/* №121 */ //runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "-2^2", "-4", "Negative base exponentiation", testNumber);
+	/* №121 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "-(2^2)", "-4", "Negative base exponentiation", testNumber);
 	/* №122 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(-2)^2", "4", "Negative in brackets exponentiation", testNumber);
 	/* №123 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^-2", "0.250000", "Negative exponent", testNumber);
 	/* №124 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "2^3^2", "512", "Right associativity test", testNumber);
@@ -283,16 +284,23 @@ bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned i
 	{
 		std::cout << "\nFailed tests:\n";
 		std::cout << "----------------------\n";
-		for (const auto& i : vectorStandartTest)
+		for (const auto& test : vectorStandartTest)
 		{
-			i.func(i.expression, i.expected, i.testName, i.testNumber);
+			(this->*(test.func))(test.expression, test.expected, test.testName, test.testNumber);
 		}
-		for (const auto& i : vectorSpecifiedTest)
+		for (const auto& test : vectorSpecifiedTest)
 		{
-			i.func(i.expression, i.testName, i.exceptionName, i.testNumber);
+			(this->*(test.func))(test.expression, test.testName, test.exceptionName, test.testNumber);
 		}
 		std::cout << '\n';
 
 		return false;
 	}
+}
+
+// Внешние функции
+bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed)
+{
+	Testing tests;
+	return tests.runAllTests(testsTotal, testsPassed, testsFailed);
 }
