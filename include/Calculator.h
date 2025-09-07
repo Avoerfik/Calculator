@@ -10,6 +10,11 @@
 #include <cmath>
 #include <complex>
 
+#include "ComplexInfo.h"
+
+std::vector<std::complex<long double>> getAllRoots(const std::complex<long double>& base, const std::complex<long double>& power);
+std::vector<long double> getRealRoots(const std::vector<std::complex<long double>>& roots);
+
 class Calculator
 {
 public:
@@ -127,7 +132,7 @@ std::string Calculator::killSigns(std::string& number)
 	return number;
 }
 
-std::string Calculator::calculateOneExpression(const std::string& operand1, const std::string& operand2, const char operator12)
+std::string Calculator::calculateOneExpression(const std::string& operand1,const std::string& operand2, const char operator12)
 {
 	if (operator12 == '/')
 	{
@@ -142,15 +147,34 @@ std::string Calculator::calculateOneExpression(const std::string& operand1, cons
 		{
 			throw std::runtime_error("Divide by zero!");
 		}
-		if ((stold(operand1) < 0.0) && (!isInt(operand2)) /* && (int64_t(1 / stold(operand2)) % 2 == 0)*/)
+		if (!isInt(operand2))
 		{
 			std::complex<long double> cop1(stold(operand1), 0.0), cop2(stold(operand2), 0.0);
 			std::complex powered = pow(cop1, cop2);
-			long double real_part = powered.real();
-			long double image_part = powered.imag();
-			return std::to_string(real_part) + " + " + std::to_string(image_part) + "i";
+			std::vector<std::complex<long double>> allRoots = getAllRoots(cop1, cop2);
+			std::vector<long double> realRoots = getRealRoots(allRoots);
+			std::vector<long double> positiveRoots, negativeRoots;
+
+			if (!realRoots.empty())
+			{
+				for (const auto& i : realRoots)
+				{
+					if (i >= 0.0) positiveRoots.push_back(i);
+					else negativeRoots.push_back(i);
+				}
+				ComplexInfo& ci = ComplexInfo::getInstance();
+				ci.set(powered, allRoots, realRoots, positiveRoots, negativeRoots, true);
+				if (!positiveRoots.empty()) return std::to_string(positiveRoots[0]);
+				else return std::to_string(negativeRoots[0]);
+			}
+			ComplexInfo& ci = ComplexInfo::getInstance();
+			ci.set(powered, allRoots, realRoots, positiveRoots, negativeRoots, true);
+
+			return std::to_string(powered.real()) + " + " + std::to_string(powered.imag()) + "i";
 		}
 	}
+	ComplexInfo& ci = ComplexInfo::getInstance();
+	ci.clear();
 
 	std::string result;
 	if (isInt(operand1) && isInt(operand2))

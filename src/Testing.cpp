@@ -33,6 +33,7 @@ bool Testing::runTest(const std::string& expression, const std::string& expected
 		std::cout << "----------------------\n";
 		isPassed = false;
 	}
+
 	return isPassed;
 }
 
@@ -67,6 +68,7 @@ bool Testing::runSpecifiedTest(const std::string& expression, const std::string&
 		isPassed = false;
 	}
 	std::cout << "----------------------\n";
+
 	return isPassed;
 }
 
@@ -246,8 +248,8 @@ bool Testing::runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, u
 	/* №106 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "0^0", "1", "Zero to zero power", testNumber);
 	/* №107 */ runSpecifiedTestCount(testsTotal, testsPassed, testsFailed, vectorSpecifiedTest, "0^-1", "Zero to negative power", "Divide by zero!", testNumber);
 	/* №108 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(-2)^0.5", "0.000000 + 1.414214i", "Complex number!", testNumber);
-	/* №109 */ //runSpecifiedTestCount(testsTotal, testsPassed, testsFailed, vectorSpecifiedTest, "(-8)^(1/3)", "Negative cube root", "Complex number!", testNumber);
-	/* №110 */ //runSpecifiedTestCount(testsTotal, testsPassed, testsFailed, vectorSpecifiedTest, "(-1)^0.5", "Square root of -1", "Complex number!", testNumber);
+	/* №109 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(-8)^(1/3)", "-1.999999", "Negative cube root", testNumber);
+	/* №110 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(-1)^0.5", "0.000000 + 1.000000i", "Square root of -1", testNumber);
 
 	
 	// 111-120. Комплексные выражения с возведением в степень
@@ -303,5 +305,6 @@ bool Testing::runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, u
 bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed)
 {
 	Testing tests;
+
 	return tests.runAllTests(testsTotal, testsPassed, testsFailed);
 }

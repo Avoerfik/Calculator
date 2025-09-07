@@ -6,7 +6,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include "../include/Menu.h"
+#include "../include/Menu/Menu.h"
 
 #endif // !MAIN_H
 
