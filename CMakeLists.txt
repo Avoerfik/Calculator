@@ -23,7 +23,7 @@ set(SOURCES
     "src/Menu/MenuInput.cpp"
     "src/Menu/MenuOutput.cpp"
 )
-add_executable(Calculator ${SOURCES} "include/ComplexInfo.h")
+add_executable(Calculator ${SOURCES})
 
 # Добавьте источник в исполняемый файл этого проекта.
 # add_executable (Calculator "src/main.cpp" "include/main.h" "src/Calculator.cpp" "src/Testing.cpp" "include/Calculator.h" "include/Testing.h")

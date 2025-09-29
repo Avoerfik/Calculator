@@ -16,28 +16,27 @@ void Menu::run()
 {
     if (runAllTests(testsTotal, testsPassed, testsFailed))
     {
-        try
-        {
-            MenuInput inputHandler;
-            MenuOutput outputHandler;
+        MenuInput inputHandler;
+        MenuOutput outputHandler;
 
-            bool cont;
-            do
+        bool cont;
+        do
+        {
+            try
             {
                 std::string expression = inputHandler.getExpression();
                 std::stack<std::string> expressionStack = bracketAnalyze(expression);
                 std::string result = calculateExpression(expressionStack);
                 outputHandler.displayResult(result);
                 outputHandler.displayComplexResults();
-
-                cont = inputHandler.getContinueChoice();
-            } while (cont);
-        }
-        catch (const std::exception& e)
-        {
-            MenuOutput outputHandler;
-            outputHandler.displayError(e);
-        }
+            }
+            catch (const std::exception& e)
+            {
+                MenuOutput outputHandler;
+                outputHandler.displayError(e);
+            }
+            cont = inputHandler.getContinueChoice();
+        } while (cont);
     }
 }
 
