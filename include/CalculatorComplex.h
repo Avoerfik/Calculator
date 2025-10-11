@@ -5,7 +5,7 @@
 
 #include "Calculator.h"
 
-class CalculatorComplex : public Calculator
+class CalculatorComplex : private Calculator
 {
 private:
 	const long double E = 2.7182818284590452;

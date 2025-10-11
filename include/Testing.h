@@ -8,10 +8,12 @@
 #include <stack>
 #include <vector>
 
+#include "CalculatorExpression.h"
+
 std::stack<std::string> bracketAnalyze(const std::string& expression);
 std::string calculateExpression(std::stack<std::string>& expressionStack);
 
-class Testing
+class Testing : public CalculatorExpression
 {
 public:
 	bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed);

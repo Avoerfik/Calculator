@@ -22,6 +22,7 @@ set(SOURCES
     "src/CalculatorComplex.cpp"
     "src/Menu/MenuInput.cpp"
     "src/Menu/MenuOutput.cpp"
+    "src/Matrix.cpp"
 )
 add_executable(Calculator ${SOURCES})
 

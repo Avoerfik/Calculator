@@ -10,12 +10,13 @@
 #include <cmath>
 #include <complex>
 
+#include "CalculatorExpression.h"
 #include "ComplexInfo.h"
 
 std::vector<std::complex<long double>> getAllRoots(const std::complex<long double>& base, const std::complex<long double>& power);
 std::vector<long double> getRealRoots(const std::vector<std::complex<long double>>& roots);
 
-class Calculator
+class Calculator : public CalculatorExpression
 {
 public:
 	std::stack<std::string> bracketAnalyze(const std::string& expression);
@@ -36,37 +37,79 @@ private:
 		std::string bracketName, bracketValue;
 	};
 
-	void analyzeFirstSymbol(const char symbol, const std::size_t index, std::stack<std::size_t>& bracketStack,
-		std::stack<bool>& bracketStackAnalyze, bool& start);
-	void analyzeLastSymbol(const std::string& expression, const std::size_t index, std::stack<std::size_t>& bracketStack,
-		std::stack<bool>& bracketStackAnalyze, std::stack<std::string>& expressionStackReverse, bool& end);
-	void analyzeOperatorNearBrackets(const std::size_t index, const std::string& expression);
-	void addNumberAndSign(const std::size_t& index, const std::string& bracket, std::vector<std::string>& bracketParsed,
-		int& dotCount, std::string& number, bool& check);
-	void checkNumber(const bool check, const std::string& bracket, const std::size_t& index, std::string& number, int& dotCount);
-	void parseBrackets(const std::string& bracket, std::vector<std::string>& bracketParsed, int& dotCount);
-	void setPriority(std::vector<std::string>& bracketParsed, std::vector<Order>& bracketPriority);
-	void insertNewElem(std::vector<Order>& bracketPriority, std::vector<std::string>& bracketParsed);
-	void handleNonEvaluableExpression(int& dotCount, const std::string& bracket, std::string& result);
-	void handleEvaluableExpression(const std::string& bracket, int& dotCount, std::string& result);
+	void analyzeFirstSymbol(const char symbol,
+		const std::size_t index,
+		std::stack<std::size_t>& bracketStack,
+		std::stack<bool>& bracketStackAnalyze,
+		bool& start);
+	void analyzeLastSymbol(const std::string& expression,
+		const std::size_t index,
+		std::stack<std::size_t>& bracketStack,
+		std::stack<bool>& bracketStackAnalyze,
+		std::stack<std::string>& expressionStackReverse,
+		bool& end);
+	void analyzeOperatorNearBrackets(const std::size_t index,
+		const std::string& expression);
+	void addNumberAndSign(const std::size_t& index,
+		const std::string& bracket,
+		std::vector<std::string>& bracketParsed,
+		int& dotCount,
+		std::string& number,
+		bool& check);
+	void checkNumber(const bool check,
+		const std::string& bracket,
+		const std::size_t& index,
+		std::string& number,
+		int& dotCount);
+	void parseBrackets(const std::string& bracket,
+		std::vector<std::string>& bracketParsed,
+		int& dotCount);
+	void setPriority(std::vector<std::string>& bracketParsed,
+		std::vector<Order>& bracketPriority);
+	void insertNewElem(std::vector<Order>& bracketPriority,
+		std::vector<std::string>& bracketParsed);
+	void handleNonEvaluableExpression(int& dotCount,
+		const std::string& bracket,
+		std::string& result);
+	void handleEvaluableExpression(const std::string& bracket,
+		int& dotCount,
+		std::string& result);
 	std::string calculateBracket(const std::string& bracket);
-	void oneMainBracket(const std::string& expressionName, std::string& expressionValue, Correspond& cell,
-		std::vector<Correspond>& table, std::stack<std::string>& expressionStack);
-	void zeroMainBracket(const std::string& expressionName, std::string& expressionValue, Correspond& cell,
-		std::vector<Correspond>& table, std::stack<std::string>& expressionStack);
-	void replaceExpressionName(std::string& expressionName, std::string& expressionValue, Correspond& cell, std::vector<Correspond>& table,
-		std::stack<std::string>& expressionStack, std::stack<std::string>& tempStackReverse);
-	void iteration(std::string& expressionName, std::string& expressionValue, std::stack<std::string>& expressionStack,
-		std::stack<std::string>& tempStackReverse, Correspond& cell, std::vector<Correspond>& table);
+	void oneMainBracket(const std::string& expressionName,
+		std::string& expressionValue,
+		Correspond& cell,
+		std::vector<Correspond>& table,
+		std::stack<std::string>& expressionStack);
+	void zeroMainBracket(const std::string& expressionName,
+		std::string& expressionValue,
+		Correspond& cell,
+		std::vector<Correspond>& table,
+		std::stack<std::string>& expressionStack);
+	void replaceExpressionName(std::string& expressionName,
+		std::string& expressionValue,
+		Correspond& cell,
+		std::vector<Correspond>& table,
+		std::stack<std::string>& expressionStack,
+		std::stack<std::string>& tempStackReverse);
+	void iteration(std::string& expressionName,
+		std::string& expressionValue,
+		std::stack<std::string>& expressionStack,
+		std::stack<std::string>& tempStackReverse,
+		Correspond& cell,
+		std::vector<Correspond>& table);
 	
 	inline bool isInt(const std::string& str);
 	inline bool isOneBracket(const std::string& expression);
 	inline bool isZeroBracket(const std::string& expression);
-	inline bool isNotRepeatInVector(const std::vector<Correspond>& vect, const Correspond elem);
+	inline bool isNotRepeatInVector(const std::vector<Correspond>& vect,
+		const Correspond elem);
 	inline std::string killSigns(std::string& number);
-	inline std::string calculateOneExpression(const std::string& operand1, const std::string& operand2, const char operator12);
+	inline std::string calculateOneExpression(const std::string& operand1,
+		const std::string& operand2,
+		const char operator12);
 	inline std::stack<std::string> reverseStack(std::stack<std::string>& source,
-												std::stack<std::string>& destination, const std::string& expression);
+		std::stack<std::string>& destination,
+		const std::string& expression);
 };
 
 bool Calculator::isInt(const std::string& str)
@@ -150,7 +193,7 @@ std::string Calculator::calculateOneExpression(const std::string& operand1,const
 		if (!isInt(operand2))
 		{
 			std::complex<long double> cop1(stold(operand1), 0.0), cop2(stold(operand2), 0.0);
-			std::complex powered = pow(cop1, cop2);
+			std::complex<long double> powered = pow(cop1, cop2);
 			std::vector<std::complex<long double>> allRoots = getAllRoots(cop1, cop2);
 			std::vector<long double> realRoots = getRealRoots(allRoots);
 			std::vector<long double> positiveRoots, negativeRoots;

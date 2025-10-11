@@ -6,7 +6,9 @@
 #include <vector>
 #include <complex>
 
-class ComplexInfo
+#include "CalculatorExpression.h"
+
+class ComplexInfo : public CalculatorExpression
 {
 private:
     // Приватный конструктор
@@ -16,12 +18,19 @@ private:
     ComplexInfo(const ComplexInfo&) = delete;
     ComplexInfo& operator=(const ComplexInfo&) = delete;
 
-public:
     // Данные
     std::complex<long double> principalValue;
     std::vector<std::complex<long double>> allRoots;
     std::vector<long double> realRoots, positiveRoots, negativeRoots;
     bool isComplex = false;
+
+public:
+    std::complex<long double> getPrincipalValue(){ return principalValue; }
+    std::vector<std::complex<long double>> getAllRoots() { return allRoots; }
+    std::vector<long double> getRealRoots() { return realRoots; }
+    std::vector<long double> getPositiveRoots() { return positiveRoots; }
+    std::vector<long double> getNegativeRoots() { return negativeRoots; }
+    bool getIsComplex() { return isComplex; }
 
     // Статический метод для доступа к единственному экземпляру
     static ComplexInfo& getInstance()

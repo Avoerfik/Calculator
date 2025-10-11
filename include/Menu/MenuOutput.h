@@ -4,11 +4,12 @@
 #define MENUOUTPUT_H
 
 #include <exception>
+#include <iostream>
 
 #include "Menu.h"
 #include "ComplexInfo.h"
 
-class MenuOutput : public Menu
+class MenuOutput : private Menu
 {
 public:
     MenuOutput();

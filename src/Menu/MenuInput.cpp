@@ -1,5 +1,5 @@
 #include "../include/Menu/MenuInput.h"
-#include <iostream>
+
 
 MenuInput::MenuInput() : Menu()
 {
@@ -49,4 +49,54 @@ std::string MenuInput::readInput(const std::string& prompt)
     std::string input;
     std::getline(std::cin, input);
     return input;
+}
+
+int MenuInput::getCalculationRegime()
+{
+    do
+    {
+        std::cout << "Choose calculation regime:\n1. Mathematical expression calculator\n2. Matrix calculator\n0. Exit\n";
+        std::string input;
+        std::getline(std::cin, input);
+        if (isCorrectChar(input) && ((input[0] == '0') || (input[0] == '1') || (input[0] == '2')))
+            return std::stoi(input);
+        std::cout << "Enter only 0, 1 or 2!\n";
+    } while (true);
+}
+
+Matrix MenuInput::getMatrix()
+{
+    Matrix matrix;
+    std::cout << "Enter matrix:\n";
+    std::cin >> matrix;
+    std::cout << "Matrix is:\n";
+    std::cout << matrix;
+    return matrix;
+}
+
+char MenuInput::getOperator()
+{
+    do
+    {
+        std::cout << "Enter operator:\n";
+        std::string input;
+        std::getline(std::cin, input);
+        if (isCorrectChar(input) && (input[0] == '+' || input[0] == '-' || input[0] == '*'))
+            return input[0];
+        std::cout << "Enter only +-*\n";
+    } while (true);
+    
+}
+
+int MenuInput::getMatrixRegime()
+{
+    do
+    {
+        std::cout << "Choose matrix regime:\n1. Multiple matrix to matrix\n2. Multiple scalar to matrix\n";
+        std::string input;
+        std::getline(std::cin, input);
+        if (isCorrectChar(input) && ((input[0] == '1') || (input[0] == '2')))
+            return std::stoi(input);
+        std::cout << "Enter only 1 or 2!\n";
+    } while (true);
 }

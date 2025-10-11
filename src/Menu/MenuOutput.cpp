@@ -1,5 +1,4 @@
 #include "../include/Menu/MenuOutput.h"
-#include <iostream>
 
 MenuOutput::MenuOutput() : Menu()
 {
@@ -41,37 +40,37 @@ void MenuOutput::formatOutput(const std::string& content, const std::string& pre
 void MenuOutput::displayComplexResults()
 {
     ComplexInfo& ci = ComplexInfo::getInstance();
-    if (!ci.allRoots.empty())
+    if (!ci.getAllRoots().empty())
     {
         std::cout << "All roots:\n";
-        for (const auto& i : ci.allRoots)
+        for (const auto& i : ci.getAllRoots())
         {
             std::cout << std::to_string(i.real()) + " + " + std::to_string(i.imag()) + "i" << '\n';
         }
-        if (!ci.realRoots.empty())
+        if (!ci.getRealRoots().empty())
         {
             std::cout << "Real roots:\n";
-            for (const auto& i : ci.realRoots)
+            for (const auto& i : ci.getRealRoots())
             {
                 std::cout << i << '\n';
             }
-            if (!ci.positiveRoots.empty())
+            if (!ci.getPositiveRoots().empty())
             {
                 std::cout << "Positive Roots:\n";
-                for (const auto& i : ci.positiveRoots)
+                for (const auto& i : ci.getPositiveRoots())
                 {
                     std::cout << i << '\n';
                 }
             }
-            if (!ci.negativeRoots.empty())
+            if (!ci.getNegativeRoots().empty())
             {
                 std::cout << "Negative Roots:\n";
-                for (const auto& i : ci.negativeRoots)
+                for (const auto& i : ci.getNegativeRoots())
                 {
                     std::cout << i << '\n';
                 }
             }
         }
-        if (ci.isComplex) std::cout << "Principal value: " << std::to_string(ci.principalValue.real()) + " + " + std::to_string(ci.principalValue.imag()) + "i" << '\n';
+        if (ci.getIsComplex()) std::cout << "Principal value: " << std::to_string(ci.getPrincipalValue().real()) + " + " + std::to_string(ci.getPrincipalValue().imag()) + "i" << '\n';
     }
 }
