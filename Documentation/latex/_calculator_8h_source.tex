@@ -1,0 +1,301 @@
+\doxysection{Calculator.\+h}
+\hypertarget{_calculator_8h_source}{}\label{_calculator_8h_source}\index{App/include/Calculator.h@{App/include/Calculator.h}}
+\mbox{\hyperlink{_calculator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ CALCULATOR\_H}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00004}\mbox{\hyperlink{_calculator_8h_a070dc57c9e05282adf0ccd5af17965a6}{00004}}\ \textcolor{preprocessor}{\#define\ CALCULATOR\_H}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_calculator_expression_8h}{CalculatorExpression.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_complex_info_8h}{ComplexInfo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00016}00016\ std::vector<std::complex<long\ double>>\ \mbox{\hyperlink{_calculator_8h_a565e1829b32076d7496814e1dcf16b60}{getAllRoots}}(\textcolor{keyword}{const}\ std::complex<long\ double>\&\ base,\ \textcolor{keyword}{const}\ std::complex<long\ double>\&\ power);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00017}00017\ std::vector<long\ double>\ \mbox{\hyperlink{_calculator_8h_ab73e00dd217666516aea398df3192b8f}{getRealRoots}}(\textcolor{keyword}{const}\ std::vector<std::complex<long\ double>>\&\ roots);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00019}\mbox{\hyperlink{class_calculator}{00019}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_calculator}{Calculator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_calculator_expression_a7de83b855fbfc7a0894d671e5dae3768}{CalculatorExpression}}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00021}00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00022}00022\ \ \ \ \ std::stack<std::string>\ \mbox{\hyperlink{class_calculator_a74ef92dc334a8244cafeba100a311b59}{bracketAnalyze}}(\textcolor{keyword}{const}\ std::string\&\ expression);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00023}00023\ \ \ \ \ std::string\ \mbox{\hyperlink{class_calculator_a011dff3e7028beb6c684762a27de673b}{calculateExpression}}(std::stack<std::string>\&\ expressionStack);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00025}00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ operators\ =\ \textcolor{stringliteral}{"{}+-\/*/\string^"{}};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ numbers\ =\ \textcolor{stringliteral}{"{}0123456789"{}};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ validSymbols\ =\ \textcolor{stringliteral}{"{}+-\/*/\string^()0123456789."{}};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{struct\ }Order}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ std::size\_t\ index,\ priority;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00033}00033\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{struct\ }Correspond}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ std::string\ bracketName,\ bracketValue;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00038}00038\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ analyzeFirstSymbol(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ symbol,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::size\_t\ index,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ std::stack<std::size\_t>\&\ bracketStack,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ std::stack<bool>\&\ bracketStackAnalyze,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\&\ start);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ analyzeLastSymbol(\textcolor{keyword}{const}\ std::string\&\ expression,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::size\_t\ index,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ std::stack<std::size\_t>\&\ bracketStack,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ std::stack<bool>\&\ bracketStackAnalyze,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ std::stack<std::string>\&\ expressionStackReverse,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\&\ end);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ analyzeOperatorNearBrackets(\textcolor{keyword}{const}\ std::size\_t\ index,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ expression);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ addNumberAndSign(\textcolor{keyword}{const}\ std::size\_t\&\ index,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ bracket,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ std::vector<std::string>\&\ bracketParsed,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\&\ dotCount,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ std::string\&\ number,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\&\ check);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{void}\ checkNumber(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ check,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ bracket,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::size\_t\&\ index,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ std::string\&\ number,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\&\ dotCount);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ parseBrackets(\textcolor{keyword}{const}\ std::string\&\ bracket,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ std::vector<std::string>\&\ bracketParsed,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\&\ dotCount);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{void}\ setPriority(std::vector<std::string>\&\ bracketParsed,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ std::vector<Order>\&\ bracketPriority);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ insertNewElem(std::vector<Order>\&\ bracketPriority,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ std::vector<std::string>\&\ bracketParsed);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{void}\ handleNonEvaluableExpression(\textcolor{keywordtype}{int}\&\ dotCount,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ bracket,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ std::string\&\ result);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{void}\ handleEvaluableExpression(\textcolor{keyword}{const}\ std::string\&\ bracket,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\&\ dotCount,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ std::string\&\ result);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00077}00077\ \ \ \ \ std::string\ calculateBracket(\textcolor{keyword}{const}\ std::string\&\ bracket);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{void}\ oneMainBracket(\textcolor{keyword}{const}\ std::string\&\ expressionName,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ std::string\&\ expressionValue,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ Correspond\&\ cell,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ std::vector<Correspond>\&\ table,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ std::stack<std::string>\&\ expressionStack);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{void}\ zeroMainBracket(\textcolor{keyword}{const}\ std::string\&\ expressionName,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ std::string\&\ expressionValue,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ Correspond\&\ cell,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ std::vector<Correspond>\&\ table,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ std::stack<std::string>\&\ expressionStack);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{void}\ replaceExpressionName(std::string\&\ expressionName,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ std::string\&\ expressionValue,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ Correspond\&\ cell,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ std::vector<Correspond>\&\ table,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ std::stack<std::string>\&\ expressionStack,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ std::stack<std::string>\&\ tempStackReverse);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00094}00094\ \ \ \ \ \textcolor{keywordtype}{void}\ iteration(std::string\&\ expressionName,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ std::string\&\ expressionValue,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ std::stack<std::string>\&\ expressionStack,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ std::stack<std::string>\&\ tempStackReverse,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ Correspond\&\ cell,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ std::vector<Correspond>\&\ table);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00100}00100\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00101}00101\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ isInt(\textcolor{keyword}{const}\ std::string\&\ str);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ isOneBracket(\textcolor{keyword}{const}\ std::string\&\ expression);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ isZeroBracket(\textcolor{keyword}{const}\ std::string\&\ expression);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00104}00104\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ isNotRepeatInVector(\textcolor{keyword}{const}\ std::vector<Correspond>\&\ vect,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Correspond\ elem);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00106}00106\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ killSigns(std::string\&\ number);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00107}00107\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ calculateOneExpression(\textcolor{keyword}{const}\ std::string\&\ operand1,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ operand2,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ operator12);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00110}00110\ \ \ \ \ \textcolor{keyword}{inline}\ std::stack<std::string>\ reverseStack(std::stack<std::string>\&\ source,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ std::stack<std::string>\&\ destination,}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ expression);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00113}00113\ \};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00115}00115\ \textcolor{keywordtype}{bool}\ Calculator::isInt(\textcolor{keyword}{const}\ std::string\&\ str)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00116}00116\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ i\ :\ str)\ \textcolor{keywordflow}{if}\ (i\ ==\ \textcolor{charliteral}{'.'})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00120}00120\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00122}00122\ \textcolor{keywordtype}{bool}\ Calculator::isOneBracket(\textcolor{keyword}{const}\ std::string\&\ expression)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00123}00123\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{int}\ brecketCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ i\ :\ expression)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00126}00126\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ \textcolor{charliteral}{'('})\ ++brecketCount;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (brecketCount\ >\ 1)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00129}00129\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{if}\ (brecketCount\ ==\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00135}00135\ \textcolor{keywordtype}{bool}\ Calculator::isZeroBracket(\textcolor{keyword}{const}\ std::string\&\ expression)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00136}00136\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00137}00137\ \ \ \ \ \textcolor{keywordtype}{int}\ brecketCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ i\ :\ expression)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00139}00139\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ \textcolor{charliteral}{'('})\ ++brecketCount;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (brecketCount\ >\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00145}00145\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00147}00147\ \textcolor{keywordtype}{bool}\ Calculator::isNotRepeatInVector(\textcolor{keyword}{const}\ std::vector<Correspond>\&\ vect,\ \textcolor{keyword}{const}\ Correspond\ elem)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00148}00148\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00149}00149\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ i\ :\ vect)\ \textcolor{keywordflow}{if}\ ((i.bracketName\ ==\ elem.bracketName)\ \&\&\ (i.bracketValue\ ==\ elem.bracketValue))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00152}00152\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00154}00154\ std::string\ Calculator::killSigns(std::string\&\ number)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00155}00155\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00156}00156\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ number.find(\textcolor{charliteral}{'+'});}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00157}00157\ \ \ \ \ \textcolor{keywordflow}{while}\ (pos\ !=\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00158}00158\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00159}00159\ \ \ \ \ \ \ \ \ number.erase(pos,\ 1);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00160}00160\ \ \ \ \ \ \ \ \ pos\ =\ number.find(\textcolor{charliteral}{'+'});}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00161}00161\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00163}00163\ \ \ \ \ \textcolor{keywordtype}{int}\ minus\_count\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00164}00164\ \ \ \ \ pos\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00165}00165\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ c\ :\ number)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00166}00166\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ ==\ \textcolor{charliteral}{'-\/'})\ minus\_count++;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00169}00169\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00170}00170\ \ \ \ \ number.erase(0,\ minus\_count);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00171}00171\ \ \ \ \ \textcolor{keywordflow}{if}\ (minus\_count\ \%\ 2\ ==\ 1)\ number\ =\ \textcolor{stringliteral}{"{}-\/"{}}\ +\ number;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{if}\ (number\ ==\ \textcolor{stringliteral}{"{}-\/0"{}})\ number\ =\ \textcolor{stringliteral}{"{}0"{}};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00175}00175\ \ \ \ \ \textcolor{keywordflow}{return}\ number;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00176}00176\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00178}00178\ std::string\ Calculator::calculateOneExpression(\textcolor{keyword}{const}\ std::string\&\ operand1,\textcolor{keyword}{const}\ std::string\&\ operand2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ operator12)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00179}00179\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00180}00180\ \ \ \ \ \textcolor{keywordflow}{if}\ (operator12\ ==\ \textcolor{charliteral}{'/'})}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00181}00181\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operand2\ ==\ \textcolor{stringliteral}{"{}0"{}}\ ||\ operand2\ ==\ \textcolor{stringliteral}{"{}0.0"{}}\ ||\ stold(operand2)\ ==\ 0.0)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00183}00183\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Divide\ by\ zero!"{}});}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00185}00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00186}00186\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00187}00187\ \ \ \ \ \textcolor{keywordflow}{if}\ (operator12\ ==\ \textcolor{charliteral}{'\string^'})}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00188}00188\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((operand1\ ==\ \textcolor{stringliteral}{"{}0"{}}\ ||\ operand1\ ==\ \textcolor{stringliteral}{"{}0.0"{}}\ ||\ stold(operand1)\ ==\ 0.0)\ \&\&\ (stold(operand2)\ <\ 0.0))}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00190}00190\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Divide\ by\ zero!"{}});}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00192}00192\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isInt(operand2))}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00194}00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ std::complex<long\ double>\ cop1(stold(operand1),\ 0.0),\ cop2(stold(operand2),\ 0.0);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ std::complex<long\ double>\ powered\ =\ pow(cop1,\ cop2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::complex<long\ double>>\ allRoots\ =\ \mbox{\hyperlink{_calculator_8h_a565e1829b32076d7496814e1dcf16b60}{getAllRoots}}(cop1,\ cop2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<long\ double>\ realRoots\ =\ \mbox{\hyperlink{_calculator_8h_ab73e00dd217666516aea398df3192b8f}{getRealRoots}}(allRoots);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<long\ double>\ positiveRoots,\ negativeRoots;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!realRoots.empty())}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ i\ :\ realRoots)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ 0.0)\ positiveRoots.push\_back(i);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ negativeRoots.push\_back(i);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ComplexInfo\&\ ci\ =\ \mbox{\hyperlink{class_complex_info_adefd896518808d6806e9b26ee39f9bf3}{ComplexInfo::getInstance}}();}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ci.\mbox{\hyperlink{class_complex_info_ac0913768fc43de3fae6d55b5cff2d255}{set}}(powered,\ allRoots,\ realRoots,\ positiveRoots,\ negativeRoots,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!positiveRoots.empty())\ \textcolor{keywordflow}{return}\ std::to\_string(positiveRoots[0]);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ std::to\_string(negativeRoots[0]);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ ComplexInfo\&\ ci\ =\ \mbox{\hyperlink{class_complex_info_adefd896518808d6806e9b26ee39f9bf3}{ComplexInfo::getInstance}}();}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ ci.\mbox{\hyperlink{class_complex_info_ac0913768fc43de3fae6d55b5cff2d255}{set}}(powered,\ allRoots,\ realRoots,\ positiveRoots,\ negativeRoots,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::to\_string(powered.real())\ +\ \textcolor{stringliteral}{"{}\ +\ "{}}\ +\ std::to\_string(powered.imag())\ +\ \textcolor{stringliteral}{"{}i"{}};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00217}00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00218}00218\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00219}00219\ \ \ \ \ ComplexInfo\&\ ci\ =\ \mbox{\hyperlink{class_complex_info_adefd896518808d6806e9b26ee39f9bf3}{ComplexInfo::getInstance}}();}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00220}00220\ \ \ \ \ ci.\mbox{\hyperlink{class_complex_info_a9ca23b77e0f23215ce87e8903808d817}{clear}}();}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00222}00222\ \ \ \ \ std::string\ result;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{if}\ (isInt(operand1)\ \&\&\ isInt(operand2))}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00224}00224\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ op1\ =\ stoll(operand1);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ op2\ =\ stoll(operand2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (operator12)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00229}00229\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'+'}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ std::to\_string(op1\ +\ op2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00233}00233\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'-\/'}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ std::to\_string(op1\ -\/\ op2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00236}00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'*'}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ std::to\_string(op1\ *\ op2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'/'}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (op1\ \%\ op2\ ==\ 0)\ result\ =\ std::to\_string(op1\ /\ op2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ result\ =\ std::to\_string(stold(operand1)\ /\ stold(operand2));}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\string^'}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stold(operand2)\ >=\ 0.0)\ result\ =\ std::to\_string(int64\_t(powl(stold(operand1),\ stold(operand2))));}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ result\ =\ std::to\_string(powl(stold(operand1),\ stold(operand2)));}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00247}00247\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00248}00248\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00249}00249\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00250}00250\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00251}00251\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ op1\ =\ stold(operand1);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ op2\ =\ stold(operand2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00254}00254\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (operator12)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00255}00255\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'+'}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ std::to\_string(op1\ +\ op2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00259}00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'-\/'}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ std::to\_string(op1\ -\/\ op2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'*'}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ std::to\_string(op1\ *\ op2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00265}00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'/'}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ std::to\_string(op1\ /\ op2);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00268}00268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\string^'}:}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ std::to\_string(powl(op1,\ op2));}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00271}00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00272}00272\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00274}00274\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00275}00275\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00277}00277\ std::stack<std::string>\ Calculator::reverseStack(std::stack<std::string>\&\ source,\ std::stack<std::string>\&\ destination,\ \textcolor{keyword}{const}\ std::string\&\ expression)}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00278}00278\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00279}00279\ \ \ \ \ \textcolor{keywordflow}{if}\ (source.empty())}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00280}00280\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00281}00281\ \ \ \ \ \ \ \ \ destination.push(expression);}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00282}00282\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00283}00283\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00284}00284\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00285}00285\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!source.empty())}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00286}00286\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ destination.push(source.top());}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ source.pop();}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00289}00289\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00290}00290\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00292}00292\ \ \ \ \ \textcolor{keywordflow}{return}\ destination;}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00293}00293\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{_calculator_8h_source_l00295}00295\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !CALCULATOR\_H}}
+
+\end{DoxyCode}

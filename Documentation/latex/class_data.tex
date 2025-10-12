@@ -1,0 +1,171 @@
+\doxysection{Data Class Reference}
+\hypertarget{class_data}{}\label{class_data}\index{Data@{Data}}
+
+
+{\ttfamily \#include $<$Data.\+h$>$}
+
+
+
+Inheritance diagram for Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_data__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}} ()
+\item 
+\mbox{\hyperlink{class_data_adb41061219822126474947b087bf15eb}{Data}} (\mbox{\hyperlink{struct_record}{Record}} \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}})
+\item 
+virtual \mbox{\hyperlink{class_data_a3635432c142836f46f99fbdf6273d135}{\texorpdfstring{$\sim$}{\string~}\+Data}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_data_a3c2617676ef58a9e8768a55b950d7827}{reserve\+Data}} (\mbox{\hyperlink{struct_record}{Record}} \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}})=0
+\item 
+virtual \mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_data_aeca16c62fc1beb85591122286c97d870}{get\+Data}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_data_ac00c9aa58b57fa56b3488be1951ab523}{get\+Next\+Number}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_record}{Record}} $>$ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}
+\item 
+unsigned int \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{current\+Number}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_data_8h_source_l00015}{15}} of file \mbox{\hyperlink{_data_8h_source}{Data.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_data_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_data_af11f741cb7f587e2e495452a8905a22a}\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_data_af11f741cb7f587e2e495452a8905a22a} 
+Data\+::\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_data_8h_source_l00018}{18}} of file \mbox{\hyperlink{_data_8h_source}{Data.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_data_af11f741cb7f587e2e495452a8905a22a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_data_adb41061219822126474947b087bf15eb}\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_data_adb41061219822126474947b087bf15eb} 
+Data\+::\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_record}{Record}}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_data_8h_source_l00022}{22}} of file \mbox{\hyperlink{_data_8h_source}{Data.\+h}}.
+
+\Hypertarget{class_data_a3635432c142836f46f99fbdf6273d135}\index{Data@{Data}!````~Data@{\texorpdfstring{$\sim$}{\string~}Data}}
+\index{````~Data@{\texorpdfstring{$\sim$}{\string~}Data}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Data()}{\string~Data()}}
+{\footnotesize\ttfamily \label{class_data_a3635432c142836f46f99fbdf6273d135} 
+virtual Data\+::\texorpdfstring{$\sim$}{\string~}\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_data_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_aeca16c62fc1beb85591122286c97d870}\index{Data@{Data}!getData@{getData}}
+\index{getData@{getData}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \label{class_data_aeca16c62fc1beb85591122286c97d870} 
+virtual \mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} Data\+::get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_history_a21139e549b8d94f2eeabc75f3fc1601e}{History}}, and \mbox{\hyperlink{class_memory_a5af0960e5defd495cb5f0c8a42f12be2}{Memory}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_data_aeca16c62fc1beb85591122286c97d870_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_data_ac00c9aa58b57fa56b3488be1951ab523}\index{Data@{Data}!getNextNumber@{getNextNumber}}
+\index{getNextNumber@{getNextNumber}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getNextNumber()}{getNextNumber()}}
+{\footnotesize\ttfamily \label{class_data_ac00c9aa58b57fa56b3488be1951ab523} 
+unsigned int Data\+::get\+Next\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_data_8h_source_l00036}{36}} of file \mbox{\hyperlink{_data_8h_source}{Data.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_data_ac00c9aa58b57fa56b3488be1951ab523_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_data_a3c2617676ef58a9e8768a55b950d7827}\index{Data@{Data}!reserveData@{reserveData}}
+\index{reserveData@{reserveData}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{reserveData()}{reserveData()}}
+{\footnotesize\ttfamily \label{class_data_a3c2617676ef58a9e8768a55b950d7827} 
+virtual \mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} Data\+::reserve\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_record}{Record}}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_history_aab8cb550ba5a172b530b4d2c1650cf29}{History}}, and \mbox{\hyperlink{class_memory_ab503c0cf4a226fd3d67aeaf0531a153f}{Memory}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{class_data_a3c2617676ef58a9e8768a55b950d7827_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_data_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_data_ae03850de2a00d7c9cfa385406d5be3d4}\index{Data@{Data}!currentNumber@{currentNumber}}
+\index{currentNumber@{currentNumber}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{currentNumber}{currentNumber}}
+{\footnotesize\ttfamily \label{class_data_ae03850de2a00d7c9cfa385406d5be3d4} 
+unsigned int Data\+::current\+Number = 1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_data_8h_source_l00033}{33}} of file \mbox{\hyperlink{_data_8h_source}{Data.\+h}}.
+
+\Hypertarget{class_data_af52531568b81e4705f2f6e40a62dd5e1}\index{Data@{Data}!data@{data}}
+\index{data@{data}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{class_data_af52531568b81e4705f2f6e40a62dd5e1} 
+std\+::vector$<$\mbox{\hyperlink{struct_record}{Record}}$>$ Data\+::data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_data_8h_source_l00032}{32}} of file \mbox{\hyperlink{_data_8h_source}{Data.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+App/include/\mbox{\hyperlink{_data_8h}{Data.\+h}}\end{DoxyCompactItemize}

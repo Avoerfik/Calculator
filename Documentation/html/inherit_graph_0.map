@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_calculator_expression.html" title=" " alt="" coords="5,55,151,80"/>
+<area shape="rect" id="Node000001" href="$class_calculator.html" title=" " alt="" coords="205,5,285,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="134,48,204,27,206,32,136,53"/>
+<area shape="rect" id="Node000003" href="$class_complex_info.html" title=" " alt="" coords="199,55,292,80"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="165,65,199,65,199,70,165,70"/>
+<area shape="rect" id="Node000004" href="$class_testing.html" title=" " alt="" coords="213,104,277,129"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="135,81,214,105,212,110,134,86"/>
+<area shape="rect" id="Node000002" href="$class_calculator_complex.html" title=" " alt="" coords="340,5,471,31"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="299,15,340,15,340,21,299,21"/>
+</map>

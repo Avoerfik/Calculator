@@ -1,0 +1,95 @@
+\doxysection{App/include/\+Calculator.h File Reference}
+\hypertarget{_calculator_8h}{}\label{_calculator_8h}\index{App/include/Calculator.h@{App/include/Calculator.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$stack$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include "{}Calculator\+Expression.\+h"{}}\newline
+{\ttfamily \#include "{}Complex\+Info.\+h"{}}\newline
+Include dependency graph for Calculator.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_calculator_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_calculator_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_calculator}{Calculator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_calculator_8h_a070dc57c9e05282adf0ccd5af17965a6}{CALCULATOR\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::complex$<$ long double $>$ $>$ \mbox{\hyperlink{_calculator_8h_a565e1829b32076d7496814e1dcf16b60}{get\+All\+Roots}} (const std\+::complex$<$ long double $>$ \&base, const std\+::complex$<$ long double $>$ \&power)
+\item 
+std\+::vector$<$ long double $>$ \mbox{\hyperlink{_calculator_8h_ab73e00dd217666516aea398df3192b8f}{get\+Real\+Roots}} (const std\+::vector$<$ std\+::complex$<$ long double $>$ $>$ \&roots)
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{_calculator_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_calculator_8h_a070dc57c9e05282adf0ccd5af17965a6}\index{Calculator.h@{Calculator.h}!CALCULATOR\_H@{CALCULATOR\_H}}
+\index{CALCULATOR\_H@{CALCULATOR\_H}!Calculator.h@{Calculator.h}}
+\doxysubsubsection{\texorpdfstring{CALCULATOR\_H}{CALCULATOR\_H}}
+{\footnotesize\ttfamily \label{_calculator_8h_a070dc57c9e05282adf0ccd5af17965a6} 
+\#define CALCULATOR\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{_calculator_8h_source_l00004}{4}} of file \mbox{\hyperlink{_calculator_8h_source}{Calculator.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{_calculator_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_calculator_8h_a565e1829b32076d7496814e1dcf16b60}\index{Calculator.h@{Calculator.h}!getAllRoots@{getAllRoots}}
+\index{getAllRoots@{getAllRoots}!Calculator.h@{Calculator.h}}
+\doxysubsubsection{\texorpdfstring{getAllRoots()}{getAllRoots()}}
+{\footnotesize\ttfamily \label{_calculator_8h_a565e1829b32076d7496814e1dcf16b60} 
+std\+::vector$<$ std\+::complex$<$ long double $>$ $>$ get\+All\+Roots (\begin{DoxyParamCaption}\item[{const std\+::complex$<$ long double $>$ \&}]{base}{, }\item[{const std\+::complex$<$ long double $>$ \&}]{power}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_calculator_complex_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{_calculator_complex_8cpp_source}{Calculator\+Complex.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{_calculator_8h_a565e1829b32076d7496814e1dcf16b60_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_calculator_8h_ab73e00dd217666516aea398df3192b8f}\index{Calculator.h@{Calculator.h}!getRealRoots@{getRealRoots}}
+\index{getRealRoots@{getRealRoots}!Calculator.h@{Calculator.h}}
+\doxysubsubsection{\texorpdfstring{getRealRoots()}{getRealRoots()}}
+{\footnotesize\ttfamily \label{_calculator_8h_ab73e00dd217666516aea398df3192b8f} 
+std\+::vector$<$ long double $>$ get\+Real\+Roots (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ long double $>$ $>$ \&}]{roots}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_calculator_complex_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{_calculator_complex_8cpp_source}{Calculator\+Complex.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{_calculator_8h_ab73e00dd217666516aea398df3192b8f_cgraph}
+\end{center}
+\end{figure}

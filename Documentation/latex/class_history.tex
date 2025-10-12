@@ -1,0 +1,259 @@
+\doxysection{History Class Reference}
+\hypertarget{class_history}{}\label{class_history}\index{History@{History}}
+
+
+{\ttfamily \#include $<$History.\+h$>$}
+
+
+
+Inheritance diagram for History\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_history__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for History\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_history__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_history_afba1384643f419d079e78adb1497f741}{History}} ()
+\item 
+\mbox{\hyperlink{class_history_acc317582bb41a3c5f995486a69e871e3}{\texorpdfstring{$\sim$}{\string~}\+History}} ()=default
+\item 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_history_a9eda9965c45bde02a3c5c3a5aea4b329}{reserve\+Data}} (const std\+::vector$<$ std\+::string $>$ \&info)
+\item 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_history_aab8cb550ba5a172b530b4d2c1650cf29}{reserve\+Data}} (\mbox{\hyperlink{struct_record}{Record}} \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}) override
+\item 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_history_a21139e549b8d94f2eeabc75f3fc1601e}{get\+Data}} () override
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{struct_record_history}{Record\+History}} $>$ \& \mbox{\hyperlink{class_history_a2bccccaac2a57a8a28cb383a9c8d0023}{get\+History}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_history_ac34d45ec9a11c4a0b1f61f2b87ba9aea}{get\+History\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_history_a9baf386eff2e21f1f389d003043499fc}{print\+Record\+History}} (const \mbox{\hyperlink{struct_record_history}{Record\+History}} \&rh) const
+\item 
+void \mbox{\hyperlink{class_history_adcaee81d1392f1c8278138a3894f0051}{print\+All\+History}} () const
+\item 
+void \mbox{\hyperlink{class_history_aa68245eca9285d748dee39ef73805872}{print\+Record\+By\+Number}} (unsigned int number) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_data}{Data}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}} ()
+\item 
+\mbox{\hyperlink{class_data_adb41061219822126474947b087bf15eb}{Data}} (\mbox{\hyperlink{struct_record}{Record}} \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}})
+\item 
+virtual \mbox{\hyperlink{class_data_a3635432c142836f46f99fbdf6273d135}{\texorpdfstring{$\sim$}{\string~}\+Data}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_data}{Data}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_data_ac00c9aa58b57fa56b3488be1951ab523}{get\+Next\+Number}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_data}{Data}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_record}{Record}} $>$ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}
+\item 
+unsigned int \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{current\+Number}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_history_8h_source_l00016}{16}} of file \mbox{\hyperlink{_history_8h_source}{History.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_history_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_history_afba1384643f419d079e78adb1497f741}\index{History@{History}!History@{History}}
+\index{History@{History}!History@{History}}
+\doxysubsubsection{\texorpdfstring{History()}{History()}}
+{\footnotesize\ttfamily \label{class_history_afba1384643f419d079e78adb1497f741} 
+History\+::\+History (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_history_8h_source_l00019}{19}} of file \mbox{\hyperlink{_history_8h_source}{History.\+h}}.
+
+\Hypertarget{class_history_acc317582bb41a3c5f995486a69e871e3}\index{History@{History}!````~History@{\texorpdfstring{$\sim$}{\string~}History}}
+\index{````~History@{\texorpdfstring{$\sim$}{\string~}History}!History@{History}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}History()}{\string~History()}}
+{\footnotesize\ttfamily \label{class_history_acc317582bb41a3c5f995486a69e871e3} 
+History\+::\texorpdfstring{$\sim$}{\string~}\+History (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{class_history_acc317582bb41a3c5f995486a69e871e3_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_history_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_history_a21139e549b8d94f2eeabc75f3fc1601e}\index{History@{History}!getData@{getData}}
+\index{getData@{getData}!History@{History}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \label{class_history_a21139e549b8d94f2eeabc75f3fc1601e} 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} History\+::get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_data_aeca16c62fc1beb85591122286c97d870}{Data}}.
+
+
+
+Definition at line \mbox{\hyperlink{_history_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_history_8cpp_source}{History.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{class_history_a21139e549b8d94f2eeabc75f3fc1601e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_history_a2bccccaac2a57a8a28cb383a9c8d0023}\index{History@{History}!getHistory@{getHistory}}
+\index{getHistory@{getHistory}!History@{History}}
+\doxysubsubsection{\texorpdfstring{getHistory()}{getHistory()}}
+{\footnotesize\ttfamily \label{class_history_a2bccccaac2a57a8a28cb383a9c8d0023} 
+const std\+::vector$<$ \mbox{\hyperlink{struct_record_history}{Record\+History}} $>$ \& History\+::get\+History (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_history_8h_source_l00029}{29}} of file \mbox{\hyperlink{_history_8h_source}{History.\+h}}.
+
+\Hypertarget{class_history_ac34d45ec9a11c4a0b1f61f2b87ba9aea}\index{History@{History}!getHistorySize@{getHistorySize}}
+\index{getHistorySize@{getHistorySize}!History@{History}}
+\doxysubsubsection{\texorpdfstring{getHistorySize()}{getHistorySize()}}
+{\footnotesize\ttfamily \label{class_history_ac34d45ec9a11c4a0b1f61f2b87ba9aea} 
+size\+\_\+t History\+::get\+History\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_history_8h_source_l00030}{30}} of file \mbox{\hyperlink{_history_8h_source}{History.\+h}}.
+
+\Hypertarget{class_history_adcaee81d1392f1c8278138a3894f0051}\index{History@{History}!printAllHistory@{printAllHistory}}
+\index{printAllHistory@{printAllHistory}!History@{History}}
+\doxysubsubsection{\texorpdfstring{printAllHistory()}{printAllHistory()}}
+{\footnotesize\ttfamily \label{class_history_adcaee81d1392f1c8278138a3894f0051} 
+void History\+::print\+All\+History (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_history_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{_history_8cpp_source}{History.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_history_adcaee81d1392f1c8278138a3894f0051_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_history_adcaee81d1392f1c8278138a3894f0051_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_history_aa68245eca9285d748dee39ef73805872}\index{History@{History}!printRecordByNumber@{printRecordByNumber}}
+\index{printRecordByNumber@{printRecordByNumber}!History@{History}}
+\doxysubsubsection{\texorpdfstring{printRecordByNumber()}{printRecordByNumber()}}
+{\footnotesize\ttfamily \label{class_history_aa68245eca9285d748dee39ef73805872} 
+void History\+::print\+Record\+By\+Number (\begin{DoxyParamCaption}\item[{unsigned int}]{number}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_history_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{_history_8cpp_source}{History.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_history_aa68245eca9285d748dee39ef73805872_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_history_a9baf386eff2e21f1f389d003043499fc}\index{History@{History}!printRecordHistory@{printRecordHistory}}
+\index{printRecordHistory@{printRecordHistory}!History@{History}}
+\doxysubsubsection{\texorpdfstring{printRecordHistory()}{printRecordHistory()}}
+{\footnotesize\ttfamily \label{class_history_a9baf386eff2e21f1f389d003043499fc} 
+void History\+::print\+Record\+History (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_record_history}{Record\+History}} \&}]{rh}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_history_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_history_8cpp_source}{History.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_history_a9baf386eff2e21f1f389d003043499fc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_history_a9eda9965c45bde02a3c5c3a5aea4b329}\index{History@{History}!reserveData@{reserveData}}
+\index{reserveData@{reserveData}!History@{History}}
+\doxysubsubsection{\texorpdfstring{reserveData()}{reserveData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_history_a9eda9965c45bde02a3c5c3a5aea4b329} 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} History\+::reserve\+Data (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_history_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_history_8cpp_source}{History.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_history_a9eda9965c45bde02a3c5c3a5aea4b329_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_history_a9eda9965c45bde02a3c5c3a5aea4b329_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_history_aab8cb550ba5a172b530b4d2c1650cf29}\index{History@{History}!reserveData@{reserveData}}
+\index{reserveData@{reserveData}!History@{History}}
+\doxysubsubsection{\texorpdfstring{reserveData()}{reserveData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_history_aab8cb550ba5a172b530b4d2c1650cf29} 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} History\+::reserve\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_record}{Record}}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_data_a3c2617676ef58a9e8768a55b950d7827}{Data}}.
+
+
+
+Definition at line \mbox{\hyperlink{_history_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_history_8cpp_source}{History.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_history_aab8cb550ba5a172b530b4d2c1650cf29_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+App/include/\mbox{\hyperlink{_history_8h}{History.\+h}}\item 
+App/src/\mbox{\hyperlink{_history_8cpp}{History.\+cpp}}\end{DoxyCompactItemize}

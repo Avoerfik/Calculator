@@ -1,0 +1,14 @@
+<map id="Matrix::operator&#45;" name="Matrix::operator&#45;">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,123,80"/>
+<area shape="rect" id="Node000002" href="$class_calculator.html#a74ef92dc334a8244cafeba100a311b59" title=" " alt="" coords="184,5,363,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,52,170,39,204,31,206,36,171,45,119,57"/>
+<area shape="rect" id="Node000003" href="$class_calculator.html#a011dff3e7028beb6c684762a27de673b" title=" " alt="" coords="171,55,376,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,65,157,65,157,70,123,70"/>
+<area shape="rect" id="Node000004" href="$class_matrix.html#a12d35ef1824cd847868a8703035b0d5d" title=" " alt="" coords="222,128,325,153"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="102,78,224,121,223,126,100,83"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="241,129,234,120,237,110,251,104,273,101,300,105,312,114,308,118,298,110,273,107,252,109,241,113,239,119,245,126"/>
+<area shape="rect" id="Node000005" href="$class_matrix.html#a8c8b8a4a34ad4a16e6ba28a62010dfa0" title=" " alt="" coords="425,103,516,128"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="324,131,411,120,412,126,325,137"/>
+<area shape="rect" id="Node000006" href="$class_matrix.html#a97617f3524bfa47d6ac7daa0eefc1941" title=" " alt="" coords="424,152,517,177"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="325,144,410,155,410,160,324,149"/>
+</map>

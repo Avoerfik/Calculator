@@ -1,0 +1,252 @@
+\doxysection{Memory Class Reference}
+\hypertarget{class_memory}{}\label{class_memory}\index{Memory@{Memory}}
+
+
+{\ttfamily \#include $<$Memory.\+h$>$}
+
+
+
+Inheritance diagram for Memory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=132pt]{class_memory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Memory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=132pt]{class_memory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_memory_a585d7bb6fc6f2237bcebf94a86b7dd99}{Memory}} ()
+\item 
+\mbox{\hyperlink{class_memory_a2b517b46ae4b070d9f6a7b6d9efeb7a1}{\texorpdfstring{$\sim$}{\string~}\+Memory}} ()=default
+\item 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_memory_a981098a28ea1d833ed33d0f711845e15}{reserve\+Data}} (const std\+::vector$<$ std\+::string $>$ \&info, char next\+Operator=\textquotesingle{} \textquotesingle{})
+\item 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_memory_ab503c0cf4a226fd3d67aeaf0531a153f}{reserve\+Data}} (\mbox{\hyperlink{struct_record}{Record}} \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}) override
+\item 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_memory_a5af0960e5defd495cb5f0c8a42f12be2}{get\+Data}} () override
+\item 
+std\+::string \mbox{\hyperlink{class_memory_a05da9e79c8a405a1331d2015a9e2d2ed}{get\+Calculation\+String}} () const
+\item 
+void \mbox{\hyperlink{class_memory_ac23bbfbefeec0a7be732b0e5dceb1bda}{print\+Memory}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{struct_memory_cell}{Memory\+Cell}} $>$ \& \mbox{\hyperlink{class_memory_a3ac68d41e25d74de7e6d998fab261f22}{get\+Memory\+Cells}} () const
+\item 
+void \mbox{\hyperlink{class_memory_a09b36e2f4a2cf8fe9bc40e3ffb1d29a8}{clear\+Memory}} ()
+\item 
+bool \mbox{\hyperlink{class_memory_a9aba7736b7d6662936a9b5c1c6ae79ba}{is\+Empty}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_data}{Data}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}} ()
+\item 
+\mbox{\hyperlink{class_data_adb41061219822126474947b087bf15eb}{Data}} (\mbox{\hyperlink{struct_record}{Record}} \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}})
+\item 
+virtual \mbox{\hyperlink{class_data_a3635432c142836f46f99fbdf6273d135}{\texorpdfstring{$\sim$}{\string~}\+Data}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_data}{Data}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_data_ac00c9aa58b57fa56b3488be1951ab523}{get\+Next\+Number}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_data}{Data}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_record}{Record}} $>$ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}
+\item 
+unsigned int \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{current\+Number}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_memory_8h_source_l00015}{15}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_memory_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_memory_a585d7bb6fc6f2237bcebf94a86b7dd99}\index{Memory@{Memory}!Memory@{Memory}}
+\index{Memory@{Memory}!Memory@{Memory}}
+\doxysubsubsection{\texorpdfstring{Memory()}{Memory()}}
+{\footnotesize\ttfamily \label{class_memory_a585d7bb6fc6f2237bcebf94a86b7dd99} 
+Memory\+::\+Memory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_memory_8h_source_l00018}{18}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
+
+\Hypertarget{class_memory_a2b517b46ae4b070d9f6a7b6d9efeb7a1}\index{Memory@{Memory}!````~Memory@{\texorpdfstring{$\sim$}{\string~}Memory}}
+\index{````~Memory@{\texorpdfstring{$\sim$}{\string~}Memory}!Memory@{Memory}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Memory()}{\string~Memory()}}
+{\footnotesize\ttfamily \label{class_memory_a2b517b46ae4b070d9f6a7b6d9efeb7a1} 
+Memory\+::\texorpdfstring{$\sim$}{\string~}\+Memory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{class_memory_a2b517b46ae4b070d9f6a7b6d9efeb7a1_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_memory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_memory_a09b36e2f4a2cf8fe9bc40e3ffb1d29a8}\index{Memory@{Memory}!clearMemory@{clearMemory}}
+\index{clearMemory@{clearMemory}!Memory@{Memory}}
+\doxysubsubsection{\texorpdfstring{clearMemory()}{clearMemory()}}
+{\footnotesize\ttfamily \label{class_memory_a09b36e2f4a2cf8fe9bc40e3ffb1d29a8} 
+void Memory\+::clear\+Memory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_memory_8h_source_l00031}{31}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_memory_a09b36e2f4a2cf8fe9bc40e3ffb1d29a8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_memory_a05da9e79c8a405a1331d2015a9e2d2ed}\index{Memory@{Memory}!getCalculationString@{getCalculationString}}
+\index{getCalculationString@{getCalculationString}!Memory@{Memory}}
+\doxysubsubsection{\texorpdfstring{getCalculationString()}{getCalculationString()}}
+{\footnotesize\ttfamily \label{class_memory_a05da9e79c8a405a1331d2015a9e2d2ed} 
+std\+::string Memory\+::get\+Calculation\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_memory_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_memory_8cpp_source}{Memory.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_memory_a05da9e79c8a405a1331d2015a9e2d2ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_memory_a5af0960e5defd495cb5f0c8a42f12be2}\index{Memory@{Memory}!getData@{getData}}
+\index{getData@{getData}!Memory@{Memory}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \label{class_memory_a5af0960e5defd495cb5f0c8a42f12be2} 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} Memory\+::get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_data_aeca16c62fc1beb85591122286c97d870}{Data}}.
+
+
+
+Definition at line \mbox{\hyperlink{_memory_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_memory_8cpp_source}{Memory.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{class_memory_a5af0960e5defd495cb5f0c8a42f12be2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_memory_a3ac68d41e25d74de7e6d998fab261f22}\index{Memory@{Memory}!getMemoryCells@{getMemoryCells}}
+\index{getMemoryCells@{getMemoryCells}!Memory@{Memory}}
+\doxysubsubsection{\texorpdfstring{getMemoryCells()}{getMemoryCells()}}
+{\footnotesize\ttfamily \label{class_memory_a3ac68d41e25d74de7e6d998fab261f22} 
+const std\+::vector$<$ \mbox{\hyperlink{struct_memory_cell}{Memory\+Cell}} $>$ \& Memory\+::get\+Memory\+Cells (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_memory_8h_source_l00030}{30}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
+
+\Hypertarget{class_memory_a9aba7736b7d6662936a9b5c1c6ae79ba}\index{Memory@{Memory}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!Memory@{Memory}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily \label{class_memory_a9aba7736b7d6662936a9b5c1c6ae79ba} 
+bool Memory\+::is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_memory_8h_source_l00032}{32}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
+
+\Hypertarget{class_memory_ac23bbfbefeec0a7be732b0e5dceb1bda}\index{Memory@{Memory}!printMemory@{printMemory}}
+\index{printMemory@{printMemory}!Memory@{Memory}}
+\doxysubsubsection{\texorpdfstring{printMemory()}{printMemory()}}
+{\footnotesize\ttfamily \label{class_memory_ac23bbfbefeec0a7be732b0e5dceb1bda} 
+void Memory\+::print\+Memory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_memory_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{_memory_8cpp_source}{Memory.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_memory_ac23bbfbefeec0a7be732b0e5dceb1bda_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_memory_a981098a28ea1d833ed33d0f711845e15}\index{Memory@{Memory}!reserveData@{reserveData}}
+\index{reserveData@{reserveData}!Memory@{Memory}}
+\doxysubsubsection{\texorpdfstring{reserveData()}{reserveData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_memory_a981098a28ea1d833ed33d0f711845e15} 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} Memory\+::reserve\+Data (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{info}{, }\item[{char}]{next\+Operator}{ = {\ttfamily \textquotesingle{}~\textquotesingle{}}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_memory_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{_memory_8cpp_source}{Memory.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_memory_a981098a28ea1d833ed33d0f711845e15_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_memory_a981098a28ea1d833ed33d0f711845e15_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_memory_ab503c0cf4a226fd3d67aeaf0531a153f}\index{Memory@{Memory}!reserveData@{reserveData}}
+\index{reserveData@{reserveData}!Memory@{Memory}}
+\doxysubsubsection{\texorpdfstring{reserveData()}{reserveData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_memory_ab503c0cf4a226fd3d67aeaf0531a153f} 
+\mbox{\hyperlink{class_data}{Data}} \texorpdfstring{$\ast$}{*} Memory\+::reserve\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_record}{Record}}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_data_a3c2617676ef58a9e8768a55b950d7827}{Data}}.
+
+
+
+Definition at line \mbox{\hyperlink{_memory_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_memory_8cpp_source}{Memory.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_memory_ab503c0cf4a226fd3d67aeaf0531a153f_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+App/include/\mbox{\hyperlink{_memory_8h}{Memory.\+h}}\item 
+App/src/\mbox{\hyperlink{_memory_8cpp}{Memory.\+cpp}}\end{DoxyCompactItemize}

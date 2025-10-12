@@ -15,16 +15,18 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(include)
 set(SOURCES
-    "src/main.cpp"
-    "src/Testing.cpp"
-    "src/Calculator.cpp"
-    "src/Menu/Menu.cpp"
-    "src/CalculatorComplex.cpp"
-    "src/Menu/MenuInput.cpp"
-    "src/Menu/MenuOutput.cpp"
-    "src/Matrix.cpp"
+    "App/src/main.cpp"
+    "App/src/Testing.cpp"
+    "App/src/Calculator.cpp"
+    "App/src/Menu/Menu.cpp"
+    "App/src/CalculatorComplex.cpp"
+    "App/src/Menu/MenuInput.cpp"
+    "App/src/Menu/MenuOutput.cpp"
+    "App/src/Matrix.cpp"
+    "App/src/History.cpp"
+    "App/src/Memory.cpp"
 )
-add_executable(Calculator ${SOURCES} "include/Data.h" "include/History.h" "src/History.cpp" "include/Memory.h" "src/Memory.cpp")
+add_executable(Calculator ${SOURCES})
 
 # Добавьте источник в исполняемый файл этого проекта.
 # add_executable (Calculator "src/main.cpp" "include/main.h" "src/Calculator.cpp" "src/Testing.cpp" "include/Calculator.h" "include/Testing.h")

@@ -1,0 +1,368 @@
+\doxysection{Matrix Class Reference}
+\hypertarget{class_matrix}{}\label{class_matrix}\index{Matrix@{Matrix}}
+
+
+{\ttfamily \#include $<$Matrix.\+h$>$}
+
+
+
+Inheritance diagram for Matrix\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{class_matrix__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Matrix\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{class_matrix__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix_a12d35ef1824cd847868a8703035b0d5d}{Matrix}} ()=default
+\item 
+\mbox{\hyperlink{class_matrix_a70734b8fe3d556e686683ea29de3e229}{Matrix}} (unsigned int \mbox{\hyperlink{class_matrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}, unsigned int \mbox{\hyperlink{class_matrix_a8c8b8a4a34ad4a16e6ba28a62010dfa0}{cols}})
+\item 
+\mbox{\hyperlink{class_matrix_af0af4d343decf4ae7b45b0929a44e4b9}{Matrix}} (const std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&mat)
+\item 
+\mbox{\hyperlink{class_matrix_abcf708e864ed3d9db2c3b317c5e529ab}{Matrix}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&other)
+\item 
+\mbox{\hyperlink{class_matrix_a75f3885769e293b3f3e236ef60a71c21}{Matrix}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{class_matrix_a3e40db12ae78b7616ee3f099bb15f13d}{operator=}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&other)
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& \mbox{\hyperlink{class_matrix_a74eca41e5a29b6efd57b009730d3fe60}{operator=}} (\mbox{\hyperlink{class_matrix}{Matrix}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_afc7858a535ebcebf445e91bccd75d197}{operator+}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&other) const
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_abb44986f4d7b2ac6465fed5b5db019e8}{operator-\/}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&other) const
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_ab4f8e22e8db0983d75e090542f4d1f7a}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_matrix}{Matrix}} \&other) const
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a662b9a90c4bd26115df878eafd8965b9}{operator\texorpdfstring{$\ast$}{*}}} (double scalar) const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_matrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_matrix_a8c8b8a4a34ad4a16e6ba28a62010dfa0}{cols}} () const
+\item 
+std\+::string \& \mbox{\hyperlink{class_matrix_a684ec10180bdbcdf79a6ba429abe1661}{at}} (size\+\_\+t i, size\+\_\+t j)
+\item 
+const std\+::string \& \mbox{\hyperlink{class_matrix_aa492f53939698c476f007fa61033ef4d}{at}} (size\+\_\+t i, size\+\_\+t j) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_calculator_matrix}{Calculator\+Matrix}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_calculator_matrix_abb422cfda62ae9ab40ad7e00dd9d78f4}{Calculator\+Matrix}} ()=default
+\item 
+\mbox{\hyperlink{class_calculator_matrix_abf339efc4d92b331595ada18ec6f9d3e}{\texorpdfstring{$\sim$}{\string~}\+Calculator\+Matrix}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix}{Matrix}} \mbox{\hyperlink{class_matrix_a43feabfac557236ef5d316f528a33868}{operator\texorpdfstring{$\ast$}{*}}} (double scalar, const \mbox{\hyperlink{class_matrix}{Matrix}} \&mat)
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_matrix_a9e0ce956d3ed783f8d5b13e571e2a04a}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_matrix}{Matrix}} \&mat)
+\item 
+std\+::istream \& \mbox{\hyperlink{class_matrix_a1e59f4510e89d18cfa284feab060583a}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_matrix}{Matrix}} \&mat)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_matrix_8h_source_l00014}{14}} of file \mbox{\hyperlink{_matrix_8h_source}{Matrix.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_matrix_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_matrix_a12d35ef1824cd847868a8703035b0d5d}\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{class_matrix_a12d35ef1824cd847868a8703035b0d5d} 
+Matrix\+::\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{class_matrix_a12d35ef1824cd847868a8703035b0d5d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{class_matrix_a12d35ef1824cd847868a8703035b0d5d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_matrix_a70734b8fe3d556e686683ea29de3e229}\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{class_matrix_a70734b8fe3d556e686683ea29de3e229} 
+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{unsigned int}]{rows}{, }\item[{unsigned int}]{cols}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{class_matrix_a70734b8fe3d556e686683ea29de3e229_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_matrix_af0af4d343decf4ae7b45b0929a44e4b9}\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{class_matrix_af0af4d343decf4ae7b45b0929a44e4b9} 
+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \&}]{mat}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_matrix_abcf708e864ed3d9db2c3b317c5e529ab}\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{class_matrix_abcf708e864ed3d9db2c3b317c5e529ab} 
+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_abcf708e864ed3d9db2c3b317c5e529ab_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_matrix_a75f3885769e293b3f3e236ef60a71c21}\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{class_matrix_a75f3885769e293b3f3e236ef60a71c21} 
+Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a75f3885769e293b3f3e236ef60a71c21_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_matrix_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_matrix_a684ec10180bdbcdf79a6ba429abe1661}\index{Matrix@{Matrix}!at@{at}}
+\index{at@{at}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a684ec10180bdbcdf79a6ba429abe1661} 
+std\+::string \& Matrix\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i}{, }\item[{size\+\_\+t}]{j}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8h_source_l00064}{64}} of file \mbox{\hyperlink{_matrix_8h_source}{Matrix.\+h}}.
+
+\Hypertarget{class_matrix_aa492f53939698c476f007fa61033ef4d}\index{Matrix@{Matrix}!at@{at}}
+\index{at@{at}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_matrix_aa492f53939698c476f007fa61033ef4d} 
+const std\+::string \& Matrix\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i}{, }\item[{size\+\_\+t}]{j}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8h_source_l00065}{65}} of file \mbox{\hyperlink{_matrix_8h_source}{Matrix.\+h}}.
+
+\Hypertarget{class_matrix_a8c8b8a4a34ad4a16e6ba28a62010dfa0}\index{Matrix@{Matrix}!cols@{cols}}
+\index{cols@{cols}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{cols()}{cols()}}
+{\footnotesize\ttfamily \label{class_matrix_a8c8b8a4a34ad4a16e6ba28a62010dfa0} 
+size\+\_\+t Matrix\+::cols (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8h_source_l00061}{61}} of file \mbox{\hyperlink{_matrix_8h_source}{Matrix.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a8c8b8a4a34ad4a16e6ba28a62010dfa0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_matrix_ab4f8e22e8db0983d75e090542f4d1f7a}\index{Matrix@{Matrix}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_matrix_ab4f8e22e8db0983d75e090542f4d1f7a} 
+\mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_ab4f8e22e8db0983d75e090542f4d1f7a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_matrix_a662b9a90c4bd26115df878eafd8965b9}\index{Matrix@{Matrix}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a662b9a90c4bd26115df878eafd8965b9} 
+\mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{double}]{scalar}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00136}{136}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a662b9a90c4bd26115df878eafd8965b9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_matrix_afc7858a535ebcebf445e91bccd75d197}\index{Matrix@{Matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{class_matrix_afc7858a535ebcebf445e91bccd75d197} 
+\mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_afc7858a535ebcebf445e91bccd75d197_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_matrix_abb44986f4d7b2ac6465fed5b5db019e8}\index{Matrix@{Matrix}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{class_matrix_abb44986f4d7b2ac6465fed5b5db019e8} 
+\mbox{\hyperlink{class_matrix}{Matrix}} Matrix\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_abb44986f4d7b2ac6465fed5b5db019e8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_matrix_a3e40db12ae78b7616ee3f099bb15f13d}\index{Matrix@{Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a3e40db12ae78b7616ee3f099bb15f13d} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& Matrix\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a3e40db12ae78b7616ee3f099bb15f13d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_matrix_a74eca41e5a29b6efd57b009730d3fe60}\index{Matrix@{Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a74eca41e5a29b6efd57b009730d3fe60} 
+\mbox{\hyperlink{class_matrix}{Matrix}} \& Matrix\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a74eca41e5a29b6efd57b009730d3fe60_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_matrix_a97617f3524bfa47d6ac7daa0eefc1941}\index{Matrix@{Matrix}!rows@{rows}}
+\index{rows@{rows}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}}
+{\footnotesize\ttfamily \label{class_matrix_a97617f3524bfa47d6ac7daa0eefc1941} 
+size\+\_\+t Matrix\+::rows (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8h_source_l00060}{60}} of file \mbox{\hyperlink{_matrix_8h_source}{Matrix.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a97617f3524bfa47d6ac7daa0eefc1941_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-related-members}
+\Hypertarget{class_matrix_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_matrix_a43feabfac557236ef5d316f528a33868}\index{Matrix@{Matrix}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}}{operator*}}
+{\footnotesize\ttfamily \label{class_matrix_a43feabfac557236ef5d316f528a33868} 
+\mbox{\hyperlink{class_matrix}{Matrix}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{double}]{scalar}{, }\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{mat}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_matrix_a9e0ce956d3ed783f8d5b13e571e2a04a}\index{Matrix@{Matrix}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_matrix_a9e0ce956d3ed783f8d5b13e571e2a04a} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_matrix}{Matrix}} \&}]{mat}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+\Hypertarget{class_matrix_a1e59f4510e89d18cfa284feab060583a}\index{Matrix@{Matrix}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Matrix@{Matrix}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \label{class_matrix_a1e59f4510e89d18cfa284feab060583a} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is}{, }\item[{\mbox{\hyperlink{class_matrix}{Matrix}} \&}]{mat}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_matrix_8cpp_source_l00179}{179}} of file \mbox{\hyperlink{_matrix_8cpp_source}{Matrix.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+App/include/\mbox{\hyperlink{_matrix_8h}{Matrix.\+h}}\item 
+App/src/\mbox{\hyperlink{_matrix_8cpp}{Matrix.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,77 @@
+\doxysection{Complex\+Info.\+h}
+\hypertarget{_complex_info_8h_source}{}\label{_complex_info_8h_source}\index{App/include/ComplexInfo.h@{App/include/ComplexInfo.h}}
+\mbox{\hyperlink{_complex_info_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ COMPLEXINFO\_H}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00004}\mbox{\hyperlink{_complex_info_8h_a835285509d132936d83badee2167b881}{00004}}\ \textcolor{preprocessor}{\#define\ COMPLEXINFO\_H}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_calculator_expression_8h}{CalculatorExpression.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00011}\mbox{\hyperlink{class_complex_info}{00011}}\ \textcolor{keyword}{class\ }ComplexInfo\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_calculator_expression_a7de83b855fbfc7a0894d671e5dae3768}{CalculatorExpression}}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00013}00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ Приватный\ конструктор}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00015}00015\ \ \ \ \ ComplexInfo()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Запрещаем\ копирование\ и\ присваивание}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00018}00018\ \ \ \ \ ComplexInfo(\textcolor{keyword}{const}\ ComplexInfo\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00019}00019\ \ \ \ \ ComplexInfo\&\ operator=(\textcolor{keyword}{const}\ ComplexInfo\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ Данные}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00022}00022\ \ \ \ \ std::complex<long\ double>\ principalValue;}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00023}00023\ \ \ \ \ std::vector<std::complex<long\ double>>\ allRoots;}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00024}00024\ \ \ \ \ std::vector<long\ double>\ realRoots,\ positiveRoots,\ negativeRoots;}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ isComplex\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00027}00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00028}\mbox{\hyperlink{class_complex_info_a91a1980b8d430300b244fabf546ee47e}{00028}}\ \ \ \ \ std::complex<long\ double>\ \mbox{\hyperlink{class_complex_info_a91a1980b8d430300b244fabf546ee47e}{getPrincipalValue}}()\{\ \textcolor{keywordflow}{return}\ principalValue;\ \}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00029}\mbox{\hyperlink{class_complex_info_a9aced4ddf7b967ef25e3f07d1bdc8129}{00029}}\ \ \ \ \ std::vector<std::complex<long\ double>>\ \mbox{\hyperlink{class_complex_info_a9aced4ddf7b967ef25e3f07d1bdc8129}{getAllRoots}}()\ \{\ \textcolor{keywordflow}{return}\ allRoots;\ \}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00030}\mbox{\hyperlink{class_complex_info_accdbfbc905a2f959692e5fee4619aa8b}{00030}}\ \ \ \ \ std::vector<long\ double>\ \mbox{\hyperlink{class_complex_info_accdbfbc905a2f959692e5fee4619aa8b}{getRealRoots}}()\ \{\ \textcolor{keywordflow}{return}\ realRoots;\ \}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00031}\mbox{\hyperlink{class_complex_info_a9260bee1ad4b8d44e05ce729f84ab199}{00031}}\ \ \ \ \ std::vector<long\ double>\ \mbox{\hyperlink{class_complex_info_a9260bee1ad4b8d44e05ce729f84ab199}{getPositiveRoots}}()\ \{\ \textcolor{keywordflow}{return}\ positiveRoots;\ \}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00032}\mbox{\hyperlink{class_complex_info_a2859950d9edc5ef4f11d963f583a3e02}{00032}}\ \ \ \ \ std::vector<long\ double>\ \mbox{\hyperlink{class_complex_info_a2859950d9edc5ef4f11d963f583a3e02}{getNegativeRoots}}()\ \{\ \textcolor{keywordflow}{return}\ negativeRoots;\ \}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00033}\mbox{\hyperlink{class_complex_info_aae31873c1d518d07adb1566456afc5bc}{00033}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_complex_info_aae31873c1d518d07adb1566456afc5bc}{getIsComplex}}()\ \{\ \textcolor{keywordflow}{return}\ isComplex;\ \}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ Статический\ метод\ для\ доступа\ к\ единственному\ экземпляру}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00036}\mbox{\hyperlink{class_complex_info_adefd896518808d6806e9b26ee39f9bf3}{00036}}\ \ \ \ \ \textcolor{keyword}{static}\ ComplexInfo\&\ \mbox{\hyperlink{class_complex_info_adefd896518808d6806e9b26ee39f9bf3}{getInstance}}()}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ ComplexInfo\ instance;}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//\ Метод\ для\ установки\ всех\ значений}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00043}\mbox{\hyperlink{class_complex_info_ac0913768fc43de3fae6d55b5cff2d255}{00043}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_complex_info_ac0913768fc43de3fae6d55b5cff2d255}{set}}(}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ std::complex<long\ double>\ pv,}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ std::vector<std::complex<long\ double>>\ ar,}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ std::vector<long\ double>\ rr,}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ std::vector<long\ double>\ pr,}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ std::vector<long\ double>\ nr,}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ic)}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ principalValue\ =\ pv;}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ allRoots\ =\ ar;}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ realRoots\ =\ rr;}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ positiveRoots\ =\ pr;}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ negativeRoots\ =\ nr;}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ isComplex\ =\ ic;}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ Метод\ для\ очистки\ данных}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00060}\mbox{\hyperlink{class_complex_info_a9ca23b77e0f23215ce87e8903808d817}{00060}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_complex_info_a9ca23b77e0f23215ce87e8903808d817}{clear}}()}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ principalValue\ =\ std::complex<long\ double>(0.0,\ 0.0);}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ allRoots.clear();}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ realRoots.clear();}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ positiveRoots.clear();}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ negativeRoots.clear();}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ isComplex\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00069}00069\ \};}
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_complex_info_8h_source_l00071}00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !COMPLEXINFO\_H}}
+
+\end{DoxyCode}

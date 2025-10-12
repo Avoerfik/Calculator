@@ -1,0 +1,69 @@
+\doxysection{Calculator\+Complex.\+cpp}
+\hypertarget{_calculator_complex_8cpp_source}{}\label{_calculator_complex_8cpp_source}\index{App/src/CalculatorComplex.cpp@{App/src/CalculatorComplex.cpp}}
+\mbox{\hyperlink{_calculator_complex_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../App/include/CalculatorComplex.h"{}}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00003}00003\ \textcolor{comment}{//\ Внутренние\ функции}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00004}\mbox{\hyperlink{class_calculator_complex_a13e56fbfc7ab120b7077f86441e34083}{00004}}\ std::vector<std::complex<long\ double>>\ \mbox{\hyperlink{class_calculator_complex_a13e56fbfc7ab120b7077f86441e34083}{CalculatorComplex::getAllRoots}}(\textcolor{keyword}{const}\ std::complex<long\ double>\&\ base,\ \textcolor{keyword}{const}\ std::complex<long\ double>\&\ power)}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00006}00006\ \ \ \ \ std::vector<std::complex<long\ double>>\ allRoots;}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00007}00007\ \ \ \ \ std::vector<std::complex<long\ double>>\ uniqueRoots;}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ radius\ =\ std::abs(base);}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ theta\ =\ std::arg(base);}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ lnRadius\ =\ std::log(radius);}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordtype}{int}\ maxIterations\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ maxIterations;\ k++)}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ std::complex<long\ double>\ lnBase(lnRadius,\ theta\ +\ 2\ *\ PI\ *\ k);}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ std::complex<long\ double>\ exponent\ =\ power\ *\ lnBase;}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ std::complex<long\ double>\ result\ =\ std::exp(exponent);}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ allRoots.push\_back(result);}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uniqueRoots.empty())\ uniqueRoots.push\_back(result);}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isUnique\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ uniqueRoots.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((std::abs(uniqueRoots[i].real()\ -\/\ result.real())\ <\ EPSILON)}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ (std::abs(uniqueRoots[i].imag()\ -\/\ result.imag())\ <\ EPSILON))\ \{\ isUnique\ =\ \textcolor{keyword}{false};\ \textcolor{keywordflow}{break};\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isUnique)\ uniqueRoots.push\_back(result);}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ uniqueRoots;}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00039}\mbox{\hyperlink{class_calculator_complex_a3034e8e8cf3d211233c4769a94edd196}{00039}}\ std::vector<long\ double>\ \mbox{\hyperlink{class_calculator_complex_a3034e8e8cf3d211233c4769a94edd196}{CalculatorComplex::getRealRoots}}(\textcolor{keyword}{const}\ std::vector<std::complex<long\ double>>\&\ roots)}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00041}00041\ \ \ \ \ std::vector<long\ double>\ realRoots;}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ i\ :\ roots)}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(i.imag())\ <\ EPSILON)\ realRoots.push\_back(i.real());}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{return}\ realRoots;}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00050}00050\ \textcolor{comment}{//\ Внешние\ функции}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00051}\mbox{\hyperlink{_calculator_8h_a565e1829b32076d7496814e1dcf16b60}{00051}}\ std::vector<std::complex<long\ double>>\ \mbox{\hyperlink{_calculator_complex_8cpp_a565e1829b32076d7496814e1dcf16b60}{getAllRoots}}(\textcolor{keyword}{const}\ std::complex<long\ double>\&\ base,\ \textcolor{keyword}{const}\ std::complex<long\ double>\&\ power)}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{class_calculator_complex}{CalculatorComplex}}\ calc;}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{return}\ calc.\mbox{\hyperlink{class_calculator_complex_a13e56fbfc7ab120b7077f86441e34083}{getAllRoots}}(base,\ power);}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00058}\mbox{\hyperlink{_calculator_8h_ab73e00dd217666516aea398df3192b8f}{00058}}\ std::vector<long\ double>\ \mbox{\hyperlink{_calculator_complex_8cpp_ab73e00dd217666516aea398df3192b8f}{getRealRoots}}(\textcolor{keyword}{const}\ std::vector<std::complex<long\ double>>\&\ roots)}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00059}00059\ \{}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{class_calculator_complex}{CalculatorComplex}}\ calc;}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{return}\ calc.\mbox{\hyperlink{class_calculator_complex_a3034e8e8cf3d211233c4769a94edd196}{getRealRoots}}(roots);}
+\DoxyCodeLine{\Hypertarget{_calculator_complex_8cpp_source_l00063}00063\ \}}
+
+\end{DoxyCode}

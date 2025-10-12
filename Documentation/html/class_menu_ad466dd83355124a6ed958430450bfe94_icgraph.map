@@ -1,0 +1,7 @@
+<map id="Menu::Menu" name="Menu::Menu">
+<area shape="rect" id="Node000001" title=" " alt="" coords="225,31,320,56"/>
+<area shape="rect" id="Node000002" href="$class_menu_input.html#ab8b02a181f6f55de4386b0f04e44e621" title=" " alt="" coords="16,5,167,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,38,167,31,167,26,212,32"/>
+<area shape="rect" id="Node000003" href="$class_menu_output.html#acd634daf6988e6dc2990d93aef72e1a1" title=" " alt="" coords="5,55,177,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,54,178,59,177,53,211,49"/>
+</map>

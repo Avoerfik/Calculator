@@ -1,0 +1,158 @@
+\doxysection{Menu.\+cpp}
+\hypertarget{_menu_8cpp_source}{}\label{_menu_8cpp_source}\index{App/src/Menu/Menu.cpp@{App/src/Menu/Menu.cpp}}
+\mbox{\hyperlink{_menu_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../App/include/Menu/Menu.h"{}}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../App/include/Menu/MenuInput.h"{}}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../App/include/Menu/MenuOutput.h"{}}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00005}\mbox{\hyperlink{class_menu_ad466dd83355124a6ed958430450bfe94}{00005}}\ \mbox{\hyperlink{class_menu_ad466dd83355124a6ed958430450bfe94}{Menu::Menu}}()\ :\ \mbox{\hyperlink{class_menu_ac42f460f50939202951daa58817e7e15}{testsTotal}}(0),\ \mbox{\hyperlink{class_menu_add033e2561712c8a830686a454ec0325}{testsPassed}}(0),\ \mbox{\hyperlink{class_menu_a34877de6052acac791b6636d8eaefb04}{testsFailed}}(0)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00010}\mbox{\hyperlink{class_menu_a831387f51358cfb88cd018e1777bc980}{00010}}\ \mbox{\hyperlink{class_menu_a831387f51358cfb88cd018e1777bc980}{Menu::\string~Menu}}()}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00015}\mbox{\hyperlink{class_menu_a35656cd130e24d69383a5c9d0a73a38c}{00015}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a35656cd130e24d69383a5c9d0a73a38c}{Menu::run}}()}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{_menu_8h_ad9b6eb6d8f8f2aa9e3819f2ee76cb29a}{runAllTests}}(\mbox{\hyperlink{class_menu_ac42f460f50939202951daa58817e7e15}{testsTotal}},\ \mbox{\hyperlink{class_menu_add033e2561712c8a830686a454ec0325}{testsPassed}},\ \mbox{\hyperlink{class_menu_a34877de6052acac791b6636d8eaefb04}{testsFailed}}))}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_input}{MenuInput}}\ inputHandler;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_output}{MenuOutput}}\ outputHandler;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history}{History}}\ mathHistory;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_memory}{Memory}}\ mathMemory;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ exitMenu\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ cont;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ regime\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_a8fc3ec49ecfa386d2c862b11db7ea27c}{getCalculationRegime}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (regime)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exitMenu\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputHandler.\mbox{\hyperlink{class_menu_output_a4fdea51cb300cfb5192304003b19a53e}{displayMessage}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ expression\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_aab3202570e4df3c2ab04bf49704978ef}{getExpression}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stack<std::string>\ expressionStack\ =\ \mbox{\hyperlink{_menu_8h_a22af37abe33be79373eda9f950d1f6f4}{bracketAnalyze}}(expression);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ result\ =\ \mbox{\hyperlink{_menu_8h_a42ce7236f0d5e6a6903cdd4327e8706c}{calculateExpression}}(expressionStack);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mathHistory.\mbox{\hyperlink{class_history_a9eda9965c45bde02a3c5c3a5aea4b329}{reserveData}}(\{\ expression\ +\ \textcolor{stringliteral}{"{}\ =\ "{}}\ +\ result\ \});}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ saveToMemory\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_a193e9f3acc377189e68c4622806a42e0}{getSaveToMemoryChoice}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (saveToMemory)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ operator12\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_afd73a4c2669eb3e48e63d306812e299b}{getMemoryOperator}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mathMemory.\mbox{\hyperlink{class_memory_a981098a28ea1d833ed33d0f711845e15}{reserveData}}(\{\ result\ \},\ operator12);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputHandler.\mbox{\hyperlink{class_menu_output_a4dbc56c97d23068265cd8775bf454b9a}{displayResult}}(result);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputHandler.\mbox{\hyperlink{class_menu_output_a9236c61b181dbaee918f1b4ff4acce42}{displayComplexResults}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_output}{MenuOutput}}\ outputHandler;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputHandler.\mbox{\hyperlink{class_menu_output_a7a6ee38d91ecdb16a14666f881628e97}{displayError}}(e);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cont\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_ae99ae4de6b19007399721767488d0a33}{getContinueChoice}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (cont);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_matrix}{Matrix}}\ matrix1\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_a2229e64c7a2043155b8be7898acdd4bb}{getMatrix}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ operator12\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_a9636ed806f1513d3851ec2bd90ccfc5e}{getMatrixOperator}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operator12\ ==\ \textcolor{charliteral}{'*'})}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ matrixRegime\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_a01919121bdc8aff3b4239e167cf3ad07}{getMatrixRegime}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (matrixRegime\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_matrix}{Matrix}}\ matrix2\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_a2229e64c7a2043155b8be7898acdd4bb}{getMatrix}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_matrix}{Matrix}}\ result(matrix1.\mbox{\hyperlink{class_matrix_a8c8b8a4a34ad4a16e6ba28a62010dfa0}{cols}}(),\ matrix2.\mbox{\hyperlink{class_matrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}());}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ matrix1\ *\ matrix2;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ result;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ expression\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_aab3202570e4df3c2ab04bf49704978ef}{getExpression}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stack<std::string>\ expressionStack\ =\ \mbox{\hyperlink{_menu_8h_a22af37abe33be79373eda9f950d1f6f4}{bracketAnalyze}}(expression);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ scalar\ =\ \mbox{\hyperlink{_menu_8h_a42ce7236f0d5e6a6903cdd4327e8706c}{calculateExpression}}(expressionStack);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_matrix}{Matrix}}\ result(matrix1.\mbox{\hyperlink{class_matrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}(),\ matrix1.\mbox{\hyperlink{class_matrix_a8c8b8a4a34ad4a16e6ba28a62010dfa0}{cols}}());}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ std::stoi(scalar)\ *\ matrix1;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ result;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_matrix}{Matrix}}\ result(matrix1.\mbox{\hyperlink{class_matrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}}(),\ matrix1.\mbox{\hyperlink{class_matrix_a8c8b8a4a34ad4a16e6ba28a62010dfa0}{cols}}());}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_matrix}{Matrix}}\ matrix2\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_a2229e64c7a2043155b8be7898acdd4bb}{getMatrix}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operator12\ ==\ \textcolor{charliteral}{'+'})\ result\ =\ matrix1\ +\ matrix2;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ result\ =\ matrix1\ -\/\ matrix2;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ result;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_output}{MenuOutput}}\ outputHandler;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputHandler.\mbox{\hyperlink{class_menu_output_a7a6ee38d91ecdb16a14666f881628e97}{displayError}}(e);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cont\ =\ inputHandler.\mbox{\hyperlink{class_menu_input_ae99ae4de6b19007399721767488d0a33}{getContinueChoice}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (cont);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mathHistory.\mbox{\hyperlink{class_history_adcaee81d1392f1c8278138a3894f0051}{printAllHistory}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ calculationString\ =\ mathMemory.\mbox{\hyperlink{class_memory_a05da9e79c8a405a1331d2015a9e2d2ed}{getCalculationString}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stack<std::string>\ expressionStack\ =\ \mbox{\hyperlink{_menu_8h_a22af37abe33be79373eda9f950d1f6f4}{bracketAnalyze}}(calculationString);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ result\ =\ \mbox{\hyperlink{_menu_8h_a42ce7236f0d5e6a6903cdd4327e8706c}{calculateExpression}}(expressionStack);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputHandler.\mbox{\hyperlink{class_menu_output_a4dbc56c97d23068265cd8775bf454b9a}{displayResult}}(result);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mathMemory.\mbox{\hyperlink{class_memory_a09b36e2f4a2cf8fe9bc40e3ffb1d29a8}{clearMemory}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_menu_output}{MenuOutput}}\ outputHandler;}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputHandler.\mbox{\hyperlink{class_menu_output_a7a6ee38d91ecdb16a14666f881628e97}{displayError}}(e);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (exitMenu);}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00128}\mbox{\hyperlink{class_menu_a71098d57a94e1d762bf3b2faaaa711a3}{00128}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_a71098d57a94e1d762bf3b2faaaa711a3}{Menu::isCorrectChar}}(\textcolor{keyword}{const}\ std::string\&\ input)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00129}00129\ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{if}\ (input.empty())}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00131}00131\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Empty\ input!\ "{}};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (input.size()\ !=\ 1)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00136}00136\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ one\ input\ character!\ "{}};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00141}00141\ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00143}\mbox{\hyperlink{class_menu_ae5392b8a8377313c6303c62bc87b9882}{00143}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_ae5392b8a8377313c6303c62bc87b9882}{Menu::isCorrectInt}}(\textcolor{keyword}{const}\ std::string\&\ input)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00144}00144\ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ numbers\ =\ \textcolor{stringliteral}{"{}0123456789"{}};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ i\ :\ input)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00147}00147\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numbers.find(i)\ ==\ std::string::npos)}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00150}00150\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_menu_8cpp_source_l00152}00152\ \}}
+
+\end{DoxyCode}
