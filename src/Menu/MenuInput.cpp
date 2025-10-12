@@ -43,6 +43,33 @@ bool MenuInput::getContinueChoice()
     return false;
 }
 
+bool MenuInput::getSaveToMemoryChoice()
+{
+    std::string yn;
+    bool err;
+    do
+    {
+        yn = readInput("Save result to memory? Enter y/n: ");
+        err = isCorrectChar(yn);
+        if (err)
+        {
+            if (toupper(yn[0]) == 'Y') { return true; }
+            else if (toupper(yn[0]) == 'N') { return false; }
+            else
+            {
+                std::cout << "Invalid symbol! ";
+                err = true;
+            }
+        }
+        else
+        {
+            err = true;
+        }
+    } while (err);
+
+    return false;
+}
+
 std::string MenuInput::readInput(const std::string& prompt)
 {
     std::cout << prompt;
@@ -55,12 +82,22 @@ int MenuInput::getCalculationRegime()
 {
     do
     {
-        std::cout << "Choose calculation regime:\n1. Mathematical expression calculator\n2. Matrix calculator\n0. Exit\n";
+        std::cout << "Choose calculation regime:\n";
+        std::cout << "1. Mathematical expression calculator\n";
+        std::cout << "2. Matrix calculator\n";
+        std::cout << "3. Show history\n";
+        std::cout << "4. Calculate Memory\n";
+        std::cout << "0. Exit\n";
         std::string input;
         std::getline(std::cin, input);
-        if (isCorrectChar(input) && ((input[0] == '0') || (input[0] == '1') || (input[0] == '2')))
+        if (isCorrectChar(input) &&
+            ((input[0] == '0')
+                || (input[0] == '1')
+                || (input[0] == '2')
+                || (input[0] == '3')
+                || (input[0] == '4')))
             return std::stoi(input);
-        std::cout << "Enter only 0, 1 or 2!\n";
+        std::cout << "Enter only 0, 1, 2 or 3!\n";
     } while (true);
 }
 
@@ -74,7 +111,7 @@ Matrix MenuInput::getMatrix()
     return matrix;
 }
 
-char MenuInput::getOperator()
+char MenuInput::getMatrixOperator()
 {
     do
     {
@@ -83,9 +120,27 @@ char MenuInput::getOperator()
         std::getline(std::cin, input);
         if (isCorrectChar(input) && (input[0] == '+' || input[0] == '-' || input[0] == '*'))
             return input[0];
-        std::cout << "Enter only +-*\n";
+        std::cout << "Enter only (+-*):\n";
     } while (true);
-    
+}
+
+char MenuInput::getMemoryOperator()
+{
+    do
+    {
+        std::cout << "Enter operator:\n";
+        std::string input;
+        std::getline(std::cin, input);
+        if (isCorrectChar(input) &&
+            (input[0] == '+' ||
+                input[0] == '-' ||
+                input[0] == '*' ||
+                input[0] == '/' || 
+                input[0] == '^' || 
+                input[0] == ' '))
+            return input[0];
+        std::cout << "Enter only (+-*/^ ):\n";
+    } while (true);
 }
 
 int MenuInput::getMatrixRegime()

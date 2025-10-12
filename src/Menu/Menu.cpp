@@ -18,8 +18,11 @@ void Menu::run()
     {
         MenuInput inputHandler;
         MenuOutput outputHandler;
+        History mathHistory;
+        Memory mathMemory;
 
         bool exitMenu = true;
+        bool cont;
         do
         {
             int regime = inputHandler.getCalculationRegime();
@@ -30,7 +33,6 @@ void Menu::run()
                 outputHandler.displayMessage("");
                 break;
             case 1:
-                bool cont;
                 do
                 {
                     try
@@ -38,6 +40,13 @@ void Menu::run()
                         std::string expression = inputHandler.getExpression();
                         std::stack<std::string> expressionStack = bracketAnalyze(expression);
                         std::string result = calculateExpression(expressionStack);
+                        mathHistory.reserveData({ expression + " = " + result });
+                        bool saveToMemory = inputHandler.getSaveToMemoryChoice();
+                        if (saveToMemory)
+                        {
+                            char operator12 = inputHandler.getMemoryOperator();
+                            mathMemory.reserveData({ result }, operator12);
+                        }
                         outputHandler.displayResult(result);
                         outputHandler.displayComplexResults();
                     }
@@ -50,38 +59,60 @@ void Menu::run()
                 } while (cont);
                 break;
             case 2:
-                try
+                do
                 {
-                    Matrix matrix1 = inputHandler.getMatrix();
-                    char operator12 = inputHandler.getOperator();
-                    if (operator12 == '*')
+                    try
                     {
-                        int matrixRegime = inputHandler.getMatrixRegime();
-                        if (matrixRegime == 1)
+                        Matrix matrix1 = inputHandler.getMatrix();
+                        char operator12 = inputHandler.getMatrixOperator();
+                        if (operator12 == '*')
                         {
-                            Matrix matrix2 = inputHandler.getMatrix();
-                            Matrix result(matrix1.cols(), matrix2.rows());
-                            result = matrix1 * matrix2;
-                            std::cout << result;
+                            int matrixRegime = inputHandler.getMatrixRegime();
+                            if (matrixRegime == 1)
+                            {
+                                Matrix matrix2 = inputHandler.getMatrix();
+                                Matrix result(matrix1.cols(), matrix2.rows());
+                                result = matrix1 * matrix2;
+                                std::cout << result;
+                            }
+                            else
+                            {
+                                std::string expression = inputHandler.getExpression();
+                                std::stack<std::string> expressionStack = bracketAnalyze(expression);
+                                std::string scalar = calculateExpression(expressionStack);
+                                Matrix result(matrix1.rows(), matrix1.cols());
+                                result = std::stoi(scalar) * matrix1;
+                                std::cout << result;
+                            }
                         }
                         else
                         {
-                            std::string expression = inputHandler.getExpression();
-                            std::stack<std::string> expressionStack = bracketAnalyze(expression);
-                            std::string scalar = calculateExpression(expressionStack);
                             Matrix result(matrix1.rows(), matrix1.cols());
-                            result = std::stoi(scalar) * matrix1;
+                            Matrix matrix2 = inputHandler.getMatrix();
+                            if (operator12 == '+') result = matrix1 + matrix2;
+                            else result = matrix1 - matrix2;
                             std::cout << result;
                         }
                     }
-                    else
+                    catch (const std::exception& e)
                     {
-                        Matrix result(matrix1.rows(), matrix1.cols());
-                        Matrix matrix2 = inputHandler.getMatrix();
-                        if (operator12 == '+') result = matrix1 + matrix2;
-                        else result = matrix1 - matrix2;
-                        std::cout << result;
+                        MenuOutput outputHandler;
+                        outputHandler.displayError(e);
                     }
+                    cont = inputHandler.getContinueChoice();
+                } while (cont);
+                break;
+            case 3:
+                mathHistory.printAllHistory();
+                break;
+            case 4:
+                try
+                {
+                    std::string calculationString = mathMemory.getCalculationString();
+                    std::stack<std::string> expressionStack = bracketAnalyze(calculationString);
+                    std::string result = calculateExpression(expressionStack);
+                    outputHandler.displayResult(result);
+                    mathMemory.clearMemory();
                 }
                 catch (const std::exception& e)
                 {

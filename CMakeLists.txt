@@ -24,7 +24,7 @@ set(SOURCES
     "src/Menu/MenuOutput.cpp"
     "src/Matrix.cpp"
 )
-add_executable(Calculator ${SOURCES})
+add_executable(Calculator ${SOURCES} "include/Data.h" "include/History.h" "src/History.cpp" "include/Memory.h" "src/Memory.cpp")
 
 # Добавьте источник в исполняемый файл этого проекта.
 # add_executable (Calculator "src/main.cpp" "include/main.h" "src/Calculator.cpp" "src/Testing.cpp" "include/Calculator.h" "include/Testing.h")

@@ -15,9 +15,11 @@ public:
 
     std::string getExpression();
     bool getContinueChoice();
+    bool getSaveToMemoryChoice();
     int getCalculationRegime();
     Matrix getMatrix();
-    char getOperator();
+    char getMatrixOperator();
+    char getMemoryOperator();
     int getMatrixRegime();
 
 private:

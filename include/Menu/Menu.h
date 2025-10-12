@@ -8,6 +8,8 @@
 #include <stack>
 
 #include "Matrix.h"
+#include "History.h"
+#include "Memory.h"
 
 std::stack<std::string> bracketAnalyze(const std::string& expression);
 std::string calculateExpression(std::stack<std::string>& expressionStack);
