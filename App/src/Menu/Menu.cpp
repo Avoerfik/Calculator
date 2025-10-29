@@ -49,11 +49,13 @@ void Menu::run()
                         }
                         outputHandler.displayResult(result);
                         outputHandler.displayComplexResults();
+                        outputHandler.displayMessage("");
                     }
                     catch (const std::exception& e)
                     {
                         MenuOutput outputHandler;
                         outputHandler.displayError(e);
+                        outputHandler.displayMessage("");
                     }
                     cont = inputHandler.getContinueChoice();
                 } while (cont);
@@ -73,6 +75,7 @@ void Menu::run()
                                 Matrix matrix2 = inputHandler.getMatrix();
                                 Matrix result(matrix1.cols(), matrix2.rows());
                                 result = matrix1 * matrix2;
+                                std::cout << "Result matrix is:\n";
                                 std::cout << result;
                             }
                             else
@@ -82,6 +85,7 @@ void Menu::run()
                                 std::string scalar = calculateExpression(expressionStack);
                                 Matrix result(matrix1.rows(), matrix1.cols());
                                 result = std::stoi(scalar) * matrix1;
+                                std::cout << "Result matrix is:\n";
                                 std::cout << result;
                             }
                         }
@@ -91,19 +95,23 @@ void Menu::run()
                             Matrix matrix2 = inputHandler.getMatrix();
                             if (operator12 == '+') result = matrix1 + matrix2;
                             else result = matrix1 - matrix2;
+                            std::cout << "Result matrix is:\n";
                             std::cout << result;
                         }
+                        outputHandler.displayMessage("");
                     }
                     catch (const std::exception& e)
                     {
                         MenuOutput outputHandler;
                         outputHandler.displayError(e);
+                        outputHandler.displayMessage("");
                     }
                     cont = inputHandler.getContinueChoice();
                 } while (cont);
                 break;
             case 3:
                 mathHistory.printAllHistory();
+                outputHandler.displayMessage("");
                 break;
             case 4:
                 try
@@ -113,11 +121,13 @@ void Menu::run()
                     std::string result = calculateExpression(expressionStack);
                     outputHandler.displayResult(result);
                     mathMemory.clearMemory();
+                    outputHandler.displayMessage("");
                 }
                 catch (const std::exception& e)
                 {
                     MenuOutput outputHandler;
                     outputHandler.displayError(e);
+                    outputHandler.displayMessage("");
                 }
                 break;
             }

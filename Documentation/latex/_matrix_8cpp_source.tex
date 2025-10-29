@@ -1,8 +1,8 @@
 \doxysection{Matrix.\+cpp}
-\hypertarget{_matrix_8cpp_source}{}\label{_matrix_8cpp_source}\index{App/src/Matrix.cpp@{App/src/Matrix.cpp}}
+\hypertarget{_matrix_8cpp_source}{}\label{_matrix_8cpp_source}\index{App/src/Matrix/Matrix.cpp@{App/src/Matrix/Matrix.cpp}}
 \mbox{\hyperlink{_matrix_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../App/include/Matrix.h"{}}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_matrix_8h}{../../include/Matrix/Matrix.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00002}00002\ }
 \DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00003}00003\ \textcolor{comment}{//\ Конструктор\ с\ размерами}}
 \DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00004}\mbox{\hyperlink{class_matrix_a70734b8fe3d556e686683ea29de3e229}{00004}}\ \mbox{\hyperlink{class_matrix_a12d35ef1824cd847868a8703035b0d5d}{Matrix::Matrix}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_matrix_a97617f3524bfa47d6ac7daa0eefc1941}{rows}},\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_matrix_a8c8b8a4a34ad4a16e6ba28a62010dfa0}{cols}})}
@@ -182,36 +182,55 @@
 \DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00178}00178\ \textcolor{comment}{//\ Оператор\ ввода}}
 \DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00179}\mbox{\hyperlink{class_matrix_a1e59f4510e89d18cfa284feab060583a}{00179}}\ std::istream\&\ \mbox{\hyperlink{_matrix_8cpp_a1e59f4510e89d18cfa284feab060583a}{operator>>}}(std::istream\&\ is,\ \mbox{\hyperlink{class_matrix_a12d35ef1824cd847868a8703035b0d5d}{Matrix}}\&\ mat)}
 \DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00180}00180\ \{}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00181}00181\ \ \ \ \ mat.matrix.clear();}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00182}00182\ \ \ \ \ std::string\ line;}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00183}00183\ }
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(is,\ line)\ \&\&\ !line.empty())}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00185}00185\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ std::vector<std::string>\ row;}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ std::string\ element;}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00189}00189\ }
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iss\ >>\ element)}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ row.push\_back(element);}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00194}00194\ }
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!row.empty())}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ newrow;}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ i\ :\ row)}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00182}00182\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ mat.matrix.clear();}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ std::size\_t\ rowsCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(is,\ line)\ \&\&\ !line.empty())}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ row;}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ std::istringstream\ iss(line);}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ element;}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (iss\ >>\ element)}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ row.push\_back(element);}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!row.empty())}
 \DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_calculator}{Calculator}}\ calc;}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stack<std::string>\ expressionStack\ =\ calc.\mbox{\hyperlink{class_calculator_a74ef92dc334a8244cafeba100a311b59}{bracketAnalyze}}(i);}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ val\ =\ calc.\mbox{\hyperlink{class_calculator_a011dff3e7028beb6c684762a27de673b}{calculateExpression}}(expressionStack);}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newrow.push\_back(val);}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ mat.matrix.push\_back(newrow);}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00208}00208\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00209}00209\ }
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
-\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ newrow;}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ i\ :\ row)}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_calculator}{Calculator}}\ calc;}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stack<std::string>\ expressionStack\ =\ calc.\mbox{\hyperlink{class_calculator_a74ef92dc334a8244cafeba100a311b59}{bracketAnalyze}}(i);}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ val\ =\ calc.\mbox{\hyperlink{class_calculator_a011dff3e7028beb6c684762a27de673b}{calculateExpression}}(expressionStack);}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newrow.push\_back(val);}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mat.matrix.push\_back(newrow);}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++rowsCount;}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Empty\ row"{}});}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ rowsCount;\ i++)}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mat.matrix[0].size()\ !=\ mat.matrix[i].size())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Invalid\ data\ format"{}});}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mat.matrix.empty())\ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Empty\ matrix"{}});}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00222}00222\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&)}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00224}00224\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00226}00226\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00227}00227\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00229}00229\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{\Hypertarget{_matrix_8cpp_source_l00230}00230\ \}}
 
 \end{DoxyCode}

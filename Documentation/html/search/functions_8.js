@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['operator_2a_0',['operator*',['../class_matrix.html#ab4f8e22e8db0983d75e090542f4d1f7a',1,'Matrix::operator*(const Matrix &amp;other) const'],['../class_matrix.html#a662b9a90c4bd26115df878eafd8965b9',1,'Matrix::operator*(double scalar) const'],['../_matrix_8cpp.html#a43feabfac557236ef5d316f528a33868',1,'operator*():&#160;Matrix.cpp']]],
-  ['operator_2b_1',['operator+',['../class_matrix.html#afc7858a535ebcebf445e91bccd75d197',1,'Matrix']]],
-  ['operator_2d_2',['operator-',['../class_matrix.html#abb44986f4d7b2ac6465fed5b5db019e8',1,'Matrix']]],
-  ['operator_3c_3c_3',['operator&lt;&lt;',['../_matrix_8cpp.html#a9e0ce956d3ed783f8d5b13e571e2a04a',1,'Matrix.cpp']]],
-  ['operator_3d_4',['operator=',['../class_matrix.html#a3e40db12ae78b7616ee3f099bb15f13d',1,'Matrix::operator=(const Matrix &amp;other)'],['../class_matrix.html#a74eca41e5a29b6efd57b009730d3fe60',1,'Matrix::operator=(Matrix &amp;&amp;other) noexcept']]],
-  ['operator_3e_3e_5',['operator&gt;&gt;',['../_matrix_8cpp.html#a1e59f4510e89d18cfa284feab060583a',1,'Matrix.cpp']]]
+  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['matrix_1',['Matrix',['../class_matrix.html#a12d35ef1824cd847868a8703035b0d5d',1,'Matrix::Matrix()=default'],['../class_matrix.html#a70734b8fe3d556e686683ea29de3e229',1,'Matrix::Matrix(unsigned int rows, unsigned int cols)'],['../class_matrix.html#af0af4d343decf4ae7b45b0929a44e4b9',1,'Matrix::Matrix(const std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;mat)'],['../class_matrix.html#abcf708e864ed3d9db2c3b317c5e529ab',1,'Matrix::Matrix(const Matrix &amp;other)'],['../class_matrix.html#a75f3885769e293b3f3e236ef60a71c21',1,'Matrix::Matrix(Matrix &amp;&amp;other) noexcept']]],
+  ['memory_2',['Memory',['../class_memory.html#a585d7bb6fc6f2237bcebf94a86b7dd99',1,'Memory']]],
+  ['menu_3',['Menu',['../class_menu.html#ad466dd83355124a6ed958430450bfe94',1,'Menu']]],
+  ['menuinput_4',['MenuInput',['../class_menu_input.html#ab8b02a181f6f55de4386b0f04e44e621',1,'MenuInput']]],
+  ['menuoutput_5',['MenuOutput',['../class_menu_output.html#acd634daf6988e6dc2990d93aef72e1a1',1,'MenuOutput']]]
 ];

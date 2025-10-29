@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator Documentation: App/include/Matrix.h File Reference</title>
+<title>Calculator Documentation: App/include/Matrix/Matrix.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
    </div>
-   <div id="projectbrief">First version</div>
+   <div id="projectbrief">Second version</div>
   </td>
  </tr>
  </tbody>
@@ -101,57 +101,62 @@ $(function(){initNavTree('_matrix_8h.html','',''); });
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Matrix.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="_matrix_8h__incl.png" border="0" usemap="#a_app_2include_2_matrix_8h" loading="lazy" alt=""/></div>
-<map name="a_app_2include_2_matrix_8h" id="a_app_2include_2_matrix_8h">
-<area shape="rect" title=" " alt="" coords="218,5,360,31"/>
-<area shape="rect" title=" " alt="" coords="86,299,142,324"/>
-<area shape="poly" title=" " alt="" coords="242,33,188,52,135,81,90,113,58,142,33,177,12,226,8,238,12,249,24,265,39,278,74,296,72,301,36,282,20,269,7,252,3,238,7,224,29,174,54,139,87,109,132,76,186,47,241,28"/>
-<area shape="rect" title=" " alt="" coords="22,225,76,251"/>
-<area shape="poly" title=" " alt="" coords="254,33,209,52,164,81,132,113,103,149,63,214,59,212,99,146,128,109,161,77,206,48,251,28"/>
-<area shape="rect" title=" " alt="" coords="377,79,430,104"/>
-<area shape="poly" title=" " alt="" coords="309,28,375,69,372,74,306,33"/>
-<area shape="rect" title=" " alt="" coords="544,225,616,251"/>
-<area shape="poly" title=" " alt="" coords="300,29,328,63,367,102,413,137,461,169,546,216,543,221,458,173,410,141,363,106,324,67,296,32"/>
-<area shape="rect" title=" " alt="" coords="455,79,534,104"/>
-<area shape="poly" title=" " alt="" coords="323,28,449,72,447,77,321,33"/>
-<area shape="rect" href="_calculator_matrix_8h.html" title=" " alt="" coords="175,79,302,104"/>
-<area shape="poly" title=" " alt="" coords="283,33,257,69,252,66,279,29"/>
-<area shape="rect" href="_calculator_8h.html" title=" " alt="" coords="202,152,293,177"/>
-<area shape="poly" title=" " alt="" coords="243,104,247,138,242,139,237,105"/>
-<area shape="poly" title=" " alt="" coords="214,180,176,198,157,211,142,227,127,256,120,285,114,284,122,254,138,224,154,207,173,194,211,175"/>
-<area shape="poly" title=" " alt="" coords="217,180,90,225,88,220,215,175"/>
-<area shape="poly" title=" " alt="" coords="294,173,531,224,530,229,293,178"/>
-<area shape="rect" title=" " alt="" coords="414,225,468,251"/>
-<area shape="poly" title=" " alt="" coords="280,175,402,219,400,224,278,180"/>
-<area shape="rect" title=" " alt="" coords="152,225,210,251"/>
-<area shape="poly" title=" " alt="" coords="239,179,203,217,199,213,235,176"/>
-<area shape="rect" title=" " alt="" coords="440,299,511,324"/>
-<area shape="poly" title=" " alt="" coords="294,172,408,196,457,210,483,223,491,238,493,255,488,285,483,285,488,255,486,240,479,227,455,215,406,202,293,177"/>
-<area shape="rect" href="_calculator_expression_8h.html" title=" " alt="" coords="200,299,356,324"/>
-<area shape="poly" title=" " alt="" coords="253,177,276,285,271,286,248,178"/>
-<area shape="rect" href="_complex_info_8h.html" title=" " alt="" coords="285,225,389,251"/>
-<area shape="poly" title=" " alt="" coords="264,175,313,214,310,219,261,179"/>
-<area shape="poly" title=" " alt="" coords="302,253,156,300,155,294,301,248"/>
-<area shape="poly" title=" " alt="" coords="361,248,442,290,440,295,358,253"/>
-<area shape="poly" title=" " alt="" coords="330,253,299,290,295,287,325,249"/>
+<div class="center"><img src="_matrix_8h__incl.png" border="0" usemap="#a_app_2include_2_matrix_2_matrix_8h" loading="lazy" alt=""/></div>
+<map name="a_app_2include_2_matrix_2_matrix_8h" id="a_app_2include_2_matrix_2_matrix_8h">
+<area shape="rect" title=" " alt="" coords="562,5,693,45"/>
+<area shape="rect" title=" " alt="" coords="502,313,558,339"/>
+<area shape="poly" title=" " alt="" coords="636,45,648,87,656,144,655,207,648,238,635,267,622,283,607,296,572,315,570,310,604,292,619,279,630,264,643,236,649,206,651,145,643,88,631,46"/>
+<area shape="rect" title=" " alt="" coords="28,240,83,265"/>
+<area shape="poly" title=" " alt="" coords="562,31,495,37,416,48,333,67,252,96,198,126,149,163,76,232,73,228,146,159,196,122,250,91,331,62,415,42,495,31,562,26"/>
+<area shape="rect" title=" " alt="" coords="695,93,749,119"/>
+<area shape="poly" title=" " alt="" coords="652,43,699,82,695,86,648,48"/>
+<area shape="rect" title=" " alt="" coords="549,240,621,265"/>
+<area shape="poly" title=" " alt="" coords="626,46,592,227,587,226,621,45"/>
+<area shape="rect" title=" " alt="" coords="773,93,852,119"/>
+<area shape="poly" title=" " alt="" coords="673,43,774,85,772,90,671,48"/>
+<area shape="rect" href="_calculator_matrix_8h.html" title=" " alt="" coords="264,93,391,119"/>
+<area shape="poly" title=" " alt="" coords="562,46,385,92,383,87,561,41"/>
+<area shape="rect" href="_calculator_8h.html" title=" " alt="" coords="245,167,410,192"/>
+<area shape="poly" title=" " alt="" coords="330,119,330,153,325,153,325,119"/>
+<area shape="rect" href="_engine_8h.html" title=" " alt="" coords="151,387,237,412"/>
+<area shape="poly" title=" " alt="" coords="264,117,202,129,133,153,100,169,68,189,41,213,18,241,9,263,12,284,24,304,43,323,95,355,149,379,147,384,92,360,39,327,19,308,7,286,4,263,13,239,37,209,65,185,97,164,131,148,200,124,263,111"/>
+<area shape="poly" title=" " alt="" coords="363,190,410,209,458,238,491,269,516,300,512,304,487,272,455,242,408,214,361,195"/>
+<area shape="poly" title=" " alt="" coords="281,195,97,242,95,237,279,190"/>
+<area shape="poly" title=" " alt="" coords="369,189,536,235,535,240,368,195"/>
+<area shape="rect" title=" " alt="" coords="107,240,161,265"/>
+<area shape="poly" title=" " alt="" coords="297,195,175,239,173,234,295,190"/>
+<area shape="rect" title=" " alt="" coords="186,240,245,265"/>
+<area shape="poly" title=" " alt="" coords="311,194,247,235,244,230,308,190"/>
+<area shape="rect" title=" " alt="" coords="227,313,297,339"/>
+<area shape="poly" title=" " alt="" coords="324,194,275,302,270,300,319,191"/>
+<area shape="rect" href="_calculator_expression_8h.html" title=" " alt="" coords="321,313,477,339"/>
+<area shape="poly" title=" " alt="" coords="370,190,407,208,424,222,438,239,442,256,440,273,422,304,417,302,435,272,437,256,433,241,420,225,404,213,368,194"/>
+<area shape="rect" href="_complex_info_8h.html" title=" " alt="" coords="319,240,423,265"/>
+<area shape="poly" title=" " alt="" coords="337,191,359,227,355,230,332,194"/>
+<area shape="poly" title=" " alt="" coords="367,341,241,385,239,380,365,336"/>
+<area shape="poly" title=" " alt="" coords="398,263,493,305,491,310,396,268"/>
+<area shape="poly" title=" " alt="" coords="355,268,293,308,290,303,352,263"/>
+<area shape="poly" title=" " alt="" coords="378,265,392,300,387,302,373,267"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="_matrix_8h__dep__incl.png" border="0" usemap="#a_app_2include_2_matrix_8hdep" loading="lazy" alt=""/></div>
-<map name="a_app_2include_2_matrix_8hdep" id="a_app_2include_2_matrix_8hdep">
-<area shape="rect" title=" " alt="" coords="266,5,407,31"/>
-<area shape="rect" href="_menu_8h.html" title=" " alt="" coords="250,79,423,104"/>
-<area shape="poly" title=" " alt="" coords="339,44,339,79,334,79,334,44"/>
-<area shape="rect" href="_menu_input_8h.html" title=" " alt="" coords="5,152,207,177"/>
-<area shape="poly" title=" " alt="" coords="287,111,144,154,143,149,286,106"/>
-<area shape="rect" href="_menu_output_8h.html" title=" " alt="" coords="231,152,443,177"/>
-<area shape="poly" title=" " alt="" coords="339,118,339,152,334,152,334,118"/>
-<area shape="rect" href="main_8h.html" title=" " alt="" coords="467,152,601,177"/>
-<area shape="poly" title=" " alt="" coords="382,106,503,149,501,154,380,111"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="472,225,596,251"/>
-<area shape="poly" title=" " alt="" coords="537,191,537,225,531,225,531,191"/>
+<div class="center"><img src="_matrix_8h__dep__incl.png" border="0" usemap="#a_app_2include_2_matrix_2_matrix_8hdep" loading="lazy" alt=""/></div>
+<map name="a_app_2include_2_matrix_2_matrix_8hdep" id="a_app_2include_2_matrix_2_matrix_8hdep">
+<area shape="rect" title=" " alt="" coords="370,5,501,45"/>
+<area shape="rect" href="_menu_8h.html" title=" " alt="" coords="250,93,423,119"/>
+<area shape="poly" title=" " alt="" coords="402,56,353,95,350,91,399,52"/>
+<area shape="rect" href="_matrix_8cpp.html" title=" " alt="" coords="448,93,620,119"/>
+<area shape="poly" title=" " alt="" coords="472,52,521,91,518,95,468,56"/>
+<area shape="rect" href="_menu_input_8h.html" title=" " alt="" coords="5,167,207,192"/>
+<area shape="poly" title=" " alt="" coords="287,125,144,169,143,164,286,120"/>
+<area shape="rect" href="_menu_output_8h.html" title=" " alt="" coords="231,167,443,192"/>
+<area shape="poly" title=" " alt="" coords="339,132,339,167,334,167,334,132"/>
+<area shape="rect" href="main_8h.html" title=" " alt="" coords="467,167,601,192"/>
+<area shape="poly" title=" " alt="" coords="382,121,503,164,501,169,380,126"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="472,240,596,265"/>
+<area shape="poly" title=" " alt="" coords="537,206,537,240,531,240,531,206"/>
 </map>
 </div>
 </div>
@@ -195,7 +200,7 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a href="dir_4633828e1ba6168e67d7b3f2ef466b2e.html">include</a></li><li class="navelem"><a href="_matrix_8h.html">Matrix.h</a></li>
+    <li class="navelem"><a href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a href="dir_4633828e1ba6168e67d7b3f2ef466b2e.html">include</a></li><li class="navelem"><a href="dir_174209e485701e5b04f57d918d4945c7.html">Matrix</a></li><li class="navelem"><a href="_matrix_8h.html">Matrix.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

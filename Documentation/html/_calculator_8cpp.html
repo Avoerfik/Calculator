@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator Documentation: App/src/Calculator.cpp File Reference</title>
+<title>Calculator Documentation: App/src/Calculator/Calculator.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
    </div>
-   <div id="projectbrief">First version</div>
+   <div id="projectbrief">Second version</div>
   </td>
  </tr>
  </tbody>
@@ -92,34 +92,36 @@ $(function(){initNavTree('_calculator_8cpp.html','',''); });
   <div class="headertitle"><div class="title">Calculator.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_calculator_8h_source.html">../include/Calculator.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_calculator_8h_source.html">../../include/Calculator/Calculator.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Calculator.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="_calculator_8cpp__incl.png" border="0" usemap="#a_app_2src_2_calculator_8cpp" loading="lazy" alt=""/></div>
-<map name="a_app_2src_2_calculator_8cpp" id="a_app_2src_2_calculator_8cpp">
-<area shape="rect" title=" " alt="" coords="240,5,395,31"/>
-<area shape="rect" href="_calculator_8h.html" title=" " alt="" coords="243,79,391,104"/>
-<area shape="poly" title=" " alt="" coords="320,31,320,65,315,65,315,31"/>
-<area shape="rect" title=" " alt="" coords="5,152,77,177"/>
-<area shape="poly" title=" " alt="" coords="274,107,91,153,90,148,272,101"/>
-<area shape="rect" title=" " alt="" coords="102,152,157,177"/>
-<area shape="poly" title=" " alt="" coords="288,107,171,151,169,146,286,102"/>
-<area shape="rect" title=" " alt="" coords="181,152,235,177"/>
-<area shape="poly" title=" " alt="" coords="301,106,239,147,236,142,298,102"/>
-<area shape="rect" title=" " alt="" coords="245,225,301,251"/>
-<area shape="poly" title=" " alt="" coords="316,105,301,153,283,213,278,211,296,151,311,103"/>
-<area shape="rect" title=" " alt="" coords="540,152,599,177"/>
-<area shape="poly" title=" " alt="" coords="359,101,528,149,526,154,357,107"/>
-<area shape="rect" title=" " alt="" coords="327,225,398,251"/>
-<area shape="poly" title=" " alt="" coords="361,102,399,120,416,134,429,151,433,170,426,189,412,205,396,219,392,215,409,202,422,186,428,170,424,153,412,137,396,125,359,106"/>
-<area shape="rect" href="_calculator_expression_8h.html" title=" " alt="" coords="423,225,579,251"/>
-<area shape="poly" title=" " alt="" coords="357,102,403,121,448,150,475,180,493,211,488,214,470,183,445,154,401,125,355,106"/>
-<area shape="rect" href="_complex_info_8h.html" title=" " alt="" coords="311,152,415,177"/>
-<area shape="poly" title=" " alt="" coords="327,103,350,139,346,142,323,106"/>
-<area shape="poly" title=" " alt="" coords="350,179,300,219,297,214,347,175"/>
-<area shape="poly" title=" " alt="" coords="365,178,365,212,360,212,360,178"/>
-<area shape="poly" title=" " alt="" coords="386,175,468,217,465,221,384,180"/>
+<div class="center"><img src="_calculator_8cpp__incl.png" border="0" usemap="#a_app_2src_2_calculator_2_calculator_8cpp" loading="lazy" alt=""/></div>
+<map name="a_app_2src_2_calculator_2_calculator_8cpp" id="a_app_2src_2_calculator_2_calculator_8cpp">
+<area shape="rect" title=" " alt="" coords="253,5,382,45"/>
+<area shape="rect" href="_calculator_8h.html" title=" " alt="" coords="243,93,392,133"/>
+<area shape="poly" title=" " alt="" coords="320,46,320,79,315,79,315,46"/>
+<area shape="rect" title=" " alt="" coords="5,181,77,207"/>
+<area shape="poly" title=" " alt="" coords="252,136,91,181,90,176,250,131"/>
+<area shape="rect" title=" " alt="" coords="102,181,157,207"/>
+<area shape="poly" title=" " alt="" coords="273,136,171,178,169,173,271,131"/>
+<area shape="rect" title=" " alt="" coords="181,181,235,207"/>
+<area shape="poly" title=" " alt="" coords="292,136,237,175,234,171,289,131"/>
+<area shape="rect" title=" " alt="" coords="245,255,301,280"/>
+<area shape="poly" title=" " alt="" coords="314,135,283,242,278,241,309,133"/>
+<area shape="rect" title=" " alt="" coords="540,181,599,207"/>
+<area shape="poly" title=" " alt="" coords="378,131,528,177,526,182,377,136"/>
+<area shape="rect" title=" " alt="" coords="327,255,398,280"/>
+<area shape="poly" title=" " alt="" coords="372,131,404,151,429,180,433,200,426,218,412,235,395,249,392,245,408,231,421,216,428,199,424,183,400,155,369,136"/>
+<area shape="rect" href="_calculator_expression_8h.html" title=" " alt="" coords="423,255,579,280"/>
+<area shape="poly" title=" " alt="" coords="370,131,410,152,448,179,474,210,493,241,488,244,470,213,445,183,407,156,367,136"/>
+<area shape="rect" href="_complex_info_8h.html" title=" " alt="" coords="311,181,415,207"/>
+<area shape="poly" title=" " alt="" coords="331,132,351,168,347,171,326,135"/>
+<area shape="rect" href="_engine_8h.html" title=" " alt="" coords="459,328,544,353"/>
+<area shape="poly" title=" " alt="" coords="504,280,504,314,499,314,499,280"/>
+<area shape="poly" title=" " alt="" coords="350,209,300,248,297,244,347,205"/>
+<area shape="poly" title=" " alt="" coords="365,207,365,241,360,241,360,207"/>
+<area shape="poly" title=" " alt="" coords="386,204,468,246,465,251,384,209"/>
 </map>
 </div>
 </div>
@@ -226,7 +228,7 @@ Here is the caller graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a href="dir_272e1a1f029f3b67cfdaae8e886cbe7c.html">src</a></li><li class="navelem"><a href="_calculator_8cpp.html">Calculator.cpp</a></li>
+    <li class="navelem"><a href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a href="dir_272e1a1f029f3b67cfdaae8e886cbe7c.html">src</a></li><li class="navelem"><a href="dir_c177e543d85ad4c6b5ff87ba40ba0b09.html">Calculator</a></li><li class="navelem"><a href="_calculator_8cpp.html">Calculator.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

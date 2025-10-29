@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
    </div>
-   <div id="projectbrief">First version</div>
+   <div id="projectbrief">Second version</div>
   </td>
  </tr>
  </tbody>
@@ -101,9 +101,9 @@ $(function(){initNavTree('_menu_8h_source.html','',''); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stack&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_matrix_8h.html">../Matrix.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_history_8h.html">../History.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_memory_8h.html">../Memory.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_matrix_8h.html">../Matrix/Matrix.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_history_8h.html">../Data/History.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_memory_8h.html">../Data/Memory.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>std::stack&lt;std::string&gt; <a class="code hl_function" href="_menu_8h.html#a22af37abe33be79373eda9f950d1f6f4">bracketAnalyze</a>(<span class="keyword">const</span> std::string&amp; expression);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>std::string <a class="code hl_function" href="_menu_8h.html#a42ce7236f0d5e6a6903cdd4327e8706c">calculateExpression</a>(std::stack&lt;std::string&gt;&amp; expressionStack);</div>
@@ -135,12 +135,12 @@ $(function(){initNavTree('_menu_8h_source.html','',''); });
 <div class="ttc" id="a_menu_8h_html_ad9b6eb6d8f8f2aa9e3819f2ee76cb29a"><div class="ttname"><a href="_menu_8h.html#ad9b6eb6d8f8f2aa9e3819f2ee76cb29a">runAllTests</a></div><div class="ttdeci">bool runAllTests(unsigned int &amp;testsTotal, unsigned int &amp;testsPassed, unsigned int &amp;testsFailed)</div><div class="ttdef"><b>Definition</b> <a href="_testing_8cpp_source.html#l00305">Testing.cpp:305</a></div></div>
 <div class="ttc" id="aclass_menu_html_a34877de6052acac791b6636d8eaefb04"><div class="ttname"><a href="class_menu.html#a34877de6052acac791b6636d8eaefb04">Menu::testsFailed</a></div><div class="ttdeci">unsigned int testsFailed</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Menu.h:27</a></div></div>
 <div class="ttc" id="aclass_menu_html_a35656cd130e24d69383a5c9d0a73a38c"><div class="ttname"><a href="class_menu.html#a35656cd130e24d69383a5c9d0a73a38c">Menu::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00015">Menu.cpp:15</a></div></div>
-<div class="ttc" id="aclass_menu_html_a71098d57a94e1d762bf3b2faaaa711a3"><div class="ttname"><a href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">Menu::isCorrectChar</a></div><div class="ttdeci">bool isCorrectChar(const std::string &amp;input)</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00128">Menu.cpp:128</a></div></div>
+<div class="ttc" id="aclass_menu_html_a71098d57a94e1d762bf3b2faaaa711a3"><div class="ttname"><a href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">Menu::isCorrectChar</a></div><div class="ttdeci">bool isCorrectChar(const std::string &amp;input)</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00138">Menu.cpp:138</a></div></div>
 <div class="ttc" id="aclass_menu_html_a831387f51358cfb88cd018e1777bc980"><div class="ttname"><a href="class_menu.html#a831387f51358cfb88cd018e1777bc980">Menu::~Menu</a></div><div class="ttdeci">~Menu()</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00010">Menu.cpp:10</a></div></div>
 <div class="ttc" id="aclass_menu_html_ac42f460f50939202951daa58817e7e15"><div class="ttname"><a href="class_menu.html#ac42f460f50939202951daa58817e7e15">Menu::testsTotal</a></div><div class="ttdeci">unsigned int testsTotal</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Menu.h:27</a></div></div>
 <div class="ttc" id="aclass_menu_html_ad466dd83355124a6ed958430450bfe94"><div class="ttname"><a href="class_menu.html#ad466dd83355124a6ed958430450bfe94">Menu::Menu</a></div><div class="ttdeci">Menu()</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00005">Menu.cpp:5</a></div></div>
 <div class="ttc" id="aclass_menu_html_add033e2561712c8a830686a454ec0325"><div class="ttname"><a href="class_menu.html#add033e2561712c8a830686a454ec0325">Menu::testsPassed</a></div><div class="ttdeci">unsigned int testsPassed</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Menu.h:27</a></div></div>
-<div class="ttc" id="aclass_menu_html_ae5392b8a8377313c6303c62bc87b9882"><div class="ttname"><a href="class_menu.html#ae5392b8a8377313c6303c62bc87b9882">Menu::isCorrectInt</a></div><div class="ttdeci">bool isCorrectInt(const std::string &amp;input)</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00143">Menu.cpp:143</a></div></div>
+<div class="ttc" id="aclass_menu_html_ae5392b8a8377313c6303c62bc87b9882"><div class="ttname"><a href="class_menu.html#ae5392b8a8377313c6303c62bc87b9882">Menu::isCorrectInt</a></div><div class="ttdeci">bool isCorrectInt(const std::string &amp;input)</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00153">Menu.cpp:153</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

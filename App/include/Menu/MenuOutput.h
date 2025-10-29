@@ -7,7 +7,7 @@
 #include <iostream>
 
 #include "Menu.h"
-#include "../ComplexInfo.h"
+#include "../Calculator/ComplexInfo.h"
 
 class MenuOutput : private Menu
 {

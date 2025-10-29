@@ -1,24 +1,26 @@
-<map id="App/include/CalculatorComplex.h" name="App/include/CalculatorComplex.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="210,5,425,31"/>
-<area shape="rect" id="Node000002" href="$_calculator_8h.html" title=" " alt="" coords="272,79,363,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="320,31,320,65,315,65,315,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,77,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,107,91,153,90,148,272,101"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="102,152,157,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="288,107,171,151,169,146,286,102"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="181,152,235,177"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="301,106,239,147,236,142,298,102"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="245,225,301,251"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="316,105,301,153,283,213,278,211,296,151,311,103"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="540,152,599,177"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="359,101,528,149,526,154,357,107"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="327,225,398,251"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="361,102,399,120,416,134,429,151,433,170,426,189,412,205,396,219,392,215,409,202,422,186,428,170,424,153,412,137,396,125,359,106"/>
-<area shape="rect" id="Node000009" href="$_calculator_expression_8h.html" title=" " alt="" coords="423,225,579,251"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="357,102,403,121,448,150,475,180,493,211,488,214,470,183,445,154,401,125,355,106"/>
-<area shape="rect" id="Node000010" href="$_complex_info_8h.html" title=" " alt="" coords="311,152,415,177"/>
-<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="327,103,350,139,346,142,323,106"/>
-<area shape="poly" id="edge10_Node000010_Node000006" title=" " alt="" coords="350,179,300,219,297,214,347,175"/>
-<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="365,178,365,212,360,212,360,178"/>
-<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="386,175,468,217,465,221,384,180"/>
+<map id="App/include/Calculator/CalculatorComplex.h" name="App/include/Calculator/CalculatorComplex.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="241,5,393,45"/>
+<area shape="rect" id="Node000002" href="$_calculator_8h.html" title=" " alt="" coords="272,93,363,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="320,46,320,79,315,79,315,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,77,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,121,91,168,90,163,272,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="102,167,157,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="288,121,171,165,169,160,286,116"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="181,167,235,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="301,121,239,161,236,157,298,116"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="245,240,301,265"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="316,119,301,167,283,228,278,226,296,166,311,118"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="540,167,599,192"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="359,116,528,164,526,169,357,121"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="327,240,398,265"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="361,116,399,135,416,148,429,166,433,185,426,203,412,220,396,234,392,230,409,216,422,201,428,184,424,168,412,152,396,139,359,121"/>
+<area shape="rect" id="Node000009" href="$_calculator_expression_8h.html" title=" " alt="" coords="423,240,579,265"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="357,116,403,135,448,165,475,195,493,226,488,229,470,198,445,169,401,140,355,121"/>
+<area shape="rect" id="Node000011" href="$_complex_info_8h.html" title=" " alt="" coords="311,167,415,192"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="327,118,350,154,346,157,323,120"/>
+<area shape="rect" id="Node000010" href="$_engine_8h.html" title=" " alt="" coords="459,313,544,339"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="504,266,504,300,499,300,499,266"/>
+<area shape="poly" id="edge11_Node000011_Node000006" title=" " alt="" coords="350,194,300,233,297,229,347,190"/>
+<area shape="poly" id="edge12_Node000011_Node000008" title=" " alt="" coords="365,192,365,226,360,226,360,192"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="386,190,468,231,465,236,384,194"/>
 </map>

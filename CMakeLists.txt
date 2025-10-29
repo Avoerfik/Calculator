@@ -16,15 +16,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(include)
 set(SOURCES
     "App/src/main.cpp"
-    "App/src/Testing.cpp"
-    "App/src/Calculator.cpp"
+    "App/src/Testing/Testing.cpp"
+    "App/src/Calculator/Calculator.cpp"
     "App/src/Menu/Menu.cpp"
-    "App/src/CalculatorComplex.cpp"
+    "App/src/Calculator/CalculatorComplex.cpp"
     "App/src/Menu/MenuInput.cpp"
     "App/src/Menu/MenuOutput.cpp"
-    "App/src/Matrix.cpp"
-    "App/src/History.cpp"
-    "App/src/Memory.cpp"
+    "App/src/Matrix/Matrix.cpp"
+    "App/src/Data/History.cpp"
+    "App/src/Data/Memory.cpp"
+    "App/include/Engine.h"
 )
 add_executable(Calculator ${SOURCES})
 

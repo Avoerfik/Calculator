@@ -6,6 +6,7 @@ var annotated_dup =
     [ "CalculatorMatrix", "class_calculator_matrix.html", "class_calculator_matrix" ],
     [ "ComplexInfo", "class_complex_info.html", "class_complex_info" ],
     [ "Data", "class_data.html", "class_data" ],
+    [ "Engine", "class_engine.html", "class_engine" ],
     [ "History", "class_history.html", "class_history" ],
     [ "Matrix", "class_matrix.html", "class_matrix" ],
     [ "Memory", "class_memory.html", "class_memory" ],

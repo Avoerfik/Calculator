@@ -7,9 +7,9 @@
 #include <string>
 #include <stack>
 
-#include "../Matrix.h"
-#include "../History.h"
-#include "../Memory.h"
+#include "../Matrix/Matrix.h"
+#include "../Data/History.h"
+#include "../Data/Memory.h"
 
 std::stack<std::string> bracketAnalyze(const std::string& expression);
 std::string calculateExpression(std::stack<std::string>& expressionStack);

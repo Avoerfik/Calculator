@@ -1,5 +1,28 @@
 var searchData=
 [
-  ['now_0',['now',['../struct_record_history.html#a3a36a54f509bc86b47a9c6ce984a3de8',1,'RecordHistory']]],
-  ['number_1',['number',['../struct_record.html#a5c8f84cd63104e6ae4cd4cd2938365bc',1,'Record']]]
+  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['main_2eh_2',['main.h',['../main_8h.html',1,'']]],
+  ['main_5fh_3',['MAIN_H',['../main_8h.html#a4e49a7df873f0586e76b47049917d3be',1,'main.h']]],
+  ['matrix_4',['Matrix',['../class_matrix.html',1,'Matrix'],['../class_matrix.html#a12d35ef1824cd847868a8703035b0d5d',1,'Matrix::Matrix()=default'],['../class_matrix.html#a70734b8fe3d556e686683ea29de3e229',1,'Matrix::Matrix(unsigned int rows, unsigned int cols)'],['../class_matrix.html#af0af4d343decf4ae7b45b0929a44e4b9',1,'Matrix::Matrix(const std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;mat)'],['../class_matrix.html#abcf708e864ed3d9db2c3b317c5e529ab',1,'Matrix::Matrix(const Matrix &amp;other)'],['../class_matrix.html#a75f3885769e293b3f3e236ef60a71c21',1,'Matrix::Matrix(Matrix &amp;&amp;other) noexcept']]],
+  ['matrix_2ecpp_5',['Matrix.cpp',['../_matrix_8cpp.html',1,'']]],
+  ['matrix_2eh_6',['Matrix.h',['../_matrix_8h.html',1,'']]],
+  ['matrix_5fh_7',['MATRIX_H',['../_matrix_8h.html#a5b62c41f0c74994ce6ad7e0bed98cc51',1,'Matrix.h']]],
+  ['memory_8',['Memory',['../class_memory.html',1,'Memory'],['../class_memory.html#a585d7bb6fc6f2237bcebf94a86b7dd99',1,'Memory::Memory()']]],
+  ['memory_2ecpp_9',['Memory.cpp',['../_memory_8cpp.html',1,'']]],
+  ['memory_2eh_10',['Memory.h',['../_memory_8h.html',1,'']]],
+  ['memory_5fh_11',['MEMORY_H',['../_memory_8h.html#adcbc57b01751050a037b0ae048d31d9b',1,'Memory.h']]],
+  ['memorycell_12',['MemoryCell',['../struct_memory_cell.html',1,'']]],
+  ['menu_13',['Menu',['../class_menu.html',1,'Menu'],['../class_menu.html#ad466dd83355124a6ed958430450bfe94',1,'Menu::Menu()']]],
+  ['menu_2ecpp_14',['Menu.cpp',['../_menu_8cpp.html',1,'']]],
+  ['menu_2eh_15',['Menu.h',['../_menu_8h.html',1,'']]],
+  ['menu_5fh_16',['MENU_H',['../_menu_8h.html#a9552ba249c0540ffe9a08a05d1b92504',1,'Menu.h']]],
+  ['menuinput_17',['MenuInput',['../class_menu_input.html',1,'MenuInput'],['../class_menu_input.html#ab8b02a181f6f55de4386b0f04e44e621',1,'MenuInput::MenuInput()']]],
+  ['menuinput_2ecpp_18',['MenuInput.cpp',['../_menu_input_8cpp.html',1,'']]],
+  ['menuinput_2eh_19',['MenuInput.h',['../_menu_input_8h.html',1,'']]],
+  ['menuinput_5fh_20',['MENUINPUT_H',['../_menu_input_8h.html#adf24ca7588a12a0095dda118add8e96e',1,'MenuInput.h']]],
+  ['menuoutput_21',['MenuOutput',['../class_menu_output.html',1,'MenuOutput'],['../class_menu_output.html#acd634daf6988e6dc2990d93aef72e1a1',1,'MenuOutput::MenuOutput()']]],
+  ['menuoutput_2ecpp_22',['MenuOutput.cpp',['../_menu_output_8cpp.html',1,'']]],
+  ['menuoutput_2eh_23',['MenuOutput.h',['../_menu_output_8h.html',1,'']]],
+  ['menuoutput_5fh_24',['MENUOUTPUT_H',['../_menu_output_8h.html#ae95c99e2a148c8489847556040ac22e7',1,'MenuOutput.h']]]
 ];

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['printallhistory_0',['printAllHistory',['../class_history.html#adcaee81d1392f1c8278138a3894f0051',1,'History']]],
-  ['printmemory_1',['printMemory',['../class_memory.html#ac23bbfbefeec0a7be732b0e5dceb1bda',1,'Memory']]],
-  ['printrecordbynumber_2',['printRecordByNumber',['../class_history.html#aa68245eca9285d748dee39ef73805872',1,'History']]],
-  ['printrecordhistory_3',['printRecordHistory',['../class_history.html#a9baf386eff2e21f1f389d003043499fc',1,'History']]]
+  ['operator_2a_0',['operator*',['../class_matrix.html#ab4f8e22e8db0983d75e090542f4d1f7a',1,'Matrix::operator*(const Matrix &amp;other) const'],['../class_matrix.html#a662b9a90c4bd26115df878eafd8965b9',1,'Matrix::operator*(double scalar) const'],['../_matrix_8cpp.html#a43feabfac557236ef5d316f528a33868',1,'operator*():&#160;Matrix.cpp']]],
+  ['operator_2b_1',['operator+',['../class_matrix.html#afc7858a535ebcebf445e91bccd75d197',1,'Matrix']]],
+  ['operator_2d_2',['operator-',['../class_matrix.html#abb44986f4d7b2ac6465fed5b5db019e8',1,'Matrix']]],
+  ['operator_3c_3c_3',['operator&lt;&lt;',['../_matrix_8cpp.html#a9e0ce956d3ed783f8d5b13e571e2a04a',1,'Matrix.cpp']]],
+  ['operator_3d_4',['operator=',['../class_matrix.html#a3e40db12ae78b7616ee3f099bb15f13d',1,'Matrix::operator=(const Matrix &amp;other)'],['../class_matrix.html#a74eca41e5a29b6efd57b009730d3fe60',1,'Matrix::operator=(Matrix &amp;&amp;other) noexcept']]],
+  ['operator_3e_3e_5',['operator&gt;&gt;',['../_matrix_8cpp.html#a1e59f4510e89d18cfa284feab060583a',1,'Matrix.cpp']]]
 ];

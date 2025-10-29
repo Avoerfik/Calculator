@@ -103,19 +103,26 @@ int MenuInput::getCalculationRegime()
 
 Matrix MenuInput::getMatrix()
 {
-    Matrix matrix;
-    std::cout << "Enter matrix:\n";
-    std::cin >> matrix;
-    std::cout << "Matrix is:\n";
-    std::cout << matrix;
-    return matrix;
+    try
+    {
+        Matrix matrix;
+        std::cout << "Enter matrix:\n";
+        std::cin >> matrix;
+        std::cout << "Matrix is:\n";
+        std::cout << matrix;
+        return matrix;
+    }
+    catch (const std::exception&)
+    {
+        throw;
+    }
 }
 
 char MenuInput::getMatrixOperator()
 {
     do
     {
-        std::cout << "Enter operator:\n";
+        std::cout << "Enter operator(use only +-*):\n";
         std::string input;
         std::getline(std::cin, input);
         if (isCorrectChar(input) && (input[0] == '+' || input[0] == '-' || input[0] == '*'))
@@ -128,7 +135,7 @@ char MenuInput::getMemoryOperator()
 {
     do
     {
-        std::cout << "Enter operator:\n";
+        std::cout << "Enter ' ' space if it is the last memory element. Enter operator(use only +-*/^ ):\n";
         std::string input;
         std::getline(std::cin, input);
         if (isCorrectChar(input) &&
@@ -147,7 +154,9 @@ int MenuInput::getMatrixRegime()
 {
     do
     {
-        std::cout << "Choose matrix regime:\n1. Multiple matrix to matrix\n2. Multiple scalar to matrix\n";
+        std::cout << "Choose matrix regime:\n";
+        std::cout << "1. Multiple matrix to matrix\n";
+        std::cout << "2. Multiple scalar to matrix\n";
         std::string input;
         std::getline(std::cin, input);
         if (isCorrectChar(input) && ((input[0] == '1') || (input[0] == '2')))

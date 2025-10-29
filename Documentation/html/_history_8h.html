@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator Documentation: App/include/History.h File Reference</title>
+<title>Calculator Documentation: App/include/Data/History.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
    </div>
-   <div id="projectbrief">First version</div>
+   <div id="projectbrief">Second version</div>
   </td>
  </tr>
  </tbody>
@@ -93,31 +93,44 @@ $(function(){initNavTree('_history_8h.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
 <code>#include &quot;<a class="el" href="_data_8h_source.html">Data.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for History.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="_history_8h__incl.png" border="0" usemap="#a_app_2include_2_history_8h" loading="lazy" alt=""/></div>
-<map name="a_app_2include_2_history_8h" id="a_app_2include_2_history_8h">
-<area shape="rect" title=" " alt="" coords="5,5,152,31"/>
+<div class="center"><img src="_history_8h__incl.png" border="0" usemap="#a_app_2include_2_data_2_history_8h" loading="lazy" alt=""/></div>
+<map name="a_app_2include_2_data_2_history_8h" id="a_app_2include_2_data_2_history_8h">
+<area shape="rect" title=" " alt="" coords="126,5,303,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,67,104"/>
-<area shape="poly" title=" " alt="" coords="74,32,52,68,48,66,69,30"/>
-<area shape="rect" href="_data_8h.html" title=" " alt="" coords="91,79,151,104"/>
-<area shape="poly" title=" " alt="" coords="88,30,110,66,105,68,83,32"/>
-<area shape="rect" title=" " alt="" coords="54,152,109,177"/>
-<area shape="poly" title=" " alt="" coords="117,106,97,141,92,139,112,103"/>
-<area shape="rect" title=" " alt="" coords="133,152,189,177"/>
-<area shape="poly" title=" " alt="" coords="130,103,150,139,146,141,126,106"/>
+<area shape="poly" title=" " alt="" coords="187,33,79,76,77,71,185,28"/>
+<area shape="rect" title=" " alt="" coords="91,79,163,104"/>
+<area shape="poly" title=" " alt="" coords="202,33,153,72,150,68,199,29"/>
+<area shape="rect" title=" " alt="" coords="187,79,242,104"/>
+<area shape="poly" title=" " alt="" coords="217,31,217,65,212,65,212,31"/>
+<area shape="rect" title=" " alt="" coords="267,79,333,104"/>
+<area shape="poly" title=" " alt="" coords="230,29,277,68,274,72,227,33"/>
+<area shape="rect" href="_data_8h.html" title=" " alt="" coords="358,79,418,104"/>
+<area shape="poly" title=" " alt="" coords="244,28,348,71,346,76,242,33"/>
+<area shape="rect" title=" " alt="" coords="281,152,335,177"/>
+<area shape="poly" title=" " alt="" coords="377,106,333,145,329,141,373,102"/>
+<area shape="rect" title=" " alt="" coords="360,152,416,177"/>
+<area shape="poly" title=" " alt="" coords="391,104,391,138,385,138,385,104"/>
+<area shape="rect" href="_engine_8h.html" title=" " alt="" coords="440,152,525,177"/>
+<area shape="poly" title=" " alt="" coords="405,102,458,141,455,146,402,106"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="_history_8h__dep__incl.png" border="0" usemap="#a_app_2include_2_history_8hdep" loading="lazy" alt=""/></div>
-<map name="a_app_2include_2_history_8hdep" id="a_app_2include_2_history_8hdep">
-<area shape="rect" title=" " alt="" coords="263,5,410,31"/>
+<div class="center"><img src="_history_8h__dep__incl.png" border="0" usemap="#a_app_2include_2_data_2_history_8hdep" loading="lazy" alt=""/></div>
+<map name="a_app_2include_2_data_2_history_8hdep" id="a_app_2include_2_data_2_history_8hdep">
+<area shape="rect" title=" " alt="" coords="345,5,523,31"/>
 <area shape="rect" href="_menu_8h.html" title=" " alt="" coords="250,79,423,104"/>
-<area shape="poly" title=" " alt="" coords="339,44,339,79,334,79,334,44"/>
+<area shape="poly" title=" " alt="" coords="409,41,354,81,351,76,406,37"/>
+<area shape="rect" href="_history_8cpp.html" title=" " alt="" coords="447,79,615,104"/>
+<area shape="poly" title=" " alt="" coords="462,37,517,76,514,81,459,41"/>
 <area shape="rect" href="_menu_input_8h.html" title=" " alt="" coords="5,152,207,177"/>
 <area shape="poly" title=" " alt="" coords="287,111,144,154,143,149,286,106"/>
 <area shape="rect" href="_menu_output_8h.html" title=" " alt="" coords="231,152,443,177"/>
@@ -170,7 +183,7 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a href="dir_4633828e1ba6168e67d7b3f2ef466b2e.html">include</a></li><li class="navelem"><a href="_history_8h.html">History.h</a></li>
+    <li class="navelem"><a href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a href="dir_4633828e1ba6168e67d7b3f2ef466b2e.html">include</a></li><li class="navelem"><a href="dir_495cc250625986c6726f151c7952de84.html">Data</a></li><li class="navelem"><a href="_history_8h.html">History.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

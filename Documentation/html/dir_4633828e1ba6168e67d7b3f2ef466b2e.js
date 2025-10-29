@@ -1,15 +1,10 @@
 var dir_4633828e1ba6168e67d7b3f2ef466b2e =
 [
+    [ "Calculator", "dir_77a7a271cbb91ad714970b103284a915.html", "dir_77a7a271cbb91ad714970b103284a915" ],
+    [ "Data", "dir_495cc250625986c6726f151c7952de84.html", "dir_495cc250625986c6726f151c7952de84" ],
+    [ "Matrix", "dir_174209e485701e5b04f57d918d4945c7.html", "dir_174209e485701e5b04f57d918d4945c7" ],
     [ "Menu", "dir_f0b9d31318f6bdba6acb823fbabeb67f.html", "dir_f0b9d31318f6bdba6acb823fbabeb67f" ],
-    [ "Calculator.h", "_calculator_8h.html", "_calculator_8h" ],
-    [ "CalculatorComplex.h", "_calculator_complex_8h.html", "_calculator_complex_8h" ],
-    [ "CalculatorExpression.h", "_calculator_expression_8h.html", "_calculator_expression_8h" ],
-    [ "CalculatorMatrix.h", "_calculator_matrix_8h.html", "_calculator_matrix_8h" ],
-    [ "ComplexInfo.h", "_complex_info_8h.html", "_complex_info_8h" ],
-    [ "Data.h", "_data_8h.html", "_data_8h" ],
-    [ "History.h", "_history_8h.html", "_history_8h" ],
-    [ "main.h", "main_8h.html", "main_8h" ],
-    [ "Matrix.h", "_matrix_8h.html", "_matrix_8h" ],
-    [ "Memory.h", "_memory_8h.html", "_memory_8h" ],
-    [ "Testing.h", "_testing_8h.html", "_testing_8h" ]
+    [ "Testing", "dir_07f1c9390f4c654795f9cee387a6e71a.html", "dir_07f1c9390f4c654795f9cee387a6e71a" ],
+    [ "Engine.h", "_engine_8h.html", "_engine_8h" ],
+    [ "main.h", "main_8h.html", "main_8h" ]
 ];

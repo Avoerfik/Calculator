@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator Documentation: App/include/Memory.h File Reference</title>
+<title>Calculator Documentation: App/include/Data/Memory.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.1</span>
+   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
    </div>
-   <div id="projectbrief">First version</div>
+   <div id="projectbrief">Second version</div>
   </td>
  </tr>
  </tbody>
@@ -92,31 +92,41 @@ $(function(){initNavTree('_memory_8h.html','',''); });
   <div class="headertitle"><div class="title">Memory.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_data_8h_source.html">Data.h</a>&quot;</code><br />
-<code>#include &lt;string&gt;</code><br />
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &quot;<a class="el" href="_data_8h_source.html">Data.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Memory.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="_memory_8h__incl.png" border="0" usemap="#a_app_2include_2_memory_8h" loading="lazy" alt=""/></div>
-<map name="a_app_2include_2_memory_8h" id="a_app_2include_2_memory_8h">
-<area shape="rect" title=" " alt="" coords="5,5,157,31"/>
-<area shape="rect" href="_data_8h.html" title=" " alt="" coords="86,79,146,104"/>
-<area shape="poly" title=" " alt="" coords="89,30,107,65,102,67,85,32"/>
-<area shape="rect" title=" " alt="" coords="21,152,75,177"/>
-<area shape="poly" title=" " alt="" coords="81,32,56,139,51,138,76,31"/>
-<area shape="poly" title=" " alt="" coords="107,106,71,144,67,140,103,102"/>
-<area shape="rect" title=" " alt="" coords="100,152,156,177"/>
-<area shape="poly" title=" " alt="" coords="121,104,126,138,121,139,115,105"/>
+<div class="center"><img src="_memory_8h__incl.png" border="0" usemap="#a_app_2include_2_data_2_memory_8h" loading="lazy" alt=""/></div>
+<map name="a_app_2include_2_data_2_memory_8h" id="a_app_2include_2_data_2_memory_8h">
+<area shape="rect" title=" " alt="" coords="13,5,196,31"/>
+<area shape="rect" title=" " alt="" coords="21,152,76,177"/>
+<area shape="poly" title=" " alt="" coords="72,33,38,52,23,64,12,80,8,95,11,110,29,140,24,143,6,112,3,95,7,78,19,61,35,47,69,28"/>
+<area shape="rect" title=" " alt="" coords="22,79,94,104"/>
+<area shape="poly" title=" " alt="" coords="99,32,75,69,70,66,94,30"/>
+<area shape="rect" title=" " alt="" coords="118,79,187,104"/>
+<area shape="poly" title=" " alt="" coords="114,30,139,66,135,69,110,33"/>
+<area shape="rect" href="_data_8h.html" title=" " alt="" coords="212,79,272,104"/>
+<area shape="poly" title=" " alt="" coords="128,28,208,70,206,75,125,33"/>
+<area shape="poly" title=" " alt="" coords="212,106,89,151,87,146,210,101"/>
+<area shape="rect" title=" " alt="" coords="166,152,222,177"/>
+<area shape="poly" title=" " alt="" coords="236,106,211,142,207,139,231,103"/>
+<area shape="rect" href="_engine_8h.html" title=" " alt="" coords="246,152,331,177"/>
+<area shape="poly" title=" " alt="" coords="251,103,275,139,271,142,247,106"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="_memory_8h__dep__incl.png" border="0" usemap="#a_app_2include_2_memory_8hdep" loading="lazy" alt=""/></div>
-<map name="a_app_2include_2_memory_8hdep" id="a_app_2include_2_memory_8hdep">
-<area shape="rect" title=" " alt="" coords="261,5,413,31"/>
+<div class="center"><img src="_memory_8h__dep__incl.png" border="0" usemap="#a_app_2include_2_data_2_memory_8hdep" loading="lazy" alt=""/></div>
+<map name="a_app_2include_2_data_2_memory_8hdep" id="a_app_2include_2_data_2_memory_8hdep">
+<area shape="rect" title=" " alt="" coords="344,5,527,31"/>
 <area shape="rect" href="_menu_8h.html" title=" " alt="" coords="250,79,423,104"/>
-<area shape="poly" title=" " alt="" coords="339,44,339,79,334,79,334,44"/>
+<area shape="poly" title=" " alt="" coords="410,41,354,81,351,76,407,36"/>
+<area shape="rect" href="_memory_8cpp.html" title=" " alt="" coords="448,79,623,104"/>
+<area shape="poly" title=" " alt="" coords="464,36,521,76,517,81,461,41"/>
 <area shape="rect" href="_menu_input_8h.html" title=" " alt="" coords="5,152,207,177"/>
 <area shape="poly" title=" " alt="" coords="287,111,144,154,143,149,286,106"/>
 <area shape="rect" href="_menu_output_8h.html" title=" " alt="" coords="231,152,443,177"/>
@@ -169,7 +179,7 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a href="dir_4633828e1ba6168e67d7b3f2ef466b2e.html">include</a></li><li class="navelem"><a href="_memory_8h.html">Memory.h</a></li>
+    <li class="navelem"><a href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a href="dir_4633828e1ba6168e67d7b3f2ef466b2e.html">include</a></li><li class="navelem"><a href="dir_495cc250625986c6726f151c7952de84.html">Data</a></li><li class="navelem"><a href="_memory_8h.html">Memory.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
