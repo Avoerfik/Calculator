@@ -12,7 +12,7 @@
 struct MemoryCell
 {
     Record record;
-    char operator12;  // оператор: +, -, *, /, ^, или ' ' (пробел) для отсутствия оператора
+    char operator12 = ' ';  // оператор: +, -, *, /, ^, или ' ' (пробел) для отсутствия оператора
 };
 
 class Memory : public Data

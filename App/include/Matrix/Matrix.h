@@ -18,7 +18,7 @@ public:
     Matrix() = default;
 
     // Конструктор с размерами
-    Matrix(unsigned int rows, unsigned int cols);
+    Matrix(std::size_t rows, std::size_t cols);
 
     // Конструктор из вектора
     Matrix(const std::vector<std::vector<std::string>>& mat);
@@ -61,8 +61,8 @@ public:
     size_t cols() const { return matrix.empty() ? 0 : matrix[0].size(); }
 
     // Методы доступа к элементам
-    std::string& at(size_t i, size_t j) { return matrix[i][j]; }
-    const std::string& at(size_t i, size_t j) const { return matrix[i][j]; }
+    std::string& at(std::size_t i, std::size_t j) { return matrix[i][j]; }
+    const std::string& at(std::size_t i, std::size_t j) const { return matrix[i][j]; }
 
 private:
     std::vector<std::vector<std::string>> matrix;

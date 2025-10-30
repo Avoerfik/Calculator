@@ -1,10 +1,10 @@
 #include "../../include/Matrix/Matrix.h"
 
 // Конструктор с размерами
-Matrix::Matrix(unsigned int rows, unsigned int cols)
+Matrix::Matrix(std::size_t rows, std::size_t cols)
 {
     matrix.resize(rows);
-    for (unsigned int i = 0; i < rows; ++i)
+    for (std::size_t i = 0; i < rows; ++i)
     {
         matrix[i].resize(cols, "0"); // заполняем нулями или другим значением по умолчанию
     }

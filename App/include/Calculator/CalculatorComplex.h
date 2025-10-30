@@ -13,7 +13,8 @@ private:
 	const long double EPSILON = 1e-4;
 
 public:
-	std::vector<std::complex<long double>> getAllRoots(const std::complex<long double>& base, const std::complex<long double>& power);
+	std::vector<std::complex<long double>> getAllRoots(const std::complex<long double>& base,
+		const std::complex<long double>& power);
 	inline std::vector<long double> getRealRoots(const std::vector<std::complex<long double>>& roots);
 };
 

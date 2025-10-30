@@ -11,7 +11,7 @@
 struct Record
 {
     std::vector<std::string> info;
-    unsigned int number;
+    unsigned int number = 0;
 };
 
 class Data : public Engine

@@ -7,6 +7,7 @@
 #include <string>
 #include <stack>
 
+#include "../Engine.h"
 #include "../Matrix/Matrix.h"
 #include "../Data/History.h"
 #include "../Data/Memory.h"
@@ -16,11 +17,11 @@ std::string calculateExpression(std::stack<std::string>& expressionStack);
 
 bool runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, unsigned int& testsFailed);
 
-class Menu
+class Menu : public Engine
 {
 public:
     Menu();
-    ~Menu();
+    virtual ~Menu();
     void run();
 
 protected:

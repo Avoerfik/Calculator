@@ -19,6 +19,9 @@ std::vector<long double> getRealRoots(const std::vector<std::complex<long double
 class Calculator : public CalculatorExpression
 {
 public:
+	Calculator() = default;
+	virtual ~Calculator() = default;
+
 	std::stack<std::string> bracketAnalyze(const std::string& expression);
 	std::string calculateExpression(std::stack<std::string>& expressionStack);
 
