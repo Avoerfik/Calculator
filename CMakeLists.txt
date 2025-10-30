@@ -27,7 +27,7 @@ set(SOURCES
     "App/src/Data/Memory.cpp"
     "App/include/Engine.h"
 )
-add_executable(Calculator ${SOURCES})
+add_executable(Calculator ${SOURCES} "App/include/Data/HistoryMemory.h" "App/src/Data/HistoryMemory.cpp" "App/include/Data/AnalysisCounter.h" "App/include/Data/ComplexityCalculator.h" "App/include/Data/ExpressionAnalyzer.h" "App/include/Data/ExpressionHistory.h" "App/src/Data/AnalysisCounter.cpp" "App/src/Data/ComplexityCalculator.cpp" "App/src/Data/ExpressionAnalyzer.cpp" "App/src/Data/ExpressionHistory.cpp" "App/include/Data/StatisticsReporter.h" "App/src/Data/StatisticsReporter.cpp" "App/include/Data/ExpressionStats.h")
 
 # Добавьте источник в исполняемый файл этого проекта.
 # add_executable (Calculator "src/main.cpp" "include/main.h" "src/Calculator.cpp" "src/Testing.cpp" "include/Calculator.h" "include/Testing.h")

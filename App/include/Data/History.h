@@ -16,28 +16,24 @@ struct RecordHistory
     std::chrono::system_clock::time_point now;
 };
 
-class History : public Data
+class History : public virtual Data  // ДОБАВЛЕНО virtual
 {
 public:
     History() {};
     ~History() = default;
 
-    // Новая перегруженная версия без параметра number
     Data* reserveData(const std::vector<std::string>& info);
-    // Старая версия для совместимости
     Data* reserveData(Record data) override;
     Data* getData() override;
 
-    // Метод для доступа к истории
     const std::vector<RecordHistory>& getHistory() const { return rh; }
     size_t getHistorySize() const { return rh.size(); }
 
-    // Методы для вывода истории
     void printRecordHistory(const RecordHistory& rh) const;
     void printAllHistory() const;
     void printRecordByNumber(unsigned int number) const;
 
-private:
+protected:  // Изменено с private на protected для доступа в HistoryMemory
     std::vector<RecordHistory> rh;
 };
 

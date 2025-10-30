@@ -2,14 +2,40 @@
 #include "../App/include/Menu/MenuInput.h"
 #include "../App/include/Menu/MenuOutput.h"
 
-Menu::Menu() : testsTotal(0), testsPassed(0), testsFailed(0)
-{
+// ДОБАВИТЬ ВСЕ НЕОБХОДИМЫЕ ВКЛЮЧЕНИЯ
+#include "../../include/Data/ExpressionAnalyzer.h"
+#include "../../include/Data/ExpressionHistory.h"
+#include "../../include/Data/AnalysisCounter.h"
+#include "../../include/Data/ComplexityCalculator.h"
+#include "../../include/Data/StatisticsReporter.h"
 
+Menu::Menu() : testsTotal(0), testsPassed(0), testsFailed(0),
+expressionAnalyzer(nullptr), expressionHistory(nullptr),
+complexityCalculator(nullptr)
+{
+    initializeAnalyzers();
 }
 
 Menu::~Menu()
 {
+    // ОСВОБОДИТЬ ПАМЯТЬ
+    if (expressionAnalyzer != nullptr) {
+        delete expressionAnalyzer;
+    }
+    if (expressionHistory != nullptr) {
+        delete expressionHistory;
+    }
+    if (complexityCalculator != nullptr) {
+        delete complexityCalculator;
+    }
+}
 
+void Menu::initializeAnalyzers()
+{
+    // СОЗДАТЬ ОБЪЕКТЫ АНАЛИЗАТОРОВ
+    complexityCalculator = new ComplexityCalculator();
+    expressionAnalyzer = new ExpressionAnalyzer(complexityCalculator);
+    expressionHistory = new ExpressionHistory();
 }
 
 void Menu::run()
@@ -20,6 +46,7 @@ void Menu::run()
         MenuOutput outputHandler;
         History mathHistory;
         Memory mathMemory;
+        HistoryMemory historyMemory;
 
         bool exitMenu = true;
         bool cont;
@@ -38,9 +65,25 @@ void Menu::run()
                     try
                     {
                         std::string expression = inputHandler.getExpression();
+
+                        // ЗАМЕР ВРЕМЕНИ ВЫЧИСЛЕНИЯ ДЛЯ СТАТИСТИКИ
+                        auto startTime = std::chrono::high_resolution_clock::now();
+
                         std::stack<std::string> expressionStack = bracketAnalyze(expression);
                         std::string result = calculateExpression(expressionStack);
+
+                        auto endTime = std::chrono::high_resolution_clock::now();
+                        double calcTime = std::chrono::duration<double, std::milli>(endTime - startTime).count();
+
+                        // АНАЛИЗ ВЫРАЖЕНИЯ И ЗАПИСЬ В СТАТИСТИКУ
+                        if (expressionAnalyzer != nullptr) {
+                            expressionAnalyzer->analyzeExpression(expression, calcTime);
+                            expressionAnalyzer->recordSuccess();
+                        }
+
+                        // Сохраняем в обычную историю
                         mathHistory.reserveData({ expression + " = " + result });
+
                         bool saveToMemory = inputHandler.getSaveToMemoryChoice();
                         if (saveToMemory)
                         {
@@ -53,6 +96,11 @@ void Menu::run()
                     }
                     catch (const std::exception& e)
                     {
+                        // ЗАПИСЬ ОШИБКИ В СТАТИСТИКУ
+                        if (expressionAnalyzer != nullptr) {
+                            expressionAnalyzer->recordError();
+                        }
+
                         MenuOutput outputHandler;
                         outputHandler.displayError(e);
                         outputHandler.displayMessage("");
@@ -110,17 +158,28 @@ void Menu::run()
                 } while (cont);
                 break;
             case 3:
+                // Показываем меню выбора типа истории
                 mathHistory.printAllHistory();
+                historyMemory.printCalculationHistory();
                 outputHandler.displayMessage("");
                 break;
             case 4:
                 try
                 {
                     std::string calculationString = mathMemory.getCalculationString();
-                    std::stack<std::string> expressionStack = bracketAnalyze(calculationString);
-                    std::string result = calculateExpression(expressionStack);
-                    outputHandler.displayResult(result);
-                    mathMemory.clearMemory();
+                    if (calculationString.empty()) {
+                        outputHandler.displayMessage("Memory is empty");
+                    }
+                    else {
+                        std::stack<std::string> expressionStack = bracketAnalyze(calculationString);
+                        std::string result = calculateExpression(expressionStack);
+
+                        // Сохраняем вычисление из памяти в HistoryMemory
+                        historyMemory.calculateAndSave(calculationString);
+
+                        outputHandler.displayResult(result);
+                        mathMemory.clearMemory();
+                    }
                     outputHandler.displayMessage("");
                 }
                 catch (const std::exception& e)
@@ -130,11 +189,157 @@ void Menu::run()
                     outputHandler.displayMessage("");
                 }
                 break;
+                // НОВЫЙ ПУНКТ МЕНЮ ДЛЯ СТАТИСТИКИ
+            case 5:
+                displayStatisticsMenu();
+                break;
             }
         } while (exitMenu);
     }
 }
 
+// РЕАЛИЗАЦИЯ МЕТОДОВ СТАТИСТИКИ
+void Menu::displayStatisticsMenu()
+{
+    MenuInput inputHandler;
+    MenuOutput outputHandler;
+
+    bool exitStatsMenu = true;
+    do
+    {
+        std::cout << "\n=== Expression Statistics ===\n";
+        std::cout << "1. Show Basic Statistics\n";
+        std::cout << "2. Show Operator Frequency\n";
+        std::cout << "3. Show Complexity Analysis\n";
+        std::cout << "4. Show Comprehensive Report\n";
+        std::cout << "5. Reset Statistics\n";
+        std::cout << "0. Back to Main Menu\n";
+        std::cout << "Choose option: ";
+
+        std::string choice;
+        std::getline(std::cin, choice);
+
+        if (choice == "0") {
+            exitStatsMenu = false;
+        }
+        else if (choice == "1") {
+            showExpressionStatistics();
+        }
+        else if (choice == "2") {
+            showOperatorFrequency();
+        }
+        else if (choice == "3") {
+            showComplexityAnalysis();
+        }
+        else if (choice == "4") {
+            showComprehensiveReport();
+        }
+        else if (choice == "5") {
+            resetStatistics();
+        }
+        else {
+            outputHandler.displayMessage("Invalid choice! Please try again.");
+        }
+
+    } while (exitStatsMenu);
+}
+
+void Menu::showExpressionStatistics()
+{
+    if (expressionAnalyzer == nullptr) {
+        std::cout << "Statistics analyzer not initialized!\n";
+        return;
+    }
+
+    std::cout << "\n=== Expression Statistics ===\n";
+    std::cout << "Total expressions analyzed: " << expressionAnalyzer->getTotalExpressions() << "\n";
+    std::cout << "Successful calculations: " << expressionAnalyzer->getSuccessCount() << "\n";
+    std::cout << "Errors encountered: " << expressionAnalyzer->getErrorCount() << "\n";
+    std::cout << "Success rate: "
+        << (expressionAnalyzer->getTotalExpressions() > 0 ?
+            (expressionAnalyzer->getSuccessCount() * 100.0 / expressionAnalyzer->getTotalExpressions()) : 0)
+        << "%\n";
+}
+
+void Menu::showOperatorFrequency()
+{
+    if (expressionAnalyzer == nullptr) {
+        std::cout << "Statistics analyzer not initialized!\n";
+        return;
+    }
+
+    auto frequency = expressionAnalyzer->getOperatorFrequency();
+    std::cout << "\n=== Operator Frequency ===\n";
+
+    if (frequency.empty()) {
+        std::cout << "No operators analyzed yet.\n";
+        return;
+    }
+
+    for (const auto& [op, count] : frequency) {
+        std::cout << "Operator '" << op << "': " << count << " times\n";
+    }
+}
+
+void Menu::showComplexityAnalysis()
+{
+    if (expressionAnalyzer == nullptr) {
+        std::cout << "Statistics analyzer not initialized!\n";
+        return;
+    }
+
+    auto stats = expressionAnalyzer->getStats();
+    std::cout << "\n=== Complexity Analysis ===\n";
+
+    if (stats.empty()) {
+        std::cout << "No expressions analyzed yet.\n";
+        return;
+    }
+
+    std::map<std::string, int> complexityLevels;
+    int totalComplexity = 0;
+
+    for (const auto& stat : stats) {
+        complexityLevels[stat.complexityLevel]++;
+        totalComplexity += stat.complexity;
+    }
+
+    std::cout << "Average complexity: " << (totalComplexity / static_cast<double>(stats.size())) << "\n";
+    std::cout << "Complexity distribution:\n";
+    for (const auto& [level, count] : complexityLevels) {
+        std::cout << "  " << level << ": " << count << " expressions\n";
+    }
+}
+
+void Menu::showComprehensiveReport()
+{
+    if (expressionAnalyzer == nullptr || expressionHistory == nullptr) {
+        std::cout << "Statistics analyzer not initialized!\n";
+        return;
+    }
+
+    // Импортируем данные в историю для генерации отчета
+    expressionHistory->importFromAnalyzer(*expressionAnalyzer);
+
+    // Используем дружественную функцию для генерации отчета
+    std::string report = generateStatisticsReport(*expressionAnalyzer, *expressionHistory);
+    std::cout << "\n" << report << "\n";
+}
+
+void Menu::resetStatistics()
+{
+    if (expressionAnalyzer != nullptr) {
+        delete expressionAnalyzer;
+        expressionAnalyzer = new ExpressionAnalyzer(complexityCalculator);
+    }
+    if (expressionHistory != nullptr) {
+        delete expressionHistory;
+        expressionHistory = new ExpressionHistory();
+    }
+    std::cout << "Statistics reset successfully!\n";
+}
+
+// СУЩЕСТВУЮЩИЕ МЕТОДЫ БЕЗ ИЗМЕНЕНИЙ
 bool Menu::isCorrectChar(const std::string& input)
 {
     if (input.empty())

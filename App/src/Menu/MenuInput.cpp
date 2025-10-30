@@ -87,6 +87,7 @@ int MenuInput::getCalculationRegime()
         std::cout << "2. Matrix calculator\n";
         std::cout << "3. Show history\n";
         std::cout << "4. Calculate Memory\n";
+        std::cout << "5. Expression Statistics\n";
         std::cout << "0. Exit\n";
         std::string input;
         std::getline(std::cin, input);
@@ -95,9 +96,10 @@ int MenuInput::getCalculationRegime()
                 || (input[0] == '1')
                 || (input[0] == '2')
                 || (input[0] == '3')
-                || (input[0] == '4')))
+                || (input[0] == '4')
+                || (input[0] == '5')))
             return std::stoi(input);
-        std::cout << "Enter only 0, 1, 2 or 3!\n";
+        std::cout << "Enter only 0, 1, 2, 3, 4 or 5!\n";
     } while (true);
 }
 

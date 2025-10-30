@@ -19,11 +19,11 @@ class Data : public Engine
 public:
     Data() {
         this->data.reserve(1);
-        currentNumber = 1;  // Начинаем с номера 1
+        currentNumber = 1;
     }
     Data(Record data) {
         this->data.push_back(data);
-        currentNumber = data.number + 1;  // Продолжаем с следующего номера
+        currentNumber = data.number + 1;
     }
     virtual ~Data() = default;
 
@@ -32,9 +32,8 @@ public:
 
 protected:
     std::vector<Record> data;
-    unsigned int currentNumber = 1;  // Счётчик номеров
+    unsigned int currentNumber = 1;
 
-    // Метод для получения следующего номера
     unsigned int getNextNumber() {
         return currentNumber++;
     }

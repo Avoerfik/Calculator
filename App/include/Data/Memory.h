@@ -12,29 +12,26 @@
 struct MemoryCell
 {
     Record record;
-    char operator12 = ' ';  // оператор: +, -, *, /, ^, или ' ' (пробел) для отсутствия оператора
+    char operator12 = ' ';
 };
 
-class Memory : public Data
+class Memory : public virtual Data  // ДОБАВЛЕНО virtual
 {
 public:
     Memory() {};
     ~Memory() = default;
 
-    // Новая версия с оператором
     Data* reserveData(const std::vector<std::string>& info, char nextOperator = ' ');
-    // Старая версия для совместимости
     Data* reserveData(Record data) override;
     Data* getData() override;
 
-    // Методы для работы с памятью
     std::string getCalculationString() const;
     void printMemory() const;
     const std::vector<MemoryCell>& getMemoryCells() const { return mc; }
     void clearMemory() { mc.clear(); data.clear(); currentNumber = 1; }
     bool isEmpty() const { return mc.empty(); }
 
-private:
+protected:  // Изменено с private на protected для доступа в HistoryMemory
     std::vector<MemoryCell> mc;
 };
 
