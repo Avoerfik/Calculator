@@ -16,7 +16,7 @@ struct RecordHistory
     std::chrono::system_clock::time_point now;
 };
 
-class History : public virtual Data  // ДОБАВЛЕНО virtual
+class History : public virtual Data
 {
 public:
     History() {};

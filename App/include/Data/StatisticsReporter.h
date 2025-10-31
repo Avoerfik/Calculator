@@ -4,6 +4,7 @@
 #define STATISTICSREPORTER_H
 
 #include <string>
+#include <sstream>
 
 class ExpressionAnalyzer;
 class ExpressionHistory;

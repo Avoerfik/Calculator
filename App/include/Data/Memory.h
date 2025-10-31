@@ -15,7 +15,7 @@ struct MemoryCell
     char operator12 = ' ';
 };
 
-class Memory : public virtual Data  // ДОБАВЛЕНО virtual
+class Memory : public virtual Data
 {
 public:
     Memory() {};

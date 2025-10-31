@@ -1,6 +1,5 @@
 #include "../../include/Data/ExpressionAnalyzer.h"
 #include "../../include/Data/ExpressionHistory.h"
-#include <sstream>
 
 // Реализация дружественной функции
 std::string generateStatisticsReport(const ExpressionAnalyzer& analyzer, const ExpressionHistory& history)

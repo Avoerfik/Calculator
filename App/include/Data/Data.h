@@ -28,6 +28,7 @@ public:
     virtual ~Data() = default;
 
     virtual Data* reserveData(Record data) = 0;
+
     virtual Data* getData() = 0;
 
 protected:

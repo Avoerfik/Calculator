@@ -3,8 +3,10 @@
 #ifndef COMPLEXITYCALCULATOR_H
 #define COMPLEXITYCALCULATOR_H
 
-#include "../Engine.h"
 #include <string>
+#include <algorithm>
+
+#include "../Engine.h"
 
 class ComplexityCalculator : public Engine
 {

@@ -1,5 +1,4 @@
 #include "../../include/Data/ComplexityCalculator.h"
-#include <algorithm>
 
 int ComplexityCalculator::calculateComplexity(const std::string& expression) const
 {

@@ -1,15 +1,15 @@
 #include "../../include/Data/ExpressionAnalyzer.h"
-#include <algorithm>
-#include <sstream>
-#include <iostream>
 
-ExpressionAnalyzer::ExpressionAnalyzer() : complexityCalc(new ComplexityCalculator()) {}
+// Конструктор по умолчанию - без создания ComplexityCalculator
+ExpressionAnalyzer::ExpressionAnalyzer() : complexityCalc(nullptr) {}
 
+// Конструктор с агрегацией - принимаем готовый объект
 ExpressionAnalyzer::ExpressionAnalyzer(ComplexityCalculator* calc) : complexityCalc(calc) {}
 
+// Деструктор - НЕ удаляем complexityCalc (агрегация)
 ExpressionAnalyzer::~ExpressionAnalyzer()
 {
-
+    // complexityCalc НЕ удаляем - это агрегация!
 }
 
 void ExpressionAnalyzer::analyzeOperators(const std::string& expression)
@@ -120,11 +120,19 @@ void ExpressionAnalyzer::analyzeExpression(const std::string& expression, double
     stats.expression = expression;
     stats.calculationTime = calcTime;
 
+    // Проверяем, что complexityCalc установлен (агрегация)
     if (complexityCalc) {
         stats.complexity = complexityCalc->calculateComplexity(expression);
         stats.complexityLevel = complexityCalc->getComplexityLevel(expression);
         stats.operatorCount = complexityCalc->countOperators(expression);
         stats.hasComplexOps = complexityCalc->hasComplexOperations(expression);
+    }
+    else {
+        // Запасной вариант, если complexityCalc не установлен
+        stats.complexity = 1;
+        stats.complexityLevel = "Unknown";
+        stats.operatorCount = 0;
+        stats.hasComplexOps = false;
     }
 
     // Вызываем анализ операторов

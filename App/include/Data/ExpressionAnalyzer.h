@@ -2,13 +2,17 @@
 #ifndef EXPRESSIONANALYZER_H
 #define EXPRESSIONANALYZER_H
 
+#include <string>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <sstream>
+#include <iostream>
+
 #include "../Engine.h"
 #include "AnalysisCounter.h"
 #include "ComplexityCalculator.h"
 #include "ExpressionStats.h"
-#include <string>
-#include <vector>
-#include <map>
 
 class ExpressionHistory;
 
@@ -16,7 +20,7 @@ class ExpressionAnalyzer : public Engine
 {
 private:
     AnalysisCounter counter;
-    ComplexityCalculator* complexityCalc;  // Теперь это указатель без владения
+    ComplexityCalculator* complexityCalc; //Агрегация
     std::vector<ExpressionStats> stats;
     std::map<char, int> operatorFrequency;
 
@@ -26,7 +30,7 @@ private:
 public:
     ExpressionAnalyzer();
     ExpressionAnalyzer(ComplexityCalculator* calc);
-    virtual ~ExpressionAnalyzer();  // Убрать удаление complexityCalc
+    virtual ~ExpressionAnalyzer();  // Убрать удаление complexityCalc для агрегации
 
     void analyzeExpression(const std::string& expression, double calcTime = 0.0);
     void recordSuccess();

@@ -13,4 +13,3 @@ public:
 };
 
 #endif // !CALCULATORMATRIX_H
-

@@ -339,7 +339,6 @@ void Menu::resetStatistics()
     std::cout << "Statistics reset successfully!\n";
 }
 
-// СУЩЕСТВУЮЩИЕ МЕТОДЫ БЕЗ ИЗМЕНЕНИЙ
 bool Menu::isCorrectChar(const std::string& input)
 {
     if (input.empty())

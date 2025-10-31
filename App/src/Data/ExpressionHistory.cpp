@@ -1,8 +1,5 @@
 #include "../../include/Data/ExpressionHistory.h"
 #include "../../include/Data/ExpressionAnalyzer.h"
-#include <sstream>
-#include <iomanip>
-#include <algorithm>
 
 void ExpressionHistory::importFromAnalyzer(const ExpressionAnalyzer& analyzer)
 {

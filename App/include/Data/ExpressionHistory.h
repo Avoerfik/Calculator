@@ -2,10 +2,14 @@
 #ifndef EXPRESSIONHISTORY_H
 #define EXPRESSIONHISTORY_H
 
-#include "../Engine.h"
-#include "ExpressionStats.h"
 #include <vector>
 #include <chrono>
+#include <sstream>
+#include <iomanip>
+#include <algorithm>
+
+#include "../Engine.h"
+#include "ExpressionStats.h"
 
 class ExpressionAnalyzer;
 

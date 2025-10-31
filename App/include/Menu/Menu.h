@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 #include <stack>
-#include <chrono>  // ДОБАВИТЬ для замера времени
+#include <chrono>
 
 #include "../Engine.h"
 #include "../Matrix/Matrix.h"
@@ -14,7 +14,6 @@
 #include "../Data/Memory.h"
 #include "../Data/HistoryMemory.h"
 
-// ПРЕДВАРИТЕЛЬНЫЕ ОБЪЯВЛЕНИЯ вместо прямого включения
 class ExpressionAnalyzer;
 class ExpressionHistory;
 class ComplexityCalculator;
