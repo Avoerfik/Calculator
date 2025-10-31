@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator12_0',['operator12',['../struct_memory_cell.html#ac89452e5619babc765244104892e95d3',1,'MemoryCell']]]
+  ['info_0',['info',['../struct_record.html#a4bcc718199b5e32ec57b07f82e8f6313',1,'Record']]]
 ];

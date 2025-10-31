@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['now_0',['now',['../struct_record_history.html#a3a36a54f509bc86b47a9c6ce984a3de8',1,'RecordHistory']]],
-  ['number_1',['number',['../struct_record.html#a5c8f84cd63104e6ae4cd4cd2938365bc',1,'Record']]]
+  ['hascomplexops_0',['hasComplexOps',['../struct_expression_stats.html#ad3e7caebf5ca8ffb36820b4d50d83afe',1,'ExpressionStats']]],
+  ['hasconsecutiveoperators_1',['hasConsecutiveOperators',['../struct_expression_stats.html#a29f11978a67e42265240969ad756005a',1,'ExpressionStats']]]
 ];

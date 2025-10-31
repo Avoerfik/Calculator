@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator Documentation: App/src/Data/Memory.cpp Source File</title>
+<title>Calculator: App/src/Data/Memory.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">Calculator<span id="projectnumber">&#160;0.0.3.</span>
    </div>
-   <div id="projectbrief">Second version</div>
+   <div id="projectbrief">Third version</div>
   </td>
  </tr>
  </tbody>
@@ -107,7 +107,7 @@ $(function(){initNavTree('_memory_8cpp_source.html','',''); });
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    cell.<a class="code hl_variable" href="struct_memory_cell.html#ac89452e5619babc765244104892e95d3">operator12</a> = nextOperator;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    this-&gt;<a class="code hl_variable" href="class_data.html#af52531568b81e4705f2f6e40a62dd5e1">data</a>.push_back(record);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    mc.push_back(cell);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_variable" href="class_memory.html#a879a8221a17ee8da45e89a6f17b088d0">mc</a>.push_back(cell);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
@@ -129,7 +129,7 @@ $(function(){initNavTree('_memory_8cpp_source.html','',''); });
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    cell.<a class="code hl_variable" href="struct_memory_cell.html#ac89452e5619babc765244104892e95d3">operator12</a> = <span class="charliteral">&#39; &#39;</span>;  <span class="comment">// по умолчанию нет оператора</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    this-&gt;data.push_back(<a class="code hl_variable" href="class_data.html#af52531568b81e4705f2f6e40a62dd5e1">data</a>);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    mc.push_back(cell);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_variable" href="class_memory.html#a879a8221a17ee8da45e89a6f17b088d0">mc</a>.push_back(cell);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
@@ -146,14 +146,14 @@ $(function(){initNavTree('_memory_8cpp_source.html','',''); });
 <div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_memory.html#a05da9e79c8a405a1331d2015a9e2d2ed">   46</a></span>std::string <a class="code hl_function" href="class_memory.html#a05da9e79c8a405a1331d2015a9e2d2ed">Memory::getCalculationString</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (mc.empty()) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_memory.html#a879a8221a17ee8da45e89a6f17b088d0">mc</a>.empty()) {</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    std::stringstream ss;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; mc.size(); ++i) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_memory_cell.html">MemoryCell</a>&amp; cell = mc[i];</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="class_memory.html#a879a8221a17ee8da45e89a6f17b088d0">mc</a>.size(); ++i) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_memory_cell.html">MemoryCell</a>&amp; cell = <a class="code hl_variable" href="class_memory.html#a879a8221a17ee8da45e89a6f17b088d0">mc</a>[i];</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="comment">// Добавляем результат из первой строки info</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">if</span> (!cell.<a class="code hl_variable" href="struct_memory_cell.html#aeff77690ddd3025cb596406addcc4540">record</a>.<a class="code hl_variable" href="struct_record.html#a4bcc718199b5e32ec57b07f82e8f6313">info</a>.empty()) {</div>
@@ -161,7 +161,7 @@ $(function(){initNavTree('_memory_8cpp_source.html','',''); });
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="comment">// Добавляем оператор, если он есть и это не последняя ячейка</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">if</span> (cell.<a class="code hl_variable" href="struct_memory_cell.html#ac89452e5619babc765244104892e95d3">operator12</a> != <span class="charliteral">&#39; &#39;</span> &amp;&amp; i &lt; mc.size() - 1) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">if</span> (cell.<a class="code hl_variable" href="struct_memory_cell.html#ac89452e5619babc765244104892e95d3">operator12</a> != <span class="charliteral">&#39; &#39;</span> &amp;&amp; i &lt; <a class="code hl_variable" href="class_memory.html#a879a8221a17ee8da45e89a6f17b088d0">mc</a>.size() - 1) {</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            ss &lt;&lt; cell.<a class="code hl_variable" href="struct_memory_cell.html#ac89452e5619babc765244104892e95d3">operator12</a>;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
@@ -174,10 +174,10 @@ $(function(){initNavTree('_memory_8cpp_source.html','',''); });
 <div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_memory.html#ac23bbfbefeec0a7be732b0e5dceb1bda">   72</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_memory.html#ac23bbfbefeec0a7be732b0e5dceb1bda">Memory::printMemory</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;=== Memory Contents (&quot;</span> &lt;&lt; mc.size() &lt;&lt; <span class="stringliteral">&quot; cells) ===&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;=== Memory Contents (&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_memory.html#a879a8221a17ee8da45e89a6f17b088d0">mc</a>.size() &lt;&lt; <span class="stringliteral">&quot; cells) ===&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; mc.size(); ++i) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_memory_cell.html">MemoryCell</a>&amp; cell = mc[i];</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="class_memory.html#a879a8221a17ee8da45e89a6f17b088d0">mc</a>.size(); ++i) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_memory_cell.html">MemoryCell</a>&amp; cell = <a class="code hl_variable" href="class_memory.html#a879a8221a17ee8da45e89a6f17b088d0">mc</a>[i];</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Cell #&quot;</span> &lt;&lt; cell.<a class="code hl_variable" href="struct_memory_cell.html#aeff77690ddd3025cb596406addcc4540">record</a>.<a class="code hl_variable" href="struct_record.html#a5c8f84cd63104e6ae4cd4cd2938365bc">number</a> &lt;&lt; <span class="stringliteral">&quot;:\n&quot;</span>;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; info : cell.<a class="code hl_variable" href="struct_memory_cell.html#aeff77690ddd3025cb596406addcc4540">record</a>.<a class="code hl_variable" href="struct_record.html#a4bcc718199b5e32ec57b07f82e8f6313">info</a>) {</div>
@@ -203,11 +203,12 @@ $(function(){initNavTree('_memory_8cpp_source.html','',''); });
 </div>
 <div class="ttc" id="a_memory_8h_html"><div class="ttname"><a href="_memory_8h.html">Memory.h</a></div></div>
 <div class="ttc" id="aclass_data_html_ac00c9aa58b57fa56b3488be1951ab523"><div class="ttname"><a href="class_data.html#ac00c9aa58b57fa56b3488be1951ab523">Data::getNextNumber</a></div><div class="ttdeci">unsigned int getNextNumber()</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00038">Data.h:38</a></div></div>
-<div class="ttc" id="aclass_data_html_ae03850de2a00d7c9cfa385406d5be3d4"><div class="ttname"><a href="class_data.html#ae03850de2a00d7c9cfa385406d5be3d4">Data::currentNumber</a></div><div class="ttdeci">unsigned int currentNumber</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00035">Data.h:35</a></div></div>
+<div class="ttc" id="aclass_data_html_ae03850de2a00d7c9cfa385406d5be3d4"><div class="ttname"><a href="class_data.html#ae03850de2a00d7c9cfa385406d5be3d4">Data::currentNumber</a></div><div class="ttdeci">unsigned int currentNumber</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00036">Data.h:36</a></div></div>
 <div class="ttc" id="aclass_data_html_af11f741cb7f587e2e495452a8905a22a"><div class="ttname"><a href="class_data.html#af11f741cb7f587e2e495452a8905a22a">Data::Data</a></div><div class="ttdeci">Data()</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00020">Data.h:20</a></div></div>
-<div class="ttc" id="aclass_data_html_af52531568b81e4705f2f6e40a62dd5e1"><div class="ttname"><a href="class_data.html#af52531568b81e4705f2f6e40a62dd5e1">Data::data</a></div><div class="ttdeci">std::vector&lt; Record &gt; data</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00034">Data.h:34</a></div></div>
+<div class="ttc" id="aclass_data_html_af52531568b81e4705f2f6e40a62dd5e1"><div class="ttname"><a href="class_data.html#af52531568b81e4705f2f6e40a62dd5e1">Data::data</a></div><div class="ttdeci">std::vector&lt; Record &gt; data</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00035">Data.h:35</a></div></div>
 <div class="ttc" id="aclass_memory_html_a05da9e79c8a405a1331d2015a9e2d2ed"><div class="ttname"><a href="class_memory.html#a05da9e79c8a405a1331d2015a9e2d2ed">Memory::getCalculationString</a></div><div class="ttdeci">std::string getCalculationString() const</div><div class="ttdef"><b>Definition</b> <a href="#l00046">Memory.cpp:46</a></div></div>
 <div class="ttc" id="aclass_memory_html_a5af0960e5defd495cb5f0c8a42f12be2"><div class="ttname"><a href="class_memory.html#a5af0960e5defd495cb5f0c8a42f12be2">Memory::getData</a></div><div class="ttdeci">Data * getData() override</div><div class="ttdef"><b>Definition</b> <a href="#l00040">Memory.cpp:40</a></div></div>
+<div class="ttc" id="aclass_memory_html_a879a8221a17ee8da45e89a6f17b088d0"><div class="ttname"><a href="class_memory.html#a879a8221a17ee8da45e89a6f17b088d0">Memory::mc</a></div><div class="ttdeci">std::vector&lt; MemoryCell &gt; mc</div><div class="ttdef"><b>Definition</b> <a href="_memory_8h_source.html#l00035">Memory.h:35</a></div></div>
 <div class="ttc" id="aclass_memory_html_a981098a28ea1d833ed33d0f711845e15"><div class="ttname"><a href="class_memory.html#a981098a28ea1d833ed33d0f711845e15">Memory::reserveData</a></div><div class="ttdeci">Data * reserveData(const std::vector&lt; std::string &gt; &amp;info, char nextOperator=&#39; &#39;)</div><div class="ttdef"><b>Definition</b> <a href="#l00004">Memory.cpp:4</a></div></div>
 <div class="ttc" id="aclass_memory_html_ac23bbfbefeec0a7be732b0e5dceb1bda"><div class="ttname"><a href="class_memory.html#ac23bbfbefeec0a7be732b0e5dceb1bda">Memory::printMemory</a></div><div class="ttdeci">void printMemory() const</div><div class="ttdef"><b>Definition</b> <a href="#l00072">Memory.cpp:72</a></div></div>
 <div class="ttc" id="astruct_memory_cell_html"><div class="ttname"><a href="struct_memory_cell.html">MemoryCell</a></div><div class="ttdef"><b>Definition</b> <a href="_memory_8h_source.html#l00012">Memory.h:13</a></div></div>

@@ -1,0 +1,195 @@
+\doxysection{Expression\+History Class Reference}
+\hypertarget{class_expression_history}{}\label{class_expression_history}\index{ExpressionHistory@{ExpressionHistory}}
+
+
+{\ttfamily \#include $<$Expression\+History.\+h$>$}
+
+
+
+Inheritance diagram for Expression\+History\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{class_expression_history__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Expression\+History\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{class_expression_history__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_expression_history_a137c0a5831f4857f19bb6a69e287cc73}{Expression\+History}} ()=default
+\item 
+void \mbox{\hyperlink{class_expression_history_a50d672d4d9afe5d9ad278e4adeae9c3f}{import\+From\+Analyzer}} (const \mbox{\hyperlink{class_expression_analyzer}{Expression\+Analyzer}} \&analyzer)
+\item 
+void \mbox{\hyperlink{class_expression_history_a68227e516006b3f88d96462b7f0c2389}{add\+Record}} (const \mbox{\hyperlink{struct_analysis_record}{Analysis\+Record}} \&record)
+\item 
+void \mbox{\hyperlink{class_expression_history_a036729404683a4bb5b9320d5ce4c17ee}{clear}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_expression_history_abea963a93d92249b50118be5d943857d}{size}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_analysis_record}{Analysis\+Record}} $>$ \mbox{\hyperlink{class_expression_history_ab41c401a2c457e1912a29f013cb21684}{get\+Recent\+Records}} (int count=10) const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_analysis_record}{Analysis\+Record}} $>$ \mbox{\hyperlink{class_expression_history_af8adbc0b556f536c05e1a50cfcf83fce}{get\+Records\+By\+Complexity}} (const std\+::string \&level) const
+\item 
+double \mbox{\hyperlink{class_expression_history_a2355eafe93dc34300b6653088557757d}{get\+Average\+Complexity}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_expression_history_aa6d5c3c6398df9abb4d5baa97653f9c3}{generate\+History\+Report}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_engine}{Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_acc713c22e0940be92b1251a916849077}{Engine}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_engine_a11f150c12c31e2af334e3f9131c5c069}{\texorpdfstring{$\sim$}{\string~}\+Engine}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_expression_history_8h_source_l00023}{23}} of file \mbox{\hyperlink{_expression_history_8h_source}{Expression\+History.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_expression_history_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_expression_history_a137c0a5831f4857f19bb6a69e287cc73}\index{ExpressionHistory@{ExpressionHistory}!ExpressionHistory@{ExpressionHistory}}
+\index{ExpressionHistory@{ExpressionHistory}!ExpressionHistory@{ExpressionHistory}}
+\doxysubsubsection{\texorpdfstring{ExpressionHistory()}{ExpressionHistory()}}
+{\footnotesize\ttfamily \label{class_expression_history_a137c0a5831f4857f19bb6a69e287cc73} 
+Expression\+History\+::\+Expression\+History (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_expression_history_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_expression_history_a68227e516006b3f88d96462b7f0c2389}\index{ExpressionHistory@{ExpressionHistory}!addRecord@{addRecord}}
+\index{addRecord@{addRecord}!ExpressionHistory@{ExpressionHistory}}
+\doxysubsubsection{\texorpdfstring{addRecord()}{addRecord()}}
+{\footnotesize\ttfamily \label{class_expression_history_a68227e516006b3f88d96462b7f0c2389} 
+void Expression\+History\+::add\+Record (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_analysis_record}{Analysis\+Record}} \&}]{record}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_history_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_expression_history_8cpp_source}{Expression\+History.\+cpp}}.
+
+\Hypertarget{class_expression_history_a036729404683a4bb5b9320d5ce4c17ee}\index{ExpressionHistory@{ExpressionHistory}!clear@{clear}}
+\index{clear@{clear}!ExpressionHistory@{ExpressionHistory}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_expression_history_a036729404683a4bb5b9320d5ce4c17ee} 
+void Expression\+History\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_history_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_expression_history_8cpp_source}{Expression\+History.\+cpp}}.
+
+\Hypertarget{class_expression_history_aa6d5c3c6398df9abb4d5baa97653f9c3}\index{ExpressionHistory@{ExpressionHistory}!generateHistoryReport@{generateHistoryReport}}
+\index{generateHistoryReport@{generateHistoryReport}!ExpressionHistory@{ExpressionHistory}}
+\doxysubsubsection{\texorpdfstring{generateHistoryReport()}{generateHistoryReport()}}
+{\footnotesize\ttfamily \label{class_expression_history_aa6d5c3c6398df9abb4d5baa97653f9c3} 
+std\+::string Expression\+History\+::generate\+History\+Report (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_history_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{_expression_history_8cpp_source}{Expression\+History.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_expression_history_aa6d5c3c6398df9abb4d5baa97653f9c3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_expression_history_a2355eafe93dc34300b6653088557757d}\index{ExpressionHistory@{ExpressionHistory}!getAverageComplexity@{getAverageComplexity}}
+\index{getAverageComplexity@{getAverageComplexity}!ExpressionHistory@{ExpressionHistory}}
+\doxysubsubsection{\texorpdfstring{getAverageComplexity()}{getAverageComplexity()}}
+{\footnotesize\ttfamily \label{class_expression_history_a2355eafe93dc34300b6653088557757d} 
+double Expression\+History\+::get\+Average\+Complexity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_history_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_expression_history_8cpp_source}{Expression\+History.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_expression_history_a2355eafe93dc34300b6653088557757d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_expression_history_ab41c401a2c457e1912a29f013cb21684}\index{ExpressionHistory@{ExpressionHistory}!getRecentRecords@{getRecentRecords}}
+\index{getRecentRecords@{getRecentRecords}!ExpressionHistory@{ExpressionHistory}}
+\doxysubsubsection{\texorpdfstring{getRecentRecords()}{getRecentRecords()}}
+{\footnotesize\ttfamily \label{class_expression_history_ab41c401a2c457e1912a29f013cb21684} 
+std\+::vector$<$ \mbox{\hyperlink{struct_analysis_record}{Analysis\+Record}} $>$ Expression\+History\+::get\+Recent\+Records (\begin{DoxyParamCaption}\item[{int}]{count}{ = {\ttfamily 10}}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_history_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_expression_history_8cpp_source}{Expression\+History.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_expression_history_ab41c401a2c457e1912a29f013cb21684_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_expression_history_af8adbc0b556f536c05e1a50cfcf83fce}\index{ExpressionHistory@{ExpressionHistory}!getRecordsByComplexity@{getRecordsByComplexity}}
+\index{getRecordsByComplexity@{getRecordsByComplexity}!ExpressionHistory@{ExpressionHistory}}
+\doxysubsubsection{\texorpdfstring{getRecordsByComplexity()}{getRecordsByComplexity()}}
+{\footnotesize\ttfamily \label{class_expression_history_af8adbc0b556f536c05e1a50cfcf83fce} 
+std\+::vector$<$ \mbox{\hyperlink{struct_analysis_record}{Analysis\+Record}} $>$ Expression\+History\+::get\+Records\+By\+Complexity (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{level}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_history_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_expression_history_8cpp_source}{Expression\+History.\+cpp}}.
+
+\Hypertarget{class_expression_history_a50d672d4d9afe5d9ad278e4adeae9c3f}\index{ExpressionHistory@{ExpressionHistory}!importFromAnalyzer@{importFromAnalyzer}}
+\index{importFromAnalyzer@{importFromAnalyzer}!ExpressionHistory@{ExpressionHistory}}
+\doxysubsubsection{\texorpdfstring{importFromAnalyzer()}{importFromAnalyzer()}}
+{\footnotesize\ttfamily \label{class_expression_history_a50d672d4d9afe5d9ad278e4adeae9c3f} 
+void Expression\+History\+::import\+From\+Analyzer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_expression_analyzer}{Expression\+Analyzer}} \&}]{analyzer}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_history_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{_expression_history_8cpp_source}{Expression\+History.\+cpp}}.
+
+\Hypertarget{class_expression_history_abea963a93d92249b50118be5d943857d}\index{ExpressionHistory@{ExpressionHistory}!size@{size}}
+\index{size@{size}!ExpressionHistory@{ExpressionHistory}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_expression_history_abea963a93d92249b50118be5d943857d} 
+size\+\_\+t Expression\+History\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_history_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_expression_history_8cpp_source}{Expression\+History.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_expression_history_abea963a93d92249b50118be5d943857d_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+App/include/\+Data/\mbox{\hyperlink{_expression_history_8h}{Expression\+History.\+h}}\item 
+App/src/\+Data/\mbox{\hyperlink{_expression_history_8cpp}{Expression\+History.\+cpp}}\end{DoxyCompactItemize}

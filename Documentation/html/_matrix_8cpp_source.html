@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator Documentation: App/src/Matrix/Matrix.cpp Source File</title>
+<title>Calculator: App/src/Matrix/Matrix.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">Calculator<span id="projectnumber">&#160;0.0.3.</span>
    </div>
-   <div id="projectbrief">Second version</div>
+   <div id="projectbrief">Third version</div>
   </td>
  </tr>
  </tbody>
@@ -96,10 +96,10 @@ $(function(){initNavTree('_matrix_8cpp_source.html','',''); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Конструктор с размерами</span></div>
 <div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_matrix.html#a70734b8fe3d556e686683ea29de3e229">    4</a></span><a class="code hl_function" href="class_matrix.html#a12d35ef1824cd847868a8703035b0d5d">Matrix::Matrix</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_matrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_matrix.html#a8c8b8a4a34ad4a16e6ba28a62010dfa0">cols</a>)</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_matrix.html#a8d87630bb5a1c350c701ab16506c9964">    4</a></span><a class="code hl_function" href="class_matrix.html#a12d35ef1824cd847868a8703035b0d5d">Matrix::Matrix</a>(std::size_t <a class="code hl_function" href="class_matrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>, std::size_t <a class="code hl_function" href="class_matrix.html#a8c8b8a4a34ad4a16e6ba28a62010dfa0">cols</a>)</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    matrix.resize(<a class="code hl_function" href="class_matrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>);</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_function" href="class_matrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>; ++i)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code hl_function" href="class_matrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>; ++i)</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        matrix[i].resize(<a class="code hl_function" href="class_matrix.html#a8c8b8a4a34ad4a16e6ba28a62010dfa0">cols</a>, <span class="stringliteral">&quot;0&quot;</span>); <span class="comment">// заполняем нулями или другим значением по умолчанию</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    }</div>

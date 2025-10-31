@@ -1,0 +1,36 @@
+\doxysection{Analysis\+Counter.\+h}
+\hypertarget{_analysis_counter_8h_source}{}\label{_analysis_counter_8h_source}\index{App/include/Data/AnalysisCounter.h@{App/include/Data/AnalysisCounter.h}}
+\mbox{\hyperlink{_analysis_counter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00002}00002\ \textcolor{preprocessor}{\#ifndef\ ANALYSISCOUNTER\_H}}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00003}\mbox{\hyperlink{_analysis_counter_8h_a7f376d72263e66dd5d7fe07df3d566eb}{00003}}\ \textcolor{preprocessor}{\#define\ ANALYSISCOUNTER\_H}}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine_8h}{../Engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00007}\mbox{\hyperlink{class_analysis_counter}{00007}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_analysis_counter_a44ecfc97c86104fe407fe5626df1de83}{AnalysisCounter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_engine_acc713c22e0940be92b1251a916849077}{Engine}}}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00009}00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00010}00010\ \ \ \ \ \textcolor{keywordtype}{int}\ successCount;}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{int}\ errorCount;}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{int}\ totalExpressions;}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00014}00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{class_analysis_counter_a44ecfc97c86104fe407fe5626df1de83}{AnalysisCounter}}();}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Перегрузка\ инкремента/декремента}}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_analysis_counter_a44ecfc97c86104fe407fe5626df1de83}{AnalysisCounter}}\&\ \mbox{\hyperlink{class_analysis_counter_ab09aef46e98f3721d78dcc128d163d12}{operator++}}();\ \ \ \ \textcolor{comment}{//\ Префиксный\ инкремент}}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{class_analysis_counter_a44ecfc97c86104fe407fe5626df1de83}{AnalysisCounter}}\ \mbox{\hyperlink{class_analysis_counter_ab09aef46e98f3721d78dcc128d163d12}{operator++}}(\textcolor{keywordtype}{int});\ \ \textcolor{comment}{//\ Постфиксный\ инкремент\ \ }}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{class_analysis_counter_a44ecfc97c86104fe407fe5626df1de83}{AnalysisCounter}}\&\ \mbox{\hyperlink{class_analysis_counter_a1e483a6bb7772505bb25b610532a7fd9}{operator-\/-\/}}();\ \ \ \ \textcolor{comment}{//\ Префиксный\ декремент}}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{class_analysis_counter_a44ecfc97c86104fe407fe5626df1de83}{AnalysisCounter}}\ \mbox{\hyperlink{class_analysis_counter_a1e483a6bb7772505bb25b610532a7fd9}{operator-\/-\/}}(\textcolor{keywordtype}{int});\ \ \textcolor{comment}{//\ Постфиксный\ декремент}}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ Геттеры}}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_analysis_counter_afdc358d815a3c13839b7a4752b20e5dd}{getSuccessCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_analysis_counter_ae5bc24e7874eb90a1c2c0718aef2d792}{getErrorCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_analysis_counter_a7d9d2ff2d9168e0beef3114ee0b484ce}{getTotalExpressions}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_analysis_counter_ab102743536f6ffff80c54001e153d74a}{reset}}();}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00028}00028\ \};}
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_analysis_counter_8h_source_l00030}00030\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator Documentation: App/include/Matrix/Matrix.h Source File</title>
+<title>Calculator: App/include/Matrix/Matrix.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">Calculator<span id="projectnumber">&#160;0.0.3.</span>
    </div>
-   <div id="projectbrief">Second version</div>
+   <div id="projectbrief">Third version</div>
   </td>
  </tr>
  </tbody>
@@ -113,7 +113,7 @@ $(function(){initNavTree('_matrix_8h_source.html','',''); });
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_matrix.html#a12d35ef1824cd847868a8703035b0d5d">   18</a></span>    <a class="code hl_function" href="class_matrix.html#a12d35ef1824cd847868a8703035b0d5d">Matrix</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// Конструктор с размерами</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_matrix.html#a12d35ef1824cd847868a8703035b0d5d">Matrix</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_matrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_matrix.html#a8c8b8a4a34ad4a16e6ba28a62010dfa0">cols</a>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_matrix.html#a12d35ef1824cd847868a8703035b0d5d">Matrix</a>(std::size_t <a class="code hl_function" href="class_matrix.html#a97617f3524bfa47d6ac7daa0eefc1941">rows</a>, std::size_t <a class="code hl_function" href="class_matrix.html#a8c8b8a4a34ad4a16e6ba28a62010dfa0">cols</a>);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// Конструктор из вектора</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_matrix.html#a12d35ef1824cd847868a8703035b0d5d">Matrix</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;std::string&gt;&gt;&amp; mat);</div>
@@ -156,8 +156,8 @@ $(function(){initNavTree('_matrix_8h_source.html','',''); });
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_matrix.html#a8c8b8a4a34ad4a16e6ba28a62010dfa0">   61</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_matrix.html#a8c8b8a4a34ad4a16e6ba28a62010dfa0">cols</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> matrix.empty() ? 0 : matrix[0].size(); }</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// Методы доступа к элементам</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_matrix.html#a684ec10180bdbcdf79a6ba429abe1661">   64</a></span>    std::string&amp; <a class="code hl_function" href="class_matrix.html#a684ec10180bdbcdf79a6ba429abe1661">at</a>(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j) { <span class="keywordflow">return</span> matrix[i][j]; }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_matrix.html#aa492f53939698c476f007fa61033ef4d">   65</a></span>    <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_matrix.html#aa492f53939698c476f007fa61033ef4d">at</a>(<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> matrix[i][j]; }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_matrix.html#aa47bdc6e1f1d73ae7332e57d27b2e9ab">   64</a></span>    std::string&amp; <a class="code hl_function" href="class_matrix.html#aa47bdc6e1f1d73ae7332e57d27b2e9ab">at</a>(std::size_t i, std::size_t j) { <span class="keywordflow">return</span> matrix[i][j]; }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_matrix.html#abbb15196dd740b084dccb797a6ff53f6">   65</a></span>    <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_matrix.html#abbb15196dd740b084dccb797a6ff53f6">at</a>(std::size_t i, std::size_t j)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> matrix[i][j]; }</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    std::vector&lt;std::vector&lt;std::string&gt;&gt; matrix;</div>
@@ -170,13 +170,13 @@ $(function(){initNavTree('_matrix_8h_source.html','',''); });
 <div class="ttc" id="aclass_matrix_html_a12d35ef1824cd847868a8703035b0d5d"><div class="ttname"><a href="class_matrix.html#a12d35ef1824cd847868a8703035b0d5d">Matrix::Matrix</a></div><div class="ttdeci">Matrix()=default</div></div>
 <div class="ttc" id="aclass_matrix_html_a1e59f4510e89d18cfa284feab060583a"><div class="ttname"><a href="class_matrix.html#a1e59f4510e89d18cfa284feab060583a">Matrix::operator&gt;&gt;</a></div><div class="ttdeci">friend std::istream &amp; operator&gt;&gt;(std::istream &amp;is, Matrix &amp;mat)</div><div class="ttdef"><b>Definition</b> <a href="_matrix_8cpp_source.html#l00179">Matrix.cpp:179</a></div></div>
 <div class="ttc" id="aclass_matrix_html_a3e40db12ae78b7616ee3f099bb15f13d"><div class="ttname"><a href="class_matrix.html#a3e40db12ae78b7616ee3f099bb15f13d">Matrix::operator=</a></div><div class="ttdeci">Matrix &amp; operator=(const Matrix &amp;other)</div><div class="ttdef"><b>Definition</b> <a href="_matrix_8cpp_source.html#l00032">Matrix.cpp:32</a></div></div>
-<div class="ttc" id="aclass_matrix_html_a684ec10180bdbcdf79a6ba429abe1661"><div class="ttname"><a href="class_matrix.html#a684ec10180bdbcdf79a6ba429abe1661">Matrix::at</a></div><div class="ttdeci">std::string &amp; at(size_t i, size_t j)</div><div class="ttdef"><b>Definition</b> <a href="#l00064">Matrix.h:64</a></div></div>
 <div class="ttc" id="aclass_matrix_html_a8c8b8a4a34ad4a16e6ba28a62010dfa0"><div class="ttname"><a href="class_matrix.html#a8c8b8a4a34ad4a16e6ba28a62010dfa0">Matrix::cols</a></div><div class="ttdeci">size_t cols() const</div><div class="ttdef"><b>Definition</b> <a href="#l00061">Matrix.h:61</a></div></div>
 <div class="ttc" id="aclass_matrix_html_a97617f3524bfa47d6ac7daa0eefc1941"><div class="ttname"><a href="class_matrix.html#a97617f3524bfa47d6ac7daa0eefc1941">Matrix::rows</a></div><div class="ttdeci">size_t rows() const</div><div class="ttdef"><b>Definition</b> <a href="#l00060">Matrix.h:60</a></div></div>
 <div class="ttc" id="aclass_matrix_html_a9e0ce956d3ed783f8d5b13e571e2a04a"><div class="ttname"><a href="class_matrix.html#a9e0ce956d3ed783f8d5b13e571e2a04a">Matrix::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Matrix &amp;mat)</div><div class="ttdef"><b>Definition</b> <a href="_matrix_8cpp_source.html#l00163">Matrix.cpp:163</a></div></div>
-<div class="ttc" id="aclass_matrix_html_aa492f53939698c476f007fa61033ef4d"><div class="ttname"><a href="class_matrix.html#aa492f53939698c476f007fa61033ef4d">Matrix::at</a></div><div class="ttdeci">const std::string &amp; at(size_t i, size_t j) const</div><div class="ttdef"><b>Definition</b> <a href="#l00065">Matrix.h:65</a></div></div>
+<div class="ttc" id="aclass_matrix_html_aa47bdc6e1f1d73ae7332e57d27b2e9ab"><div class="ttname"><a href="class_matrix.html#aa47bdc6e1f1d73ae7332e57d27b2e9ab">Matrix::at</a></div><div class="ttdeci">std::string &amp; at(std::size_t i, std::size_t j)</div><div class="ttdef"><b>Definition</b> <a href="#l00064">Matrix.h:64</a></div></div>
 <div class="ttc" id="aclass_matrix_html_ab4f8e22e8db0983d75e090542f4d1f7a"><div class="ttname"><a href="class_matrix.html#ab4f8e22e8db0983d75e090542f4d1f7a">Matrix::operator*</a></div><div class="ttdeci">Matrix operator*(const Matrix &amp;other) const</div><div class="ttdef"><b>Definition</b> <a href="_matrix_8cpp_source.html#l00101">Matrix.cpp:101</a></div></div>
 <div class="ttc" id="aclass_matrix_html_abb44986f4d7b2ac6465fed5b5db019e8"><div class="ttname"><a href="class_matrix.html#abb44986f4d7b2ac6465fed5b5db019e8">Matrix::operator-</a></div><div class="ttdeci">Matrix operator-(const Matrix &amp;other) const</div><div class="ttdef"><b>Definition</b> <a href="_matrix_8cpp_source.html#l00076">Matrix.cpp:76</a></div></div>
+<div class="ttc" id="aclass_matrix_html_abbb15196dd740b084dccb797a6ff53f6"><div class="ttname"><a href="class_matrix.html#abbb15196dd740b084dccb797a6ff53f6">Matrix::at</a></div><div class="ttdeci">const std::string &amp; at(std::size_t i, std::size_t j) const</div><div class="ttdef"><b>Definition</b> <a href="#l00065">Matrix.h:65</a></div></div>
 <div class="ttc" id="aclass_matrix_html_afc7858a535ebcebf445e91bccd75d197"><div class="ttname"><a href="class_matrix.html#afc7858a535ebcebf445e91bccd75d197">Matrix::operator+</a></div><div class="ttdeci">Matrix operator+(const Matrix &amp;other) const</div><div class="ttdef"><b>Definition</b> <a href="_matrix_8cpp_source.html#l00052">Matrix.cpp:52</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

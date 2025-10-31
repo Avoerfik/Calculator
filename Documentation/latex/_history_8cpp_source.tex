@@ -14,7 +14,7 @@
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00010}00010\ \ \ \ \ this-\/>\mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}.push\_back(record);}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00011}00011\ \ \ \ \ std::chrono::system\_clock::time\_point\ now\ =\ std::chrono::system\_clock::now();}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{struct_record_history}{RecordHistory}}\ newrh\ =\ \{\ record,\ now\ \};}
-\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00013}00013\ \ \ \ \ rh.push\_back(newrh);}
+\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}}.push\_back(newrh);}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00014}00014\ }
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00016}00016\ \}}
@@ -34,7 +34,7 @@
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00030}00030\ \ \ \ \ this-\/>data.push\_back(\mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}});}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00031}00031\ \ \ \ \ std::chrono::system\_clock::time\_point\ now\ =\ std::chrono::system\_clock::now();}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{struct_record_history}{RecordHistory}}\ newrh\ =\ \{\ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}},\ now\ \};}
-\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00033}00033\ \ \ \ \ rh.push\_back(newrh);}
+\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}}.push\_back(newrh);}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00034}00034\ }
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00036}00036\ \}}
@@ -45,9 +45,9 @@
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00041}00041\ \}}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00042}00042\ }
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00043}00043\ \textcolor{comment}{//\ Метод\ для\ вывода\ одной\ записи\ истории}}
-\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00044}\mbox{\hyperlink{class_history_a9baf386eff2e21f1f389d003043499fc}{00044}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_history_a9baf386eff2e21f1f389d003043499fc}{History::printRecordHistory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_record_history}{RecordHistory}}\&\ rh)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00044}\mbox{\hyperlink{class_history_a9baf386eff2e21f1f389d003043499fc}{00044}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_history_a9baf386eff2e21f1f389d003043499fc}{History::printRecordHistory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_record_history}{RecordHistory}}\&\ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}})\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00045}00045\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00046}00046\ \ \ \ \ std::time\_t\ time\ =\ std::chrono::system\_clock::to\_time\_t(rh.now);}
+\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00046}00046\ \ \ \ \ std::time\_t\ time\ =\ std::chrono::system\_clock::to\_time\_t(\mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}}.now);}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00047}00047\ \ \ \ \ std::tm\ localTime;}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00048}00048\ }
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00049}00049\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
@@ -56,8 +56,8 @@
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00052}00052\ \ \ \ \ localtime\_r(\&time,\ \&localTime);}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00053}00053\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00055}00055\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Record\ \#"{}}\ <<\ rh.record.number\ <<\ \textcolor{stringliteral}{"{}:\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ info\ :\ rh.record.info)\ \{}
+\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00055}00055\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Record\ \#"{}}\ <<\ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}}.record.number\ <<\ \textcolor{stringliteral}{"{}:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ info\ :\ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}}.record.info)\ \{}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ "{}}\ <<\ info\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00058}00058\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00059}00059\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ Calculated\ at:\ "{}}\ <<\ std::put\_time(\&localTime,\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\ \%H:\%M:\%S"{}})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
@@ -67,8 +67,8 @@
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00063}00063\ \textcolor{comment}{//\ Метод\ для\ вывода\ всей\ истории}}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00064}\mbox{\hyperlink{class_history_adcaee81d1392f1c8278138a3894f0051}{00064}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_history_adcaee81d1392f1c8278138a3894f0051}{History::printAllHistory}}()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00065}00065\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00066}00066\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}===\ Full\ History\ ("{}}\ <<\ rh.size()\ <<\ \textcolor{stringliteral}{"{}\ records)\ ==="{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ historyEntry\ :\ rh)\ \{}
+\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00066}00066\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}===\ Full\ History\ ("{}}\ <<\ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}}.size()\ <<\ \textcolor{stringliteral}{"{}\ records)\ ==="{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ historyEntry\ :\ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}})\ \{}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_a9baf386eff2e21f1f389d003043499fc}{printRecordHistory}}(historyEntry);}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00069}00069\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00070}00070\ \}}
@@ -76,7 +76,7 @@
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00072}00072\ \textcolor{comment}{//\ Метод\ для\ вывода\ записи\ по\ номеру}}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00073}\mbox{\hyperlink{class_history_aa68245eca9285d748dee39ef73805872}{00073}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_history_aa68245eca9285d748dee39ef73805872}{History::printRecordByNumber}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ number)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00074}00074\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ historyEntry\ :\ rh)\ \{}
+\DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ historyEntry\ :\ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}})\ \{}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (historyEntry.record.number\ ==\ number)\ \{}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}===\ Record\ \#"{}}\ <<\ number\ <<\ \textcolor{stringliteral}{"{}\ ==="{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_history_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_a9baf386eff2e21f1f389d003043499fc}{printRecordHistory}}(historyEntry);}

@@ -1,0 +1,9 @@
+<map id="ComplexityCalculator::calculateComplexity" name="ComplexityCalculator::calculateComplexity">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,69,152,109"/>
+<area shape="rect" id="Node000002" href="$class_complexity_calculator.html#a81e7a7981f87a4ffd931dab5b346dbfe" title=" " alt="" coords="210,5,355,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,67,204,47,206,52,144,72"/>
+<area shape="rect" id="Node000003" href="$class_complexity_calculator.html#a7f60d327429b657b7d34dcbda9da2524" title=" " alt="" coords="210,69,355,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,87,196,87,196,92,152,92"/>
+<area shape="rect" id="Node000004" href="$class_complexity_calculator.html#ab97909a46dfca109c1aed28b54469573" title=" " alt="" coords="200,133,365,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="144,107,206,127,204,132,142,112"/>
+</map>

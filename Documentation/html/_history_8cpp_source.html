@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator Documentation: App/src/Data/History.cpp Source File</title>
+<title>Calculator: App/src/Data/History.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">Calculator<span id="projectnumber">&#160;0.0.3.</span>
    </div>
-   <div id="projectbrief">Second version</div>
+   <div id="projectbrief">Third version</div>
   </td>
  </tr>
  </tbody>
@@ -105,7 +105,7 @@ $(function(){initNavTree('_history_8cpp_source.html','',''); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    this-&gt;<a class="code hl_variable" href="class_data.html#af52531568b81e4705f2f6e40a62dd5e1">data</a>.push_back(record);</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_struct" href="struct_record_history.html">RecordHistory</a> newrh = { record, now };</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    rh.push_back(newrh);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_variable" href="class_history.html#a811563490b625c00e594d7132be71dea">rh</a>.push_back(newrh);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
@@ -127,7 +127,7 @@ $(function(){initNavTree('_history_8cpp_source.html','',''); });
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    this-&gt;data.push_back(<a class="code hl_variable" href="class_data.html#af52531568b81e4705f2f6e40a62dd5e1">data</a>);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_struct" href="struct_record_history.html">RecordHistory</a> newrh = { <a class="code hl_variable" href="class_data.html#af52531568b81e4705f2f6e40a62dd5e1">data</a>, now };</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    rh.push_back(newrh);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_variable" href="class_history.html#a811563490b625c00e594d7132be71dea">rh</a>.push_back(newrh);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
@@ -142,9 +142,9 @@ $(function(){initNavTree('_history_8cpp_source.html','',''); });
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// Метод для вывода одной записи истории</span></div>
 <div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_history.html#a9baf386eff2e21f1f389d003043499fc">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_history.html#a9baf386eff2e21f1f389d003043499fc">History::printRecordHistory</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_record_history.html">RecordHistory</a>&amp; rh)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_history.html#a9baf386eff2e21f1f389d003043499fc">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_history.html#a9baf386eff2e21f1f389d003043499fc">History::printRecordHistory</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_record_history.html">RecordHistory</a>&amp; <a class="code hl_variable" href="class_history.html#a811563490b625c00e594d7132be71dea">rh</a>)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::time_t time = std::chrono::system_clock::to_time_t(rh.now);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::time_t time = std::chrono::system_clock::to_time_t(<a class="code hl_variable" href="class_history.html#a811563490b625c00e594d7132be71dea">rh</a>.now);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::tm localTime;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#ifdef _WIN32</span></div>
@@ -153,8 +153,8 @@ $(function(){initNavTree('_history_8cpp_source.html','',''); });
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    localtime_r(&amp;time, &amp;localTime);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Record #&quot;</span> &lt;&lt; rh.record.number &lt;&lt; <span class="stringliteral">&quot;:\n&quot;</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; info : rh.record.info) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Record #&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_history.html#a811563490b625c00e594d7132be71dea">rh</a>.record.number &lt;&lt; <span class="stringliteral">&quot;:\n&quot;</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; info : <a class="code hl_variable" href="class_history.html#a811563490b625c00e594d7132be71dea">rh</a>.record.info) {</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; info &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;  Calculated at: &quot;</span> &lt;&lt; std::put_time(&amp;localTime, <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
@@ -166,8 +166,8 @@ $(function(){initNavTree('_history_8cpp_source.html','',''); });
 <div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_history.html#adcaee81d1392f1c8278138a3894f0051">   64</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_history.html#adcaee81d1392f1c8278138a3894f0051">History::printAllHistory</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;=== Full History (&quot;</span> &lt;&lt; rh.size() &lt;&lt; <span class="stringliteral">&quot; records) ===&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; historyEntry : rh) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;=== Full History (&quot;</span> &lt;&lt; <a class="code hl_variable" href="class_history.html#a811563490b625c00e594d7132be71dea">rh</a>.size() &lt;&lt; <span class="stringliteral">&quot; records) ===&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; historyEntry : <a class="code hl_variable" href="class_history.html#a811563490b625c00e594d7132be71dea">rh</a>) {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <a class="code hl_function" href="class_history.html#a9baf386eff2e21f1f389d003043499fc">printRecordHistory</a>(historyEntry);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
@@ -177,7 +177,7 @@ $(function(){initNavTree('_history_8cpp_source.html','',''); });
 <div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_history.html#aa68245eca9285d748dee39ef73805872">   73</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_history.html#aa68245eca9285d748dee39ef73805872">History::printRecordByNumber</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> number)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; historyEntry : rh) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; historyEntry : <a class="code hl_variable" href="class_history.html#a811563490b625c00e594d7132be71dea">rh</a>) {</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span> (historyEntry.record.number == number) {</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;=== Record #&quot;</span> &lt;&lt; number &lt;&lt; <span class="stringliteral">&quot; ===&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <a class="code hl_function" href="class_history.html#a9baf386eff2e21f1f389d003043499fc">printRecordHistory</a>(historyEntry);</div>
@@ -189,10 +189,11 @@ $(function(){initNavTree('_history_8cpp_source.html','',''); });
 </div>
 <div class="ttc" id="a_history_8h_html"><div class="ttname"><a href="_history_8h.html">History.h</a></div></div>
 <div class="ttc" id="aclass_data_html_ac00c9aa58b57fa56b3488be1951ab523"><div class="ttname"><a href="class_data.html#ac00c9aa58b57fa56b3488be1951ab523">Data::getNextNumber</a></div><div class="ttdeci">unsigned int getNextNumber()</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00038">Data.h:38</a></div></div>
-<div class="ttc" id="aclass_data_html_ae03850de2a00d7c9cfa385406d5be3d4"><div class="ttname"><a href="class_data.html#ae03850de2a00d7c9cfa385406d5be3d4">Data::currentNumber</a></div><div class="ttdeci">unsigned int currentNumber</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00035">Data.h:35</a></div></div>
+<div class="ttc" id="aclass_data_html_ae03850de2a00d7c9cfa385406d5be3d4"><div class="ttname"><a href="class_data.html#ae03850de2a00d7c9cfa385406d5be3d4">Data::currentNumber</a></div><div class="ttdeci">unsigned int currentNumber</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00036">Data.h:36</a></div></div>
 <div class="ttc" id="aclass_data_html_af11f741cb7f587e2e495452a8905a22a"><div class="ttname"><a href="class_data.html#af11f741cb7f587e2e495452a8905a22a">Data::Data</a></div><div class="ttdeci">Data()</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00020">Data.h:20</a></div></div>
-<div class="ttc" id="aclass_data_html_af52531568b81e4705f2f6e40a62dd5e1"><div class="ttname"><a href="class_data.html#af52531568b81e4705f2f6e40a62dd5e1">Data::data</a></div><div class="ttdeci">std::vector&lt; Record &gt; data</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00034">Data.h:34</a></div></div>
+<div class="ttc" id="aclass_data_html_af52531568b81e4705f2f6e40a62dd5e1"><div class="ttname"><a href="class_data.html#af52531568b81e4705f2f6e40a62dd5e1">Data::data</a></div><div class="ttdeci">std::vector&lt; Record &gt; data</div><div class="ttdef"><b>Definition</b> <a href="_data_8h_source.html#l00035">Data.h:35</a></div></div>
 <div class="ttc" id="aclass_history_html_a21139e549b8d94f2eeabc75f3fc1601e"><div class="ttname"><a href="class_history.html#a21139e549b8d94f2eeabc75f3fc1601e">History::getData</a></div><div class="ttdeci">Data * getData() override</div><div class="ttdef"><b>Definition</b> <a href="#l00038">History.cpp:38</a></div></div>
+<div class="ttc" id="aclass_history_html_a811563490b625c00e594d7132be71dea"><div class="ttname"><a href="class_history.html#a811563490b625c00e594d7132be71dea">History::rh</a></div><div class="ttdeci">std::vector&lt; RecordHistory &gt; rh</div><div class="ttdef"><b>Definition</b> <a href="_history_8h_source.html#l00037">History.h:37</a></div></div>
 <div class="ttc" id="aclass_history_html_a9baf386eff2e21f1f389d003043499fc"><div class="ttname"><a href="class_history.html#a9baf386eff2e21f1f389d003043499fc">History::printRecordHistory</a></div><div class="ttdeci">void printRecordHistory(const RecordHistory &amp;rh) const</div><div class="ttdef"><b>Definition</b> <a href="#l00044">History.cpp:44</a></div></div>
 <div class="ttc" id="aclass_history_html_a9eda9965c45bde02a3c5c3a5aea4b329"><div class="ttname"><a href="class_history.html#a9eda9965c45bde02a3c5c3a5aea4b329">History::reserveData</a></div><div class="ttdeci">Data * reserveData(const std::vector&lt; std::string &gt; &amp;info)</div><div class="ttdef"><b>Definition</b> <a href="#l00004">History.cpp:4</a></div></div>
 <div class="ttc" id="aclass_history_html_aa68245eca9285d748dee39ef73805872"><div class="ttname"><a href="class_history.html#aa68245eca9285d748dee39ef73805872">History::printRecordByNumber</a></div><div class="ttdeci">void printRecordByNumber(unsigned int number) const</div><div class="ttdef"><b>Definition</b> <a href="#l00073">History.cpp:73</a></div></div>

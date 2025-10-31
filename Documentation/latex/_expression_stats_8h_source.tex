@@ -1,0 +1,32 @@
+\doxysection{Expression\+Stats.\+h}
+\hypertarget{_expression_stats_8h_source}{}\label{_expression_stats_8h_source}\index{App/include/Data/ExpressionStats.h@{App/include/Data/ExpressionStats.h}}
+\mbox{\hyperlink{_expression_stats_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00001}00001\ \textcolor{comment}{//\ include/Data/ExpressionStats.h}}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00002}00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ EXPRESSIONSTATS\_H}}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00004}\mbox{\hyperlink{_expression_stats_8h_a5debc84c3acc65ea6be2e566731c2ea5}{00004}}\ \textcolor{preprocessor}{\#define\ EXPRESSIONSTATS\_H}}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00008}\mbox{\hyperlink{struct_expression_stats}{00008}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_expression_stats}{ExpressionStats}}}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00010}\mbox{\hyperlink{struct_expression_stats_ac93abfe47f228fae5054b84e91ba9c66}{00010}}\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_expression_stats_ac93abfe47f228fae5054b84e91ba9c66}{expression}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00011}\mbox{\hyperlink{struct_expression_stats_a73716bed0dd08bb7551957feb536f2f3}{00011}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_expression_stats_a73716bed0dd08bb7551957feb536f2f3}{complexity}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00012}\mbox{\hyperlink{struct_expression_stats_a055510f6666515e3c85f55d7d62710b0}{00012}}\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_expression_stats_a055510f6666515e3c85f55d7d62710b0}{complexityLevel}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00013}\mbox{\hyperlink{struct_expression_stats_abb62a17926839f42c51ffd17cb154d68}{00013}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_expression_stats_abb62a17926839f42c51ffd17cb154d68}{operatorCount}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00014}\mbox{\hyperlink{struct_expression_stats_ad3e7caebf5ca8ffb36820b4d50d83afe}{00014}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_expression_stats_ad3e7caebf5ca8ffb36820b4d50d83afe}{hasComplexOps}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00015}\mbox{\hyperlink{struct_expression_stats_aca83bd04459276861a6e81a98e594806}{00015}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_expression_stats_aca83bd04459276861a6e81a98e594806}{calculationTime}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Новые\ поля\ для\ анализа\ операторов}}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00018}\mbox{\hyperlink{struct_expression_stats_a29f11978a67e42265240969ad756005a}{00018}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_expression_stats_a29f11978a67e42265240969ad756005a}{hasConsecutiveOperators}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00019}\mbox{\hyperlink{struct_expression_stats_a1e86c0502716d5f34189ad471329ee87}{00019}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_expression_stats_a1e86c0502716d5f34189ad471329ee87}{startsWithBinaryOperator}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00020}\mbox{\hyperlink{struct_expression_stats_a7e3bb29aabe156351364380f0a444cb1}{00020}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_expression_stats_a7e3bb29aabe156351364380f0a444cb1}{endsWithOperator}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00021}\mbox{\hyperlink{struct_expression_stats_a7d0ba3b2a162a1d1d1e788ca1e390137}{00021}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_expression_stats_a7d0ba3b2a162a1d1d1e788ca1e390137}{potentialDivisionByZero}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00022}\mbox{\hyperlink{struct_expression_stats_a75324a33ce78fc2f2a1c999a9f284468}{00022}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_expression_stats_a75324a33ce78fc2f2a1c999a9f284468}{numberCount}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00023}\mbox{\hyperlink{struct_expression_stats_a27708649cc79003c6e72991049fe7807}{00023}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_expression_stats_a27708649cc79003c6e72991049fe7807}{operandOperatorRatio}};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00024}00024\ \};}
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_expression_stats_8h_source_l00026}00026\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

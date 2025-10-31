@@ -10,30 +10,51 @@
 \DoxyCodeLine{\Hypertarget{_menu_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{\Hypertarget{_menu_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{\Hypertarget{_menu_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <stack>}}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00009}00009\ }
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_matrix_8h}{../Matrix/Matrix.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_history_8h}{../Data/History.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_memory_8h}{../Data/Memory.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00014}00014\ std::stack<std::string>\ \mbox{\hyperlink{_menu_8h_a22af37abe33be79373eda9f950d1f6f4}{bracketAnalyze}}(\textcolor{keyword}{const}\ std::string\&\ expression);}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00015}00015\ std::string\ \mbox{\hyperlink{_menu_8h_a42ce7236f0d5e6a6903cdd4327e8706c}{calculateExpression}}(std::stack<std::string>\&\ expressionStack);}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine_8h}{../Engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_matrix_8h}{../Matrix/Matrix.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_history_8h}{../Data/History.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_memory_8h}{../Data/Memory.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_history_memory_8h}{../Data/HistoryMemory.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_menu_8h_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00017}00017\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_menu_8h_ad9b6eb6d8f8f2aa9e3819f2ee76cb29a}{runAllTests}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsTotal,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsPassed,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsFailed);}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00019}\mbox{\hyperlink{class_menu}{00019}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_menu_ad466dd83355124a6ed958430450bfe94}{Menu}}}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00020}00020\ \{}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00021}00021\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{class_menu_ad466dd83355124a6ed958430450bfe94}{Menu}}();}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{class_menu_a831387f51358cfb88cd018e1777bc980}{\string~Menu}}();}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a35656cd130e24d69383a5c9d0a73a38c}{run}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00017}00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_expression_analyzer}{ExpressionAnalyzer}};}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00018}00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_expression_history}{ExpressionHistory}};}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00019}00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_complexity_calculator}{ComplexityCalculator}};}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00021}00021\ std::stack<std::string>\ \mbox{\hyperlink{_menu_8h_a22af37abe33be79373eda9f950d1f6f4}{bracketAnalyze}}(\textcolor{keyword}{const}\ std::string\&\ expression);}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00022}00022\ std::string\ \mbox{\hyperlink{_menu_8h_a42ce7236f0d5e6a6903cdd4327e8706c}{calculateExpression}}(std::stack<std::string>\&\ expressionStack);}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00024}00024\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_menu_8h_ad9b6eb6d8f8f2aa9e3819f2ee76cb29a}{runAllTests}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsTotal,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsPassed,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsFailed);}
 \DoxyCodeLine{\Hypertarget{_menu_8h_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00026}00026\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00027}\mbox{\hyperlink{class_menu_a34877de6052acac791b6636d8eaefb04}{00027}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_menu_ac42f460f50939202951daa58817e7e15}{testsTotal}},\ \mbox{\hyperlink{class_menu_add033e2561712c8a830686a454ec0325}{testsPassed}},\ \mbox{\hyperlink{class_menu_a34877de6052acac791b6636d8eaefb04}{testsFailed}};}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_a71098d57a94e1d762bf3b2faaaa711a3}{isCorrectChar}}(\textcolor{keyword}{const}\ std::string\&\ input);}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_ae5392b8a8377313c6303c62bc87b9882}{isCorrectInt}}(\textcolor{keyword}{const}\ std::string\&\ input);}
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00030}00030\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00031}00031\ \};}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00026}\mbox{\hyperlink{class_menu}{00026}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_menu_ad466dd83355124a6ed958430450bfe94}{Menu}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_engine_acc713c22e0940be92b1251a916849077}{Engine}}}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00028}00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{class_menu_ad466dd83355124a6ed958430450bfe94}{Menu}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_menu_a831387f51358cfb88cd018e1777bc980}{\string~Menu}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a35656cd130e24d69383a5c9d0a73a38c}{run}}();}
 \DoxyCodeLine{\Hypertarget{_menu_8h_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00033}00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !MENU\_H}}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00033}00033\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00034}\mbox{\hyperlink{class_menu_a34877de6052acac791b6636d8eaefb04}{00034}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_menu_ac42f460f50939202951daa58817e7e15}{testsTotal}},\ \mbox{\hyperlink{class_menu_add033e2561712c8a830686a454ec0325}{testsPassed}},\ \mbox{\hyperlink{class_menu_a34877de6052acac791b6636d8eaefb04}{testsFailed}};}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_a71098d57a94e1d762bf3b2faaaa711a3}{isCorrectChar}}(\textcolor{keyword}{const}\ std::string\&\ input);}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_menu_ae5392b8a8377313c6303c62bc87b9882}{isCorrectInt}}(\textcolor{keyword}{const}\ std::string\&\ input);}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ НОВЫЕ\ МЕТОДЫ\ для\ работы\ со\ статистикой}}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a8ab06ae3f53ecfaf8f64917d3203a922}{initializeAnalyzers}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a58e5c028a346543a4b8a47f7d2a2819c}{displayStatisticsMenu}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a075af2cdb22b2f9976a2a49905b6fc36}{showExpressionStatistics}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_aec80e5cd45c063299eee3f0be4106391}{showOperatorFrequency}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_ab5887065a8ccdfeca6078c81cae9280c}{showComplexityAnalysis}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a9782f4ceb22f05a974a283af2692f31c}{showComprehensiveReport}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a57323620065a67ecaf8140a7b2d55a64}{resetStatistics}}();}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00047}00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ НОВЫЕ\ УКАЗАТЕЛИ\ на\ анализаторы}}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{class_expression_analyzer}{ExpressionAnalyzer}}*\ expressionAnalyzer;}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{class_expression_history}{ExpressionHistory}}*\ expressionHistory;}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{class_complexity_calculator}{ComplexityCalculator}}*\ complexityCalculator;}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00052}00052\ \};}
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_menu_8h_source_l00054}00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !MENU\_H}}
 
 \end{DoxyCode}

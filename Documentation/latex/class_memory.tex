@@ -11,13 +11,12 @@ Inheritance diagram for Memory\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=132pt]{class_memory__inherit__graph}
+\includegraphics[width=163pt]{class_memory__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Memory\+:
-\nopagebreak
+Collaboration diagram for Memory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -63,11 +62,10 @@ virtual \mbox{\hyperlink{class_data_a3635432c142836f46f99fbdf6273d135}{\texorpdf
 \item 
 virtual \mbox{\hyperlink{class_engine_a11f150c12c31e2af334e3f9131c5c069}{\texorpdfstring{$\sim$}{\string~}\+Engine}} ()=default
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_data}{Data}}}
+\doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-unsigned int \mbox{\hyperlink{class_data_ac00c9aa58b57fa56b3488be1951ab523}{get\+Next\+Number}} ()
+std\+::vector$<$ \mbox{\hyperlink{struct_memory_cell}{Memory\+Cell}} $>$ \mbox{\hyperlink{class_memory_a879a8221a17ee8da45e89a6f17b088d0}{mc}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_data}{Data}}}
 \begin{DoxyCompactItemize}
@@ -75,6 +73,12 @@ unsigned int \mbox{\hyperlink{class_data_ac00c9aa58b57fa56b3488be1951ab523}{get\
 std\+::vector$<$ \mbox{\hyperlink{struct_record}{Record}} $>$ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}
 \item 
 unsigned int \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{current\+Number}} = 1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_data}{Data}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_data_ac00c9aa58b57fa56b3488be1951ab523}{get\+Next\+Number}} ()
 \end{DoxyCompactItemize}
 
 
@@ -124,7 +128,7 @@ void Memory\+::clear\+Memory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}
 
 
 
-Definition at line \mbox{\hyperlink{_memory_8h_source_l00034}{34}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
+Definition at line \mbox{\hyperlink{_memory_8h_source_l00031}{31}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -179,7 +183,7 @@ const std\+::vector$<$ \mbox{\hyperlink{struct_memory_cell}{Memory\+Cell}} $>$ \
 
 
 
-Definition at line \mbox{\hyperlink{_memory_8h_source_l00033}{33}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
+Definition at line \mbox{\hyperlink{_memory_8h_source_l00030}{30}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
 
 \Hypertarget{class_memory_a9aba7736b7d6662936a9b5c1c6ae79ba}\index{Memory@{Memory}!isEmpty@{isEmpty}}
 \index{isEmpty@{isEmpty}!Memory@{Memory}}
@@ -189,7 +193,7 @@ bool Memory\+::is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) co
 
 
 
-Definition at line \mbox{\hyperlink{_memory_8h_source_l00035}{35}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
+Definition at line \mbox{\hyperlink{_memory_8h_source_l00032}{32}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
 
 \Hypertarget{class_memory_ac23bbfbefeec0a7be732b0e5dceb1bda}\index{Memory@{Memory}!printMemory@{printMemory}}
 \index{printMemory@{printMemory}!Memory@{Memory}}
@@ -225,7 +229,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=335pt]{class_memory_a981098a28ea1d833ed33d0f711845e15_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -253,6 +258,21 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=335pt]{class_memory_ab503c0cf4a226fd3d67aeaf0531a153f_cgraph}
 \end{center}
 \end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_memory_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_memory_a879a8221a17ee8da45e89a6f17b088d0}\index{Memory@{Memory}!mc@{mc}}
+\index{mc@{mc}!Memory@{Memory}}
+\doxysubsubsection{\texorpdfstring{mc}{mc}}
+{\footnotesize\ttfamily \label{class_memory_a879a8221a17ee8da45e89a6f17b088d0} 
+std\+::vector$<$\mbox{\hyperlink{struct_memory_cell}{Memory\+Cell}}$>$ Memory\+::mc\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_memory_8h_source_l00035}{35}} of file \mbox{\hyperlink{_memory_8h_source}{Memory.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

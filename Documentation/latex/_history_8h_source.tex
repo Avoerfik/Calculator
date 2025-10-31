@@ -20,31 +20,27 @@
 \DoxyCodeLine{\Hypertarget{_history_8h_source_l00016}\mbox{\hyperlink{struct_record_history_a3a36a54f509bc86b47a9c6ce984a3de8}{00016}}\ \ \ \ \ std::chrono::system\_clock::time\_point\ \mbox{\hyperlink{struct_record_history_a3a36a54f509bc86b47a9c6ce984a3de8}{now}};}
 \DoxyCodeLine{\Hypertarget{_history_8h_source_l00017}00017\ \};}
 \DoxyCodeLine{\Hypertarget{_history_8h_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00019}\mbox{\hyperlink{class_history}{00019}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_history_afba1384643f419d079e78adb1497f741}{History}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00019}\mbox{\hyperlink{class_history}{00019}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_history_afba1384643f419d079e78adb1497f741}{History}}\ :\ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}}
 \DoxyCodeLine{\Hypertarget{_history_8h_source_l00020}00020\ \{}
 \DoxyCodeLine{\Hypertarget{_history_8h_source_l00021}00021\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{_history_8h_source_l00022}\mbox{\hyperlink{class_history_afba1384643f419d079e78adb1497f741}{00022}}\ \ \ \ \ \mbox{\hyperlink{class_history_afba1384643f419d079e78adb1497f741}{History}}()\ \{\};}
 \DoxyCodeLine{\Hypertarget{_history_8h_source_l00023}\mbox{\hyperlink{class_history_acc317582bb41a3c5f995486a69e871e3}{00023}}\ \ \ \ \ \mbox{\hyperlink{class_history_acc317582bb41a3c5f995486a69e871e3}{\string~History}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{\Hypertarget{_history_8h_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ Новая\ перегруженная\ версия\ без\ параметра\ number}}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}*\ \mbox{\hyperlink{class_history_a9eda9965c45bde02a3c5c3a5aea4b329}{reserveData}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ info);}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ Старая\ версия\ для\ совместимости}}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}*\ \mbox{\hyperlink{class_history_a9eda9965c45bde02a3c5c3a5aea4b329}{reserveData}}(\mbox{\hyperlink{struct_record}{Record}}\ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}})\ \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}*\ \mbox{\hyperlink{class_history_a21139e549b8d94f2eeabc75f3fc1601e}{getData}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Метод\ для\ доступа\ к\ истории}}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00032}\mbox{\hyperlink{class_history_a2bccccaac2a57a8a28cb383a9c8d0023}{00032}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<RecordHistory>\&\ \mbox{\hyperlink{class_history_a2bccccaac2a57a8a28cb383a9c8d0023}{getHistory}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ rh;\ \}}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00033}\mbox{\hyperlink{class_history_ac34d45ec9a11c4a0b1f61f2b87ba9aea}{00033}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_history_ac34d45ec9a11c4a0b1f61f2b87ba9aea}{getHistorySize}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ rh.size();\ \}}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ Методы\ для\ вывода\ истории}}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_history_a9baf386eff2e21f1f389d003043499fc}{printRecordHistory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_record_history}{RecordHistory}}\&\ rh)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_history_adcaee81d1392f1c8278138a3894f0051}{printAllHistory}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_history_aa68245eca9285d748dee39ef73805872}{printRecordByNumber}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ number)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}*\ \mbox{\hyperlink{class_history_a9eda9965c45bde02a3c5c3a5aea4b329}{reserveData}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ info);}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}*\ \mbox{\hyperlink{class_history_a9eda9965c45bde02a3c5c3a5aea4b329}{reserveData}}(\mbox{\hyperlink{struct_record}{Record}}\ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}*\ \mbox{\hyperlink{class_history_a21139e549b8d94f2eeabc75f3fc1601e}{getData}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00029}\mbox{\hyperlink{class_history_a2bccccaac2a57a8a28cb383a9c8d0023}{00029}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<RecordHistory>\&\ \mbox{\hyperlink{class_history_a2bccccaac2a57a8a28cb383a9c8d0023}{getHistory}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}};\ \}}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00030}\mbox{\hyperlink{class_history_ac34d45ec9a11c4a0b1f61f2b87ba9aea}{00030}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_history_ac34d45ec9a11c4a0b1f61f2b87ba9aea}{getHistorySize}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}}.size();\ \}}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_history_a9baf386eff2e21f1f389d003043499fc}{printRecordHistory}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_record_history}{RecordHistory}}\&\ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_history_adcaee81d1392f1c8278138a3894f0051}{printAllHistory}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_history_aa68245eca9285d748dee39ef73805872}{printRecordByNumber}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ number)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00036}00036\ \textcolor{keyword}{protected}:\ \ \textcolor{comment}{//\ Изменено\ с\ private\ на\ protected\ для\ доступа\ в\ HistoryMemory}}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00037}\mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{00037}}\ \ \ \ \ std::vector<RecordHistory>\ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}};}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00038}00038\ \};}
 \DoxyCodeLine{\Hypertarget{_history_8h_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00040}00040\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00041}00041\ \ \ \ \ std::vector<RecordHistory>\ rh;}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00042}00042\ \};}
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{_history_8h_source_l00044}00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !HISTORY\_H}}
+\DoxyCodeLine{\Hypertarget{_history_8h_source_l00040}00040\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !HISTORY\_H}}
 
 \end{DoxyCode}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator Documentation: Class Members</title>
+<title>Calculator: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">Calculator<span id="projectnumber">&#160;0.0.3.</span>
    </div>
-   <div id="projectbrief">Second version</div>
+   <div id="projectbrief">Third version</div>
   </td>
  </tr>
  </tbody>
@@ -92,7 +92,10 @@ $(function(){initNavTree('functions.html','',''); });
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
-<li>at()&#160;:&#160;<a class="el" href="class_matrix.html#a684ec10180bdbcdf79a6ba429abe1661">Matrix</a></li>
+<li>addRecord()&#160;:&#160;<a class="el" href="class_expression_history.html#a68227e516006b3f88d96462b7f0c2389">ExpressionHistory</a></li>
+<li>AnalysisCounter()&#160;:&#160;<a class="el" href="class_analysis_counter.html#a44ecfc97c86104fe407fe5626df1de83">AnalysisCounter</a></li>
+<li>analyzeExpression()&#160;:&#160;<a class="el" href="class_expression_analyzer.html#a289ffe4d88b9ec0b0e23587f7f66be7c">ExpressionAnalyzer</a></li>
+<li>at()&#160;:&#160;<a class="el" href="class_matrix.html#aa47bdc6e1f1d73ae7332e57d27b2e9ab">Matrix</a></li>
 </ul>
 
 
@@ -102,12 +105,21 @@ $(function(){initNavTree('functions.html','',''); });
 
 
 <h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>calculateAndSave()&#160;:&#160;<a class="el" href="class_history_memory.html#a7dbed50adc58522043e506888201342e">HistoryMemory</a></li>
+<li>calculateComplexity()&#160;:&#160;<a class="el" href="class_complexity_calculator.html#a3d167759c1f01e0df4be9b453c90ea6f">ComplexityCalculator</a></li>
 <li>calculateExpression()&#160;:&#160;<a class="el" href="class_calculator.html#a011dff3e7028beb6c684762a27de673b">Calculator</a></li>
+<li>calculationTime&#160;:&#160;<a class="el" href="struct_expression_stats.html#aca83bd04459276861a6e81a98e594806">ExpressionStats</a></li>
+<li>Calculator()&#160;:&#160;<a class="el" href="class_calculator.html#aecd26b79aad2e01fe1bf816503bdd554">Calculator</a></li>
 <li>CalculatorExpression()&#160;:&#160;<a class="el" href="class_calculator_expression.html#a7de83b855fbfc7a0894d671e5dae3768">CalculatorExpression</a></li>
 <li>CalculatorMatrix()&#160;:&#160;<a class="el" href="class_calculator_matrix.html#abb422cfda62ae9ab40ad7e00dd9d78f4">CalculatorMatrix</a></li>
-<li>clear()&#160;:&#160;<a class="el" href="class_complex_info.html#a9ca23b77e0f23215ce87e8903808d817">ComplexInfo</a></li>
+<li>clear()&#160;:&#160;<a class="el" href="class_complex_info.html#a9ca23b77e0f23215ce87e8903808d817">ComplexInfo</a>, <a class="el" href="class_expression_history.html#a036729404683a4bb5b9320d5ce4c17ee">ExpressionHistory</a></li>
 <li>clearMemory()&#160;:&#160;<a class="el" href="class_memory.html#a09b36e2f4a2cf8fe9bc40e3ffb1d29a8">Memory</a></li>
 <li>cols()&#160;:&#160;<a class="el" href="class_matrix.html#a8c8b8a4a34ad4a16e6ba28a62010dfa0">Matrix</a></li>
+<li>complexity&#160;:&#160;<a class="el" href="struct_expression_stats.html#a73716bed0dd08bb7551957feb536f2f3">ExpressionStats</a></li>
+<li>ComplexityCalculator()&#160;:&#160;<a class="el" href="class_complexity_calculator.html#acc3009701f54814dedcae127189caa34">ComplexityCalculator</a></li>
+<li>complexityLevel&#160;:&#160;<a class="el" href="struct_expression_stats.html#a055510f6666515e3c85f55d7d62710b0">ExpressionStats</a></li>
+<li>countBrackets()&#160;:&#160;<a class="el" href="class_complexity_calculator.html#a81e7a7981f87a4ffd931dab5b346dbfe">ComplexityCalculator</a></li>
+<li>countOperators()&#160;:&#160;<a class="el" href="class_complexity_calculator.html#a7f60d327429b657b7d34dcbda9da2524">ComplexityCalculator</a></li>
 <li>currentNumber&#160;:&#160;<a class="el" href="class_data.html#ae03850de2a00d7c9cfa385406d5be3d4">Data</a></li>
 </ul>
 
@@ -119,47 +131,70 @@ $(function(){initNavTree('functions.html','',''); });
 <li>displayError()&#160;:&#160;<a class="el" href="class_menu_output.html#a7a6ee38d91ecdb16a14666f881628e97">MenuOutput</a></li>
 <li>displayMessage()&#160;:&#160;<a class="el" href="class_menu_output.html#a4fdea51cb300cfb5192304003b19a53e">MenuOutput</a></li>
 <li>displayResult()&#160;:&#160;<a class="el" href="class_menu_output.html#a4dbc56c97d23068265cd8775bf454b9a">MenuOutput</a></li>
+<li>displayStatisticsMenu()&#160;:&#160;<a class="el" href="class_menu.html#a58e5c028a346543a4b8a47f7d2a2819c">Menu</a></li>
 <li>displayTestResults()&#160;:&#160;<a class="el" href="class_menu_output.html#ab5cd376a33b974b571515490a260c9d9">MenuOutput</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>endsWithOperator&#160;:&#160;<a class="el" href="struct_expression_stats.html#a7e3bb29aabe156351364380f0a444cb1">ExpressionStats</a></li>
 <li>Engine()&#160;:&#160;<a class="el" href="class_engine.html#acc713c22e0940be92b1251a916849077">Engine</a></li>
+<li>expression&#160;:&#160;<a class="el" href="struct_expression_stats.html#ac93abfe47f228fae5054b84e91ba9c66">ExpressionStats</a></li>
+<li>ExpressionAnalyzer()&#160;:&#160;<a class="el" href="class_expression_analyzer.html#a87a1b9331ab7b649e6a9a94bd0ecef48">ExpressionAnalyzer</a></li>
+<li>ExpressionHistory&#160;:&#160;<a class="el" href="class_expression_analyzer.html#ae644fd91e034c1d23ea7147bc73042a1">ExpressionAnalyzer</a>, <a class="el" href="class_expression_history.html#a137c0a5831f4857f19bb6a69e287cc73">ExpressionHistory</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>generateHistoryReport()&#160;:&#160;<a class="el" href="class_expression_history.html#aa6d5c3c6398df9abb4d5baa97653f9c3">ExpressionHistory</a></li>
+<li>generateStatisticsReport&#160;:&#160;<a class="el" href="class_expression_analyzer.html#a52814976c7eefbf9db16b71b337ba9ec">ExpressionAnalyzer</a></li>
 <li>getAllRoots()&#160;:&#160;<a class="el" href="class_calculator_complex.html#a13e56fbfc7ab120b7077f86441e34083">CalculatorComplex</a>, <a class="el" href="class_complex_info.html#a9aced4ddf7b967ef25e3f07d1bdc8129">ComplexInfo</a></li>
+<li>getAverageComplexity()&#160;:&#160;<a class="el" href="class_expression_history.html#a2355eafe93dc34300b6653088557757d">ExpressionHistory</a></li>
 <li>getCalculationRegime()&#160;:&#160;<a class="el" href="class_menu_input.html#a8fc3ec49ecfa386d2c862b11db7ea27c">MenuInput</a></li>
 <li>getCalculationString()&#160;:&#160;<a class="el" href="class_memory.html#a05da9e79c8a405a1331d2015a9e2d2ed">Memory</a></li>
+<li>getComplexityLevel()&#160;:&#160;<a class="el" href="class_complexity_calculator.html#a540abf1d8e88e4732be0b8c838b431a9">ComplexityCalculator</a></li>
 <li>getContinueChoice()&#160;:&#160;<a class="el" href="class_menu_input.html#ae99ae4de6b19007399721767488d0a33">MenuInput</a></li>
-<li>getData()&#160;:&#160;<a class="el" href="class_data.html#aeca16c62fc1beb85591122286c97d870">Data</a>, <a class="el" href="class_history.html#a21139e549b8d94f2eeabc75f3fc1601e">History</a>, <a class="el" href="class_memory.html#a5af0960e5defd495cb5f0c8a42f12be2">Memory</a></li>
+<li>getData()&#160;:&#160;<a class="el" href="class_data.html#aeca16c62fc1beb85591122286c97d870">Data</a>, <a class="el" href="class_history.html#a21139e549b8d94f2eeabc75f3fc1601e">History</a>, <a class="el" href="class_history_memory.html#af1fd3af6151440404082b6c4bcb2be16">HistoryMemory</a>, <a class="el" href="class_memory.html#a5af0960e5defd495cb5f0c8a42f12be2">Memory</a></li>
+<li>getErrorCount()&#160;:&#160;<a class="el" href="class_analysis_counter.html#ae5bc24e7874eb90a1c2c0718aef2d792">AnalysisCounter</a>, <a class="el" href="class_expression_analyzer.html#a4070753d3addf679ecbaf41abda01b87">ExpressionAnalyzer</a></li>
 <li>getExpression()&#160;:&#160;<a class="el" href="class_menu_input.html#aab3202570e4df3c2ab04bf49704978ef">MenuInput</a></li>
 <li>getHistory()&#160;:&#160;<a class="el" href="class_history.html#a2bccccaac2a57a8a28cb383a9c8d0023">History</a></li>
 <li>getHistorySize()&#160;:&#160;<a class="el" href="class_history.html#ac34d45ec9a11c4a0b1f61f2b87ba9aea">History</a></li>
 <li>getInstance()&#160;:&#160;<a class="el" href="class_complex_info.html#adefd896518808d6806e9b26ee39f9bf3">ComplexInfo</a></li>
 <li>getIsComplex()&#160;:&#160;<a class="el" href="class_complex_info.html#aae31873c1d518d07adb1566456afc5bc">ComplexInfo</a></li>
+<li>getLastCalculationResult()&#160;:&#160;<a class="el" href="class_history_memory.html#ab0df70d0c80c36a0b5ae09d2143cd262">HistoryMemory</a></li>
 <li>getMatrix()&#160;:&#160;<a class="el" href="class_menu_input.html#a2229e64c7a2043155b8be7898acdd4bb">MenuInput</a></li>
 <li>getMatrixOperator()&#160;:&#160;<a class="el" href="class_menu_input.html#a9636ed806f1513d3851ec2bd90ccfc5e">MenuInput</a></li>
 <li>getMatrixRegime()&#160;:&#160;<a class="el" href="class_menu_input.html#a01919121bdc8aff3b4239e167cf3ad07">MenuInput</a></li>
 <li>getMemoryCells()&#160;:&#160;<a class="el" href="class_memory.html#a3ac68d41e25d74de7e6d998fab261f22">Memory</a></li>
 <li>getMemoryOperator()&#160;:&#160;<a class="el" href="class_menu_input.html#afd73a4c2669eb3e48e63d306812e299b">MenuInput</a></li>
 <li>getNegativeRoots()&#160;:&#160;<a class="el" href="class_complex_info.html#a2859950d9edc5ef4f11d963f583a3e02">ComplexInfo</a></li>
-<li>getNextNumber()&#160;:&#160;<a class="el" href="class_data.html#ac00c9aa58b57fa56b3488be1951ab523">Data</a></li>
+<li>getNextNumber()&#160;:&#160;<a class="el" href="class_data.html#ac00c9aa58b57fa56b3488be1951ab523">Data</a>, <a class="el" href="class_history_memory.html#a177d64b288bc643cb0a91c9ba64cb2cd">HistoryMemory</a></li>
+<li>getOperatorFrequency()&#160;:&#160;<a class="el" href="class_expression_analyzer.html#a501bb3bc34cc93d5d2ef0348a5c81230">ExpressionAnalyzer</a></li>
 <li>getPositiveRoots()&#160;:&#160;<a class="el" href="class_complex_info.html#a9260bee1ad4b8d44e05ce729f84ab199">ComplexInfo</a></li>
 <li>getPrincipalValue()&#160;:&#160;<a class="el" href="class_complex_info.html#a91a1980b8d430300b244fabf546ee47e">ComplexInfo</a></li>
 <li>getRealRoots()&#160;:&#160;<a class="el" href="class_calculator_complex.html#a3034e8e8cf3d211233c4769a94edd196">CalculatorComplex</a>, <a class="el" href="class_complex_info.html#accdbfbc905a2f959692e5fee4619aa8b">ComplexInfo</a></li>
+<li>getRecentRecords()&#160;:&#160;<a class="el" href="class_expression_history.html#ab41c401a2c457e1912a29f013cb21684">ExpressionHistory</a></li>
+<li>getRecordsByComplexity()&#160;:&#160;<a class="el" href="class_expression_history.html#af8adbc0b556f536c05e1a50cfcf83fce">ExpressionHistory</a></li>
 <li>getSaveToMemoryChoice()&#160;:&#160;<a class="el" href="class_menu_input.html#a193e9f3acc377189e68c4622806a42e0">MenuInput</a></li>
+<li>getStats()&#160;:&#160;<a class="el" href="class_expression_analyzer.html#a8d7428d760f56ff698ac1198c3aa775d">ExpressionAnalyzer</a></li>
+<li>getSuccessCount()&#160;:&#160;<a class="el" href="class_analysis_counter.html#afdc358d815a3c13839b7a4752b20e5dd">AnalysisCounter</a>, <a class="el" href="class_expression_analyzer.html#a0f21262a9887ed8ff87424a2c6f47e75">ExpressionAnalyzer</a></li>
+<li>getTotalExpressions()&#160;:&#160;<a class="el" href="class_analysis_counter.html#a7d9d2ff2d9168e0beef3114ee0b484ce">AnalysisCounter</a>, <a class="el" href="class_expression_analyzer.html#ae68e4e749e7ddd5b8452ea4be0a51650">ExpressionAnalyzer</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_h" name="index_h"></a>- h -</h3><ul>
+<li>hasComplexOperations()&#160;:&#160;<a class="el" href="class_complexity_calculator.html#ab97909a46dfca109c1aed28b54469573">ComplexityCalculator</a></li>
+<li>hasComplexOps&#160;:&#160;<a class="el" href="struct_expression_stats.html#ad3e7caebf5ca8ffb36820b4d50d83afe">ExpressionStats</a></li>
+<li>hasConsecutiveOperators&#160;:&#160;<a class="el" href="struct_expression_stats.html#a29f11978a67e42265240969ad756005a">ExpressionStats</a></li>
 <li>History()&#160;:&#160;<a class="el" href="class_history.html#afba1384643f419d079e78adb1497f741">History</a></li>
+<li>HistoryMemory()&#160;:&#160;<a class="el" href="class_history_memory.html#a6f572d2c106a96090f25f949e147acce">HistoryMemory</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>importFromAnalyzer()&#160;:&#160;<a class="el" href="class_expression_history.html#a50d672d4d9afe5d9ad278e4adeae9c3f">ExpressionHistory</a></li>
 <li>info&#160;:&#160;<a class="el" href="struct_record.html#a4bcc718199b5e32ec57b07f82e8f6313">Record</a></li>
+<li>initializeAnalyzers()&#160;:&#160;<a class="el" href="class_menu.html#a8ab06ae3f53ecfaf8f64917d3203a922">Menu</a></li>
 <li>isCorrectChar()&#160;:&#160;<a class="el" href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">Menu</a></li>
 <li>isCorrectInt()&#160;:&#160;<a class="el" href="class_menu.html#ae5392b8a8377313c6303c62bc87b9882">Menu</a></li>
 <li>isEmpty()&#160;:&#160;<a class="el" href="class_memory.html#a9aba7736b7d6662936a9b5c1c6ae79ba">Memory</a></li>
@@ -168,6 +203,7 @@ $(function(){initNavTree('functions.html','',''); });
 
 <h3 class="doxsection"><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>Matrix()&#160;:&#160;<a class="el" href="class_matrix.html#a12d35ef1824cd847868a8703035b0d5d">Matrix</a></li>
+<li>mc&#160;:&#160;<a class="el" href="class_memory.html#a879a8221a17ee8da45e89a6f17b088d0">Memory</a></li>
 <li>Memory()&#160;:&#160;<a class="el" href="class_memory.html#a585d7bb6fc6f2237bcebf94a86b7dd99">Memory</a></li>
 <li>Menu()&#160;:&#160;<a class="el" href="class_menu.html#ad466dd83355124a6ed958430450bfe94">Menu</a></li>
 <li>MenuInput()&#160;:&#160;<a class="el" href="class_menu_input.html#ab8b02a181f6f55de4386b0f04e44e621">MenuInput</a></li>
@@ -178,22 +214,30 @@ $(function(){initNavTree('functions.html','',''); });
 <h3 class="doxsection"><a id="index_n" name="index_n"></a>- n -</h3><ul>
 <li>now&#160;:&#160;<a class="el" href="struct_record_history.html#a3a36a54f509bc86b47a9c6ce984a3de8">RecordHistory</a></li>
 <li>number&#160;:&#160;<a class="el" href="struct_record.html#a5c8f84cd63104e6ae4cd4cd2938365bc">Record</a></li>
+<li>numberCount&#160;:&#160;<a class="el" href="struct_expression_stats.html#a75324a33ce78fc2f2a1c999a9f284468">ExpressionStats</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>operandOperatorRatio&#160;:&#160;<a class="el" href="struct_expression_stats.html#a27708649cc79003c6e72991049fe7807">ExpressionStats</a></li>
 <li>operator*()&#160;:&#160;<a class="el" href="class_matrix.html#ab4f8e22e8db0983d75e090542f4d1f7a">Matrix</a></li>
 <li>operator+()&#160;:&#160;<a class="el" href="class_matrix.html#afc7858a535ebcebf445e91bccd75d197">Matrix</a></li>
+<li>operator++()&#160;:&#160;<a class="el" href="class_analysis_counter.html#ab09aef46e98f3721d78dcc128d163d12">AnalysisCounter</a></li>
 <li>operator-()&#160;:&#160;<a class="el" href="class_matrix.html#abb44986f4d7b2ac6465fed5b5db019e8">Matrix</a></li>
+<li>operator--()&#160;:&#160;<a class="el" href="class_analysis_counter.html#a1e483a6bb7772505bb25b610532a7fd9">AnalysisCounter</a></li>
 <li>operator12&#160;:&#160;<a class="el" href="struct_memory_cell.html#ac89452e5619babc765244104892e95d3">MemoryCell</a></li>
 <li>operator&lt;&lt;&#160;:&#160;<a class="el" href="class_matrix.html#a9e0ce956d3ed783f8d5b13e571e2a04a">Matrix</a></li>
 <li>operator=()&#160;:&#160;<a class="el" href="class_matrix.html#a3e40db12ae78b7616ee3f099bb15f13d">Matrix</a></li>
 <li>operator&gt;&gt;&#160;:&#160;<a class="el" href="class_matrix.html#a1e59f4510e89d18cfa284feab060583a">Matrix</a></li>
+<li>operatorCount&#160;:&#160;<a class="el" href="struct_expression_stats.html#abb62a17926839f42c51ffd17cb154d68">ExpressionStats</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>potentialDivisionByZero&#160;:&#160;<a class="el" href="struct_expression_stats.html#a7d0ba3b2a162a1d1d1e788ca1e390137">ExpressionStats</a></li>
 <li>printAllHistory()&#160;:&#160;<a class="el" href="class_history.html#adcaee81d1392f1c8278138a3894f0051">History</a></li>
+<li>printCalculationByNumber()&#160;:&#160;<a class="el" href="class_history_memory.html#ac60f6f071782f1e4a53d79b76b06ba2a">HistoryMemory</a></li>
+<li>printCalculationHistory()&#160;:&#160;<a class="el" href="class_history_memory.html#a663672a74d593543adf6d7ef66c2f64f">HistoryMemory</a></li>
 <li>printMemory()&#160;:&#160;<a class="el" href="class_memory.html#ac23bbfbefeec0a7be732b0e5dceb1bda">Memory</a></li>
 <li>printRecordByNumber()&#160;:&#160;<a class="el" href="class_history.html#aa68245eca9285d748dee39ef73805872">History</a></li>
 <li>printRecordHistory()&#160;:&#160;<a class="el" href="class_history.html#a9baf386eff2e21f1f389d003043499fc">History</a></li>
@@ -202,7 +246,12 @@ $(function(){initNavTree('functions.html','',''); });
 
 <h3 class="doxsection"><a id="index_r" name="index_r"></a>- r -</h3><ul>
 <li>record&#160;:&#160;<a class="el" href="struct_memory_cell.html#aeff77690ddd3025cb596406addcc4540">MemoryCell</a>, <a class="el" href="struct_record_history.html#a977ed51aed91b24a12a9a52158a33038">RecordHistory</a></li>
-<li>reserveData()&#160;:&#160;<a class="el" href="class_data.html#a3c2617676ef58a9e8768a55b950d7827">Data</a>, <a class="el" href="class_history.html#a9eda9965c45bde02a3c5c3a5aea4b329">History</a>, <a class="el" href="class_memory.html#a981098a28ea1d833ed33d0f711845e15">Memory</a></li>
+<li>recordError()&#160;:&#160;<a class="el" href="class_expression_analyzer.html#a4d6e3070c41a6149e4317ebc284862a0">ExpressionAnalyzer</a></li>
+<li>recordSuccess()&#160;:&#160;<a class="el" href="class_expression_analyzer.html#a8964961399758a763429cb6c2be813ec">ExpressionAnalyzer</a></li>
+<li>reserveData()&#160;:&#160;<a class="el" href="class_data.html#a3c2617676ef58a9e8768a55b950d7827">Data</a>, <a class="el" href="class_history.html#a9eda9965c45bde02a3c5c3a5aea4b329">History</a>, <a class="el" href="class_history_memory.html#a756135e55b9ee77d8a24835b8638bd07">HistoryMemory</a>, <a class="el" href="class_memory.html#a981098a28ea1d833ed33d0f711845e15">Memory</a></li>
+<li>reset()&#160;:&#160;<a class="el" href="class_analysis_counter.html#ab102743536f6ffff80c54001e153d74a">AnalysisCounter</a></li>
+<li>resetStatistics()&#160;:&#160;<a class="el" href="class_menu.html#a57323620065a67ecaf8140a7b2d55a64">Menu</a></li>
+<li>rh&#160;:&#160;<a class="el" href="class_history.html#a811563490b625c00e594d7132be71dea">History</a></li>
 <li>rows()&#160;:&#160;<a class="el" href="class_matrix.html#a97617f3524bfa47d6ac7daa0eefc1941">Matrix</a></li>
 <li>run()&#160;:&#160;<a class="el" href="class_menu.html#a35656cd130e24d69383a5c9d0a73a38c">Menu</a></li>
 <li>runAllTests()&#160;:&#160;<a class="el" href="class_testing.html#a129048a23785c573d2855abf022e5fc9">Testing</a></li>
@@ -211,26 +260,44 @@ $(function(){initNavTree('functions.html','',''); });
 
 <h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>set()&#160;:&#160;<a class="el" href="class_complex_info.html#ac0913768fc43de3fae6d55b5cff2d255">ComplexInfo</a></li>
+<li>showComplexityAnalysis()&#160;:&#160;<a class="el" href="class_menu.html#ab5887065a8ccdfeca6078c81cae9280c">Menu</a></li>
+<li>showComprehensiveReport()&#160;:&#160;<a class="el" href="class_menu.html#a9782f4ceb22f05a974a283af2692f31c">Menu</a></li>
+<li>showExpressionStatistics()&#160;:&#160;<a class="el" href="class_menu.html#a075af2cdb22b2f9976a2a49905b6fc36">Menu</a></li>
+<li>showOperatorFrequency()&#160;:&#160;<a class="el" href="class_menu.html#aec80e5cd45c063299eee3f0be4106391">Menu</a></li>
+<li>size()&#160;:&#160;<a class="el" href="class_expression_history.html#abea963a93d92249b50118be5d943857d">ExpressionHistory</a></li>
+<li>startsWithBinaryOperator&#160;:&#160;<a class="el" href="struct_expression_stats.html#a1e86c0502716d5f34189ad471329ee87">ExpressionStats</a></li>
+<li>stats&#160;:&#160;<a class="el" href="struct_analysis_record.html#a56f15f671a0d14b0d94044ab2ef30531">AnalysisRecord</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>Testing()&#160;:&#160;<a class="el" href="class_testing.html#aeeb2ffdd21714053d03aeddc1209649c">Testing</a></li>
 <li>testsFailed&#160;:&#160;<a class="el" href="class_menu.html#a34877de6052acac791b6636d8eaefb04">Menu</a></li>
 <li>testsPassed&#160;:&#160;<a class="el" href="class_menu.html#add033e2561712c8a830686a454ec0325">Menu</a></li>
 <li>testsTotal&#160;:&#160;<a class="el" href="class_menu.html#ac42f460f50939202951daa58817e7e15">Menu</a></li>
+<li>timestamp&#160;:&#160;<a class="el" href="struct_analysis_record.html#aa19390e29458303ea715cf3c76f16555">AnalysisRecord</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>wasSuccessful&#160;:&#160;<a class="el" href="struct_analysis_record.html#a884b820cf109d4f42c9f099f9c94fc6c">AnalysisRecord</a></li>
 </ul>
 
 
 <h3 class="doxsection"><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
+<li>~Calculator()&#160;:&#160;<a class="el" href="class_calculator.html#ae3eb6608990044b355550179673200ec">Calculator</a></li>
 <li>~CalculatorExpression()&#160;:&#160;<a class="el" href="class_calculator_expression.html#a264f80e2d93b3dddf6e2240a57b407fc">CalculatorExpression</a></li>
 <li>~CalculatorMatrix()&#160;:&#160;<a class="el" href="class_calculator_matrix.html#abf339efc4d92b331595ada18ec6f9d3e">CalculatorMatrix</a></li>
 <li>~Data()&#160;:&#160;<a class="el" href="class_data.html#a3635432c142836f46f99fbdf6273d135">Data</a></li>
 <li>~Engine()&#160;:&#160;<a class="el" href="class_engine.html#a11f150c12c31e2af334e3f9131c5c069">Engine</a></li>
+<li>~ExpressionAnalyzer()&#160;:&#160;<a class="el" href="class_expression_analyzer.html#a35e5a64c19abb08b01dd8201dd0b0ac6">ExpressionAnalyzer</a></li>
 <li>~History()&#160;:&#160;<a class="el" href="class_history.html#acc317582bb41a3c5f995486a69e871e3">History</a></li>
+<li>~HistoryMemory()&#160;:&#160;<a class="el" href="class_history_memory.html#acb0567f6f63a893a35e13ef441a65806">HistoryMemory</a></li>
 <li>~Memory()&#160;:&#160;<a class="el" href="class_memory.html#a2b517b46ae4b070d9f6a7b6d9efeb7a1">Memory</a></li>
 <li>~Menu()&#160;:&#160;<a class="el" href="class_menu.html#a831387f51358cfb88cd018e1777bc980">Menu</a></li>
 <li>~MenuInput()&#160;:&#160;<a class="el" href="class_menu_input.html#a987f140173d4c22cbd7491e292a51cb6">MenuInput</a></li>
 <li>~MenuOutput()&#160;:&#160;<a class="el" href="class_menu_output.html#acdc653201ac4dadfc1a965c83418dcc7">MenuOutput</a></li>
+<li>~Testing()&#160;:&#160;<a class="el" href="class_testing.html#a2cb29c0cedbbd09c2af0d1676f558933">Testing</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

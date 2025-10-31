@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator Documentation: App/include/Testing/Testing.h Source File</title>
+<title>Calculator: App/include/Testing/Testing.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">Calculator<span id="projectnumber">&#160;0.0.3.</span>
    </div>
-   <div id="projectbrief">Second version</div>
+   <div id="projectbrief">Third version</div>
   </td>
  </tr>
  </tbody>
@@ -108,54 +108,73 @@ $(function(){initNavTree('_testing_8h_source.html','',''); });
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>std::string <a class="code hl_function" href="_testing_8h.html#a42ce7236f0d5e6a6903cdd4327e8706c">calculateExpression</a>(std::stack&lt;std::string&gt;&amp; expressionStack);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_testing.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_testing.html">Testing</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_calculator_expression.html#a7de83b855fbfc7a0894d671e5dae3768">CalculatorExpression</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_testing.html">   16</a></span><span class="keyword">class </span><a class="code hl_function" href="class_testing.html#aeeb2ffdd21714053d03aeddc1209649c">Testing</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_calculator_expression.html#a7de83b855fbfc7a0894d671e5dae3768">CalculatorExpression</a></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_testing.html#a129048a23785c573d2855abf022e5fc9">runAllTests</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsTotal, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsPassed, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsFailed);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">using </span>standartTest = bool (<a class="code hl_class" href="class_testing.html">Testing</a>::*)(<span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp;);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">using </span>specifiedTest = bool (<a class="code hl_class" href="class_testing.html">Testing</a>::*)(<span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp;);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">struct </span>TestCallStandart</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        standartTest func;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        std::string expression;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        std::string expected;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        std::string testName;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> testNumber;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    };</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">struct </span>TestCallSpecified</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        specifiedTest func;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        std::string expression;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        std::string testName;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        std::string exceptionName;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> testNumber;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    };</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">bool</span> runTest(<span class="keyword">const</span> std::string&amp; expression, <span class="keyword">const</span> std::string&amp; expected, <span class="keyword">const</span> std::string&amp; testName, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testNumber);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">bool</span> runSpecifiedTest(<span class="keyword">const</span> std::string&amp; expression, <span class="keyword">const</span> std::string&amp; testName,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">const</span> std::string&amp; exceptionName, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testNumber);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> runStandartTestCount(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsTotal, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsPassed, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsFailed,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        std::vector&lt;TestCallStandart&gt;&amp; vectorStandartTest, <span class="keyword">const</span> std::string&amp; expression,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">const</span> std::string&amp; expected, <span class="keyword">const</span> std::string&amp; testName, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testNumber);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> runSpecifiedTestCount(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsTotal, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsPassed, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsFailed,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        std::vector&lt;TestCallSpecified&gt;&amp; vectorSpecifiedTest, <span class="keyword">const</span> std::string&amp; expression,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keyword">const</span> std::string&amp; testName, <span class="keyword">const</span> std::string&amp; exceptionName, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testNumber);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_testing.html#aeeb2ffdd21714053d03aeddc1209649c">   19</a></span>    <a class="code hl_function" href="class_testing.html#aeeb2ffdd21714053d03aeddc1209649c">Testing</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_testing.html#a2cb29c0cedbbd09c2af0d1676f558933">   20</a></span>    <a class="code hl_function" href="class_testing.html#a2cb29c0cedbbd09c2af0d1676f558933">~Testing</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_testing.html#a129048a23785c573d2855abf022e5fc9">runAllTests</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsTotal, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsPassed, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsFailed);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">using </span>standartTest = bool (<a class="code hl_function" href="class_testing.html#aeeb2ffdd21714053d03aeddc1209649c">Testing</a>::*)(<span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp;);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">using </span>specifiedTest = bool (<a class="code hl_function" href="class_testing.html#aeeb2ffdd21714053d03aeddc1209649c">Testing</a>::*)(<span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> std::string&amp;, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp;);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">struct </span>TestCallStandart</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        standartTest func;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        std::string expression;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        std::string expected;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        std::string testName;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> testNumber;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    };</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">struct </span>TestCallSpecified</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        specifiedTest func;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        std::string expression;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        std::string testName;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        std::string exceptionName;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> testNumber;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    };</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">bool</span> runTest(<span class="keyword">const</span> std::string&amp; expression,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">const</span> std::string&amp; expected,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">const</span> std::string&amp; testName,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testNumber);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">bool</span> runSpecifiedTest(<span class="keyword">const</span> std::string&amp; expression,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keyword">const</span> std::string&amp; testName,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">const</span> std::string&amp; exceptionName,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testNumber);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> runStandartTestCount(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsTotal,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsPassed,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsFailed,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        std::vector&lt;TestCallStandart&gt;&amp; vectorStandartTest,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">const</span> std::string&amp; expression,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">const</span> std::string&amp; expected,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">const</span> std::string&amp; testName,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testNumber);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> runSpecifiedTestCount(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsTotal,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsPassed,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testsFailed,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        std::vector&lt;TestCallSpecified&gt;&amp; vectorSpecifiedTest,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keyword">const</span> std::string&amp; expression,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">const</span> std::string&amp; testName,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">const</span> std::string&amp; exceptionName,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; testNumber);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">// !TESTING_H</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif </span><span class="comment">// !TESTING_H</span></div>
 <div class="ttc" id="a_calculator_expression_8h_html"><div class="ttname"><a href="_calculator_expression_8h.html">CalculatorExpression.h</a></div></div>
 <div class="ttc" id="a_testing_8h_html_a22af37abe33be79373eda9f950d1f6f4"><div class="ttname"><a href="_testing_8h.html#a22af37abe33be79373eda9f950d1f6f4">bracketAnalyze</a></div><div class="ttdeci">std::stack&lt; std::string &gt; bracketAnalyze(const std::string &amp;expression)</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00445">Calculator.cpp:445</a></div></div>
 <div class="ttc" id="a_testing_8h_html_a42ce7236f0d5e6a6903cdd4327e8706c"><div class="ttname"><a href="_testing_8h.html#a42ce7236f0d5e6a6903cdd4327e8706c">calculateExpression</a></div><div class="ttdeci">std::string calculateExpression(std::stack&lt; std::string &gt; &amp;expressionStack)</div><div class="ttdef"><b>Definition</b> <a href="_calculator_8cpp_source.html#l00451">Calculator.cpp:451</a></div></div>
 <div class="ttc" id="aclass_calculator_expression_html_a7de83b855fbfc7a0894d671e5dae3768"><div class="ttname"><a href="class_calculator_expression.html#a7de83b855fbfc7a0894d671e5dae3768">CalculatorExpression::CalculatorExpression</a></div><div class="ttdeci">CalculatorExpression()=default</div></div>
-<div class="ttc" id="aclass_testing_html"><div class="ttname"><a href="class_testing.html">Testing</a></div><div class="ttdef"><b>Definition</b> <a href="#l00016">Testing.h:17</a></div></div>
 <div class="ttc" id="aclass_testing_html_a129048a23785c573d2855abf022e5fc9"><div class="ttname"><a href="class_testing.html#a129048a23785c573d2855abf022e5fc9">Testing::runAllTests</a></div><div class="ttdeci">bool runAllTests(unsigned int &amp;testsTotal, unsigned int &amp;testsPassed, unsigned int &amp;testsFailed)</div><div class="ttdef"><b>Definition</b> <a href="_testing_8cpp_source.html#l00103">Testing.cpp:103</a></div></div>
+<div class="ttc" id="aclass_testing_html_a2cb29c0cedbbd09c2af0d1676f558933"><div class="ttname"><a href="class_testing.html#a2cb29c0cedbbd09c2af0d1676f558933">Testing::~Testing</a></div><div class="ttdeci">~Testing()=default</div></div>
+<div class="ttc" id="aclass_testing_html_aeeb2ffdd21714053d03aeddc1209649c"><div class="ttname"><a href="class_testing.html#aeeb2ffdd21714053d03aeddc1209649c">Testing::Testing</a></div><div class="ttdeci">Testing()=default</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

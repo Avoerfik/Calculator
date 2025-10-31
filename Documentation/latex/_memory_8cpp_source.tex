@@ -16,7 +16,7 @@
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00012}00012\ \ \ \ \ cell.\mbox{\hyperlink{struct_memory_cell_ac89452e5619babc765244104892e95d3}{operator12}}\ =\ nextOperator;}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00013}00013\ }
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00014}00014\ \ \ \ \ this-\/>\mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}.push\_back(record);}
-\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00015}00015\ \ \ \ \ mc.push\_back(cell);}
+\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{class_memory_a879a8221a17ee8da45e89a6f17b088d0}{mc}}.push\_back(cell);}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00016}00016\ }
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00018}00018\ \}}
@@ -36,7 +36,7 @@
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00032}00032\ \ \ \ \ cell.\mbox{\hyperlink{struct_memory_cell_ac89452e5619babc765244104892e95d3}{operator12}}\ =\ \textcolor{charliteral}{'\ '};\ \ \textcolor{comment}{//\ по\ умолчанию\ нет\ оператора}}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00033}00033\ }
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00034}00034\ \ \ \ \ this-\/>data.push\_back(\mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}});}
-\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00035}00035\ \ \ \ \ mc.push\_back(cell);}
+\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{class_memory_a879a8221a17ee8da45e89a6f17b088d0}{mc}}.push\_back(cell);}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00036}00036\ }
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00038}00038\ \}}
@@ -49,14 +49,14 @@
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00045}00045\ \textcolor{comment}{//\ Метод\ для\ получения\ строки\ расчета\ (просто\ объединяет\ все\ результаты\ и\ операторы)}}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00046}\mbox{\hyperlink{class_memory_a05da9e79c8a405a1331d2015a9e2d2ed}{00046}}\ std::string\ \mbox{\hyperlink{class_memory_a05da9e79c8a405a1331d2015a9e2d2ed}{Memory::getCalculationString}}()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00047}00047\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (mc.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_memory_a879a8221a17ee8da45e89a6f17b088d0}{mc}}.empty())\ \{}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00050}00050\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00051}00051\ }
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00052}00052\ \ \ \ \ std::stringstream\ ss;}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ mc.size();\ ++i)\ \{}
-\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_memory_cell}{MemoryCell}}\&\ cell\ =\ mc[i];}
+\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_memory_a879a8221a17ee8da45e89a6f17b088d0}{mc}}.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_memory_cell}{MemoryCell}}\&\ cell\ =\ \mbox{\hyperlink{class_memory_a879a8221a17ee8da45e89a6f17b088d0}{mc}}[i];}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00056}00056\ }
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Добавляем\ результат\ из\ первой\ строки\ info}}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!cell.\mbox{\hyperlink{struct_memory_cell_aeff77690ddd3025cb596406addcc4540}{record}}.\mbox{\hyperlink{struct_record_a4bcc718199b5e32ec57b07f82e8f6313}{info}}.empty())\ \{}
@@ -64,7 +64,7 @@
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00061}00061\ }
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Добавляем\ оператор,\ если\ он\ есть\ и\ это\ не\ последняя\ ячейка}}
-\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cell.\mbox{\hyperlink{struct_memory_cell_ac89452e5619babc765244104892e95d3}{operator12}}\ !=\ \textcolor{charliteral}{'\ '}\ \&\&\ i\ <\ mc.size()\ -\/\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cell.\mbox{\hyperlink{struct_memory_cell_ac89452e5619babc765244104892e95d3}{operator12}}\ !=\ \textcolor{charliteral}{'\ '}\ \&\&\ i\ <\ \mbox{\hyperlink{class_memory_a879a8221a17ee8da45e89a6f17b088d0}{mc}}.size()\ -\/\ 1)\ \{}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ cell.\mbox{\hyperlink{struct_memory_cell_ac89452e5619babc765244104892e95d3}{operator12}};}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00066}00066\ \ \ \ \ \}}
@@ -75,10 +75,10 @@
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00071}00071\ \textcolor{comment}{//\ Метод\ для\ вывода\ содержимого\ памяти}}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00072}\mbox{\hyperlink{class_memory_ac23bbfbefeec0a7be732b0e5dceb1bda}{00072}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_memory_ac23bbfbefeec0a7be732b0e5dceb1bda}{Memory::printMemory}}()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00073}00073\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00074}00074\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}===\ Memory\ Contents\ ("{}}\ <<\ mc.size()\ <<\ \textcolor{stringliteral}{"{}\ cells)\ ==="{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00074}00074\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}===\ Memory\ Contents\ ("{}}\ <<\ \mbox{\hyperlink{class_memory_a879a8221a17ee8da45e89a6f17b088d0}{mc}}.size()\ <<\ \textcolor{stringliteral}{"{}\ cells)\ ==="{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ mc.size();\ ++i)\ \{}
-\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_memory_cell}{MemoryCell}}\&\ cell\ =\ mc[i];}
+\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_memory_a879a8221a17ee8da45e89a6f17b088d0}{mc}}.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_memory_cell}{MemoryCell}}\&\ cell\ =\ \mbox{\hyperlink{class_memory_a879a8221a17ee8da45e89a6f17b088d0}{mc}}[i];}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00078}00078\ }
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Cell\ \#"{}}\ <<\ cell.\mbox{\hyperlink{struct_memory_cell_aeff77690ddd3025cb596406addcc4540}{record}}.\mbox{\hyperlink{struct_record_a5c8f84cd63104e6ae4cd4cd2938365bc}{number}}\ <<\ \textcolor{stringliteral}{"{}:\(\backslash\)n"{}};}
 \DoxyCodeLine{\Hypertarget{_memory_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ info\ :\ cell.\mbox{\hyperlink{struct_memory_cell_aeff77690ddd3025cb596406addcc4540}{record}}.\mbox{\hyperlink{struct_record_a4bcc718199b5e32ec57b07f82e8f6313}{info}})\ \{}

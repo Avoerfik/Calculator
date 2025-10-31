@@ -1,0 +1,95 @@
+\doxysection{Expression\+History.\+cpp}
+\hypertarget{_expression_history_8cpp_source}{}\label{_expression_history_8cpp_source}\index{App/src/Data/ExpressionHistory.cpp@{App/src/Data/ExpressionHistory.cpp}}
+\mbox{\hyperlink{_expression_history_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_expression_history_8h}{../../include/Data/ExpressionHistory.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_expression_analyzer_8h}{../../include/Data/ExpressionAnalyzer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00004}\mbox{\hyperlink{class_expression_history_a50d672d4d9afe5d9ad278e4adeae9c3f}{00004}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expression_history_a50d672d4d9afe5d9ad278e4adeae9c3f}{ExpressionHistory::importFromAnalyzer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_expression_analyzer}{ExpressionAnalyzer}}\&\ analyzer)}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{comment}{//\ Дружественный\ доступ\ к\ приватным\ данным\ analyzer}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{auto}\ stats\ =\ analyzer.stats;}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ stat\ :\ stats)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_analysis_record}{AnalysisRecord}}\ record;}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{struct_analysis_record_aa19390e29458303ea715cf3c76f16555}{timestamp}}\ =\ std::chrono::system\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{struct_analysis_record_a56f15f671a0d14b0d94044ab2ef30531}{stats}}\ =\ stat;}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{struct_analysis_record_a884b820cf109d4f42c9f099f9c94fc6c}{wasSuccessful}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ records.push\_back(record);}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00017}\mbox{\hyperlink{class_expression_history_a68227e516006b3f88d96462b7f0c2389}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expression_history_a68227e516006b3f88d96462b7f0c2389}{ExpressionHistory::addRecord}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_analysis_record}{AnalysisRecord}}\&\ record)}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00019}00019\ \ \ \ \ records.push\_back(record);}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00022}\mbox{\hyperlink{class_expression_history_a036729404683a4bb5b9320d5ce4c17ee}{00022}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expression_history_a036729404683a4bb5b9320d5ce4c17ee}{ExpressionHistory::clear}}()}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00024}00024\ \ \ \ \ records.clear();}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00027}\mbox{\hyperlink{class_expression_history_abea963a93d92249b50118be5d943857d}{00027}}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_expression_history_abea963a93d92249b50118be5d943857d}{ExpressionHistory::size}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00028}00028\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ records.size();}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00032}\mbox{\hyperlink{class_expression_history_ab41c401a2c457e1912a29f013cb21684}{00032}}\ std::vector<AnalysisRecord>\ \mbox{\hyperlink{class_expression_history_ab41c401a2c457e1912a29f013cb21684}{ExpressionHistory::getRecentRecords}}(\textcolor{keywordtype}{int}\ count)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00033}00033\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ <=\ 0\ ||\ records.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::vector<AnalysisRecord>();}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ >=\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(records.size()))\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ records;}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{return}\ std::vector<AnalysisRecord>(records.end()\ -\/\ count,\ records.end());}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00045}\mbox{\hyperlink{class_expression_history_af8adbc0b556f536c05e1a50cfcf83fce}{00045}}\ std::vector<AnalysisRecord>\ \mbox{\hyperlink{class_expression_history_af8adbc0b556f536c05e1a50cfcf83fce}{ExpressionHistory::getRecordsByComplexity}}(\textcolor{keyword}{const}\ std::string\&\ level)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00046}00046\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00047}00047\ \ \ \ \ std::vector<AnalysisRecord>\ result;}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ record\ :\ records)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (record.stats.complexityLevel\ ==\ level)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(record);}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00056}\mbox{\hyperlink{class_expression_history_a2355eafe93dc34300b6653088557757d}{00056}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_expression_history_a2355eafe93dc34300b6653088557757d}{ExpressionHistory::getAverageComplexity}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00057}00057\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (records.empty())\ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{double}\ sum\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ record\ :\ records)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ sum\ +=\ record.stats.complexity;}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{return}\ sum\ /\ records.size();}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00067}\mbox{\hyperlink{class_expression_history_aa6d5c3c6398df9abb4d5baa97653f9c3}{00067}}\ std::string\ \mbox{\hyperlink{class_expression_history_aa6d5c3c6398df9abb4d5baa97653f9c3}{ExpressionHistory::generateHistoryReport}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00068}00068\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00069}00069\ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00070}00070\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}===\ Expression\ Analysis\ History\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00071}00071\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}Total\ records:\ "{}}\ <<\ records.size()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00072}00072\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}Average\ complexity:\ "{}}\ <<\ \mbox{\hyperlink{class_expression_history_a2355eafe93dc34300b6653088557757d}{getAverageComplexity}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (!records.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}Recent\ expressions:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ recent\ =\ \mbox{\hyperlink{class_expression_history_ab41c401a2c457e1912a29f013cb21684}{getRecentRecords}}(5);}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ record\ :\ recent)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ time\ =\ std::chrono::system\_clock::to\_time\_t(record.timestamp);}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ "{}}\ <<\ std::put\_time(std::localtime(\&time),\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\ \%H:\%M:\%S"{}})}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ <<\ record.stats.expression}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ ["{}}\ <<\ record.stats.complexityLevel\ <<\ \textcolor{stringliteral}{"{}]\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}No\ records\ available.\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{\Hypertarget{_expression_history_8cpp_source_l00089}00089\ \}}
+
+\end{DoxyCode}

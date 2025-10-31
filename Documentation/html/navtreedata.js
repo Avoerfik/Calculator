@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Calculator Documentation", "index.html", [
+  [ "Calculator", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -49,7 +49,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_calculator_8cpp.html"
+"_analysis_counter_8cpp.html",
+"class_menu.html#a9782f4ceb22f05a974a283af2692f31c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

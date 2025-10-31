@@ -1,0 +1,263 @@
+\doxysection{Expression\+Analyzer Class Reference}
+\hypertarget{class_expression_analyzer}{}\label{class_expression_analyzer}\index{ExpressionAnalyzer@{ExpressionAnalyzer}}
+
+
+{\ttfamily \#include $<$Expression\+Analyzer.\+h$>$}
+
+
+
+Inheritance diagram for Expression\+Analyzer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{class_expression_analyzer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Expression\+Analyzer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{class_expression_analyzer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48}{Expression\+Analyzer}} ()
+\item 
+\mbox{\hyperlink{class_expression_analyzer_a8b94e5030ec3ac616800f0a428b9a433}{Expression\+Analyzer}} (\mbox{\hyperlink{class_complexity_calculator}{Complexity\+Calculator}} \texorpdfstring{$\ast$}{*}calc)
+\item 
+virtual \mbox{\hyperlink{class_expression_analyzer_a35e5a64c19abb08b01dd8201dd0b0ac6}{\texorpdfstring{$\sim$}{\string~}\+Expression\+Analyzer}} ()
+\item 
+void \mbox{\hyperlink{class_expression_analyzer_a289ffe4d88b9ec0b0e23587f7f66be7c}{analyze\+Expression}} (const std\+::string \&expression, double calc\+Time=0.\+0)
+\item 
+void \mbox{\hyperlink{class_expression_analyzer_a8964961399758a763429cb6c2be813ec}{record\+Success}} ()
+\item 
+void \mbox{\hyperlink{class_expression_analyzer_a4d6e3070c41a6149e4317ebc284862a0}{record\+Error}} ()
+\item 
+int \mbox{\hyperlink{class_expression_analyzer_ae68e4e749e7ddd5b8452ea4be0a51650}{get\+Total\+Expressions}} () const
+\item 
+int \mbox{\hyperlink{class_expression_analyzer_a0f21262a9887ed8ff87424a2c6f47e75}{get\+Success\+Count}} () const
+\item 
+int \mbox{\hyperlink{class_expression_analyzer_a4070753d3addf679ecbaf41abda01b87}{get\+Error\+Count}} () const
+\item 
+std\+::map$<$ char, int $>$ \mbox{\hyperlink{class_expression_analyzer_a501bb3bc34cc93d5d2ef0348a5c81230}{get\+Operator\+Frequency}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_expression_stats}{Expression\+Stats}} $>$ \mbox{\hyperlink{class_expression_analyzer_a8d7428d760f56ff698ac1198c3aa775d}{get\+Stats}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_engine}{Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_acc713c22e0940be92b1251a916849077}{Engine}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_engine_a11f150c12c31e2af334e3f9131c5c069}{\texorpdfstring{$\sim$}{\string~}\+Engine}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_expression_analyzer_ae644fd91e034c1d23ea7147bc73042a1}{Expression\+History}}
+\item 
+std\+::string \mbox{\hyperlink{class_expression_analyzer_a52814976c7eefbf9db16b71b337ba9ec}{generate\+Statistics\+Report}} (const \mbox{\hyperlink{class_expression_analyzer}{Expression\+Analyzer}} \&analyzer, const \mbox{\hyperlink{class_expression_history}{Expression\+History}} \&history)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8h_source_l00019}{19}} of file \mbox{\hyperlink{_expression_analyzer_8h_source}{Expression\+Analyzer.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_expression_analyzer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\index{ExpressionAnalyzer@{ExpressionAnalyzer}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{ExpressionAnalyzer()}{ExpressionAnalyzer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48} 
+Expression\+Analyzer\+::\+Expression\+Analyzer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{_expression_analyzer_8cpp_source}{Expression\+Analyzer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_expression_analyzer_a8b94e5030ec3ac616800f0a428b9a433}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\index{ExpressionAnalyzer@{ExpressionAnalyzer}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{ExpressionAnalyzer()}{ExpressionAnalyzer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_a8b94e5030ec3ac616800f0a428b9a433} 
+Expression\+Analyzer\+::\+Expression\+Analyzer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_complexity_calculator}{Complexity\+Calculator}} \texorpdfstring{$\ast$}{*}}]{calc}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{_expression_analyzer_8cpp_source}{Expression\+Analyzer.\+cpp}}.
+
+\Hypertarget{class_expression_analyzer_a35e5a64c19abb08b01dd8201dd0b0ac6}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!````~ExpressionAnalyzer@{\texorpdfstring{$\sim$}{\string~}ExpressionAnalyzer}}
+\index{````~ExpressionAnalyzer@{\texorpdfstring{$\sim$}{\string~}ExpressionAnalyzer}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ExpressionAnalyzer()}{\string~ExpressionAnalyzer()}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_a35e5a64c19abb08b01dd8201dd0b0ac6} 
+Expression\+Analyzer\+::\texorpdfstring{$\sim$}{\string~}\+Expression\+Analyzer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_expression_analyzer_8cpp_source}{Expression\+Analyzer.\+cpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_expression_analyzer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_expression_analyzer_a289ffe4d88b9ec0b0e23587f7f66be7c}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!analyzeExpression@{analyzeExpression}}
+\index{analyzeExpression@{analyzeExpression}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{analyzeExpression()}{analyzeExpression()}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_a289ffe4d88b9ec0b0e23587f7f66be7c} 
+void Expression\+Analyzer\+::analyze\+Expression (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expression}{, }\item[{double}]{calc\+Time}{ = {\ttfamily 0.0}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8cpp_source_l00117}{117}} of file \mbox{\hyperlink{_expression_analyzer_8cpp_source}{Expression\+Analyzer.\+cpp}}.
+
+\Hypertarget{class_expression_analyzer_a4070753d3addf679ecbaf41abda01b87}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!getErrorCount@{getErrorCount}}
+\index{getErrorCount@{getErrorCount}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{getErrorCount()}{getErrorCount()}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_a4070753d3addf679ecbaf41abda01b87} 
+int Expression\+Analyzer\+::get\+Error\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{_expression_analyzer_8cpp_source}{Expression\+Analyzer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_expression_analyzer_a4070753d3addf679ecbaf41abda01b87_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_expression_analyzer_a501bb3bc34cc93d5d2ef0348a5c81230}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!getOperatorFrequency@{getOperatorFrequency}}
+\index{getOperatorFrequency@{getOperatorFrequency}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{getOperatorFrequency()}{getOperatorFrequency()}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_a501bb3bc34cc93d5d2ef0348a5c81230} 
+std\+::map$<$ char, int $>$ Expression\+Analyzer\+::get\+Operator\+Frequency (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8cpp_source_l00171}{171}} of file \mbox{\hyperlink{_expression_analyzer_8cpp_source}{Expression\+Analyzer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_expression_analyzer_a501bb3bc34cc93d5d2ef0348a5c81230_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_expression_analyzer_a8d7428d760f56ff698ac1198c3aa775d}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!getStats@{getStats}}
+\index{getStats@{getStats}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{getStats()}{getStats()}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_a8d7428d760f56ff698ac1198c3aa775d} 
+std\+::vector$<$ \mbox{\hyperlink{struct_expression_stats}{Expression\+Stats}} $>$ Expression\+Analyzer\+::get\+Stats (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8cpp_source_l00172}{172}} of file \mbox{\hyperlink{_expression_analyzer_8cpp_source}{Expression\+Analyzer.\+cpp}}.
+
+\Hypertarget{class_expression_analyzer_a0f21262a9887ed8ff87424a2c6f47e75}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!getSuccessCount@{getSuccessCount}}
+\index{getSuccessCount@{getSuccessCount}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{getSuccessCount()}{getSuccessCount()}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_a0f21262a9887ed8ff87424a2c6f47e75} 
+int Expression\+Analyzer\+::get\+Success\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8cpp_source_l00169}{169}} of file \mbox{\hyperlink{_expression_analyzer_8cpp_source}{Expression\+Analyzer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_expression_analyzer_a0f21262a9887ed8ff87424a2c6f47e75_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_expression_analyzer_ae68e4e749e7ddd5b8452ea4be0a51650}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!getTotalExpressions@{getTotalExpressions}}
+\index{getTotalExpressions@{getTotalExpressions}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{getTotalExpressions()}{getTotalExpressions()}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_ae68e4e749e7ddd5b8452ea4be0a51650} 
+int Expression\+Analyzer\+::get\+Total\+Expressions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{_expression_analyzer_8cpp_source}{Expression\+Analyzer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_expression_analyzer_ae68e4e749e7ddd5b8452ea4be0a51650_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_expression_analyzer_a4d6e3070c41a6149e4317ebc284862a0}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!recordError@{recordError}}
+\index{recordError@{recordError}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{recordError()}{recordError()}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_a4d6e3070c41a6149e4317ebc284862a0} 
+void Expression\+Analyzer\+::record\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{_expression_analyzer_8cpp_source}{Expression\+Analyzer.\+cpp}}.
+
+\Hypertarget{class_expression_analyzer_a8964961399758a763429cb6c2be813ec}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!recordSuccess@{recordSuccess}}
+\index{recordSuccess@{recordSuccess}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{recordSuccess()}{recordSuccess()}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_a8964961399758a763429cb6c2be813ec} 
+void Expression\+Analyzer\+::record\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8cpp_source_l00146}{146}} of file \mbox{\hyperlink{_expression_analyzer_8cpp_source}{Expression\+Analyzer.\+cpp}}.
+
+
+
+\label{doc-related-members}
+\Hypertarget{class_expression_analyzer_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_expression_analyzer_ae644fd91e034c1d23ea7147bc73042a1}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!ExpressionHistory@{ExpressionHistory}}
+\index{ExpressionHistory@{ExpressionHistory}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{ExpressionHistory}{ExpressionHistory}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_ae644fd91e034c1d23ea7147bc73042a1} 
+friend class \mbox{\hyperlink{class_expression_history}{Expression\+History}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_expression_analyzer_8h_source_l00047}{47}} of file \mbox{\hyperlink{_expression_analyzer_8h_source}{Expression\+Analyzer.\+h}}.
+
+\Hypertarget{class_expression_analyzer_a52814976c7eefbf9db16b71b337ba9ec}\index{ExpressionAnalyzer@{ExpressionAnalyzer}!generateStatisticsReport@{generateStatisticsReport}}
+\index{generateStatisticsReport@{generateStatisticsReport}!ExpressionAnalyzer@{ExpressionAnalyzer}}
+\doxysubsubsection{\texorpdfstring{generateStatisticsReport}{generateStatisticsReport}}
+{\footnotesize\ttfamily \label{class_expression_analyzer_a52814976c7eefbf9db16b71b337ba9ec} 
+std\+::string generate\+Statistics\+Report (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_expression_analyzer}{Expression\+Analyzer}} \&}]{analyzer}{, }\item[{const \mbox{\hyperlink{class_expression_history}{Expression\+History}} \&}]{history}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_statistics_reporter_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{_statistics_reporter_8cpp_source}{Statistics\+Reporter.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+App/include/\+Data/\mbox{\hyperlink{_expression_analyzer_8h}{Expression\+Analyzer.\+h}}\item 
+App/src/\+Data/\mbox{\hyperlink{_expression_analyzer_8cpp}{Expression\+Analyzer.\+cpp}}\end{DoxyCompactItemize}

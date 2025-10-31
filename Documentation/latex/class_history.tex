@@ -11,13 +11,12 @@ Inheritance diagram for History\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=127pt]{class_history__inherit__graph}
+\includegraphics[width=163pt]{class_history__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for History\+:
-\nopagebreak
+Collaboration diagram for History\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -41,7 +40,7 @@ const std\+::vector$<$ \mbox{\hyperlink{struct_record_history}{Record\+History}}
 \item 
 size\+\_\+t \mbox{\hyperlink{class_history_ac34d45ec9a11c4a0b1f61f2b87ba9aea}{get\+History\+Size}} () const
 \item 
-void \mbox{\hyperlink{class_history_a9baf386eff2e21f1f389d003043499fc}{print\+Record\+History}} (const \mbox{\hyperlink{struct_record_history}{Record\+History}} \&rh) const
+void \mbox{\hyperlink{class_history_a9baf386eff2e21f1f389d003043499fc}{print\+Record\+History}} (const \mbox{\hyperlink{struct_record_history}{Record\+History}} \&\mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}}) const
 \item 
 void \mbox{\hyperlink{class_history_adcaee81d1392f1c8278138a3894f0051}{print\+All\+History}} () const
 \item 
@@ -63,11 +62,10 @@ virtual \mbox{\hyperlink{class_data_a3635432c142836f46f99fbdf6273d135}{\texorpdf
 \item 
 virtual \mbox{\hyperlink{class_engine_a11f150c12c31e2af334e3f9131c5c069}{\texorpdfstring{$\sim$}{\string~}\+Engine}} ()=default
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_data}{Data}}}
+\doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-unsigned int \mbox{\hyperlink{class_data_ac00c9aa58b57fa56b3488be1951ab523}{get\+Next\+Number}} ()
+std\+::vector$<$ \mbox{\hyperlink{struct_record_history}{Record\+History}} $>$ \mbox{\hyperlink{class_history_a811563490b625c00e594d7132be71dea}{rh}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_data}{Data}}}
 \begin{DoxyCompactItemize}
@@ -75,6 +73,12 @@ unsigned int \mbox{\hyperlink{class_data_ac00c9aa58b57fa56b3488be1951ab523}{get\
 std\+::vector$<$ \mbox{\hyperlink{struct_record}{Record}} $>$ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}
 \item 
 unsigned int \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{current\+Number}} = 1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_data}{Data}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_data_ac00c9aa58b57fa56b3488be1951ab523}{get\+Next\+Number}} ()
 \end{DoxyCompactItemize}
 
 
@@ -128,6 +132,10 @@ Implements \mbox{\hyperlink{class_data_aeca16c62fc1beb85591122286c97d870}{Data}}
 
 
 
+Reimplemented in \mbox{\hyperlink{class_history_memory_af1fd3af6151440404082b6c4bcb2be16}{History\+Memory}}.
+
+
+
 Definition at line \mbox{\hyperlink{_history_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{_history_8cpp_source}{History.\+cpp}}.
 
 Here is the call graph for this function\+:\nopagebreak
@@ -145,7 +153,7 @@ const std\+::vector$<$ \mbox{\hyperlink{struct_record_history}{Record\+History}}
 
 
 
-Definition at line \mbox{\hyperlink{_history_8h_source_l00032}{32}} of file \mbox{\hyperlink{_history_8h_source}{History.\+h}}.
+Definition at line \mbox{\hyperlink{_history_8h_source_l00029}{29}} of file \mbox{\hyperlink{_history_8h_source}{History.\+h}}.
 
 \Hypertarget{class_history_ac34d45ec9a11c4a0b1f61f2b87ba9aea}\index{History@{History}!getHistorySize@{getHistorySize}}
 \index{getHistorySize@{getHistorySize}!History@{History}}
@@ -155,7 +163,7 @@ size\+\_\+t History\+::get\+History\+Size (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-Definition at line \mbox{\hyperlink{_history_8h_source_l00033}{33}} of file \mbox{\hyperlink{_history_8h_source}{History.\+h}}.
+Definition at line \mbox{\hyperlink{_history_8h_source_l00030}{30}} of file \mbox{\hyperlink{_history_8h_source}{History.\+h}}.
 
 \Hypertarget{class_history_adcaee81d1392f1c8278138a3894f0051}\index{History@{History}!printAllHistory@{printAllHistory}}
 \index{printAllHistory@{printAllHistory}!History@{History}}
@@ -232,7 +240,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=330pt]{class_history_a9eda9965c45bde02a3c5c3a5aea4b329_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -251,6 +260,10 @@ Implements \mbox{\hyperlink{class_data_a3c2617676ef58a9e8768a55b950d7827}{Data}}
 
 
 
+Reimplemented in \mbox{\hyperlink{class_history_memory_a756135e55b9ee77d8a24835b8638bd07}{History\+Memory}}.
+
+
+
 Definition at line \mbox{\hyperlink{_history_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_history_8cpp_source}{History.\+cpp}}.
 
 Here is the call graph for this function\+:\nopagebreak
@@ -260,6 +273,21 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=330pt]{class_history_aab8cb550ba5a172b530b4d2c1650cf29_cgraph}
 \end{center}
 \end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_history_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_history_a811563490b625c00e594d7132be71dea}\index{History@{History}!rh@{rh}}
+\index{rh@{rh}!History@{History}}
+\doxysubsubsection{\texorpdfstring{rh}{rh}}
+{\footnotesize\ttfamily \label{class_history_a811563490b625c00e594d7132be71dea} 
+std\+::vector$<$\mbox{\hyperlink{struct_record_history}{Record\+History}}$>$ History\+::rh\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_history_8h_source_l00037}{37}} of file \mbox{\hyperlink{_history_8h_source}{History.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

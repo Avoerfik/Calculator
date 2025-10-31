@@ -1,7 +1,9 @@
 <map id="Memory" name="Memory">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,152,75,177"/>
-<area shape="rect" id="Node000002" href="$class_data.html" title=" " alt="" coords="15,79,65,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="43,118,43,152,37,152,37,118"/>
-<area shape="rect" id="Node000003" href="$class_engine.html" title=" " alt="" coords="9,5,71,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="43,44,43,79,37,79,37,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="26,152,95,177"/>
+<area shape="rect" id="Node000004" href="$class_history_memory.html" title=" " alt="" coords="5,225,116,251"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="63,191,63,225,58,225,58,191"/>
+<area shape="rect" id="Node000002" href="$class_data.html" title=" " alt="" coords="36,79,85,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,118,63,152,58,152,58,118"/>
+<area shape="rect" id="Node000003" href="$class_engine.html" title=" " alt="" coords="29,5,92,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="63,44,63,79,58,79,58,44"/>
 </map>

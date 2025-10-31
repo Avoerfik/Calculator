@@ -9,5 +9,6 @@ var class_memory =
     [ "isEmpty", "class_memory.html#a9aba7736b7d6662936a9b5c1c6ae79ba", null ],
     [ "printMemory", "class_memory.html#ac23bbfbefeec0a7be732b0e5dceb1bda", null ],
     [ "reserveData", "class_memory.html#a981098a28ea1d833ed33d0f711845e15", null ],
-    [ "reserveData", "class_memory.html#ab503c0cf4a226fd3d67aeaf0531a153f", null ]
+    [ "reserveData", "class_memory.html#ab503c0cf4a226fd3d67aeaf0531a153f", null ],
+    [ "mc", "class_memory.html#a879a8221a17ee8da45e89a6f17b088d0", null ]
 ];

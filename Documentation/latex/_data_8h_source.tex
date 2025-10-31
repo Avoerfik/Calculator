@@ -15,7 +15,7 @@
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00011}\mbox{\hyperlink{struct_record}{00011}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_record}{Record}}}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00012}00012\ \{}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00013}\mbox{\hyperlink{struct_record_a4bcc718199b5e32ec57b07f82e8f6313}{00013}}\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{struct_record_a4bcc718199b5e32ec57b07f82e8f6313}{info}};}
-\DoxyCodeLine{\Hypertarget{_data_8h_source_l00014}\mbox{\hyperlink{struct_record_a5c8f84cd63104e6ae4cd4cd2938365bc}{00014}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_record_a5c8f84cd63104e6ae4cd4cd2938365bc}{number}};}
+\DoxyCodeLine{\Hypertarget{_data_8h_source_l00014}\mbox{\hyperlink{struct_record_a5c8f84cd63104e6ae4cd4cd2938365bc}{00014}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_record_a5c8f84cd63104e6ae4cd4cd2938365bc}{number}}\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00015}00015\ \};}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00016}00016\ }
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00017}\mbox{\hyperlink{class_data}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_engine_acc713c22e0940be92b1251a916849077}{Engine}}}
@@ -23,22 +23,22 @@
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00019}00019\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00020}\mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{00020}}\ \ \ \ \ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}()\ \{}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}.reserve(1);}
-\DoxyCodeLine{\Hypertarget{_data_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{currentNumber}}\ =\ 1;\ \ \textcolor{comment}{//\ Начинаем\ с\ номера\ 1}}
+\DoxyCodeLine{\Hypertarget{_data_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{currentNumber}}\ =\ 1;}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00023}00023\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00024}\mbox{\hyperlink{class_data_adb41061219822126474947b087bf15eb}{00024}}\ \ \ \ \ \mbox{\hyperlink{class_data_adb41061219822126474947b087bf15eb}{Data}}(\mbox{\hyperlink{struct_record}{Record}}\ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}})\ \{}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ this-\/>data.push\_back(\mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}});}
-\DoxyCodeLine{\Hypertarget{_data_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{currentNumber}}\ =\ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}.number\ +\ 1;\ \ \textcolor{comment}{//\ Продолжаем\ с\ следующего\ номера}}
+\DoxyCodeLine{\Hypertarget{_data_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{currentNumber}}\ =\ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}}.number\ +\ 1;}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00027}00027\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00028}\mbox{\hyperlink{class_data_a3635432c142836f46f99fbdf6273d135}{00028}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_data_a3635432c142836f46f99fbdf6273d135}{\string~Data}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00029}00029\ }
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00030}\mbox{\hyperlink{class_data_a3c2617676ef58a9e8768a55b950d7827}{00030}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}*\ \mbox{\hyperlink{class_data_a3c2617676ef58a9e8768a55b950d7827}{reserveData}}(\mbox{\hyperlink{struct_record}{Record}}\ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}})\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_data_8h_source_l00031}\mbox{\hyperlink{class_data_aeca16c62fc1beb85591122286c97d870}{00031}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}*\ \mbox{\hyperlink{class_data_aeca16c62fc1beb85591122286c97d870}{getData}}()\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_data_8h_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{_data_8h_source_l00033}00033\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{\Hypertarget{_data_8h_source_l00034}\mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{00034}}\ \ \ \ \ std::vector<Record>\ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}};}
-\DoxyCodeLine{\Hypertarget{_data_8h_source_l00035}\mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{00035}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{currentNumber}}\ =\ 1;\ \ \textcolor{comment}{//\ Счётчик\ номеров}}
-\DoxyCodeLine{\Hypertarget{_data_8h_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{_data_8h_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Метод\ для\ получения\ следующего\ номера}}
+\DoxyCodeLine{\Hypertarget{_data_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_data_8h_source_l00032}\mbox{\hyperlink{class_data_aeca16c62fc1beb85591122286c97d870}{00032}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_data_af11f741cb7f587e2e495452a8905a22a}{Data}}*\ \mbox{\hyperlink{class_data_aeca16c62fc1beb85591122286c97d870}{getData}}()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_data_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_data_8h_source_l00034}00034\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_data_8h_source_l00035}\mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{00035}}\ \ \ \ \ std::vector<Record>\ \mbox{\hyperlink{class_data_af52531568b81e4705f2f6e40a62dd5e1}{data}};}
+\DoxyCodeLine{\Hypertarget{_data_8h_source_l00036}\mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{00036}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{currentNumber}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_data_8h_source_l00037}00037\ }
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00038}\mbox{\hyperlink{class_data_ac00c9aa58b57fa56b3488be1951ab523}{00038}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_data_ac00c9aa58b57fa56b3488be1951ab523}{getNextNumber}}()\ \{}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_data_ae03850de2a00d7c9cfa385406d5be3d4}{currentNumber}}++;}
 \DoxyCodeLine{\Hypertarget{_data_8h_source_l00040}00040\ \ \ \ \ \}}

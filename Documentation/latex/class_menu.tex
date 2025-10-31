@@ -6,11 +6,22 @@
 
 
 
-Inheritance diagram for Menu\+:\nopagebreak
+Inheritance diagram for Menu\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=230pt]{class_menu__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_menu__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -18,9 +29,16 @@ Inheritance diagram for Menu\+:\nopagebreak
 \item 
 \mbox{\hyperlink{class_menu_ad466dd83355124a6ed958430450bfe94}{Menu}} ()
 \item 
-\mbox{\hyperlink{class_menu_a831387f51358cfb88cd018e1777bc980}{\texorpdfstring{$\sim$}{\string~}\+Menu}} ()
+virtual \mbox{\hyperlink{class_menu_a831387f51358cfb88cd018e1777bc980}{\texorpdfstring{$\sim$}{\string~}\+Menu}} ()
 \item 
 void \mbox{\hyperlink{class_menu_a35656cd130e24d69383a5c9d0a73a38c}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_engine}{Engine}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_engine_acc713c22e0940be92b1251a916849077}{Engine}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_engine_a11f150c12c31e2af334e3f9131c5c069}{\texorpdfstring{$\sim$}{\string~}\+Engine}} ()=default
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -28,6 +46,20 @@ void \mbox{\hyperlink{class_menu_a35656cd130e24d69383a5c9d0a73a38c}{run}} ()
 bool \mbox{\hyperlink{class_menu_a71098d57a94e1d762bf3b2faaaa711a3}{is\+Correct\+Char}} (const std\+::string \&input)
 \item 
 bool \mbox{\hyperlink{class_menu_ae5392b8a8377313c6303c62bc87b9882}{is\+Correct\+Int}} (const std\+::string \&input)
+\item 
+void \mbox{\hyperlink{class_menu_a8ab06ae3f53ecfaf8f64917d3203a922}{initialize\+Analyzers}} ()
+\item 
+void \mbox{\hyperlink{class_menu_a58e5c028a346543a4b8a47f7d2a2819c}{display\+Statistics\+Menu}} ()
+\item 
+void \mbox{\hyperlink{class_menu_a075af2cdb22b2f9976a2a49905b6fc36}{show\+Expression\+Statistics}} ()
+\item 
+void \mbox{\hyperlink{class_menu_aec80e5cd45c063299eee3f0be4106391}{show\+Operator\+Frequency}} ()
+\item 
+void \mbox{\hyperlink{class_menu_ab5887065a8ccdfeca6078c81cae9280c}{show\+Complexity\+Analysis}} ()
+\item 
+void \mbox{\hyperlink{class_menu_a9782f4ceb22f05a974a283af2692f31c}{show\+Comprehensive\+Report}} ()
+\item 
+void \mbox{\hyperlink{class_menu_a57323620065a67ecaf8140a7b2d55a64}{reset\+Statistics}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -43,7 +75,7 @@ unsigned int \mbox{\hyperlink{class_menu_a34877de6052acac791b6636d8eaefb04}{test
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{_menu_8h_source_l00019}{19}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
+Definition at line \mbox{\hyperlink{_menu_8h_source_l00026}{26}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
 
 
 
@@ -58,8 +90,16 @@ Menu\+::\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_menu_ad466dd83355124a6ed958430450bfe94_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -71,17 +111,61 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{````~Menu@{\texorpdfstring{$\sim$}{\string~}Menu}!Menu@{Menu}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Menu()}{\string~Menu()}}
 {\footnotesize\ttfamily \label{class_menu_a831387f51358cfb88cd018e1777bc980} 
-Menu\+::\texorpdfstring{$\sim$}{\string~}\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+Menu\+::\texorpdfstring{$\sim$}{\string~}\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
 
 
 
 \label{doc-func-members}
 \Hypertarget{class_menu_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_a58e5c028a346543a4b8a47f7d2a2819c}\index{Menu@{Menu}!displayStatisticsMenu@{displayStatisticsMenu}}
+\index{displayStatisticsMenu@{displayStatisticsMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{displayStatisticsMenu()}{displayStatisticsMenu()}}
+{\footnotesize\ttfamily \label{class_menu_a58e5c028a346543a4b8a47f7d2a2819c} 
+void Menu\+::display\+Statistics\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00202}{202}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a58e5c028a346543a4b8a47f7d2a2819c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a58e5c028a346543a4b8a47f7d2a2819c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_a8ab06ae3f53ecfaf8f64917d3203a922}\index{Menu@{Menu}!initializeAnalyzers@{initializeAnalyzers}}
+\index{initializeAnalyzers@{initializeAnalyzers}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{initializeAnalyzers()}{initializeAnalyzers()}}
+{\footnotesize\ttfamily \label{class_menu_a8ab06ae3f53ecfaf8f64917d3203a922} 
+void Menu\+::initialize\+Analyzers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a8ab06ae3f53ecfaf8f64917d3203a922_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_menu_a71098d57a94e1d762bf3b2faaaa711a3}\index{Menu@{Menu}!isCorrectChar@{isCorrectChar}}
 \index{isCorrectChar@{isCorrectChar}!Menu@{Menu}}
 \doxysubsubsection{\texorpdfstring{isCorrectChar()}{isCorrectChar()}}
@@ -90,7 +174,7 @@ bool Menu\+::is\+Correct\+Char (\begin{DoxyParamCaption}\item[{const std\+::stri
 
 
 
-Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00342}{342}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -107,8 +191,26 @@ bool Menu\+::is\+Correct\+Int (\begin{DoxyParamCaption}\item[{const std\+::strin
 
 
 
-Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00357}{357}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
 
+\Hypertarget{class_menu_a57323620065a67ecaf8140a7b2d55a64}\index{Menu@{Menu}!resetStatistics@{resetStatistics}}
+\index{resetStatistics@{resetStatistics}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{resetStatistics()}{resetStatistics()}}
+{\footnotesize\ttfamily \label{class_menu_a57323620065a67ecaf8140a7b2d55a64} 
+void Menu\+::reset\+Statistics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00329}{329}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a57323620065a67ecaf8140a7b2d55a64_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_menu_a35656cd130e24d69383a5c9d0a73a38c}\index{Menu@{Menu}!run@{run}}
 \index{run@{run}!Menu@{Menu}}
 \doxysubsubsection{\texorpdfstring{run()}{run()}}
@@ -117,9 +219,10 @@ void Menu\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -131,6 +234,86 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=214pt]{class_menu_a35656cd130e24d69383a5c9d0a73a38c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_ab5887065a8ccdfeca6078c81cae9280c}\index{Menu@{Menu}!showComplexityAnalysis@{showComplexityAnalysis}}
+\index{showComplexityAnalysis@{showComplexityAnalysis}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{showComplexityAnalysis()}{showComplexityAnalysis()}}
+{\footnotesize\ttfamily \label{class_menu_ab5887065a8ccdfeca6078c81cae9280c} 
+void Menu\+::show\+Complexity\+Analysis (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00284}{284}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_ab5887065a8ccdfeca6078c81cae9280c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_a9782f4ceb22f05a974a283af2692f31c}\index{Menu@{Menu}!showComprehensiveReport@{showComprehensiveReport}}
+\index{showComprehensiveReport@{showComprehensiveReport}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{showComprehensiveReport()}{showComprehensiveReport()}}
+{\footnotesize\ttfamily \label{class_menu_a9782f4ceb22f05a974a283af2692f31c} 
+void Menu\+::show\+Comprehensive\+Report (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00314}{314}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a9782f4ceb22f05a974a283af2692f31c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a9782f4ceb22f05a974a283af2692f31c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_a075af2cdb22b2f9976a2a49905b6fc36}\index{Menu@{Menu}!showExpressionStatistics@{showExpressionStatistics}}
+\index{showExpressionStatistics@{showExpressionStatistics}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{showExpressionStatistics()}{showExpressionStatistics()}}
+{\footnotesize\ttfamily \label{class_menu_a075af2cdb22b2f9976a2a49905b6fc36} 
+void Menu\+::show\+Expression\+Statistics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00247}{247}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a075af2cdb22b2f9976a2a49905b6fc36_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_menu_aec80e5cd45c063299eee3f0be4106391}\index{Menu@{Menu}!showOperatorFrequency@{showOperatorFrequency}}
+\index{showOperatorFrequency@{showOperatorFrequency}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{showOperatorFrequency()}{showOperatorFrequency()}}
+{\footnotesize\ttfamily \label{class_menu_aec80e5cd45c063299eee3f0be4106391} 
+void Menu\+::show\+Operator\+Frequency (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_menu_8cpp_source_l00264}{264}} of file \mbox{\hyperlink{_menu_8cpp_source}{Menu.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_aec80e5cd45c063299eee3f0be4106391_icgraph}
 \end{center}
 \end{figure}
 
@@ -146,7 +329,7 @@ unsigned int Menu\+::tests\+Failed\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Definition at line \mbox{\hyperlink{_menu_8h_source_l00027}{27}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
+Definition at line \mbox{\hyperlink{_menu_8h_source_l00034}{34}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
 
 \Hypertarget{class_menu_add033e2561712c8a830686a454ec0325}\index{Menu@{Menu}!testsPassed@{testsPassed}}
 \index{testsPassed@{testsPassed}!Menu@{Menu}}
@@ -156,7 +339,7 @@ unsigned int Menu\+::tests\+Passed\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Definition at line \mbox{\hyperlink{_menu_8h_source_l00027}{27}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
+Definition at line \mbox{\hyperlink{_menu_8h_source_l00034}{34}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
 
 \Hypertarget{class_menu_ac42f460f50939202951daa58817e7e15}\index{Menu@{Menu}!testsTotal@{testsTotal}}
 \index{testsTotal@{testsTotal}!Menu@{Menu}}
@@ -166,7 +349,7 @@ unsigned int Menu\+::tests\+Total\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Definition at line \mbox{\hyperlink{_menu_8h_source_l00027}{27}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
+Definition at line \mbox{\hyperlink{_menu_8h_source_l00034}{34}} of file \mbox{\hyperlink{_menu_8h_source}{Menu.\+h}}.
 
 
 

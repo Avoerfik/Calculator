@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator Documentation: App/src/Menu/MenuInput.cpp Source File</title>
+<title>Calculator: App/src/Menu/MenuInput.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Calculator Documentation<span id="projectnumber">&#160;0.0.2</span>
+   <div id="projectname">Calculator<span id="projectnumber">&#160;0.0.3.</span>
    </div>
-   <div id="projectbrief">Second version</div>
+   <div id="projectbrief">Third version</div>
   </td>
  </tr>
  </tbody>
@@ -192,105 +192,107 @@ $(function(){initNavTree('_menu_input_8cpp_source.html','',''); });
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;2. Matrix calculator\n&quot;</span>;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;3. Show history\n&quot;</span>;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;4. Calculate Memory\n&quot;</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;0. Exit\n&quot;</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        std::string input;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        std::getline(std::cin, input);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">isCorrectChar</a>(input) &amp;&amp;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            ((input[0] == <span class="charliteral">&#39;0&#39;</span>)</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                || (input[0] == <span class="charliteral">&#39;1&#39;</span>)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                || (input[0] == <span class="charliteral">&#39;2&#39;</span>)</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                || (input[0] == <span class="charliteral">&#39;3&#39;</span>)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                || (input[0] == <span class="charliteral">&#39;4&#39;</span>)))</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">return</span> std::stoi(input);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter only 0, 1, 2 or 3!\n&quot;</span>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    } <span class="keywordflow">while</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;5. Expression Statistics\n&quot;</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;0. Exit\n&quot;</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        std::string input;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        std::getline(std::cin, input);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">isCorrectChar</a>(input) &amp;&amp;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            ((input[0] == <span class="charliteral">&#39;0&#39;</span>)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                || (input[0] == <span class="charliteral">&#39;1&#39;</span>)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                || (input[0] == <span class="charliteral">&#39;2&#39;</span>)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                || (input[0] == <span class="charliteral">&#39;3&#39;</span>)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                || (input[0] == <span class="charliteral">&#39;4&#39;</span>)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                || (input[0] == <span class="charliteral">&#39;5&#39;</span>)))</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordflow">return</span> std::stoi(input);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter only 0, 1, 2, 3, 4 or 5!\n&quot;</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    } <span class="keywordflow">while</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
 </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_menu_input.html#a2229e64c7a2043155b8be7898acdd4bb">  104</a></span><a class="code hl_class" href="class_matrix.html">Matrix</a> <a class="code hl_function" href="class_menu_input.html#a2229e64c7a2043155b8be7898acdd4bb">MenuInput::getMatrix</a>()</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <a class="code hl_class" href="class_matrix.html">Matrix</a> matrix;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter matrix:\n&quot;</span>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        std::cin &gt;&gt; matrix;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Matrix is:\n&quot;</span>;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        std::cout &lt;&lt; matrix;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">return</span> matrix;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp;)</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">throw</span>;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_menu_input.html#a2229e64c7a2043155b8be7898acdd4bb">  106</a></span><a class="code hl_class" href="class_matrix.html">Matrix</a> <a class="code hl_function" href="class_menu_input.html#a2229e64c7a2043155b8be7898acdd4bb">MenuInput::getMatrix</a>()</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <a class="code hl_class" href="class_matrix.html">Matrix</a> matrix;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter matrix:\n&quot;</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        std::cin &gt;&gt; matrix;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Matrix is:\n&quot;</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        std::cout &lt;&lt; matrix;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">return</span> matrix;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp;)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">throw</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
 </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="foldopen" id="foldopen00121" data-start="{" data-end="}">
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_menu_input.html#a9636ed806f1513d3851ec2bd90ccfc5e">  121</a></span><span class="keywordtype">char</span> <a class="code hl_function" href="class_menu_input.html#a9636ed806f1513d3851ec2bd90ccfc5e">MenuInput::getMatrixOperator</a>()</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">do</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter operator(use only +-*):\n&quot;</span>;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        std::string input;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        std::getline(std::cin, input);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">isCorrectChar</a>(input) &amp;&amp; (input[0] == <span class="charliteral">&#39;+&#39;</span> || input[0] == <span class="charliteral">&#39;-&#39;</span> || input[0] == <span class="charliteral">&#39;*&#39;</span>))</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">return</span> input[0];</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter only (+-*):\n&quot;</span>;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    } <span class="keywordflow">while</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>}</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_menu_input.html#a9636ed806f1513d3851ec2bd90ccfc5e">  123</a></span><span class="keywordtype">char</span> <a class="code hl_function" href="class_menu_input.html#a9636ed806f1513d3851ec2bd90ccfc5e">MenuInput::getMatrixOperator</a>()</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>{</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">do</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter operator(use only +-*):\n&quot;</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        std::string input;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        std::getline(std::cin, input);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">isCorrectChar</a>(input) &amp;&amp; (input[0] == <span class="charliteral">&#39;+&#39;</span> || input[0] == <span class="charliteral">&#39;-&#39;</span> || input[0] == <span class="charliteral">&#39;*&#39;</span>))</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordflow">return</span> input[0];</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter only (+-*):\n&quot;</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    } <span class="keywordflow">while</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
 </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="class_menu_input.html#afd73a4c2669eb3e48e63d306812e299b">  134</a></span><span class="keywordtype">char</span> <a class="code hl_function" href="class_menu_input.html#afd73a4c2669eb3e48e63d306812e299b">MenuInput::getMemoryOperator</a>()</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>{</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">do</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    {</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter &#39; &#39; space if it is the last memory element. Enter operator(use only +-*/^ ):\n&quot;</span>;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        std::string input;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        std::getline(std::cin, input);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">isCorrectChar</a>(input) &amp;&amp;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            (input[0] == <span class="charliteral">&#39;+&#39;</span> ||</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                input[0] == <span class="charliteral">&#39;-&#39;</span> ||</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                input[0] == <span class="charliteral">&#39;*&#39;</span> ||</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                input[0] == <span class="charliteral">&#39;/&#39;</span> || </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                input[0] == <span class="charliteral">&#39;^&#39;</span> || </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                input[0] == <span class="charliteral">&#39; &#39;</span>))</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <span class="keywordflow">return</span> input[0];</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter only (+-*/^ ):\n&quot;</span>;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    } <span class="keywordflow">while</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="class_menu_input.html#afd73a4c2669eb3e48e63d306812e299b">  136</a></span><span class="keywordtype">char</span> <a class="code hl_function" href="class_menu_input.html#afd73a4c2669eb3e48e63d306812e299b">MenuInput::getMemoryOperator</a>()</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>{</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">do</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter &#39; &#39; space if it is the last memory element. Enter operator(use only +-*/^ ):\n&quot;</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        std::string input;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        std::getline(std::cin, input);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">isCorrectChar</a>(input) &amp;&amp;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            (input[0] == <span class="charliteral">&#39;+&#39;</span> ||</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                input[0] == <span class="charliteral">&#39;-&#39;</span> ||</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                input[0] == <span class="charliteral">&#39;*&#39;</span> ||</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                input[0] == <span class="charliteral">&#39;/&#39;</span> || </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                input[0] == <span class="charliteral">&#39;^&#39;</span> || </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                input[0] == <span class="charliteral">&#39; &#39;</span>))</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            <span class="keywordflow">return</span> input[0];</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter only (+-*/^ ):\n&quot;</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    } <span class="keywordflow">while</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>}</div>
 </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="foldopen" id="foldopen00153" data-start="{" data-end="}">
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="class_menu_input.html#a01919121bdc8aff3b4239e167cf3ad07">  153</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_menu_input.html#a01919121bdc8aff3b4239e167cf3ad07">MenuInput::getMatrixRegime</a>()</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>{</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">do</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    {</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Choose matrix regime:\n&quot;</span>;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;1. Multiple matrix to matrix\n&quot;</span>;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;2. Multiple scalar to matrix\n&quot;</span>;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        std::string input;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        std::getline(std::cin, input);</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">isCorrectChar</a>(input) &amp;&amp; ((input[0] == <span class="charliteral">&#39;1&#39;</span>) || (input[0] == <span class="charliteral">&#39;2&#39;</span>)))</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keywordflow">return</span> std::stoi(input);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter only 1 or 2!\n&quot;</span>;</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    } <span class="keywordflow">while</span> (<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>}</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="class_menu_input.html#a01919121bdc8aff3b4239e167cf3ad07">  155</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_menu_input.html#a01919121bdc8aff3b4239e167cf3ad07">MenuInput::getMatrixRegime</a>()</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>{</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordflow">do</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Choose matrix regime:\n&quot;</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;1. Multiple matrix to matrix\n&quot;</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;2. Multiple scalar to matrix\n&quot;</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        std::string input;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        std::getline(std::cin, input);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">isCorrectChar</a>(input) &amp;&amp; ((input[0] == <span class="charliteral">&#39;1&#39;</span>) || (input[0] == <span class="charliteral">&#39;2&#39;</span>)))</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            <span class="keywordflow">return</span> std::stoi(input);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Enter only 1 or 2!\n&quot;</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    } <span class="keywordflow">while</span> (<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}</div>
 </div>
 <div class="ttc" id="aclass_matrix_html"><div class="ttname"><a href="class_matrix.html">Matrix</a></div><div class="ttdef"><b>Definition</b> <a href="_matrix_8h_source.html#l00014">Matrix.h:15</a></div></div>
-<div class="ttc" id="aclass_menu_html_a71098d57a94e1d762bf3b2faaaa711a3"><div class="ttname"><a href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">Menu::isCorrectChar</a></div><div class="ttdeci">bool isCorrectChar(const std::string &amp;input)</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00138">Menu.cpp:138</a></div></div>
-<div class="ttc" id="aclass_menu_html_ad466dd83355124a6ed958430450bfe94"><div class="ttname"><a href="class_menu.html#ad466dd83355124a6ed958430450bfe94">Menu::Menu</a></div><div class="ttdeci">Menu()</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00005">Menu.cpp:5</a></div></div>
-<div class="ttc" id="aclass_menu_input_html_a01919121bdc8aff3b4239e167cf3ad07"><div class="ttname"><a href="class_menu_input.html#a01919121bdc8aff3b4239e167cf3ad07">MenuInput::getMatrixRegime</a></div><div class="ttdeci">int getMatrixRegime()</div><div class="ttdef"><b>Definition</b> <a href="#l00153">MenuInput.cpp:153</a></div></div>
+<div class="ttc" id="aclass_menu_html_a71098d57a94e1d762bf3b2faaaa711a3"><div class="ttname"><a href="class_menu.html#a71098d57a94e1d762bf3b2faaaa711a3">Menu::isCorrectChar</a></div><div class="ttdeci">bool isCorrectChar(const std::string &amp;input)</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00342">Menu.cpp:342</a></div></div>
+<div class="ttc" id="aclass_menu_html_ad466dd83355124a6ed958430450bfe94"><div class="ttname"><a href="class_menu.html#ad466dd83355124a6ed958430450bfe94">Menu::Menu</a></div><div class="ttdeci">Menu()</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00012">Menu.cpp:12</a></div></div>
+<div class="ttc" id="aclass_menu_input_html_a01919121bdc8aff3b4239e167cf3ad07"><div class="ttname"><a href="class_menu_input.html#a01919121bdc8aff3b4239e167cf3ad07">MenuInput::getMatrixRegime</a></div><div class="ttdeci">int getMatrixRegime()</div><div class="ttdef"><b>Definition</b> <a href="#l00155">MenuInput.cpp:155</a></div></div>
 <div class="ttc" id="aclass_menu_input_html_a193e9f3acc377189e68c4622806a42e0"><div class="ttname"><a href="class_menu_input.html#a193e9f3acc377189e68c4622806a42e0">MenuInput::getSaveToMemoryChoice</a></div><div class="ttdeci">bool getSaveToMemoryChoice()</div><div class="ttdef"><b>Definition</b> <a href="#l00046">MenuInput.cpp:46</a></div></div>
-<div class="ttc" id="aclass_menu_input_html_a2229e64c7a2043155b8be7898acdd4bb"><div class="ttname"><a href="class_menu_input.html#a2229e64c7a2043155b8be7898acdd4bb">MenuInput::getMatrix</a></div><div class="ttdeci">Matrix getMatrix()</div><div class="ttdef"><b>Definition</b> <a href="#l00104">MenuInput.cpp:104</a></div></div>
+<div class="ttc" id="aclass_menu_input_html_a2229e64c7a2043155b8be7898acdd4bb"><div class="ttname"><a href="class_menu_input.html#a2229e64c7a2043155b8be7898acdd4bb">MenuInput::getMatrix</a></div><div class="ttdeci">Matrix getMatrix()</div><div class="ttdef"><b>Definition</b> <a href="#l00106">MenuInput.cpp:106</a></div></div>
 <div class="ttc" id="aclass_menu_input_html_a8fc3ec49ecfa386d2c862b11db7ea27c"><div class="ttname"><a href="class_menu_input.html#a8fc3ec49ecfa386d2c862b11db7ea27c">MenuInput::getCalculationRegime</a></div><div class="ttdeci">int getCalculationRegime()</div><div class="ttdef"><b>Definition</b> <a href="#l00081">MenuInput.cpp:81</a></div></div>
-<div class="ttc" id="aclass_menu_input_html_a9636ed806f1513d3851ec2bd90ccfc5e"><div class="ttname"><a href="class_menu_input.html#a9636ed806f1513d3851ec2bd90ccfc5e">MenuInput::getMatrixOperator</a></div><div class="ttdeci">char getMatrixOperator()</div><div class="ttdef"><b>Definition</b> <a href="#l00121">MenuInput.cpp:121</a></div></div>
+<div class="ttc" id="aclass_menu_input_html_a9636ed806f1513d3851ec2bd90ccfc5e"><div class="ttname"><a href="class_menu_input.html#a9636ed806f1513d3851ec2bd90ccfc5e">MenuInput::getMatrixOperator</a></div><div class="ttdeci">char getMatrixOperator()</div><div class="ttdef"><b>Definition</b> <a href="#l00123">MenuInput.cpp:123</a></div></div>
 <div class="ttc" id="aclass_menu_input_html_a987f140173d4c22cbd7491e292a51cb6"><div class="ttname"><a href="class_menu_input.html#a987f140173d4c22cbd7491e292a51cb6">MenuInput::~MenuInput</a></div><div class="ttdeci">~MenuInput()</div><div class="ttdef"><b>Definition</b> <a href="#l00009">MenuInput.cpp:9</a></div></div>
 <div class="ttc" id="aclass_menu_input_html_aab3202570e4df3c2ab04bf49704978ef"><div class="ttname"><a href="class_menu_input.html#aab3202570e4df3c2ab04bf49704978ef">MenuInput::getExpression</a></div><div class="ttdeci">std::string getExpression()</div><div class="ttdef"><b>Definition</b> <a href="#l00014">MenuInput.cpp:14</a></div></div>
 <div class="ttc" id="aclass_menu_input_html_ab8b02a181f6f55de4386b0f04e44e621"><div class="ttname"><a href="class_menu_input.html#ab8b02a181f6f55de4386b0f04e44e621">MenuInput::MenuInput</a></div><div class="ttdeci">MenuInput()</div><div class="ttdef"><b>Definition</b> <a href="#l00004">MenuInput.cpp:4</a></div></div>
 <div class="ttc" id="aclass_menu_input_html_ae99ae4de6b19007399721767488d0a33"><div class="ttname"><a href="class_menu_input.html#ae99ae4de6b19007399721767488d0a33">MenuInput::getContinueChoice</a></div><div class="ttdeci">bool getContinueChoice()</div><div class="ttdef"><b>Definition</b> <a href="#l00019">MenuInput.cpp:19</a></div></div>
-<div class="ttc" id="aclass_menu_input_html_afd73a4c2669eb3e48e63d306812e299b"><div class="ttname"><a href="class_menu_input.html#afd73a4c2669eb3e48e63d306812e299b">MenuInput::getMemoryOperator</a></div><div class="ttdeci">char getMemoryOperator()</div><div class="ttdef"><b>Definition</b> <a href="#l00134">MenuInput.cpp:134</a></div></div>
+<div class="ttc" id="aclass_menu_input_html_afd73a4c2669eb3e48e63d306812e299b"><div class="ttname"><a href="class_menu_input.html#afd73a4c2669eb3e48e63d306812e299b">MenuInput::getMemoryOperator</a></div><div class="ttdeci">char getMemoryOperator()</div><div class="ttdef"><b>Definition</b> <a href="#l00136">MenuInput.cpp:136</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

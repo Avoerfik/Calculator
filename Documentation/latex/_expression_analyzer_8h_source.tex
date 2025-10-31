@@ -1,0 +1,57 @@
+\doxysection{Expression\+Analyzer.\+h}
+\hypertarget{_expression_analyzer_8h_source}{}\label{_expression_analyzer_8h_source}\index{App/include/Data/ExpressionAnalyzer.h@{App/include/Data/ExpressionAnalyzer.h}}
+\mbox{\hyperlink{_expression_analyzer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00002}00002\ \textcolor{preprocessor}{\#ifndef\ EXPRESSIONANALYZER\_H}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00003}\mbox{\hyperlink{_expression_analyzer_8h_a0d3f32870d536b2ea4f9eabc00f3b819}{00003}}\ \textcolor{preprocessor}{\#define\ EXPRESSIONANALYZER\_H}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine_8h}{../Engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_analysis_counter_8h}{AnalysisCounter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_complexity_calculator_8h}{ComplexityCalculator.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_expression_stats_8h}{ExpressionStats.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00017}00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_expression_history}{ExpressionHistory}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00019}\mbox{\hyperlink{class_expression_analyzer}{00019}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48}{ExpressionAnalyzer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_engine_acc713c22e0940be92b1251a916849077}{Engine}}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00021}00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{class_analysis_counter}{AnalysisCounter}}\ counter;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{class_complexity_calculator}{ComplexityCalculator}}*\ complexityCalc;\ \textcolor{comment}{//Агрегация}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00024}00024\ \ \ \ \ std::vector<ExpressionStats>\ stats;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00025}00025\ \ \ \ \ std::map<char,\ int>\ operatorFrequency;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ analyzeOperators(\textcolor{keyword}{const}\ std::string\&\ expression);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ updateOperatorFrequency(\textcolor{keyword}{const}\ std::string\&\ expression);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00030}00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48}{ExpressionAnalyzer}}();}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48}{ExpressionAnalyzer}}(\mbox{\hyperlink{class_complexity_calculator}{ComplexityCalculator}}*\ calc);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_expression_analyzer_a35e5a64c19abb08b01dd8201dd0b0ac6}{\string~ExpressionAnalyzer}}();\ \ \textcolor{comment}{//\ Убрать\ удаление\ complexityCalc\ для\ агрегации}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expression_analyzer_a289ffe4d88b9ec0b0e23587f7f66be7c}{analyzeExpression}}(\textcolor{keyword}{const}\ std::string\&\ expression,\ \textcolor{keywordtype}{double}\ calcTime\ =\ 0.0);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expression_analyzer_a8964961399758a763429cb6c2be813ec}{recordSuccess}}();}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expression_analyzer_a4d6e3070c41a6149e4317ebc284862a0}{recordError}}();}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ Геттеры\ для\ статистики}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_expression_analyzer_ae68e4e749e7ddd5b8452ea4be0a51650}{getTotalExpressions}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_expression_analyzer_a0f21262a9887ed8ff87424a2c6f47e75}{getSuccessCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_expression_analyzer_a4070753d3addf679ecbaf41abda01b87}{getErrorCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00043}00043\ \ \ \ \ std::map<char,\ int>\ \mbox{\hyperlink{class_expression_analyzer_a501bb3bc34cc93d5d2ef0348a5c81230}{getOperatorFrequency}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00044}00044\ \ \ \ \ std::vector<ExpressionStats>\ \mbox{\hyperlink{class_expression_analyzer_a8d7428d760f56ff698ac1198c3aa775d}{getStats}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ Дружественные\ объявления}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00047}\mbox{\hyperlink{class_expression_analyzer_ae644fd91e034c1d23ea7147bc73042a1}{00047}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_expression_analyzer_ae644fd91e034c1d23ea7147bc73042a1}{ExpressionHistory}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{friend}\ std::string\ \mbox{\hyperlink{class_expression_analyzer_a52814976c7eefbf9db16b71b337ba9ec}{generateStatisticsReport}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48}{ExpressionAnalyzer}}\&\ analyzer,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_expression_analyzer_ae644fd91e034c1d23ea7147bc73042a1}{ExpressionHistory}}\&\ history);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00049}00049\ \};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8h_source_l00051}00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,178 @@
+\doxysection{Expression\+Analyzer.\+cpp}
+\hypertarget{_expression_analyzer_8cpp_source}{}\label{_expression_analyzer_8cpp_source}\index{App/src/Data/ExpressionAnalyzer.cpp@{App/src/Data/ExpressionAnalyzer.cpp}}
+\mbox{\hyperlink{_expression_analyzer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_expression_analyzer_8h}{../../include/Data/ExpressionAnalyzer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00003}00003\ \textcolor{comment}{//\ Конструктор\ по\ умолчанию\ -\/\ без\ создания\ ComplexityCalculator}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00004}\mbox{\hyperlink{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48}{00004}}\ \mbox{\hyperlink{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48}{ExpressionAnalyzer::ExpressionAnalyzer}}()\ :\ complexityCalc(nullptr)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00006}00006\ \textcolor{comment}{//\ Конструктор\ с\ агрегацией\ -\/\ принимаем\ готовый\ объект}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00007}\mbox{\hyperlink{class_expression_analyzer_a8b94e5030ec3ac616800f0a428b9a433}{00007}}\ \mbox{\hyperlink{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48}{ExpressionAnalyzer::ExpressionAnalyzer}}(\mbox{\hyperlink{class_complexity_calculator}{ComplexityCalculator}}*\ calc)\ :\ complexityCalc(calc)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00009}00009\ \textcolor{comment}{//\ Деструктор\ -\/\ НЕ\ удаляем\ complexityCalc\ (агрегация)}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00010}\mbox{\hyperlink{class_expression_analyzer_a35e5a64c19abb08b01dd8201dd0b0ac6}{00010}}\ \mbox{\hyperlink{class_expression_analyzer_a35e5a64c19abb08b01dd8201dd0b0ac6}{ExpressionAnalyzer::\string~ExpressionAnalyzer}}()}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{comment}{//\ complexityCalc\ НЕ\ удаляем\ -\/\ это\ агрегация!}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00015}00015\ \textcolor{keywordtype}{void}\ ExpressionAnalyzer::analyzeOperators(\textcolor{keyword}{const}\ std::string\&\ expression)}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Анализ\ паттернов\ использования\ операторов}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ operators\ =\ \textcolor{stringliteral}{"{}+-\/*/\string^"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ 1.\ Проверка\ на\ последовательные\ операторы\ (кроме\ унарных\ +-\/\ в\ начале)}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasConsecutiveOps\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ expression.length();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operators.find(expression[i])\ !=\ std::string::npos\ \&\&}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ operators.find(expression[i\ -\/\ 1])\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Исключаем\ случаи\ унарных\ операторов:\ "{}+5"{},\ "{}-\/3"{},\ "{}(-\/2)"{},\ "{}+(5)"{}}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(expression[i]\ ==\ \textcolor{charliteral}{'+'}\ ||\ expression[i]\ ==\ \textcolor{charliteral}{'-\/'})\ ||}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (i\ >\ 0\ \&\&\ expression[i\ -\/\ 1]\ !=\ \textcolor{charliteral}{'('}\ \&\&\ expression[i\ -\/\ 1]\ !=\ \textcolor{charliteral}{'\ '}))\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasConsecutiveOps\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ 2.\ Проверка\ на\ операторы\ в\ начале/конце\ (кроме\ унарных\ +-\/)}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ startsWithBinaryOp\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ endsWithOp\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (!expression.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ firstChar\ =\ expression[0];}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operators.find(firstChar)\ !=\ std::string::npos\ \&\&}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ firstChar\ !=\ \textcolor{charliteral}{'+'}\ \&\&\ firstChar\ !=\ \textcolor{charliteral}{'-\/'})\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ startsWithBinaryOp\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ lastChar\ =\ expression[expression.length()\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operators.find(lastChar)\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ endsWithOp\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ 3.\ Анализ\ баланса\ операторов\ и\ операндов}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{int}\ operatorCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{int}\ numberCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ numbers\ =\ \textcolor{stringliteral}{"{}0123456789"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ c\ :\ expression)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (operators.find(c)\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ operatorCount++;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (numbers.find(c)\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ numberCount++;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ 4.\ Проверка\ на\ использование\ оператора\ деления\ с\ нулем}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasDivisionByZeroPattern\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ divPos\ =\ expression.find(\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (divPos\ !=\ std::string::npos\ \&\&\ divPos\ +\ 1\ <\ expression.length())\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ищем\ следующий\ символ\ после\ '/'}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ nextPos\ =\ divPos\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Пропускаем\ пробелы\ и\ унарные\ +-\/}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (nextPos\ <\ expression.length()\ \&\&}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ (expression[nextPos]\ ==\ \textcolor{charliteral}{'\ '}\ ||\ expression[nextPos]\ ==\ \textcolor{charliteral}{'+'}\ ||\ expression[nextPos]\ ==\ \textcolor{charliteral}{'-\/'}))\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ nextPos++;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nextPos\ <\ expression.length())\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Проверяем,\ не\ идет\ ли\ сразу\ ноль}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (expression[nextPos]\ ==\ \textcolor{charliteral}{'0'})\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Но\ исключаем\ случаи\ типа\ "{}0.5"{}}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nextPos\ +\ 1\ >=\ expression.length()\ ||\ expression[nextPos\ +\ 1]\ !=\ \textcolor{charliteral}{'.'})\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasDivisionByZeroPattern\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//\ 5.\ Анализ\ приоритетов\ операторов}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasHighPriorityOps\ =\ expression.find(\textcolor{charliteral}{'\string^'})\ !=\ std::string::npos;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasMediumPriorityOps\ =\ expression.find(\textcolor{charliteral}{'*'})\ !=\ std::string::npos\ ||}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ expression.find(\textcolor{charliteral}{'/'})\ !=\ std::string::npos;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasLowPriorityOps\ =\ expression.find(\textcolor{charliteral}{'+'})\ !=\ std::string::npos\ ||}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ expression.find(\textcolor{charliteral}{'-\/'})\ !=\ std::string::npos;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{comment}{//\ 6.\ Сохраняем\ результаты\ анализа\ (можно\ добавить\ в\ структуру\ ExpressionStats)}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//\ Пока\ просто\ выводим\ в\ консоль\ для\ отладки}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00097}00097\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n===\ Operator\ Analysis\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00098}00098\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Expression:\ "{}}\ <<\ expression\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00099}00099\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Consecutive\ operators:\ "{}}\ <<\ (hasConsecutiveOps\ ?\ \textcolor{stringliteral}{"{}YES"{}}\ :\ \textcolor{stringliteral}{"{}NO"{}})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00100}00100\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Starts\ with\ binary\ operator:\ "{}}\ <<\ (startsWithBinaryOp\ ?\ \textcolor{stringliteral}{"{}YES"{}}\ :\ \textcolor{stringliteral}{"{}NO"{}})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00101}00101\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ends\ with\ operator:\ "{}}\ <<\ (endsWithOp\ ?\ \textcolor{stringliteral}{"{}YES"{}}\ :\ \textcolor{stringliteral}{"{}NO"{}})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00102}00102\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Operator\ count:\ "{}}\ <<\ operatorCount\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00103}00103\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Number\ count:\ "{}}\ <<\ numberCount\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00104}00104\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Operand/Operator\ ratio:\ "{}}\ <<\ (operatorCount\ >\ 0\ ?\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(numberCount)\ /\ operatorCount\ :\ 0)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00105}00105\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Potential\ division\ by\ zero:\ "{}}\ <<\ (hasDivisionByZeroPattern\ ?\ \textcolor{stringliteral}{"{}WARNING"{}}\ :\ \textcolor{stringliteral}{"{}NO"{}})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00106}00106\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}High\ priority\ ops\ (\string^):\ "{}}\ <<\ (hasHighPriorityOps\ ?\ \textcolor{stringliteral}{"{}YES"{}}\ :\ \textcolor{stringliteral}{"{}NO"{}})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00107}00107\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Medium\ priority\ ops\ (*,/):\ "{}}\ <<\ (hasMediumPriorityOps\ ?\ \textcolor{stringliteral}{"{}YES"{}}\ :\ \textcolor{stringliteral}{"{}NO"{}})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00108}00108\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Low\ priority\ ops\ (+,-\/):\ "{}}\ <<\ (hasLowPriorityOps\ ?\ \textcolor{stringliteral}{"{}YES"{}}\ :\ \textcolor{stringliteral}{"{}NO"{}})\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{comment}{//\ 7.\ Проверка\ на\ сложные\ операторные\ конструкции}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasComplexOperatorPatterns\ =\ hasConsecutiveOps\ ||\ startsWithBinaryOp\ ||\ endsWithOp\ ||\ hasDivisionByZeroPattern;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{if}\ (hasComplexOperatorPatterns)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}WARNING:\ Expression\ has\ complex\ operator\ patterns\ that\ might\ cause\ errors!\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00115}00115\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00117}\mbox{\hyperlink{class_expression_analyzer_a289ffe4d88b9ec0b0e23587f7f66be7c}{00117}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expression_analyzer_a289ffe4d88b9ec0b0e23587f7f66be7c}{ExpressionAnalyzer::analyzeExpression}}(\textcolor{keyword}{const}\ std::string\&\ expression,\ \textcolor{keywordtype}{double}\ calcTime)}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00118}00118\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00119}00119\ \ \ \ \ \mbox{\hyperlink{struct_expression_stats}{ExpressionStats}}\ stats;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00120}00120\ \ \ \ \ stats.\mbox{\hyperlink{struct_expression_stats_ac93abfe47f228fae5054b84e91ba9c66}{expression}}\ =\ expression;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00121}00121\ \ \ \ \ stats.calculationTime\ =\ calcTime;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{comment}{//\ Проверяем,\ что\ complexityCalc\ установлен\ (агрегация)}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{if}\ (complexityCalc)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ stats.complexity\ =\ complexityCalc-\/>calculateComplexity(expression);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ stats.complexityLevel\ =\ complexityCalc-\/>getComplexityLevel(expression);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ stats.operatorCount\ =\ complexityCalc-\/>countOperators(expression);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ stats.hasComplexOps\ =\ complexityCalc-\/>hasComplexOperations(expression);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00129}00129\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Запасной\ вариант,\ если\ complexityCalc\ не\ установлен}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ stats.complexity\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ stats.complexityLevel\ =\ \textcolor{stringliteral}{"{}Unknown"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ stats.operatorCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ stats.hasComplexOps\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{comment}{//\ Вызываем\ анализ\ операторов}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00139}00139\ \ \ \ \ analyzeOperators(expression);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00141}00141\ \ \ \ \ this-\/>stats.push\_back(stats);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00142}00142\ \ \ \ \ updateOperatorFrequency(expression);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00143}00143\ \ \ \ \ ++counter;\ \textcolor{comment}{//\ Увеличиваем\ счётчик\ успешных\ анализов}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00144}00144\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00146}\mbox{\hyperlink{class_expression_analyzer_a8964961399758a763429cb6c2be813ec}{00146}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expression_analyzer_a8964961399758a763429cb6c2be813ec}{ExpressionAnalyzer::recordSuccess}}()}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00147}00147\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00148}00148\ \ \ \ \ ++counter;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00149}00149\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00151}\mbox{\hyperlink{class_expression_analyzer_a4d6e3070c41a6149e4317ebc284862a0}{00151}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expression_analyzer_a4d6e3070c41a6149e4317ebc284862a0}{ExpressionAnalyzer::recordError}}()}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00152}00152\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00153}00153\ \ \ \ \ -\/-\/counter;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00154}00154\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00156}00156\ \textcolor{keywordtype}{void}\ ExpressionAnalyzer::updateOperatorFrequency(\textcolor{keyword}{const}\ std::string\&\ expression)}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00157}00157\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ operators\ =\ \textcolor{stringliteral}{"{}+-\/*/\string^"{}};}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ op\ :\ operators)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count\ =\ std::count(expression.begin(),\ expression.end(),\ op);}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (count\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ operatorFrequency[op]\ +=\ count;}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00164}00164\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00167}00167\ \textcolor{comment}{//\ Геттеры}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00168}\mbox{\hyperlink{class_expression_analyzer_ae68e4e749e7ddd5b8452ea4be0a51650}{00168}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_expression_analyzer_ae68e4e749e7ddd5b8452ea4be0a51650}{ExpressionAnalyzer::getTotalExpressions}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ counter.getTotalExpressions();\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00169}\mbox{\hyperlink{class_expression_analyzer_a0f21262a9887ed8ff87424a2c6f47e75}{00169}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_expression_analyzer_a0f21262a9887ed8ff87424a2c6f47e75}{ExpressionAnalyzer::getSuccessCount}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ counter.getSuccessCount();\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00170}\mbox{\hyperlink{class_expression_analyzer_a4070753d3addf679ecbaf41abda01b87}{00170}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_expression_analyzer_a4070753d3addf679ecbaf41abda01b87}{ExpressionAnalyzer::getErrorCount}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ counter.getErrorCount();\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00171}\mbox{\hyperlink{class_expression_analyzer_a501bb3bc34cc93d5d2ef0348a5c81230}{00171}}\ std::map<char,\ int>\ \mbox{\hyperlink{class_expression_analyzer_a501bb3bc34cc93d5d2ef0348a5c81230}{ExpressionAnalyzer::getOperatorFrequency}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ operatorFrequency;\ \}}
+\DoxyCodeLine{\Hypertarget{_expression_analyzer_8cpp_source_l00172}\mbox{\hyperlink{class_expression_analyzer_a8d7428d760f56ff698ac1198c3aa775d}{00172}}\ std::vector<ExpressionStats>\ \mbox{\hyperlink{class_expression_analyzer_a8d7428d760f56ff698ac1198c3aa775d}{ExpressionAnalyzer::getStats}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ stats;\ \}}
+
+\end{DoxyCode}

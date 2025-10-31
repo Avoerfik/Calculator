@@ -9,5 +9,6 @@ var class_history =
     [ "printRecordByNumber", "class_history.html#aa68245eca9285d748dee39ef73805872", null ],
     [ "printRecordHistory", "class_history.html#a9baf386eff2e21f1f389d003043499fc", null ],
     [ "reserveData", "class_history.html#a9eda9965c45bde02a3c5c3a5aea4b329", null ],
-    [ "reserveData", "class_history.html#aab8cb550ba5a172b530b4d2c1650cf29", null ]
+    [ "reserveData", "class_history.html#aab8cb550ba5a172b530b4d2c1650cf29", null ],
+    [ "rh", "class_history.html#a811563490b625c00e594d7132be71dea", null ]
 ];

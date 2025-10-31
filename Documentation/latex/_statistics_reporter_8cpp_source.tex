@@ -1,0 +1,31 @@
+\doxysection{Statistics\+Reporter.\+cpp}
+\hypertarget{_statistics_reporter_8cpp_source}{}\label{_statistics_reporter_8cpp_source}\index{App/src/Data/StatisticsReporter.cpp@{App/src/Data/StatisticsReporter.cpp}}
+\mbox{\hyperlink{_statistics_reporter_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_expression_analyzer_8h}{../../include/Data/ExpressionAnalyzer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_expression_history_8h}{../../include/Data/ExpressionHistory.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00004}00004\ \textcolor{comment}{//\ Реализация\ дружественной\ функции}}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00005}\mbox{\hyperlink{class_expression_analyzer_a52814976c7eefbf9db16b71b337ba9ec}{00005}}\ std::string\ \mbox{\hyperlink{_statistics_reporter_8cpp_a52814976c7eefbf9db16b71b337ba9ec}{generateStatisticsReport}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_expression_analyzer_a87a1b9331ab7b649e6a9a94bd0ecef48}{ExpressionAnalyzer}}\&\ analyzer,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_expression_analyzer_ae644fd91e034c1d23ea7147bc73042a1}{ExpressionHistory}}\&\ history)}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00007}00007\ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00008}00008\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}===\ Comprehensive\ Statistics\ Report\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00009}00009\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}Expression\ Analysis:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00010}00010\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ Total:\ "{}}\ <<\ analyzer.\mbox{\hyperlink{class_expression_analyzer_ae68e4e749e7ddd5b8452ea4be0a51650}{getTotalExpressions}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00011}00011\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ Success:\ "{}}\ <<\ analyzer.\mbox{\hyperlink{class_expression_analyzer_a0f21262a9887ed8ff87424a2c6f47e75}{getSuccessCount}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00012}00012\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ Errors:\ "{}}\ <<\ analyzer.\mbox{\hyperlink{class_expression_analyzer_a4070753d3addf679ecbaf41abda01b87}{getErrorCount}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00014}00014\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nOperator\ Frequency:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{auto}\ freq\ =\ analyzer.\mbox{\hyperlink{class_expression_analyzer_a501bb3bc34cc93d5d2ef0348a5c81230}{getOperatorFrequency}}();}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [op,\ count]\ :\ freq)\ \{}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ "{}}\ <<\ op\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ count\ <<\ \textcolor{stringliteral}{"{}\ times\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00020}00020\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nHistory\ Summary:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00021}00021\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ Records:\ "{}}\ <<\ history.\mbox{\hyperlink{class_expression_history_abea963a93d92249b50118be5d943857d}{size}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00022}00022\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ Avg\ Complexity:\ "{}}\ <<\ history.\mbox{\hyperlink{class_expression_history_a2355eafe93dc34300b6653088557757d}{getAverageComplexity}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{\Hypertarget{_statistics_reporter_8cpp_source_l00025}00025\ \}}
+
+\end{DoxyCode}

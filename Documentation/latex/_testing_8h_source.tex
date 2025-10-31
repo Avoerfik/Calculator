@@ -17,46 +17,64 @@
 \DoxyCodeLine{\Hypertarget{_testing_8h_source_l00013}00013\ std::stack<std::string>\ \mbox{\hyperlink{_testing_8h_a22af37abe33be79373eda9f950d1f6f4}{bracketAnalyze}}(\textcolor{keyword}{const}\ std::string\&\ expression);}
 \DoxyCodeLine{\Hypertarget{_testing_8h_source_l00014}00014\ std::string\ \mbox{\hyperlink{_testing_8h_a42ce7236f0d5e6a6903cdd4327e8706c}{calculateExpression}}(std::stack<std::string>\&\ expressionStack);}
 \DoxyCodeLine{\Hypertarget{_testing_8h_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00016}\mbox{\hyperlink{class_testing}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_testing}{Testing}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_calculator_expression_a7de83b855fbfc7a0894d671e5dae3768}{CalculatorExpression}}}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00016}\mbox{\hyperlink{class_testing}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_testing_aeeb2ffdd21714053d03aeddc1209649c}{Testing}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_calculator_expression_a7de83b855fbfc7a0894d671e5dae3768}{CalculatorExpression}}}
 \DoxyCodeLine{\Hypertarget{_testing_8h_source_l00017}00017\ \{}
 \DoxyCodeLine{\Hypertarget{_testing_8h_source_l00018}00018\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_testing_a129048a23785c573d2855abf022e5fc9}{runAllTests}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsTotal,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsPassed,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsFailed);}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00021}00021\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{using\ }standartTest\ =\ bool\ (\mbox{\hyperlink{class_testing}{Testing}}::*)(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&);}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{using\ }specifiedTest\ =\ bool\ (\mbox{\hyperlink{class_testing}{Testing}}::*)(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&);}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{struct\ }TestCallStandart}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00026}00026\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ standartTest\ func;}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ std::string\ expression;}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ std::string\ expected;}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ std::string\ testName;}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ testNumber;}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00032}00032\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{struct\ }TestCallSpecified}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00035}00035\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ specifiedTest\ func;}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ std::string\ expression;}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ std::string\ testName;}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ std::string\ exceptionName;}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ testNumber;}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00041}00041\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ runTest(\textcolor{keyword}{const}\ std::string\&\ expression,\ \textcolor{keyword}{const}\ std::string\&\ expected,\ \textcolor{keyword}{const}\ std::string\&\ testName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testNumber);}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ runSpecifiedTest(\textcolor{keyword}{const}\ std::string\&\ expression,\ \textcolor{keyword}{const}\ std::string\&\ testName,}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ exceptionName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testNumber);}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{void}\ runStandartTestCount(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsTotal,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsPassed,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsFailed,}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ std::vector<TestCallStandart>\&\ vectorStandartTest,\ \textcolor{keyword}{const}\ std::string\&\ expression,}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ expected,\ \textcolor{keyword}{const}\ std::string\&\ testName,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testNumber);}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ runSpecifiedTestCount(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsTotal,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsPassed,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsFailed,}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ std::vector<TestCallSpecified>\&\ vectorSpecifiedTest,\ \textcolor{keyword}{const}\ std::string\&\ expression,}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ testName,\ \textcolor{keyword}{const}\ std::string\&\ exceptionName,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testNumber);}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00054}00054\ \};}
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00056}00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !TESTING\_H}}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00019}\mbox{\hyperlink{class_testing_aeeb2ffdd21714053d03aeddc1209649c}{00019}}\ \ \ \ \ \mbox{\hyperlink{class_testing_aeeb2ffdd21714053d03aeddc1209649c}{Testing}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00020}\mbox{\hyperlink{class_testing_a2cb29c0cedbbd09c2af0d1676f558933}{00020}}\ \ \ \ \ \mbox{\hyperlink{class_testing_a2cb29c0cedbbd09c2af0d1676f558933}{\string~Testing}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_testing_a129048a23785c573d2855abf022e5fc9}{runAllTests}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsTotal,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsPassed,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsFailed);}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00024}00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{using\ }standartTest\ =\ bool\ (\mbox{\hyperlink{class_testing_aeeb2ffdd21714053d03aeddc1209649c}{Testing}}::*)(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{using\ }specifiedTest\ =\ bool\ (\mbox{\hyperlink{class_testing_aeeb2ffdd21714053d03aeddc1209649c}{Testing}}::*)(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{struct\ }TestCallStandart}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ standartTest\ func;}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ std::string\ expression;}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ std::string\ expected;}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ std::string\ testName;}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ testNumber;}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00035}00035\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{struct\ }TestCallSpecified}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ specifiedTest\ func;}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ std::string\ expression;}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ std::string\ testName;}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ std::string\ exceptionName;}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ testNumber;}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00044}00044\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ runTest(\textcolor{keyword}{const}\ std::string\&\ expression,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ expected,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ testName,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testNumber);}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ runSpecifiedTest(\textcolor{keyword}{const}\ std::string\&\ expression,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ testName,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ exceptionName,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testNumber);}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ runStandartTestCount(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsTotal,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsPassed,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsFailed,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ std::vector<TestCallStandart>\&\ vectorStandartTest,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ expression,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ expected,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ testName,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testNumber);}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{void}\ runSpecifiedTestCount(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsTotal,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsPassed,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testsFailed,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ std::vector<TestCallSpecified>\&\ vectorSpecifiedTest,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ expression,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ testName,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ exceptionName,}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ testNumber);}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00072}00072\ \};}
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_testing_8h_source_l00074}00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !TESTING\_H}}
 
 \end{DoxyCode}
