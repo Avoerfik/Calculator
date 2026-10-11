@@ -22,15 +22,6 @@ set(SOURCES
     "App/src/Calculator/CalculatorComplex.cpp"
     "App/src/Menu/MenuInput.cpp"
     "App/src/Menu/MenuOutput.cpp"
-    "App/src/Matrix/Matrix.cpp"
-    "App/src/Data/History.cpp"
-    "App/src/Data/Memory.cpp"
-    "App/src/Data/HistoryMemory.cpp"
-    "App/src/Data/AnalysisCounter.cpp"
-    "App/src/Data/ComplexityCalculator.cpp"
-    "App/src/Data/ExpressionAnalyzer.cpp"
-    "App/src/Data/ExpressionHistory.cpp"
-    "App/src/Data/StatisticsReporter.cpp"
 )
 add_executable(Calculator ${SOURCES})
 
