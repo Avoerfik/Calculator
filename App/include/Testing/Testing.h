@@ -8,12 +8,10 @@
 #include <stack>
 #include <vector>
 
-#include "../Calculator/CalculatorExpression.h"
-
 std::stack<std::string> bracketAnalyze(const std::string& expression);
 std::string calculateExpression(std::stack<std::string>& expressionStack);
 
-class Testing : public CalculatorExpression
+class Testing
 {
 public:
 	Testing() = default;

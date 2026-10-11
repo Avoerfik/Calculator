@@ -10,13 +10,12 @@
 #include <cmath>
 #include <complex>
 
-#include "CalculatorExpression.h"
 #include "ComplexInfo.h"
 
 std::vector<std::complex<long double>> getAllRoots(const std::complex<long double>& base, const std::complex<long double>& power);
 std::vector<long double> getRealRoots(const std::vector<std::complex<long double>>& roots);
 
-class Calculator : public CalculatorExpression
+class Calculator
 {
 public:
 	Calculator() = default;

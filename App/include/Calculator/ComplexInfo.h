@@ -6,9 +6,7 @@
 #include <vector>
 #include <complex>
 
-#include "CalculatorExpression.h"
-
-class ComplexInfo : public CalculatorExpression
+class ComplexInfo
 {
 private:
     // Приватный конструктор

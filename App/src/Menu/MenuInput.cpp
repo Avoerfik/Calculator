@@ -43,33 +43,6 @@ bool MenuInput::getContinueChoice()
     return false;
 }
 
-bool MenuInput::getSaveToMemoryChoice()
-{
-    std::string yn;
-    bool err;
-    do
-    {
-        yn = readInput("Save result to memory? Enter y/n: ");
-        err = isCorrectChar(yn);
-        if (err)
-        {
-            if (toupper(yn[0]) == 'Y') { return true; }
-            else if (toupper(yn[0]) == 'N') { return false; }
-            else
-            {
-                std::cout << "Invalid symbol! ";
-                err = true;
-            }
-        }
-        else
-        {
-            err = true;
-        }
-    } while (err);
-
-    return false;
-}
-
 std::string MenuInput::readInput(const std::string& prompt)
 {
     std::cout << prompt;
@@ -84,85 +57,13 @@ int MenuInput::getCalculationRegime()
     {
         std::cout << "Choose calculation regime:\n";
         std::cout << "1. Mathematical expression calculator\n";
-        std::cout << "2. Matrix calculator\n";
-        std::cout << "3. Show history\n";
-        std::cout << "4. Calculate Memory\n";
-        std::cout << "5. Expression Statistics\n";
         std::cout << "0. Exit\n";
         std::string input;
         std::getline(std::cin, input);
         if (isCorrectChar(input) &&
             ((input[0] == '0')
-                || (input[0] == '1')
-                || (input[0] == '2')
-                || (input[0] == '3')
-                || (input[0] == '4')
-                || (input[0] == '5')))
+                || (input[0] == '1')))
             return std::stoi(input);
-        std::cout << "Enter only 0, 1, 2, 3, 4 or 5!\n";
-    } while (true);
-}
-
-Matrix MenuInput::getMatrix()
-{
-    try
-    {
-        Matrix matrix;
-        std::cout << "Enter matrix:\n";
-        std::cin >> matrix;
-        std::cout << "Matrix is:\n";
-        std::cout << matrix;
-        return matrix;
-    }
-    catch (const std::exception&)
-    {
-        throw;
-    }
-}
-
-char MenuInput::getMatrixOperator()
-{
-    do
-    {
-        std::cout << "Enter operator(use only +-*):\n";
-        std::string input;
-        std::getline(std::cin, input);
-        if (isCorrectChar(input) && (input[0] == '+' || input[0] == '-' || input[0] == '*'))
-            return input[0];
-        std::cout << "Enter only (+-*):\n";
-    } while (true);
-}
-
-char MenuInput::getMemoryOperator()
-{
-    do
-    {
-        std::cout << "Enter ' ' space if it is the last memory element. Enter operator(use only +-*/^ ):\n";
-        std::string input;
-        std::getline(std::cin, input);
-        if (isCorrectChar(input) &&
-            (input[0] == '+' ||
-                input[0] == '-' ||
-                input[0] == '*' ||
-                input[0] == '/' || 
-                input[0] == '^' || 
-                input[0] == ' '))
-            return input[0];
-        std::cout << "Enter only (+-*/^ ):\n";
-    } while (true);
-}
-
-int MenuInput::getMatrixRegime()
-{
-    do
-    {
-        std::cout << "Choose matrix regime:\n";
-        std::cout << "1. Multiple matrix to matrix\n";
-        std::cout << "2. Multiple scalar to matrix\n";
-        std::string input;
-        std::getline(std::cin, input);
-        if (isCorrectChar(input) && ((input[0] == '1') || (input[0] == '2')))
-            return std::stoi(input);
-        std::cout << "Enter only 1 or 2!\n";
+        std::cout << "Enter only 0, 1!\n";
     } while (true);
 }
