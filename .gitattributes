@@ -61,3 +61,10 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+*.cpp text eol=lf
+*.h   text eol=lf
+*.md  text eol=lf
+*.txt text eol=lf
+*.cmake text eol=lf
+CMakeLists.txt text eol=lf

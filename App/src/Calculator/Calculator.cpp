@@ -1,4 +1,4 @@
-#include "../../include/Calculator/Calculator.h"
+#include "Calculator/Calculator.h"
 
 // Внутренние функции
 void Calculator::analyzeFirstSymbol(const char symbol, const std::size_t index, std::stack<std::size_t>& bracketStack,

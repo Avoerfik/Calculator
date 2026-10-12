@@ -1,7 +1,7 @@
 ﻿# CMakeList.txt: проект CMake для Calculator; включите исходный код и определения,
 # укажите здесь логику для конкретного проекта.
 #
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.16)
 
 # Включение горячей перезагрузки для компиляторов MSVC, если поддерживается.
 if (POLICY CMP0141)
@@ -9,21 +9,35 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project ("Calculator")
+project (Calculator LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-include_directories(include)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# include_directories(include)
+
 set(SOURCES
     "App/src/main.cpp"
     "App/src/Testing/Testing.cpp"
     "App/src/Calculator/Calculator.cpp"
-    "App/src/Menu/Menu.cpp"
     "App/src/Calculator/CalculatorComplex.cpp"
+    "App/src/Menu/Menu.cpp"
     "App/src/Menu/MenuInput.cpp"
     "App/src/Menu/MenuOutput.cpp"
 )
+
 add_executable(Calculator ${SOURCES})
+
+target_include_directories(Calculator PRIVATE
+    ${CMAKE_SOURCE_DIR}/App/include
+)
+
+if (MSVC)
+    target_compile_options(Calculator PRIVATE /W4 /utf-8)
+else()
+    target_compile_options(Calculator PRIVATE -Wall -Wextra -Wpedantic)
+endif()
 
 # Добавьте источник в исполняемый файл этого проекта.
 # add_executable (Calculator "src/main.cpp" "include/main.h" "src/Calculator.cpp" "src/Testing.cpp" "include/Calculator.h" "include/Testing.h")

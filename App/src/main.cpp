@@ -1,7 +1,7 @@
 ﻿// main.cpp: определяет точку входа для приложения.
 //
 
-#include "../include/main.h"
+#include "main.h"
 
 #ifdef _WIN32
 #include <windows.h>

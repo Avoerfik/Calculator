@@ -1,4 +1,4 @@
-#include "../../include/Testing/Testing.h"
+#include "Testing/Testing.h"
 
 // Внутренние функции
 bool Testing::runTest(const std::string& expression, const std::string& expected, const std::string& testName, const unsigned int& testNumber)

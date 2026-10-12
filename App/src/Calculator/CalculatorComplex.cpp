@@ -1,4 +1,4 @@
-#include "../App/include/Calculator/CalculatorComplex.h"
+#include "Calculator/CalculatorComplex.h"
 
 // Внутренние функции
 std::vector<std::complex<long double>> CalculatorComplex::getAllRoots(const std::complex<long double>& base, const std::complex<long double>& power)

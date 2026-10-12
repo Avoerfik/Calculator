@@ -1,6 +1,6 @@
-#include "../App/include/Menu/Menu.h"
-#include "../App/include/Menu/MenuInput.h"
-#include "../App/include/Menu/MenuOutput.h"
+#include "Menu/Menu.h"
+#include "Menu/MenuInput.h"
+#include "Menu/MenuOutput.h"
 
 Menu::Menu() : testsTotal(0), testsPassed(0), testsFailed(0),
 complexityCalculator(nullptr)

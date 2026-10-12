@@ -1,4 +1,4 @@
-#include "../App/include/Menu/MenuOutput.h"
+#include "Menu/MenuOutput.h"
 
 MenuOutput::MenuOutput() : Menu()
 {
