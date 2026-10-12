@@ -10,6 +10,10 @@
 #include <cmath>
 #include <complex>
 
+#ifndef _WIN32
+#include <cstdint>
+#endif
+
 #include "ComplexInfo.h"
 
 std::vector<std::complex<long double>> getAllRoots(const std::complex<long double>& base, const std::complex<long double>& power);
@@ -243,8 +247,17 @@ std::string Calculator::calculateOneExpression(const std::string& operand1,const
 			else result = std::to_string(stold(operand1) / stold(operand2));
 			break;
 		case '^':
-			if (stold(operand2) >= 0.0) result = std::to_string(int64_t(powl(stold(operand1), stold(operand2))));
-			else result = std::to_string(powl(stold(operand1), stold(operand2)));
+			long double val = powl(stold(operand1), stold(operand2));
+			if (std::isnan(val) || std::isinf(val) ||
+				val > 9.2e18L || val < -9.2e18L ||
+				std::floor(val) != val)
+			{
+				result = std::to_string(val);
+			}
+			else
+			{
+				result = std::to_string(int64_t(val));
+			}
 			break;
 		}
 	}
