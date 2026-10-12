@@ -23,7 +23,7 @@ set(SOURCES
     "App/src/Menu/MenuInput.cpp"
     "App/src/Menu/MenuOutput.cpp"
 )
-add_executable(Calculator ${SOURCES})
+add_executable(Calculator ${SOURCES} "App/include/Tokens.h" "App/include/lexer.h" "App/src/lexer.cpp")
 
 # Добавьте источник в исполняемый файл этого проекта.
 # add_executable (Calculator "src/main.cpp" "include/main.h" "src/Calculator.cpp" "src/Testing.cpp" "include/Calculator.h" "include/Testing.h")
