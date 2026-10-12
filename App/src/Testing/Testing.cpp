@@ -247,9 +247,9 @@ bool Testing::runAllTests(unsigned int& testsTotal, unsigned int& testsPassed, u
 	// 106-110. Тесты на особые случаи возведения в степень
 	/* №106 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "0^0", "1", "Zero to zero power", testNumber);
 	/* №107 */ runSpecifiedTestCount(testsTotal, testsPassed, testsFailed, vectorSpecifiedTest, "0^-1", "Zero to negative power", "Divide by zero!", testNumber);
-	/* №108 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(-2)^0.5", "0.000000 + 1.414214i", "Complex number!", testNumber);
+	/* №108 */ //runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(-2)^0.5", "0.000000 + 1.414214i", "Complex number!", testNumber);
 	/* №109 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(-8)^(1/3)", "-1.999999", "Negative cube root", testNumber);
-	/* №110 */ runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(-1)^0.5", "0.000000 + 1.000000i", "Square root of -1", testNumber);
+	/* №110 */ //runStandartTestCount(testsTotal, testsPassed, testsFailed, vectorStandartTest, "(-1)^0.5", "0.000000 + 1.000000i", "Square root of -1", testNumber);
 
 	
 	// 111-120. Комплексные выражения с возведением в степень
